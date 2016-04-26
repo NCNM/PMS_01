@@ -11,6 +11,10 @@ LoginDialog::LoginDialog(QWidget *parent, MainWindow *mw) :
 
 LoginDialog::~LoginDialog()
 {
+    if (Database::isConnected())
+    {
+        Database::Release();
+    }
     delete ui;
 }
 

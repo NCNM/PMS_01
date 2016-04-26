@@ -18,6 +18,8 @@ public:
 private slots:
     void on_pushButton_viewInmates_clicked(bool checked);
 
+    void on_pushButton_viewOfficers_clicked(bool checked);
+
 private:
     Ui::DiningWindow *ui;
 };
