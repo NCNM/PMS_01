@@ -2,6 +2,7 @@
 #include <QSqlError>
 
 Database* Database::instance = NULL;
+QSqlDatabase Database::mDb = QSqlDatabase::addDatabase(NULL);
 
 Database * Database::init(QString hostname, QString username, QString password, int port)
 {
@@ -29,6 +30,11 @@ Database * Database::init(QString hostname, QString username, QString password, 
 QSqlDatabase Database::getDatabase()
 {
     return instance->mDb;
+}
+
+bool Database::isConnected()
+{
+    return instance != NULL;
 }
 
 void Database::Release()

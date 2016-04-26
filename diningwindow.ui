@@ -287,7 +287,7 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_16">
+     <widget class="QPushButton" name="pushButton_viewInmates">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -544,7 +544,7 @@ QScrollBar::sub-line:vertical {
                <number>11</number>
               </property>
               <attribute name="horizontalHeaderVisible">
-               <bool>true</bool>
+               <bool>false</bool>
               </attribute>
               <attribute name="horizontalHeaderCascadingSectionResizes">
                <bool>false</bool>

@@ -9,6 +9,7 @@
 #include "loginwindow.h"
 #include "database.h"
 #include <QMessageBox>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -25,6 +26,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    if (Database::isConnected())
+    {
+        Database::Release();
+    }
     delete ui;
 }
 

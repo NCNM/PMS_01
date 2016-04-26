@@ -1,6 +1,9 @@
 #include "diningwindow.h"
 #include "ui_diningwindow.h"
-#include <QSqlDatabase>
+#include <database.h>
+#include <QSqlTableModel>
+#include <QSqlQuery>
+#include <QDebug>
 
 DiningWindow::DiningWindow(QWidget *parent) :
     QWidget(parent),
@@ -12,4 +15,15 @@ DiningWindow::DiningWindow(QWidget *parent) :
 DiningWindow::~DiningWindow()
 {
     delete ui;
+}
+
+
+
+void DiningWindow::on_pushButton_viewInmates_clicked(bool checked)
+{
+    QSqlDatabase db = Database::getDatabase();
+    QSqlQuery qry(db);
+    qry.exec("SELECT * FROM INMATE");
+
+
 }

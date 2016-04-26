@@ -7,12 +7,13 @@ class Database
 {
 private:
     static Database * instance;
+    static QSqlDatabase mDb;
     Database(){}
 public:
     static Database * init(QString hostname, QString username, QString password, int port);
-    QSqlDatabase getDatabase();
-    QSqlDatabase mDb;
-    void Release();
+    static QSqlDatabase getDatabase();
+    static void Release();
+    static bool isConnected();
 };
 
 
