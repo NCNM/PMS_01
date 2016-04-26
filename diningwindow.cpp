@@ -30,16 +30,16 @@ void DiningWindow::on_pushButton_viewInmates_clicked(bool checked)
     ui->tableView->setModel(model);
 */
 
-    QSqlQueryModel *m = new QSqlQueryModel;
-    m->setQuery("SELECT * FROM INMATE", db);
-    ui->tableView->setModel(m);
+    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery("SELECT * FROM INMATE", db);
+    ui->tableView->setModel(model);
 }
 
 void DiningWindow::on_pushButton_viewOfficers_clicked(bool checked)
 {
     QSqlDatabase db = Database::getDatabase();
 
-    QSqlQueryModel *m = new QSqlQueryModel;
-    m->setQuery("SELECT * FROM OFFICER", db);
-    ui->tableView->setModel(m);
+    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery("SELECT * FROM OFFICER", db);
+    ui->tableView->setModel(model);
 }

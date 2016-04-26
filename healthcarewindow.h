@@ -15,6 +15,9 @@ public:
     explicit HealthcareWindow(QWidget *parent = 0);
     ~HealthcareWindow();
 
+private slots:
+    void on_pushButton_HealthRecord_clicked(bool checked);
+
 private:
     Ui::HealthcareWindow *ui;
 };

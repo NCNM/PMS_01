@@ -3,7 +3,7 @@
 #include <QDebug>
 
 Database* Database::instance = NULL;
-QSqlDatabase Database::mDb = QSqlDatabase::addDatabase(NULL);
+QSqlDatabase Database::mDb = QSqlDatabase::database("", 0);
 
 Database * Database::init(QString hostname, QString username, QString password, int port)
 {

@@ -249,7 +249,7 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_16">
+     <widget class="QPushButton" name="pushButton_HealthRecord">
       <property name="geometry">
        <rect>
         <x>10</x>

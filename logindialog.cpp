@@ -8,6 +8,7 @@ LoginDialog::LoginDialog(QWidget *parent):
     ui->setupUi(this);
     m_loginedSuccess = false;
     this_mw = NULL;
+    ui->serverStatus->setStyleSheet("QLabel { background-color : white; color : red; }");
 }
 
 LoginDialog::~LoginDialog()
@@ -72,10 +73,14 @@ void LoginDialog::on_pushButton_connect_clicked()
     int port = ui->plainTextEdit_port->toPlainText().toInt();
 
     Database *CDb = Database::init(hostname, username, password, port);
+
     if (CDb)
     {
         connected = true;
-        QMessageBox::critical(this, "Error", "Connected");
+
+        ui->serverStatus->setStyleSheet("QLabel { background-color : white; color : blue; }");
+        ui->serverStatus->setText("Connected");
+
         ui->pushButton_connect->setEnabled(0);
         ui->plainTextEdit_localhost->setEnabled(0);
         ui->plainTextEdit_pass->setEnabled(0);
