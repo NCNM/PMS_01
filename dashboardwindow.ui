@@ -1,0 +1,1151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DashboardWindow</class>
+ <widget class="QWidget" name="DashboardWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>754</width>
+    <height>410</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dashboard</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="pms_resources.qrc">
+    <normaloff>:/images/speedometer.png</normaloff>:/images/speedometer.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="sidebar">
+     <property name="minimumSize">
+      <size>
+       <width>200</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>200</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame #sidebar {
+	background-image: url(:/images/bg_sidemenu.png);
+	background-position:top right;
+	background-repeat:no-repeat
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="pushButton_16">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+text-align:left;
+}
+
+QPushButton:hover {
+border-radius: 10px;
+background-color: #299ED6;
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Force refresh</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_17">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+text-align:left;
+}
+
+QPushButton:hover {
+border-radius: 10px;
+background-color: #299ED6;
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>View mode</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_18">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+text-align:left;
+}
+
+QPushButton:hover {
+border-radius: 10px;
+background-color: #299ED6;
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Sort: A-Z</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_19">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>140</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+text-align:left;
+}
+
+QPushButton:hover {
+border-radius: 10px;
+background-color: #299ED6;
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Filter: All</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_20">
+      <property name="geometry">
+       <rect>
+        <x>-1</x>
+        <y>-1</y>
+        <width>201</width>
+        <height>36</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/images/sidebar_header.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_21">
+      <property name="geometry">
+       <rect>
+        <x>3</x>
+        <y>3</y>
+        <width>28</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+text-align:left;
+background-image: url(:/images/sidebar_unpin.png);
+}
+
+QPushButton:hover {
+border-radius:1px;
+background-color: #299ED6;
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_22">
+      <property name="geometry">
+       <rect>
+        <x>168</x>
+        <y>3</y>
+        <width>28</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+text-align:left;
+	background-image: url(:/images/sidebar_close.png);
+}
+
+QPushButton:hover {
+border-radius:1px;
+background-color: #299ED6;
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QFrame" name="frame_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>64</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>64</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QLabel" name="label">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>10</y>
+           <width>151</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Dashboard</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_2">
+         <property name="geometry">
+          <rect>
+           <x>22</x>
+           <y>36</y>
+           <width>391</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(94, 94, 94);</string>
+         </property>
+         <property name="text">
+          <string>Get a visual overview of the facility's current status</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_2">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <layout class="QGridLayout" name="gridLayout">
+           <property name="sizeConstraint">
+            <enum>QLayout::SetMaximumSize</enum>
+           </property>
+           <property name="leftMargin">
+            <number>5</number>
+           </property>
+           <property name="topMargin">
+            <number>5</number>
+           </property>
+           <property name="rightMargin">
+            <number>5</number>
+           </property>
+           <property name="bottomMargin">
+            <number>5</number>
+           </property>
+           <property name="spacing">
+            <number>9</number>
+           </property>
+           <item row="0" column="4">
+            <widget class="QPushButton" name="pushButton_5">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+border: 1px solid #333333;
+border-radius: 6px;
+background-color: #222222;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, stop: 0 #444444, stop: 1 #222222);
+}
+
+QPushButton:hover {
+border: 1px solid #138ACC;
+border-radius: 6px;
+background-color: #299ED6;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #63CFFF, stop: 1 #0075B5);
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+             </property>
+             <property name="text">
+              <string>Dashboard Entry 5</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QPushButton" name="pushButton_6">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+border: 1px solid #333333;
+border-radius: 6px;
+background-color: #222222;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, stop: 0 #444444, stop: 1 #222222);
+}
+
+QPushButton:hover {
+border: 1px solid #138ACC;
+border-radius: 6px;
+background-color: #299ED6;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #63CFFF, stop: 1 #0075B5);
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+             </property>
+             <property name="text">
+              <string>Dashboard Entry 6</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QPushButton" name="pushButton_7">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+border: 1px solid #333333;
+border-radius: 6px;
+background-color: #222222;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, stop: 0 #444444, stop: 1 #222222);
+}
+
+QPushButton:hover {
+border: 1px solid #138ACC;
+border-radius: 6px;
+background-color: #299ED6;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #63CFFF, stop: 1 #0075B5);
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+             </property>
+             <property name="text">
+              <string>Dashboard Entry 7</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QPushButton" name="pushButton_8">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+border: 1px solid #333333;
+border-radius: 6px;
+background-color: #222222;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, stop: 0 #444444, stop: 1 #222222);
+}
+
+QPushButton:hover {
+border: 1px solid #138ACC;
+border-radius: 6px;
+background-color: #299ED6;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #63CFFF, stop: 1 #0075B5);
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+             </property>
+             <property name="text">
+              <string>Dashboard Entry 8</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QPushButton" name="pushButton_9">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+border: 1px solid #333333;
+border-radius: 6px;
+background-color: #222222;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, stop: 0 #444444, stop: 1 #222222);
+}
+
+QPushButton:hover {
+border: 1px solid #138ACC;
+border-radius: 6px;
+background-color: #299ED6;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #63CFFF, stop: 1 #0075B5);
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+             </property>
+             <property name="text">
+              <string>Dashboard Entry 9</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QPushButton" name="pushButton_10">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+border: 1px solid #333333;
+border-radius: 6px;
+background-color: #222222;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, stop: 0 #444444, stop: 1 #222222);
+}
+
+QPushButton:hover {
+border: 1px solid #138ACC;
+border-radius: 6px;
+background-color: #299ED6;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #63CFFF, stop: 1 #0075B5);
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+             </property>
+             <property name="text">
+              <string>Dashboard Entry 10</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QPushButton" name="pushButton">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+border: 1px solid #333333;
+border-radius: 6px;
+background-color: #222222;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, stop: 0 #444444, stop: 1 #222222);
+}
+
+QPushButton:hover {
+border: 1px solid #138ACC;
+border-radius: 6px;
+background-color: #299ED6;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #63CFFF, stop: 1 #0075B5);
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+             </property>
+             <property name="text">
+              <string>Dashboard Entry 1</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="pushButton_2">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+border: 1px solid #333333;
+border-radius: 6px;
+background-color: #222222;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, stop: 0 #444444, stop: 1 #222222);
+}
+
+QPushButton:hover {
+border: 1px solid #138ACC;
+border-radius: 6px;
+background-color: #299ED6;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #63CFFF, stop: 1 #0075B5);
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+             </property>
+             <property name="text">
+              <string>Dashboard Entry 2</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QPushButton" name="pushButton_3">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+border: 1px solid #333333;
+border-radius: 6px;
+background-color: #222222;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, stop: 0 #444444, stop: 1 #222222);
+}
+
+QPushButton:hover {
+border: 1px solid #138ACC;
+border-radius: 6px;
+background-color: #299ED6;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #63CFFF, stop: 1 #0075B5);
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+             </property>
+             <property name="text">
+              <string>Dashboard Entry 3</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QPushButton" name="pushButton_4">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+border: 1px solid #333333;
+border-radius: 6px;
+background-color: #222222;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, stop: 0 #444444, stop: 1 #222222);
+}
+
+QPushButton:hover {
+border: 1px solid #138ACC;
+border-radius: 6px;
+background-color: #299ED6;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #63CFFF, stop: 1 #0075B5);
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+             </property>
+             <property name="text">
+              <string>Dashboard Entry 4</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QPushButton" name="pushButton_12">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+border: 1px solid #333333;
+border-radius: 6px;
+background-color: #222222;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, stop: 0 #444444, stop: 1 #222222);
+}
+
+QPushButton:hover {
+border: 1px solid #138ACC;
+border-radius: 6px;
+background-color: #299ED6;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #63CFFF, stop: 1 #0075B5);
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+             </property>
+             <property name="text">
+              <string>Dashboard Entry 12</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QPushButton" name="pushButton_11">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+border: 1px solid #333333;
+border-radius: 6px;
+background-color: #222222;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, stop: 0 #444444, stop: 1 #222222);
+}
+
+QPushButton:hover {
+border: 1px solid #138ACC;
+border-radius: 6px;
+background-color: #299ED6;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #63CFFF, stop: 1 #0075B5);
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+             </property>
+             <property name="text">
+              <string>Dashboard Entry 11</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QPushButton" name="pushButton_13">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+border: 1px solid #333333;
+border-radius: 6px;
+background-color: #222222;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, stop: 0 #444444, stop: 1 #222222);
+}
+
+QPushButton:hover {
+border: 1px solid #138ACC;
+border-radius: 6px;
+background-color: #299ED6;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #63CFFF, stop: 1 #0075B5);
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+             </property>
+             <property name="text">
+              <string>Dashboard Entry 13</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="3">
+            <widget class="QPushButton" name="pushButton_14">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+border: 1px solid #333333;
+border-radius: 6px;
+background-color: #222222;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, stop: 0 #444444, stop: 1 #222222);
+}
+
+QPushButton:hover {
+border: 1px solid #138ACC;
+border-radius: 6px;
+background-color: #299ED6;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #63CFFF, stop: 1 #0075B5);
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+             </property>
+             <property name="text">
+              <string>Dashboard Entry 14</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="4">
+            <widget class="QPushButton" name="pushButton_15">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+border: 1px solid #333333;
+border-radius: 6px;
+background-color: #222222;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, stop: 0 #444444, stop: 1 #222222);
+}
+
+QPushButton:hover {
+border: 1px solid #138ACC;
+border-radius: 6px;
+background-color: #299ED6;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #63CFFF, stop: 1 #0075B5);
+}
+
+QPushButton:pressed {
+border: 1px solid #333333;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border: 1px solid #ED8876;
+border-radius: 5px;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
+}
+
+</string>
+             </property>
+             <property name="text">
+              <string>Dashboard Entry 15</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="pms_resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
