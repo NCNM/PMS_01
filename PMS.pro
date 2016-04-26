@@ -20,8 +20,8 @@ SOURCES += main.cpp\
     rehabform.cpp \
     entryreleaseform.cpp \
     managementwindow.cpp \
-    loginwindow.cpp \
-    database.cpp
+    database.cpp \
+    logindialog.cpp
 
 HEADERS  += mainwindow.h \
     dashboardwindow.h \
@@ -30,8 +30,8 @@ HEADERS  += mainwindow.h \
     rehabform.h \
     entryreleaseform.h \
     managementwindow.h \
-    loginwindow.h \
-    database.h
+    database.h \
+    logindialog.h
 
 FORMS    += mainwindow.ui \
     dashboardwindow.ui \
@@ -40,7 +40,7 @@ FORMS    += mainwindow.ui \
     rehabform.ui \
     entryreleaseform.ui \
     managementwindow.ui \
-    loginwindow.ui
+    logindialog.ui
 
 RESOURCES += \
     pms_resources.qrc

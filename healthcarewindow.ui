@@ -556,9 +556,6 @@ QScrollBar::sub-line:vertical {
             <property name="spacing">
              <number>0</number>
             </property>
-            <property name="sizeConstraint">
-             <enum>QLayout::SetMaximumSize</enum>
-            </property>
             <property name="leftMargin">
              <number>0</number>
             </property>
@@ -572,103 +569,10 @@ QScrollBar::sub-line:vertical {
              <number>0</number>
             </property>
             <item>
-             <widget class="QTableWidget" name="tableWidget">
-              <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
-              </property>
+             <widget class="QTableView" name="tableView">
               <property name="frameShape">
                <enum>QFrame::NoFrame</enum>
               </property>
-              <property name="showGrid">
-               <bool>true</bool>
-              </property>
-              <property name="rowCount">
-               <number>23</number>
-              </property>
-              <property name="columnCount">
-               <number>5</number>
-              </property>
-              <attribute name="horizontalHeaderVisible">
-               <bool>true</bool>
-              </attribute>
-              <attribute name="horizontalHeaderCascadingSectionResizes">
-               <bool>false</bool>
-              </attribute>
-              <attribute name="horizontalHeaderDefaultSectionSize">
-               <number>150</number>
-              </attribute>
-              <attribute name="horizontalHeaderHighlightSections">
-               <bool>false</bool>
-              </attribute>
-              <attribute name="horizontalHeaderMinimumSectionSize">
-               <number>32</number>
-              </attribute>
-              <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-               <bool>true</bool>
-              </attribute>
-              <attribute name="horizontalHeaderStretchLastSection">
-               <bool>true</bool>
-              </attribute>
-              <attribute name="verticalHeaderCascadingSectionResizes">
-               <bool>true</bool>
-              </attribute>
-              <attribute name="verticalHeaderDefaultSectionSize">
-               <number>32</number>
-              </attribute>
-              <attribute name="verticalHeaderMinimumSectionSize">
-               <number>23</number>
-              </attribute>
-              <attribute name="verticalHeaderStretchLastSection">
-               <bool>false</bool>
-              </attribute>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <row/>
-              <column>
-               <property name="text">
-                <string>Inmate</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>Last check</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>Condition</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>Urgency</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>Remarks</string>
-               </property>
-              </column>
              </widget>
             </item>
             <item>

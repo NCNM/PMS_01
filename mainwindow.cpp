@@ -6,7 +6,7 @@
 #include "rehabform.h"
 #include "entryreleaseform.h"
 #include "managementwindow.h"
-#include "loginwindow.h"
+#include "logindialog.h"
 #include "database.h"
 #include <QMessageBox>
 #include <QDebug>
@@ -20,8 +20,8 @@ MainWindow::MainWindow(QWidget *parent) :
     centralWidget()->layout()->setContentsMargins(0, 0, 0, 0);
     centralWidget()->layout()->setSizeConstraint(QLayout::SetMaximumSize);
 
-    LoginWindow *lgn = new LoginWindow;
-    lgn->show();
+    //LoginWindow *lgn = new LoginWindow;
+    //lgn->show();
 }
 
 MainWindow::~MainWindow()
@@ -45,8 +45,8 @@ void MainWindow::on_toolButton_Dashboard_clicked(bool checked)
 
 void MainWindow::on_actionTest_login_triggered()
 {
-    LoginWindow *lgn = new LoginWindow;
-    lgn->show();
+    //LoginWindow *lgn = new LoginWindow;
+    //lgn->show();
 }
 
 void MainWindow::on_toolButton_clicked(bool checked)
@@ -102,4 +102,8 @@ void MainWindow::on_toolButton_mng_clicked(bool checked)
        mng->showMaximized();
        mng->activateWindow();
     }
+}
+
+void MainWindow::closeEvent (QCloseEvent *event){
+    return; // To avoid "Stopped working" nags from Windows, which should be investigated soon
 }

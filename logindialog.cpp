@@ -1,33 +1,24 @@
-#include "loginwindow.h"
-#include "ui_loginwindow.h"
-#include <QTextCursor>
-#include <QMessageBox>
-#include <QSqlError>
-#include <QSqlQuery>
-#include <QDebug>
+#include "logindialog.h"
+#include "ui_logindialog.h"
 
-LoginWindow::LoginWindow(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::LoginWindow)
+LoginDialog::LoginDialog(QWidget *parent, MainWindow *mw) :
+    QDialog(parent),
+    ui(new Ui::LoginDialog)
 {
     ui->setupUi(this);
-    connected = false;
+    this_mw = mw;
 }
 
-LoginWindow::~LoginWindow()
+LoginDialog::~LoginDialog()
 {
     delete ui;
 }
 
-void LoginWindow::on_pushButton_6_clicked()
-{
-    this->close();
-}
-
-void LoginWindow::on_pushButton_5_clicked()
+void LoginDialog::on_pushButton_5_clicked()
 {
     if ((ui->plainTextEdit_ID->toPlainText() == "admin") && (ui->plainTextEdit_passID->toPlainText() =="admin"))
     {
+        this_mw->show();
         this->close();      // sucess
     }
     else
@@ -50,14 +41,21 @@ void LoginWindow::on_pushButton_5_clicked()
             }
 
             //succes
+            this_mw->show();
             this->close();
         }
-        else
+        else {
             QMessageBox::critical(this, "Error", "Please connect to server first!");
+        }
     }
 }
 
-void LoginWindow::on_pushButton_connect_clicked()
+void LoginDialog::on_pushButton_6_clicked()
+{
+        this->close();
+}
+
+void LoginDialog::on_pushButton_connect_clicked()
 {
     QString hostname = ui->plainTextEdit_localhost->toPlainText();
     QString username = ui->plainTextEdit_username->toPlainText();
