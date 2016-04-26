@@ -1,11 +1,13 @@
 #include "database.h"
 #include <QSqlError>
+#include <QDebug>
 
 Database* Database::instance = NULL;
 QSqlDatabase Database::mDb = QSqlDatabase::addDatabase(NULL);
 
 Database * Database::init(QString hostname, QString username, QString password, int port)
 {
+    qDebug() << "Construct database";
     if (instance != NULL)
         return instance;
 
@@ -39,6 +41,7 @@ bool Database::isConnected()
 
 void Database::Release()
 {
+    qDebug() << "Release database";
     instance->mDb.close();
     if (instance)
     {

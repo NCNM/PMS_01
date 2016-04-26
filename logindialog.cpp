@@ -1,19 +1,27 @@
 #include "logindialog.h"
 #include "ui_logindialog.h"
 
-LoginDialog::LoginDialog(QWidget *parent, MainWindow *mw) :
+LoginDialog::LoginDialog(QWidget *parent):
     QDialog(parent),
     ui(new Ui::LoginDialog)
 {
     ui->setupUi(this);
-    this_mw = mw;
+    m_loginedSuccess = false;
+    this_mw = NULL;
 }
 
 LoginDialog::~LoginDialog()
 {
-    if (Database::isConnected())
+    qDebug() << "Destruct login dialog";
+    if (!m_loginedSuccess && Database::isConnected())
     {
         Database::Release();
+    }
+    if (this_mw)
+    {
+        qDebug() << "Destruct main window";
+        delete this_mw;
+        this_mw = NULL;
     }
     delete ui;
 }
@@ -22,19 +30,17 @@ void LoginDialog::on_pushButton_5_clicked()
 {
     if ((ui->plainTextEdit_ID->toPlainText() == "admin") && (ui->plainTextEdit_passID->toPlainText() =="admin"))
     {
-        this_mw->show();
-        this->close();      // sucess
+        loginSuccess();
     }
     else
     {
         if (connected)
         {
+            QSqlDatabase db = Database::getDatabase();
             QString ID = ui->plainTextEdit_ID->toPlainText();
             QString pass = ui->plainTextEdit_passID->toPlainText();
             QString QSQuery = "SELECT * FROM ACCOUNT WHERE ID = '" + ID + "' AND PASS = '" + pass + "'";
             QSqlQuery query(db);
-
-            qDebug() << QSQuery;
 
             query.exec(QSQuery);
 
@@ -45,8 +51,7 @@ void LoginDialog::on_pushButton_5_clicked()
             }
 
             //succes
-            this_mw->show();
-            this->close();
+            loginSuccess();
         }
         else {
             QMessageBox::critical(this, "Error", "Please connect to server first!");
@@ -56,7 +61,7 @@ void LoginDialog::on_pushButton_5_clicked()
 
 void LoginDialog::on_pushButton_6_clicked()
 {
-        this->close();
+    this->close();
 }
 
 void LoginDialog::on_pushButton_connect_clicked()
@@ -70,7 +75,6 @@ void LoginDialog::on_pushButton_connect_clicked()
     if (CDb)
     {
         connected = true;
-        db = CDb->getDatabase();
         QMessageBox::critical(this, "Error", "Connected");
         ui->pushButton_connect->setEnabled(0);
         ui->plainTextEdit_localhost->setEnabled(0);
@@ -78,4 +82,14 @@ void LoginDialog::on_pushButton_connect_clicked()
         ui->plainTextEdit_port->setEnabled(0);
         ui->plainTextEdit_username->setEnabled(0);
     }
+}
+
+void LoginDialog::loginSuccess()
+{
+    m_loginedSuccess = true;
+
+    this_mw = new MainWindow;
+    this_mw->show();
+
+    this->close();
 }

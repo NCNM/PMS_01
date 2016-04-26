@@ -19,7 +19,7 @@ class LoginDialog : public QDialog
     Q_OBJECT
 
 public:
-    LoginDialog(QWidget *parent, MainWindow *mw);
+    LoginDialog(QWidget *parent = 0);
     ~LoginDialog();
 
 private slots:
@@ -29,10 +29,12 @@ private slots:
 
     void on_pushButton_connect_clicked();
 
+    void loginSuccess();
+
 private:
     Ui::LoginDialog *ui;
     bool connected;
-    QSqlDatabase db;
+    bool m_loginedSuccess;
     MainWindow *this_mw;
 };
 
