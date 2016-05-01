@@ -69,11 +69,21 @@
         <height>36</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-image: url(:/images/sidebar_header.png);</string>
+       <string notr="true">background-image: url(:/images/sidebar_header.png);
+text-align:left;
+color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>            ACTIONS</string>
       </property>
       <property name="flat">
        <bool>true</bool>
@@ -468,7 +478,8 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
             </property>
             <property name="font">
              <font>
-              <pointsize>18</pointsize>
+              <family>Segoe UI</family>
+              <pointsize>14</pointsize>
              </font>
             </property>
             <property name="text">

@@ -7,22 +7,24 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    centralWidget()->layout()->setSpacing(0);
-    centralWidget()->layout()->setContentsMargins(0, 0, 0, 0);
-    centralWidget()->layout()->setSizeConstraint(QLayout::SetMaximumSize);
 
     dashboard = new DashboardWindow;
-    ui->mdiArea->addSubWindow(dashboard, Qt::CustomizeWindowHint | Qt::Tool | Qt::WindowTitleHint);
+    sub_dashboard = ui->mdiArea->addSubWindow(dashboard, Qt::FramelessWindowHint);
     dashboard->showMaximized();
     dashboard->activateWindow();
     ui->toolButton_Dashboard->setChecked(true);
-
 
     healthcare = NULL;
     dining = NULL;
     etrr = NULL;
     rehab = NULL;
     mng = NULL;
+
+    sub_healthcare = NULL;
+    sub_dining = NULL;
+    sub_etrr = NULL;
+    sub_rehab = NULL;
+    sub_mng = NULL;
 }
 
 MainWindow::~MainWindow()
@@ -70,94 +72,104 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_toolButton_Dashboard_clicked(bool checked)
+void MainWindow::on_toolButton_Dashboard_clicked()
 {
-    if (checked == true) {
-       if(dashboard == NULL){
-       dashboard = new DashboardWindow;
-       }
-
-       dashboard->showMaximized();
-       dashboard->activateWindow();
+    if (sub_dashboard == NULL) {
+        dashboard = new DashboardWindow;
+        sub_dashboard = ui->mdiArea->addSubWindow(dashboard, Qt::FramelessWindowHint);
+        dashboard->showMaximized();
+        dashboard->activateWindow();
     }
+    else ui->mdiArea->setActiveSubWindow(sub_dashboard);
+    ui->toolButton_Dashboard->setChecked(true);
+    ui->toolButton_Dining->setChecked(false);
+    ui->toolButton_Healthcare->setChecked(false);
+    ui->toolButton_etrr->setChecked(false);
+    ui->toolButton_rehab->setChecked(false);
+    ui->toolButton_mng->setChecked(false);
 }
 
-void MainWindow::on_actionTest_login_triggered()
+void MainWindow::on_toolButton_Dining_clicked()
 {
-    //LoginWindow *lgn = new LoginWindow;
-    //lgn->show();
-}
-
-void MainWindow::on_toolButton_clicked(bool checked)
-{
-
-}
-
-void MainWindow::on_toolButton_Healthcare_clicked(bool checked)
-{
-    if(checked == true){
-        if(healthcare == NULL){
-        healthcare = new HealthcareWindow;
-        ui->mdiArea->addSubWindow(healthcare, Qt::CustomizeWindowHint | Qt::Tool | Qt::WindowTitleHint);
-        }
-        healthcare->showMaximized();
-        healthcare->activateWindow();
-    }
-
-}
-
-void MainWindow::on_toolButton_Dining_clicked(bool checked)
-{
-    if (checked == true) {
-       if(dining==NULL){
+    if (sub_dining == NULL) {
        dining = new DiningWindow;
-       ui->mdiArea->addSubWindow(dining, Qt::CustomizeWindowHint | Qt::Tool | Qt::WindowTitleHint);
-       }
+       sub_dining = ui->mdiArea->addSubWindow(dining, Qt::FramelessWindowHint);
        dining->showMaximized();
        dining->activateWindow();
     }
-
+    else ui->mdiArea->setActiveSubWindow(sub_dining);
+    ui->toolButton_Dining->setChecked(true);
+    ui->toolButton_Healthcare->setChecked(false);
+    ui->toolButton_Dashboard->setChecked(false);
+    ui->toolButton_etrr->setChecked(false);
+    ui->toolButton_rehab->setChecked(false);
+    ui->toolButton_mng->setChecked(false);
 }
 
-void MainWindow::on_toolButton_etrr_clicked(bool checked)
+void MainWindow::on_toolButton_Healthcare_clicked()
 {
-    if (checked == true) {
-       if(etrr==NULL){
+    if (sub_healthcare == NULL) {
+      healthcare = new HealthcareWindow;
+      sub_healthcare = ui->mdiArea->addSubWindow(healthcare, Qt::FramelessWindowHint);
+      healthcare->showMaximized();
+      healthcare->activateWindow();
+    }
+    else ui->mdiArea->setActiveSubWindow(sub_healthcare);
+    ui->toolButton_Healthcare->setChecked(true);
+    ui->toolButton_Dining->setChecked(false);
+    ui->toolButton_Dashboard->setChecked(false);
+    ui->toolButton_etrr->setChecked(false);
+    ui->toolButton_rehab->setChecked(false);
+    ui->toolButton_mng->setChecked(false);
+}
+
+void MainWindow::on_toolButton_etrr_clicked()
+{
+    if (sub_etrr == NULL) {
        etrr = new EntryReleaseForm;
-       ui->mdiArea->addSubWindow(etrr, Qt::CustomizeWindowHint | Qt::Tool | Qt::WindowTitleHint);
-       }
+       sub_etrr = ui->mdiArea->addSubWindow(etrr, Qt::FramelessWindowHint);
        etrr->showMaximized();
        etrr->activateWindow();
     }
-
+    else ui->mdiArea->setActiveSubWindow(sub_etrr);
+    ui->toolButton_etrr->setChecked(true);
+    ui->toolButton_Dining->setChecked(false);
+    ui->toolButton_Dashboard->setChecked(false);
+    ui->toolButton_Healthcare->setChecked(false);
+    ui->toolButton_rehab->setChecked(false);
+    ui->toolButton_mng->setChecked(false);
 }
 
-void MainWindow::on_toolButton_rehab_clicked(bool checked)
+void MainWindow::on_toolButton_rehab_clicked()
 {
-    if (checked == true) {
-       if(rehab==NULL){
+    if (sub_rehab == NULL) {
        rehab = new RehabForm;
-       ui->mdiArea->addSubWindow(rehab, Qt::CustomizeWindowHint | Qt::Tool | Qt::WindowTitleHint);
-       }
+       sub_rehab = ui->mdiArea->addSubWindow(rehab, Qt::FramelessWindowHint);
        rehab->showMaximized();
        rehab->activateWindow();
     }
-
+    else ui->mdiArea->setActiveSubWindow(sub_rehab);
+    ui->toolButton_rehab->setChecked(true);
+    ui->toolButton_Dining->setChecked(false);
+    ui->toolButton_Dashboard->setChecked(false);
+    ui->toolButton_etrr->setChecked(false);
+    ui->toolButton_Healthcare->setChecked(false);
+    ui->toolButton_mng->setChecked(false);
 }
 
-void MainWindow::on_toolButton_mng_clicked(bool checked)
+void MainWindow::on_toolButton_mng_clicked()
 {
-    if (checked == true) {
-       if(mng == NULL){
+    if (sub_mng == NULL) {
        mng = new ManagementWindow;
-       ui->mdiArea->addSubWindow(mng, Qt::CustomizeWindowHint | Qt::Tool | Qt::WindowTitleHint);
-       }
+       sub_mng = ui->mdiArea->addSubWindow(mng, Qt::FramelessWindowHint);
        mng->showMaximized();
        mng->activateWindow();
     }
+    else ui->mdiArea->setActiveSubWindow(sub_mng);
+    ui->toolButton_mng->setChecked(true);
+    ui->toolButton_Dining->setChecked(false);
+    ui->toolButton_Dashboard->setChecked(false);
+    ui->toolButton_etrr->setChecked(false);
+    ui->toolButton_rehab->setChecked(false);
+    ui->toolButton_Healthcare->setChecked(false);
 }
-
-void MainWindow::closeEvent (QCloseEvent *event){
-    return; // To avoid "Stopped working" nags from Windows, which should be investigated soon
-}
-

@@ -28,6 +28,24 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="sizeConstraint">
+     <enum>QLayout::SetMaximumSize</enum>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QFrame" name="frame">
       <property name="minimumSize">
@@ -240,9 +258,6 @@ QToolButton#toolButton:checked {
             <property name="checked">
              <bool>false</bool>
             </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
-            </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
             </property>
@@ -293,9 +308,6 @@ QToolButton#toolButton:checked {
             </property>
             <property name="checked">
              <bool>false</bool>
-            </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
             </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
@@ -348,9 +360,6 @@ QToolButton#toolButton:checked {
             <property name="checked">
              <bool>false</bool>
             </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
-            </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
             </property>
@@ -401,9 +410,6 @@ QToolButton#toolButton:checked {
             </property>
             <property name="checked">
              <bool>false</bool>
-            </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
             </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
@@ -456,9 +462,6 @@ QToolButton#toolButton:checked {
             <property name="checked">
              <bool>false</bool>
             </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
-            </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
             </property>
@@ -502,9 +505,6 @@ QToolButton#toolButton:checked {
             </property>
             <property name="checked">
              <bool>false</bool>
-            </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
             </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
@@ -552,9 +552,6 @@ QToolButton#toolButton:checked {
             </property>
             <property name="autoRepeat">
              <bool>false</bool>
-            </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
             </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
@@ -643,59 +640,7 @@ QToolButton#toolButton:checked {
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1172</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuFile">
-    <property name="title">
-     <string>File</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuEdit">
-    <property name="title">
-     <string>Edit</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuView">
-    <property name="title">
-     <string>View</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuDatabase">
-    <property name="title">
-     <string>Database</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuTools">
-    <property name="title">
-     <string>Tools</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuHelp">
-    <property name="title">
-     <string>Help</string>
-    </property>
-    <addaction name="actionTest_login"/>
-   </widget>
-   <addaction name="menuFile"/>
-   <addaction name="menuEdit"/>
-   <addaction name="menuView"/>
-   <addaction name="menuDatabase"/>
-   <addaction name="menuTools"/>
-   <addaction name="menuHelp"/>
-  </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="actionTest_login">
-   <property name="text">
-    <string>Test login</string>
-   </property>
-  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
