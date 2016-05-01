@@ -11,7 +11,13 @@ MainWindow::MainWindow(QWidget *parent) :
     centralWidget()->layout()->setContentsMargins(0, 0, 0, 0);
     centralWidget()->layout()->setSizeConstraint(QLayout::SetMaximumSize);
 
-    dashboard = NULL;
+    dashboard = new DashboardWindow;
+    ui->mdiArea->addSubWindow(dashboard, Qt::CustomizeWindowHint | Qt::Tool | Qt::WindowTitleHint);
+    dashboard->showMaximized();
+    dashboard->activateWindow();
+    ui->toolButton_Dashboard->setChecked(true);
+
+
     healthcare = NULL;
     dining = NULL;
     etrr = NULL;
@@ -67,8 +73,10 @@ MainWindow::~MainWindow()
 void MainWindow::on_toolButton_Dashboard_clicked(bool checked)
 {
     if (checked == true) {
+       if(dashboard == NULL){
        dashboard = new DashboardWindow;
-       ui->mdiArea->addSubWindow(dashboard, Qt::CustomizeWindowHint | Qt::Tool | Qt::WindowTitleHint);
+       }
+
        dashboard->showMaximized();
        dashboard->activateWindow();
     }
@@ -87,49 +95,63 @@ void MainWindow::on_toolButton_clicked(bool checked)
 
 void MainWindow::on_toolButton_Healthcare_clicked(bool checked)
 {
-    if (checked == true) {
-       healthcare = new HealthcareWindow;
-       ui->mdiArea->addSubWindow(healthcare, Qt::CustomizeWindowHint | Qt::Tool | Qt::WindowTitleHint);
-       healthcare->showMaximized();
-       healthcare->activateWindow();
+    if(checked == true){
+        if(healthcare == NULL){
+        healthcare = new HealthcareWindow;
+        ui->mdiArea->addSubWindow(healthcare, Qt::CustomizeWindowHint | Qt::Tool | Qt::WindowTitleHint);
+        }
+        healthcare->showMaximized();
+        healthcare->activateWindow();
     }
+
 }
 
 void MainWindow::on_toolButton_Dining_clicked(bool checked)
 {
     if (checked == true) {
+       if(dining==NULL){
        dining = new DiningWindow;
        ui->mdiArea->addSubWindow(dining, Qt::CustomizeWindowHint | Qt::Tool | Qt::WindowTitleHint);
+       }
        dining->showMaximized();
        dining->activateWindow();
     }
+
 }
 
 void MainWindow::on_toolButton_etrr_clicked(bool checked)
 {
     if (checked == true) {
+       if(etrr==NULL){
        etrr = new EntryReleaseForm;
        ui->mdiArea->addSubWindow(etrr, Qt::CustomizeWindowHint | Qt::Tool | Qt::WindowTitleHint);
+       }
        etrr->showMaximized();
        etrr->activateWindow();
     }
+
 }
 
 void MainWindow::on_toolButton_rehab_clicked(bool checked)
 {
     if (checked == true) {
+       if(rehab==NULL){
        rehab = new RehabForm;
        ui->mdiArea->addSubWindow(rehab, Qt::CustomizeWindowHint | Qt::Tool | Qt::WindowTitleHint);
+       }
        rehab->showMaximized();
        rehab->activateWindow();
     }
+
 }
 
 void MainWindow::on_toolButton_mng_clicked(bool checked)
 {
     if (checked == true) {
+       if(mng == NULL){
        mng = new ManagementWindow;
        ui->mdiArea->addSubWindow(mng, Qt::CustomizeWindowHint | Qt::Tool | Qt::WindowTitleHint);
+       }
        mng->showMaximized();
        mng->activateWindow();
     }
@@ -138,3 +160,4 @@ void MainWindow::on_toolButton_mng_clicked(bool checked)
 void MainWindow::closeEvent (QCloseEvent *event){
     return; // To avoid "Stopped working" nags from Windows, which should be investigated soon
 }
+

@@ -240,6 +240,9 @@ QToolButton#toolButton:checked {
             <property name="checked">
              <bool>false</bool>
             </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
             </property>
@@ -290,6 +293,9 @@ QToolButton#toolButton:checked {
             </property>
             <property name="checked">
              <bool>false</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
             </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
@@ -342,6 +348,9 @@ QToolButton#toolButton:checked {
             <property name="checked">
              <bool>false</bool>
             </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
             </property>
@@ -392,6 +401,9 @@ QToolButton#toolButton:checked {
             </property>
             <property name="checked">
              <bool>false</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
             </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
@@ -444,6 +456,9 @@ QToolButton#toolButton:checked {
             <property name="checked">
              <bool>false</bool>
             </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
             </property>
@@ -487,6 +502,9 @@ QToolButton#toolButton:checked {
             </property>
             <property name="checked">
              <bool>false</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
             </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
@@ -534,6 +552,9 @@ QToolButton#toolButton:checked {
             </property>
             <property name="autoRepeat">
              <bool>false</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
             </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
