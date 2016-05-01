@@ -81,12 +81,6 @@ void MainWindow::on_toolButton_Dashboard_clicked()
         dashboard->activateWindow();
     }
     else ui->mdiArea->setActiveSubWindow(sub_dashboard);
-    ui->toolButton_Dashboard->setChecked(true);
-    ui->toolButton_Dining->setChecked(false);
-    ui->toolButton_Healthcare->setChecked(false);
-    ui->toolButton_etrr->setChecked(false);
-    ui->toolButton_rehab->setChecked(false);
-    ui->toolButton_mng->setChecked(false);
 }
 
 void MainWindow::on_toolButton_Dining_clicked()
@@ -98,12 +92,6 @@ void MainWindow::on_toolButton_Dining_clicked()
        dining->activateWindow();
     }
     else ui->mdiArea->setActiveSubWindow(sub_dining);
-    ui->toolButton_Dining->setChecked(true);
-    ui->toolButton_Healthcare->setChecked(false);
-    ui->toolButton_Dashboard->setChecked(false);
-    ui->toolButton_etrr->setChecked(false);
-    ui->toolButton_rehab->setChecked(false);
-    ui->toolButton_mng->setChecked(false);
 }
 
 void MainWindow::on_toolButton_Healthcare_clicked()
@@ -115,12 +103,6 @@ void MainWindow::on_toolButton_Healthcare_clicked()
       healthcare->activateWindow();
     }
     else ui->mdiArea->setActiveSubWindow(sub_healthcare);
-    ui->toolButton_Healthcare->setChecked(true);
-    ui->toolButton_Dining->setChecked(false);
-    ui->toolButton_Dashboard->setChecked(false);
-    ui->toolButton_etrr->setChecked(false);
-    ui->toolButton_rehab->setChecked(false);
-    ui->toolButton_mng->setChecked(false);
 }
 
 void MainWindow::on_toolButton_etrr_clicked()
@@ -132,12 +114,6 @@ void MainWindow::on_toolButton_etrr_clicked()
        etrr->activateWindow();
     }
     else ui->mdiArea->setActiveSubWindow(sub_etrr);
-    ui->toolButton_etrr->setChecked(true);
-    ui->toolButton_Dining->setChecked(false);
-    ui->toolButton_Dashboard->setChecked(false);
-    ui->toolButton_Healthcare->setChecked(false);
-    ui->toolButton_rehab->setChecked(false);
-    ui->toolButton_mng->setChecked(false);
 }
 
 void MainWindow::on_toolButton_rehab_clicked()
@@ -149,12 +125,6 @@ void MainWindow::on_toolButton_rehab_clicked()
        rehab->activateWindow();
     }
     else ui->mdiArea->setActiveSubWindow(sub_rehab);
-    ui->toolButton_rehab->setChecked(true);
-    ui->toolButton_Dining->setChecked(false);
-    ui->toolButton_Dashboard->setChecked(false);
-    ui->toolButton_etrr->setChecked(false);
-    ui->toolButton_Healthcare->setChecked(false);
-    ui->toolButton_mng->setChecked(false);
 }
 
 void MainWindow::on_toolButton_mng_clicked()
@@ -166,10 +136,4 @@ void MainWindow::on_toolButton_mng_clicked()
        mng->activateWindow();
     }
     else ui->mdiArea->setActiveSubWindow(sub_mng);
-    ui->toolButton_mng->setChecked(true);
-    ui->toolButton_Dining->setChecked(false);
-    ui->toolButton_Dashboard->setChecked(false);
-    ui->toolButton_etrr->setChecked(false);
-    ui->toolButton_rehab->setChecked(false);
-    ui->toolButton_Healthcare->setChecked(false);
 }
