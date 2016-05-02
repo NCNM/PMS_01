@@ -7,20 +7,21 @@ LoginDialog::LoginDialog(QWidget *parent):
 {
     ui->setupUi(this);
     m_loginedSuccess = false;
+    qDebug() << "drivers: "<< QSqlDatabase::drivers();
     this_mw = NULL;
     ui->serverStatus->setStyleSheet("QLabel { background-color : white; color : red; }");
 }
 
 LoginDialog::~LoginDialog()
 {
-    qDebug() << "Destruct login dialog";
+    qDebug() << "Destruct login dialog.";
     if (!m_loginedSuccess && Database::isConnected())
     {
         Database::Release();
     }
     if (this_mw)
     {
-        qDebug() << "Destruct main window";
+        qDebug() << "Destruct main window.";
         delete this_mw;
         this_mw = NULL;
     }
@@ -29,7 +30,7 @@ LoginDialog::~LoginDialog()
 
 void LoginDialog::on_pushButton_5_clicked()
 {
-    if ((ui->plainTextEdit_ID->toPlainText() == "admin") && (ui->plainTextEdit_passID->toPlainText() =="admin"))
+    if ((ui->txtID->text() == "admin") && (ui->txtPassword->text() =="admin"))
     {
         loginSuccess();
     }
@@ -38,8 +39,8 @@ void LoginDialog::on_pushButton_5_clicked()
         if (connected)
         {
             QSqlDatabase db = Database::getDatabase();
-            QString ID = ui->plainTextEdit_ID->toPlainText();
-            QString pass = ui->plainTextEdit_passID->toPlainText();
+            QString ID = ui->txtID->text();
+            QString pass = ui->txtPassword->text();
             QString QSQuery = "SELECT * FROM ACCOUNT WHERE ID = '" + ID + "' AND PASS = '" + pass + "'";
             QSqlQuery query(db);
 
@@ -47,7 +48,7 @@ void LoginDialog::on_pushButton_5_clicked()
 
             if (query.size() != 1)
             {
-                QMessageBox::critical(this, "Error", "This ID or password does not exist!");
+                QMessageBox::critical(this, "Error", "Invalid ID or password!");
                 return;
             }
 
@@ -55,7 +56,7 @@ void LoginDialog::on_pushButton_5_clicked()
             loginSuccess();
         }
         else {
-            QMessageBox::critical(this, "Error", "Please connect to server first!");
+            QMessageBox::critical(this, "Error", "Please connect to database server first!");
         }
     }
 }
@@ -97,4 +98,16 @@ void LoginDialog::loginSuccess()
     this_mw->show();
 
     this->close();
+}
+
+void LoginDialog::on_commandLinkButton_clicked(bool checked)
+{
+    if (checked == true) {
+        this->setMaximumSize(738, 386);
+        this->setFixedSize(738, 386);
+    }
+    else {
+        this->setMaximumSize(414, 290);
+        this->setFixedSize(414, 290);
+    }
 }

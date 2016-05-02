@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QTextCursor>
 #include <QMessageBox>
+#include <QtSql>
 #include <QSqlError>
 #include <QSqlQuery>
 #include <QDebug>
@@ -30,6 +31,8 @@ private slots:
     void on_pushButton_connect_clicked();
 
     void loginSuccess();
+
+    void on_commandLinkButton_clicked(bool checked);
 
 private:
     Ui::LoginDialog *ui;

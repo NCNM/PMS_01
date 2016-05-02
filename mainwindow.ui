@@ -178,6 +178,10 @@ QToolButton {
 	background-image: url(:&quot;&quot;);
  }
 
+QToolButton:hover {    
+	border-image: url(:/images/banner_hovered.png);
+ }
+
 QToolButton:checked {    
 	border-image: url(:/images/banner_selected.png);
  }

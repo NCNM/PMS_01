@@ -20,5 +20,6 @@
         <file>scroll_right.png</file>
         <file>scroll_down.png</file>
         <file>scroll_up.png</file>
+        <file>banner_hovered.png</file>
     </qresource>
 </RCC>
