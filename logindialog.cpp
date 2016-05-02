@@ -7,6 +7,7 @@ LoginDialog::LoginDialog(QWidget *parent):
 {
     ui->setupUi(this);
     m_loginedSuccess = false;
+    connected = false;
     qDebug() << "drivers: "<< QSqlDatabase::drivers();
     this_mw = NULL;
     ui->serverStatus->setStyleSheet("QLabel { background-color : white; color : red; }");
