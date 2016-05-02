@@ -21,5 +21,10 @@
         <file>scroll_down.png</file>
         <file>scroll_up.png</file>
         <file>banner_hovered.png</file>
+        <file>account_login.png</file>
+        <file>PMS_icon.png</file>
+        <file>award_star_gold_red.png</file>
+        <file>database.png</file>
+        <file>user_imprisoned_female.png</file>
     </qresource>
 </RCC>

@@ -69,21 +69,23 @@
        <string notr="true">QPushButton {
 color: rgb(255, 255, 255);
 text-align:left;
+padding-left:7px;
 }
 
 QPushButton:hover {
-border-radius: 10px;
+border-radius:10px;
 background-color: #299ED6;
 }
 
 QPushButton:pressed {
-border: 1px solid #333333;
+border-radius:10px;
+border: 1px solid #777777;
 background-color: #222222;
 }
 
 QPushButton:checked {
+border-radius:0px;
 border: 1px solid #ED8876;
-border-radius: 5px;
 background-color: #C73D18;
 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
 stop: 0 #A73F2D, stop: 1 #E4685D);
@@ -111,21 +113,23 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
        <string notr="true">QPushButton {
 color: rgb(255, 255, 255);
 text-align:left;
+padding-left:7px;
 }
 
 QPushButton:hover {
-border-radius: 10px;
+border-radius:10px;
 background-color: #299ED6;
 }
 
 QPushButton:pressed {
-border: 1px solid #333333;
+border-radius:10px;
+border: 1px solid #777777;
 background-color: #222222;
 }
 
 QPushButton:checked {
+border-radius:0px;
 border: 1px solid #ED8876;
-border-radius: 5px;
 background-color: #C73D18;
 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
 stop: 0 #A73F2D, stop: 1 #E4685D);
@@ -196,21 +200,23 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
        <string notr="true">QPushButton {
 color: rgb(255, 255, 255);
 text-align:left;
+padding-left:7px;
 }
 
 QPushButton:hover {
-border-radius: 10px;
+border-radius:10px;
 background-color: #299ED6;
 }
 
 QPushButton:pressed {
-border: 1px solid #333333;
+border-radius:10px;
+border: 1px solid #777777;
 background-color: #222222;
 }
 
 QPushButton:checked {
+border-radius:0px;
 border: 1px solid #ED8876;
-border-radius: 5px;
 background-color: #C73D18;
 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
 stop: 0 #A73F2D, stop: 1 #E4685D);
@@ -281,21 +287,26 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
        <string notr="true">QPushButton {
 color: rgb(255, 255, 255);
 text-align:left;
+padding-left:7px;
 }
 
 QPushButton:hover {
-border-radius: 10px;
+border-radius:10px;
 background-color: #299ED6;
 }
 
 QPushButton:pressed {
-border: 1px solid #333333;
+border-radius:10px;
+border: 1px solid #777777;
 background-color: #222222;
 }
 
 QPushButton:checked {
-border-radius: 5px;
-background-color: #299ED6;
+border-radius:0px;
+border: 1px solid #ED8876;
+background-color: #C73D18;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
+stop: 0 #A73F2D, stop: 1 #E4685D);
 }
 
 </string>

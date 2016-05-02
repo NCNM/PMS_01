@@ -20,8 +20,8 @@
    <string>PMS</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>../../Desktop/images/PMS_icon.png</normaloff>../../Desktop/images/PMS_icon.png</iconset>
+   <iconset resource="pms_resources.qrc">
+    <normaloff>:/images/PMS_icon.png</normaloff>:/images/PMS_icon.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -133,12 +133,12 @@
            <rect>
             <x>370</x>
             <y>50</y>
-            <width>61</width>
+            <width>101</width>
             <height>16</height>
            </rect>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic; color:#ffffff;&quot;&gt;E&amp;amp;R Officer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic; color:#ffffff;&quot;&gt;Supreme supervisor&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
          <widget class="QGraphicsView" name="graphicsView">
@@ -352,7 +352,7 @@ QToolButton#toolButton:checked {
 </string>
             </property>
             <property name="text">
-             <string>Education</string>
+             <string>Rehabilitation</string>
             </property>
             <property name="icon">
              <iconset resource="pms_resources.qrc">

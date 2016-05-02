@@ -30,7 +30,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="pms_resources.qrc">
-    <normaloff>:/images/doge.jpeg</normaloff>:/images/doge.jpeg</iconset>
+    <normaloff>:/images/account_login.png</normaloff>:/images/account_login.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -442,7 +442,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
 #frame_5 {
 border: none;
 background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-stop: 0.08 #7a7a7a,
+stop: 0 #4c4c4c,
+stop: 0.04 #7a7a7a,
 stop: 0.39999 #717171, stop: 0.4 #626262,
 stop: 0.9 #4c4c4c, stop: 1 #333333);
 }
@@ -481,8 +482,7 @@ QComboBox:pressed {
 background: qradialgradient(cx: 0.4, cy: -0.1,
 fx: 0.4, fy: -0.1,
 radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
-}
-</string>
+}</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
@@ -518,10 +518,10 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
          <string notr="true">color: rgb(255, 255, 255);
 border: none;
 background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-stop: 0.08 #7f7f7f,
+stop: 0 #4c4c4c,
+stop: 0.04 #7a7a7a,
 stop: 0.39999 #717171, stop: 0.4 #626262,
-stop: 0.9 #4c4c4c, stop: 1 #333333);
-</string>
+stop: 0.9 #4c4c4c, stop: 1 #333333);</string>
         </property>
         <property name="text">
          <string>Remember details</string>
@@ -533,10 +533,10 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
         <property name="styleSheet">
          <string notr="true">border: none;
 background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-stop: 0.08 #7f7f7f,
+stop: 0 #4c4c4c,
+stop: 0.04 #7a7a7a,
 stop: 0.39999 #717171, stop: 0.4 #626262,
-stop: 0.9 #4c4c4c, stop: 1 #333333);
-</string>
+stop: 0.9 #4c4c4c, stop: 1 #333333);</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>
