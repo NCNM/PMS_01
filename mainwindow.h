@@ -10,6 +10,7 @@
 #include "entryreleaseform.h"
 #include "managementwindow.h"
 #include "database.h"
+#include "idofficertype.h"
 
 namespace Ui {
 class MainWindow;
@@ -20,7 +21,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(int OfficerType = -1, QWidget *parent = 0);
     ~MainWindow();
 
 private slots:
@@ -39,6 +40,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
+    void SetPermission(int OfficerType);
     // Pointers to regulate instancing of subwindow classes
     // These pointers mainly serve to help avoid spawning multiple instances
     // of the same subwindow class.

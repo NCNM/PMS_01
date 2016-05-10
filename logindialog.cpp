@@ -95,10 +95,53 @@ void LoginDialog::loginSuccess()
 {
     m_loginedSuccess = true;
 
-    this_mw = new MainWindow;
-    this_mw->show();
+    QString tmp = ui->txtID->text();
+    QString IDType(2);
+    IDType[0] = tmp[0];
+    IDType[1] = tmp[1];
+    qDebug() << tmp;
+    if (IDType == RELATIVE)
+    {
+        this_mw = new MainWindow(RELATIVETYPE);
+        this_mw->show();
 
-    this->close();
+        this->close();
+    }
+    else if (IDType == DINING)
+    {
+        this_mw = new MainWindow(DININGTYPE);
+        this_mw->show();
+
+        this->close();
+    }
+    else if (IDType == HEALTHCARE)
+    {
+        this_mw = new MainWindow(HEALTHCARETYPE);
+        this_mw->show();
+
+        this->close();
+    }
+    else if (IDType == ENTRY_RELEASE)
+    {
+        this_mw = new MainWindow(ENTRY_RELEASETYPE);
+        this_mw->show();
+
+        this->close();
+    }
+    else if (IDType == REHABILITATION)
+    {
+        this_mw = new MainWindow(REHABILITATIONTYPE);
+        this_mw->show();
+
+        this->close();
+    }
+    else if (IDType == MANAGE)
+    {
+        this_mw = new MainWindow(MANAGETYPE);
+        this_mw->show();
+
+        this->close();
+    }
 }
 
 void LoginDialog::on_commandLinkButton_clicked(bool checked)

@@ -12,3 +12,13 @@ ManagementWindow::~ManagementWindow()
 {
     delete ui;
 }
+
+void ManagementWindow::on_pushButton_16_clicked()
+{
+/*
+    QSqlDatabase db = Database::getDatabase();
+
+    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery("SELECT * FROM DUTY", db);
+*/
+}

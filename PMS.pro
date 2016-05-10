@@ -31,7 +31,8 @@ HEADERS  += mainwindow.h \
     entryreleaseform.h \
     managementwindow.h \
     database.h \
-    logindialog.h
+    logindialog.h \
+    idofficertype.h
 
 FORMS    += mainwindow.ui \
     dashboardwindow.ui \

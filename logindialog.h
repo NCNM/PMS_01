@@ -10,6 +10,7 @@
 #include <QDebug>
 #include "database.h"
 #include "mainwindow.h"
+#include "idofficertype.h"
 
 namespace Ui {
 class LoginDialog;

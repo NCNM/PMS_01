@@ -2,7 +2,7 @@
 #include <QDebug>
 #include "mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(int OfficerType, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent) :
     dashboard->showMaximized();
     dashboard->activateWindow();
     ui->toolButton_Dashboard->setChecked(true);
+
+    SetPermission(OfficerType);
 
     healthcare = NULL;
     dining = NULL;
@@ -70,6 +72,53 @@ MainWindow::~MainWindow()
         mng = NULL;
     }
     delete ui;
+}
+
+void MainWindow::SetPermission(int OfficerType)
+{
+    if (OfficerType == RELATIVETYPE)
+    {
+        ui->toolButton_Dining->setEnabled(false);
+        ui->toolButton_etrr->setEnabled(false);
+        ui->toolButton_Healthcare->setEnabled(false);
+        ui->toolButton_mng->setEnabled(false);
+        ui->toolButton_rehab->setEnabled(false);
+    }
+    else if (OfficerType == DININGTYPE)
+    {
+        ui->toolButton_etrr->setEnabled(false);
+        ui->toolButton_Healthcare->setEnabled(false);
+        ui->toolButton_mng->setEnabled(false);
+        ui->toolButton_rehab->setEnabled(false);
+    }
+    else if (OfficerType == HEALTHCARETYPE)
+    {
+        ui->toolButton_Dining->setEnabled(false);
+        ui->toolButton_etrr->setEnabled(false);
+        ui->toolButton_mng->setEnabled(false);
+        ui->toolButton_rehab->setEnabled(false);
+    }
+    else if (OfficerType == ENTRY_RELEASETYPE)
+    {
+        ui->toolButton_Dining->setEnabled(false);
+        ui->toolButton_Healthcare->setEnabled(false);
+        ui->toolButton_mng->setEnabled(false);
+        ui->toolButton_rehab->setEnabled(false);
+    }
+    else if (OfficerType == REHABILITATIONTYPE)
+    {
+        ui->toolButton_Dining->setEnabled(false);
+        ui->toolButton_etrr->setEnabled(false);
+        ui->toolButton_Healthcare->setEnabled(false);
+        ui->toolButton_mng->setEnabled(false);
+    }
+    else if (OfficerType == MANAGETYPE)
+    {
+        ui->toolButton_Dining->setEnabled(false);
+        ui->toolButton_etrr->setEnabled(false);
+        ui->toolButton_Healthcare->setEnabled(false);
+        ui->toolButton_rehab->setEnabled(false);
+    }
 }
 
 void MainWindow::on_toolButton_Dashboard_clicked()
