@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>689</width>
+    <width>773</width>
     <height>396</height>
    </rect>
   </property>
@@ -671,6 +671,27 @@ background: qradialgradient(cx: 0.4, cy: -0.1,
 fx: 0.4, fy: -0.1,
 radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
 }
+
+QLineEdit {
+color: #333;
+border: 2px solid #555;
+border-radius: 5px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #eee, stop: 1 #ddd);
+min-width: 80px;
+}
+
+QLineEdit:hover {
+background-color: rgb(255, 255, 255);
+}
+
+QLineEdit:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}
 </string>
               </property>
               <property name="frameShape">
@@ -680,48 +701,73 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                <enum>QFrame::Raised</enum>
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_2">
-               <property name="spacing">
-                <number>6</number>
-               </property>
-               <property name="leftMargin">
-                <number>9</number>
-               </property>
                <property name="topMargin">
                 <number>0</number>
-               </property>
-               <property name="rightMargin">
-                <number>9</number>
                </property>
                <property name="bottomMargin">
                 <number>0</number>
                </property>
                <item>
-                <widget class="QComboBox" name="comboBox">
+                <widget class="QLineEdit" name="lineEdit">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="minimumSize">
                   <size>
                    <width>94</width>
-                   <height>0</height>
+                   <height>27</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
-                   <width>128</width>
-                   <height>16777215</height>
+                   <width>175</width>
+                   <height>27</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
+                 <property name="placeholderText">
+                  <string>Find...</string>
                  </property>
-                 <item>
-                  <property name="text">
-                   <string>Auto-save</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Requires commit</string>
-                  </property>
-                 </item>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_4">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>32</width>
+                   <height>27</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>32</width>
+                   <height>27</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="pms_resources.qrc">
+                   <normaloff>:/images/find_icon.png</normaloff>:/images/find_icon.png</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>24</width>
+                   <height>24</height>
+                  </size>
+                 </property>
+                 <property name="flat">
+                  <bool>false</bool>
+                 </property>
                 </widget>
                </item>
                <item>
@@ -757,7 +803,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                   </size>
                  </property>
                  <property name="text">
-                  <string>Rollback</string>
+                  <string>Modify</string>
                  </property>
                 </widget>
                </item>
@@ -776,7 +822,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                   </size>
                  </property>
                  <property name="text">
-                  <string>Modify</string>
+                  <string>Add</string>
                  </property>
                 </widget>
                </item>
@@ -798,7 +844,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                   <string notr="true"/>
                  </property>
                  <property name="text">
-                  <string>Commit</string>
+                  <string>Delete</string>
                  </property>
                 </widget>
                </item>

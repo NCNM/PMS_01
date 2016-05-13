@@ -26,5 +26,6 @@
         <file>award_star_gold_red.png</file>
         <file>database.png</file>
         <file>user_imprisoned_female.png</file>
+        <file>find_icon.png</file>
     </qresource>
 </RCC>

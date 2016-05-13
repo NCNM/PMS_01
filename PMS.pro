@@ -21,7 +21,9 @@ SOURCES += main.cpp\
     entryreleaseform.cpp \
     managementwindow.cpp \
     database.cpp \
-    logindialog.cpp
+    logindialog.cpp \
+    newinmateform.cpp \
+    systemwindow.cpp
 
 HEADERS  += mainwindow.h \
     dashboardwindow.h \
@@ -32,7 +34,9 @@ HEADERS  += mainwindow.h \
     managementwindow.h \
     database.h \
     logindialog.h \
-    idofficertype.h
+    idofficertype.h \
+    newinmateform.h \
+    systemwindow.h
 
 FORMS    += mainwindow.ui \
     dashboardwindow.ui \
@@ -41,7 +45,9 @@ FORMS    += mainwindow.ui \
     rehabform.ui \
     entryreleaseform.ui \
     managementwindow.ui \
-    logindialog.ui
+    logindialog.ui \
+    newinmateform.ui \
+    systemwindow.ui
 
 RESOURCES += \
     pms_resources.qrc
