@@ -23,8 +23,17 @@ public:
 private slots:
     void on_pushButton_16_clicked();
 
+    void on_pushAdd_clicked();
+
+    void on_pushDelete_clicked();
+
+    void on_pushModify_clicked();
+
+    void on_pushSearch_clicked();
+
 private:
     Ui::RehabForm *ui;
+    QSqlTableModel *model;
 };
 
 #endif // REHABFORM_H

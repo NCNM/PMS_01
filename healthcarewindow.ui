@@ -733,7 +733,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                 </widget>
                </item>
                <item>
-                <widget class="QPushButton" name="pushButton_4">
+                <widget class="QPushButton" name="pushSearch">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -742,7 +742,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                  </property>
                  <property name="minimumSize">
                   <size>
-                   <width>32</width>
+                   <width>94</width>
                    <height>27</height>
                   </size>
                  </property>
@@ -789,7 +789,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                 </widget>
                </item>
                <item>
-                <widget class="QPushButton" name="pushButton_3">
+                <widget class="QPushButton" name="pushModify">
                  <property name="minimumSize">
                   <size>
                    <width>94</width>
@@ -808,7 +808,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                 </widget>
                </item>
                <item>
-                <widget class="QPushButton" name="pushButton_2">
+                <widget class="QPushButton" name="pushAdd">
                  <property name="minimumSize">
                   <size>
                    <width>94</width>
@@ -827,7 +827,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                 </widget>
                </item>
                <item>
-                <widget class="QPushButton" name="pushButton">
+                <widget class="QPushButton" name="pushDelete">
                  <property name="minimumSize">
                   <size>
                    <width>94</width>

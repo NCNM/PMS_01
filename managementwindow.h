@@ -25,6 +25,7 @@ private slots:
 
 private:
     Ui::ManagementWindow *ui;
+    QSqlTableModel *model;
 };
 
 #endif // MANAGEMENTWINDOW_H

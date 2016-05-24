@@ -27,6 +27,8 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_pushSearch_clicked();
+
 private:
     Ui::EntryReleaseForm *ui;
     QSqlTableModel *model;

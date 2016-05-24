@@ -2,6 +2,7 @@
 #define HEALTHCAREWINDOW_H
 
 #include <QWidget>
+#include <QSqlTableModel>
 
 namespace Ui {
 class HealthcareWindow;
@@ -18,8 +19,17 @@ public:
 private slots:
     void on_pushButton_HealthRecord_clicked(bool checked);
 
+    void on_pushAdd_clicked();
+
+    void on_pushDelete_clicked();
+
+    void on_pushModify_clicked();
+
+    void on_pushSearch_clicked();
+
 private:
     Ui::HealthcareWindow *ui;
+    QSqlTableModel *model;
 };
 
 #endif // HEALTHCAREWINDOW_H

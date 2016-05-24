@@ -7,7 +7,7 @@ EntryReleaseForm::EntryReleaseForm(QWidget *parent) :
     ui(new Ui::EntryReleaseForm)
 {
     ui->setupUi(this);
-
+    ui->pushSearch->setEnabled(false);
 }
 
 EntryReleaseForm::~EntryReleaseForm()
@@ -23,6 +23,8 @@ void EntryReleaseForm::on_pushButton_update_clicked(bool checked)
     model->select();
 
     ui->tableView->setModel(model);
+
+    ui->pushSearch->setEnabled(true);
 }
 
 void EntryReleaseForm::on_pushButton_3_clicked()
@@ -38,4 +40,17 @@ void EntryReleaseForm::on_pushButton_2_clicked()
 void EntryReleaseForm::on_pushButton_clicked()
 {
     model->removeRow(ui->tableView->currentIndex().row());
+}
+
+void EntryReleaseForm::on_pushSearch_clicked()
+{
+    QSqlDatabase db = Database::getDatabase();
+
+    QString name = ui->lineEdit->text();
+    QString query;
+    query = "SELECT * FROM INMATE WHERE Firstname LIKE '%" + name + "%' OR Midname LIKE '%" + name + "%' OR Lastname LIKE '%" + name + "%'";
+
+    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery(query, db);
+    ui->tableView->setModel(model);
 }

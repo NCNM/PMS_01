@@ -685,7 +685,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                 </widget>
                </item>
                <item>
-                <widget class="QPushButton" name="pushButton_4">
+                <widget class="QPushButton" name="pushSearch">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -694,7 +694,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                  </property>
                  <property name="minimumSize">
                   <size>
-                   <width>32</width>
+                   <width>94</width>
                    <height>27</height>
                   </size>
                  </property>
