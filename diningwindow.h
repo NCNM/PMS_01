@@ -26,6 +26,8 @@ private slots:
 
     void on_pushSearch_clicked();
 
+    void on_pushButton_viewOfficers_clicked();
+
 private:
     Ui::DiningWindow *ui;
     QSqlTableModel *model;

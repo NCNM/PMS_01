@@ -27,5 +27,14 @@
         <file>database.png</file>
         <file>user_imprisoned_female.png</file>
         <file>find_icon.png</file>
+        <file>add_new.png</file>
+        <file>check.png</file>
+        <file>clear.png</file>
+        <file>delete.png</file>
+        <file>execute.png</file>
+        <file>export.png</file>
+        <file>modify.png</file>
+        <file>print.png</file>
+        <file>about_banner.png</file>
     </qresource>
 </RCC>

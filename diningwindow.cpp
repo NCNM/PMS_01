@@ -76,3 +76,8 @@ void DiningWindow::on_pushSearch_clicked()
     model->setQuery(query, db);
     ui->tableView->setModel(model);
 }
+
+void DiningWindow::on_pushButton_viewOfficers_clicked()
+{
+
+}
