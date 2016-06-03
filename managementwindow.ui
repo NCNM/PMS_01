@@ -470,11 +470,6 @@ color: rgb(255, 255, 255);</string>
              <string>Manage inmate records and monitor important events across the facility</string>
             </property>
            </widget>
-           <zorder>label</zorder>
-           <zorder>label_2</zorder>
-           <zorder>frame_10</zorder>
-           <zorder>frame_8</zorder>
-           <zorder>listWidget_2</zorder>
           </widget>
          </item>
          <item>
@@ -562,7 +557,7 @@ QFrame {
                <string notr="true">background-color: rgb(255, 255, 255);</string>
               </property>
               <property name="currentIndex">
-               <number>0</number>
+               <number>2</number>
               </property>
               <widget class="QWidget" name="logs">
                <layout class="QVBoxLayout" name="verticalLayout_4">

@@ -115,7 +115,7 @@
            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Logged in as&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label_13">
+         <widget class="QLabel" name="nameID">
           <property name="geometry">
            <rect>
             <x>370</x>
@@ -128,7 +128,7 @@
            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#ffffff;&quot;&gt;Supadoge&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label_14">
+         <widget class="QLabel" name="permision">
           <property name="geometry">
            <rect>
             <x>370</x>
@@ -220,7 +220,7 @@ QToolButton:pressed {
            <number>0</number>
           </property>
           <item>
-           <widget class="QToolButton" name="toolButton">
+           <widget class="QToolButton" name="system">
             <property name="minimumSize">
              <size>
               <width>90</width>

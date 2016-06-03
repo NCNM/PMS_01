@@ -27,6 +27,8 @@ private slots:
 
     void on_pushSearch_clicked();
 
+    void on_pushAccept_clicked();
+
 private:
     Ui::HealthcareWindow *ui;
     QSqlTableModel *model;

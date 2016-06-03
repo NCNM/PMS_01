@@ -575,7 +575,7 @@ QScrollBar::sub-line:vertical {
             <item>
              <widget class="QStackedWidget" name="stackedWidget">
               <property name="currentIndex">
-               <number>2</number>
+               <number>1</number>
               </property>
               <widget class="QWidget" name="database">
                <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -933,7 +933,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     </widget>
                    </item>
                    <item row="0" column="1">
-                    <widget class="QLineEdit" name="lineEdit_2"/>
+                    <widget class="QLineEdit" name="inmateID"/>
                    </item>
                    <item row="1" column="0">
                     <widget class="QLabel" name="label_4">
@@ -943,7 +943,11 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     </widget>
                    </item>
                    <item row="1" column="1">
-                    <widget class="QDateEdit" name="dateEdit"/>
+                    <widget class="QDateEdit" name="date">
+                     <property name="displayFormat">
+                      <string>yyyy/MM/dd</string>
+                     </property>
+                    </widget>
                    </item>
                    <item row="2" column="0">
                     <widget class="QLabel" name="label_6">
@@ -953,7 +957,51 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     </widget>
                    </item>
                    <item row="2" column="1">
-                    <widget class="QTimeEdit" name="timeEdit"/>
+                    <widget class="QTimeEdit" name="time">
+                     <property name="dateTime">
+                      <datetime>
+                       <hour>0</hour>
+                       <minute>0</minute>
+                       <second>0</second>
+                       <year>2000</year>
+                       <month>1</month>
+                       <day>1</day>
+                      </datetime>
+                     </property>
+                     <property name="minimumDateTime">
+                      <datetime>
+                       <hour>0</hour>
+                       <minute>0</minute>
+                       <second>0</second>
+                       <year>2000</year>
+                       <month>1</month>
+                       <day>1</day>
+                      </datetime>
+                     </property>
+                     <property name="maximumDate">
+                      <date>
+                       <year>2000</year>
+                       <month>1</month>
+                       <day>1</day>
+                      </date>
+                     </property>
+                     <property name="minimumDate">
+                      <date>
+                       <year>2000</year>
+                       <month>1</month>
+                       <day>1</day>
+                      </date>
+                     </property>
+                     <property name="displayFormat">
+                      <string>hh:mm AP</string>
+                     </property>
+                     <property name="calendarPopup">
+                      <bool>false</bool>
+                     </property>
+                     <property name="currentSectionIndex">
+                      <number>0</number>
+                     </property>
+                    </widget>
                    </item>
                    <item row="3" column="0">
                     <widget class="QLabel" name="label_5">
@@ -963,7 +1011,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     </widget>
                    </item>
                    <item row="3" column="1">
-                    <widget class="QPlainTextEdit" name="plainTextEdit"/>
+                    <widget class="QPlainTextEdit" name="remarks"/>
                    </item>
                   </layout>
                  </widget>
@@ -1097,7 +1145,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushAdd_2">
+                    <widget class="QPushButton" name="pushAccept">
                      <property name="minimumSize">
                       <size>
                        <width>0</width>

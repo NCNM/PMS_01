@@ -2,7 +2,7 @@
 #include <QDebug>
 #include "mainwindow.h"
 
-MainWindow::MainWindow(int OfficerType, QWidget *parent) :
+MainWindow::MainWindow(int OfficerType, QString ID, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
@@ -14,6 +14,8 @@ MainWindow::MainWindow(int OfficerType, QWidget *parent) :
     dashboard->activateWindow();
     ui->toolButton_Dashboard->setChecked(true);
 
+    ui->nameID->setText(ID);
+
     SetPermission(OfficerType);
 
     healthcare = NULL;
@@ -21,12 +23,14 @@ MainWindow::MainWindow(int OfficerType, QWidget *parent) :
     etrr = NULL;
     rehab = NULL;
     mng = NULL;
+    system = NULL;
 
     sub_healthcare = NULL;
     sub_dining = NULL;
     sub_etrr = NULL;
     sub_rehab = NULL;
     sub_mng = NULL;
+    sub_system = NULL;
 }
 
 MainWindow::~MainWindow()
@@ -71,6 +75,12 @@ MainWindow::~MainWindow()
         delete mng;
         mng = NULL;
     }
+
+    if (system)
+    {
+        delete system;
+        system = NULL;
+    }
     delete ui;
 }
 
@@ -83,6 +93,7 @@ void MainWindow::SetPermission(int OfficerType)
         ui->toolButton_Healthcare->setEnabled(false);
         ui->toolButton_mng->setEnabled(false);
         ui->toolButton_rehab->setEnabled(false);
+        ui->permision->setText("Relative");
     }
     else if (OfficerType == DININGTYPE)
     {
@@ -90,6 +101,7 @@ void MainWindow::SetPermission(int OfficerType)
         ui->toolButton_Healthcare->setEnabled(false);
         ui->toolButton_mng->setEnabled(false);
         ui->toolButton_rehab->setEnabled(false);
+        ui->permision->setText("Dining");
     }
     else if (OfficerType == HEALTHCARETYPE)
     {
@@ -97,6 +109,7 @@ void MainWindow::SetPermission(int OfficerType)
         ui->toolButton_etrr->setEnabled(false);
         ui->toolButton_mng->setEnabled(false);
         ui->toolButton_rehab->setEnabled(false);
+        ui->permision->setText("Health care");
     }
     else if (OfficerType == ENTRY_RELEASETYPE)
     {
@@ -104,6 +117,7 @@ void MainWindow::SetPermission(int OfficerType)
         ui->toolButton_Healthcare->setEnabled(false);
         ui->toolButton_mng->setEnabled(false);
         ui->toolButton_rehab->setEnabled(false);
+        ui->permision->setText("Entry & Release");
     }
     else if (OfficerType == REHABILITATIONTYPE)
     {
@@ -111,6 +125,7 @@ void MainWindow::SetPermission(int OfficerType)
         ui->toolButton_etrr->setEnabled(false);
         ui->toolButton_Healthcare->setEnabled(false);
         ui->toolButton_mng->setEnabled(false);
+        ui->permision->setText("Rehabilitation");
     }
     else if (OfficerType == MANAGETYPE)
     {
@@ -118,6 +133,7 @@ void MainWindow::SetPermission(int OfficerType)
         ui->toolButton_etrr->setEnabled(false);
         ui->toolButton_Healthcare->setEnabled(false);
         ui->toolButton_rehab->setEnabled(false);
+        ui->permision->setText("Management");
     }
 }
 
@@ -185,4 +201,16 @@ void MainWindow::on_toolButton_mng_clicked()
        mng->activateWindow();
     }
     else ui->mdiArea->setActiveSubWindow(sub_mng);
+}
+
+
+void MainWindow::on_system_clicked()
+{
+    if (sub_system == NULL) {
+       system = new systemwindow;
+       sub_system = ui->mdiArea->addSubWindow(system, Qt::FramelessWindowHint);
+       system->showMaximized();
+       system->activateWindow();
+    }
+    else ui->mdiArea->setActiveSubWindow(sub_system);
 }

@@ -11,6 +11,7 @@
 #include "managementwindow.h"
 #include "database.h"
 #include "idofficertype.h"
+#include "systemwindow.h"
 
 namespace Ui {
 class MainWindow;
@@ -21,7 +22,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(int OfficerType = -1, QWidget *parent = 0);
+    explicit MainWindow(int OfficerType = -1, QString ID = "unknown ID", QWidget *parent = 0);
     ~MainWindow();
 
 private slots:
@@ -37,6 +38,8 @@ private slots:
 
     void on_toolButton_mng_clicked();
 
+    void on_system_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -51,6 +54,7 @@ private:
     EntryReleaseForm *etrr;
     RehabForm *rehab;
     ManagementWindow *mng;
+    systemwindow *system;
 
     // Pointers to manage the subwindow themselves
     // These pointers are required for switching between multiple subwindows
@@ -62,6 +66,7 @@ private:
     QMdiSubWindow *sub_etrr;
     QMdiSubWindow *sub_rehab;
     QMdiSubWindow *sub_mng;
+    QMdiSubWindow *sub_system;
 };
 
 #endif // MAINWINDOW_H

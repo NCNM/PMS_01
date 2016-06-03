@@ -1519,9 +1519,6 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
               </widget>
              </item>
             </layout>
-            <zorder>frame_10</zorder>
-            <zorder>frame_12</zorder>
-            <zorder>frame_11</zorder>
            </widget>
           </widget>
          </item>

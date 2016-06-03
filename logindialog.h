@@ -39,6 +39,7 @@ private:
     Ui::LoginDialog *ui;
     bool connected;
     bool m_loginedSuccess;
+    QString mID;
     MainWindow *this_mw;
 };
 

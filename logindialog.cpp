@@ -37,28 +37,27 @@ void LoginDialog::on_pushButton_5_clicked()
     }
     else
     {
-        if (connected)
-        {
-            QSqlDatabase db = Database::getDatabase();
-            QString ID = ui->txtID->text();
-            QString pass = ui->txtPassword->text();
-            QString QSQuery = "SELECT * FROM ACCOUNT WHERE ID = '" + ID + "' AND PASS = '" + pass + "'";
-            QSqlQuery query(db);
+        if (!connected)
+             on_pushButton_connect_clicked();
 
-            query.exec(QSQuery);
+         QSqlDatabase db = Database::getDatabase();
+         QString ID = ui->txtID->text();
+         QString pass = ui->txtPassword->text();
+         QString QSQuery = "SELECT * FROM ACCOUNT WHERE ID = '" + ID + "' AND PASS = '" + pass + "'";
+         QSqlQuery query(db);
+         query.exec(QSQuery);
+         if (query.size() != 1)
+         {
+             QMessageBox::critical(this, "Error", "Invalid ID or password!");
+             return;
+         }
 
-            if (query.size() != 1)
-            {
-                QMessageBox::critical(this, "Error", "Invalid ID or password!");
-                return;
-            }
+         //succes
+         query.next();
+         mID = query.value(0).toString();
+         loginSuccess();
 
-            //succes
-            loginSuccess();
-        }
-        else {
-            QMessageBox::critical(this, "Error", "Please connect to database server first!");
-        }
+         //QMessageBox::critical(this, "Error", "Please connect to database server first!");
     }
 }
 
@@ -99,45 +98,45 @@ void LoginDialog::loginSuccess()
     QString IDType(2);
     IDType[0] = tmp[0];
     IDType[1] = tmp[1];
-    qDebug() << tmp;
+    //qDebug() << tmp;
     if (IDType == RELATIVE)
     {
-        this_mw = new MainWindow(RELATIVETYPE);
+        this_mw = new MainWindow(RELATIVETYPE, mID);
         this_mw->show();
 
         this->close();
     }
     else if (IDType == DINING)
     {
-        this_mw = new MainWindow(DININGTYPE);
+        this_mw = new MainWindow(DININGTYPE, mID);
         this_mw->show();
 
         this->close();
     }
     else if (IDType == HEALTHCARE)
     {
-        this_mw = new MainWindow(HEALTHCARETYPE);
+        this_mw = new MainWindow(HEALTHCARETYPE, mID);
         this_mw->show();
 
         this->close();
     }
     else if (IDType == ENTRY_RELEASE)
     {
-        this_mw = new MainWindow(ENTRY_RELEASETYPE);
+        this_mw = new MainWindow(ENTRY_RELEASETYPE, mID);
         this_mw->show();
 
         this->close();
     }
     else if (IDType == REHABILITATION)
     {
-        this_mw = new MainWindow(REHABILITATIONTYPE);
+        this_mw = new MainWindow(REHABILITATIONTYPE, mID);
         this_mw->show();
 
         this->close();
     }
     else if (IDType == MANAGE)
     {
-        this_mw = new MainWindow(MANAGETYPE);
+        this_mw = new MainWindow(MANAGETYPE, mID);
         this_mw->show();
 
         this->close();
