@@ -69,25 +69,20 @@
        <string notr="true">QPushButton {
 color: rgb(255, 255, 255);
 text-align:left;
-	background-image: url(:/images/sidebar_close.png);
+background-image: url(:/images/sidebar_close.png);
+background-position:center;
 }
 
 QPushButton:hover {
-border-radius:1px;
-background-color: #299ED6;
+border-radius:5px;
+border: 1px solid rgb(120, 120, 120);
+background-color: rgb(38, 38, 38);
 }
 
 QPushButton:pressed {
-border: 1px solid #333333;
-background-color: #222222;
-}
-
-QPushButton:checked {
-border: 1px solid #ED8876;
-border-radius: 5px;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:5px;
+border: 1px solid rgb(60, 60, 60);
+background-color: rgb(85, 170, 255);
 }
 
 </string>
@@ -127,11 +122,9 @@ background-color: #222222;
 }
 
 QPushButton:checked {
-border-radius:0px;
-border: 1px solid #ED8876;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:10px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
 }
 
 </string>
@@ -163,27 +156,20 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
 color: rgb(255, 255, 255);
 text-align:left;
 background-image: url(:/images/sidebar_unpin.png);
+background-position:center;
 }
 
 QPushButton:hover {
-border-radius:1px;
-background-color: #299ED6;
+border-radius:5px;
+border: 1px solid rgb(120, 120, 120);
+background-color: rgb(38, 38, 38);
 }
 
 QPushButton:pressed {
-border: 1px solid #333333;
-background-color: #222222;
-}
-
-QPushButton:checked {
-border: 1px solid #ED8876;
-border-radius: 5px;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
-}
-
-</string>
+border-radius:5px;
+border: 1px solid rgb(60, 60, 60);
+background-color: rgb(85, 170, 255);
+}</string>
       </property>
       <property name="text">
        <string/>
@@ -193,6 +179,9 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_20">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>-1</x>
@@ -215,7 +204,7 @@ text-align:left;
 color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>            ACTIONS</string>
+       <string>            MENU</string>
       </property>
       <property name="flat">
        <bool>true</bool>
@@ -249,11 +238,9 @@ background-color: #222222;
 }
 
 QPushButton:checked {
-border-radius:0px;
-border: 1px solid #ED8876;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:10px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
 }
 
 </string>
@@ -299,11 +286,9 @@ background-color: #222222;
 }
 
 QPushButton:checked {
-border-radius:0px;
-border: 1px solid #ED8876;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:10px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
 }
 
 </string>
@@ -352,11 +337,9 @@ background-color: #222222;
 }
 
 QPushButton:checked {
-border-radius:0px;
-border: 1px solid #ED8876;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:10px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
 }
 
 </string>
@@ -374,6 +357,13 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
        <bool>true</bool>
       </property>
      </widget>
+     <zorder>pushButton_18</zorder>
+     <zorder>pushButton_20</zorder>
+     <zorder>pushButton_16</zorder>
+     <zorder>pushButton_17</zorder>
+     <zorder>pushButton_19</zorder>
+     <zorder>pushButton_21</zorder>
+     <zorder>pushButton_22</zorder>
     </widget>
    </item>
    <item>
@@ -445,7 +435,11 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(255, 255, 255);</string>
+            <string notr="true">QFrame #frame_3 {
+	background-color: rgb(255, 255, 255);
+	background-image: url(:/images/subwindow_header.png);
+	background-repeat:0;
+}</string>
            </property>
            <property name="frameShape">
             <enum>QFrame::NoFrame</enum>
@@ -471,6 +465,9 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
               <pointsize>14</pointsize>
              </font>
             </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:0;</string>
+            </property>
             <property name="text">
              <string>Rehabilitation</string>
             </property>
@@ -485,7 +482,8 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">color: rgb(94, 94, 94);</string>
+             <string notr="true">color: rgb(94, 94, 94);
+background-color:0;</string>
             </property>
             <property name="text">
              <string>Monitor inmates' rehabilitation progress</string>
@@ -570,6 +568,9 @@ QScrollBar::sub-line:vertical {
             </property>
             <item>
              <widget class="QStackedWidget" name="stackedWidget">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);</string>
+              </property>
               <property name="currentIndex">
                <number>0</number>
               </property>
@@ -592,6 +593,9 @@ QScrollBar::sub-line:vertical {
                 </property>
                 <item>
                  <widget class="QTableView" name="tableView">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(255, 255, 255);</string>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::NoFrame</enum>
                   </property>
@@ -902,6 +906,9 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                 </property>
                 <item>
                  <widget class="QPlainTextEdit" name="plainTextEdit">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(255, 255, 255);</string>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::NoFrame</enum>
                   </property>
@@ -1120,6 +1127,9 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                 </property>
                 <item>
                  <widget class="QFrame" name="frame_9">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(255, 255, 255);</string>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
@@ -1138,7 +1148,11 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     </widget>
                    </item>
                    <item row="0" column="1">
-                    <widget class="QLineEdit" name="lineEdit_2"/>
+                    <widget class="QLineEdit" name="lineEdit_2">
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(255, 255, 255);</string>
+                     </property>
+                    </widget>
                    </item>
                    <item row="1" column="0">
                     <widget class="QLabel" name="label_4">
@@ -1148,7 +1162,11 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     </widget>
                    </item>
                    <item row="1" column="1">
-                    <widget class="QLineEdit" name="lineEdit_3"/>
+                    <widget class="QLineEdit" name="lineEdit_3">
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(255, 255, 255);</string>
+                     </property>
+                    </widget>
                    </item>
                    <item row="2" column="0">
                     <widget class="QLabel" name="label_5">
@@ -1158,7 +1176,11 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     </widget>
                    </item>
                    <item row="2" column="1">
-                    <widget class="QPlainTextEdit" name="plainTextEdit_2"/>
+                    <widget class="QPlainTextEdit" name="plainTextEdit_2">
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(255, 255, 255);</string>
+                     </property>
+                    </widget>
                    </item>
                   </layout>
                  </widget>

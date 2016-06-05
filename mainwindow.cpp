@@ -16,7 +16,9 @@ MainWindow::MainWindow(int OfficerType, QString ID, QWidget *parent) :
 
     ui->nameID->setText(ID);
 
+    ui->statusBar->showMessage("<i> Setting permissions...");
     SetPermission(OfficerType);
+
 
     healthcare = NULL;
     dining = NULL;
@@ -31,6 +33,8 @@ MainWindow::MainWindow(int OfficerType, QString ID, QWidget *parent) :
     sub_rehab = NULL;
     sub_mng = NULL;
     sub_system = NULL;
+
+    ui->statusBar->showMessage("<i> Ready.");
 }
 
 MainWindow::~MainWindow()

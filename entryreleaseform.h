@@ -19,7 +19,6 @@ public:
     ~EntryReleaseForm();
 
 private slots:
-    void on_pushButton_update_clicked(bool checked);
 
     void on_pushButton_3_clicked();
 
@@ -28,6 +27,16 @@ private slots:
     void on_pushButton_clicked();
 
     void on_pushSearch_clicked();
+
+    void on_pushButton_update_clicked();
+
+    void on_pushButton_17_clicked();
+
+    void on_pushButton_18_clicked();
+
+    void on_pushButton_19_clicked();
+
+    void on_pushButton_6_clicked();
 
 private:
     Ui::EntryReleaseForm *ui;

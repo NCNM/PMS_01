@@ -15,6 +15,11 @@ public:
     explicit systemwindow(QWidget *parent = 0);
     ~systemwindow();
 
+private slots:
+    void on_pushButton_16_clicked();
+
+    void on_pushButton_17_clicked();
+
 private:
     Ui::systemwindow *ui;
 };

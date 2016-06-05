@@ -13,21 +13,7 @@ HealthcareWindow::HealthcareWindow(QWidget *parent) :
     ui(new Ui::HealthcareWindow)
 {
     ui->setupUi(this);
-    ui->pushSearch->setEnabled(false);
-}
-
-HealthcareWindow::~HealthcareWindow()
-{
-    delete ui;
-}
-
-void HealthcareWindow::on_pushButton_HealthRecord_clicked(bool checked)
-{
-    /*QSqlDatabase db = Database::getDatabase();
-
-    QSqlQueryModel *model = new QSqlQueryModel;
-    model->setQuery("SELECT * FROM MEDCHECKS", db);
-    ui->tableView->setModel(model);*/
+    ui->stackedWidget->setCurrentIndex(0);
 
     QSqlDatabase db = Database::getDatabase();
     model = new QSqlTableModel(this, db);
@@ -37,6 +23,12 @@ void HealthcareWindow::on_pushButton_HealthRecord_clicked(bool checked)
     ui->tableView->setModel(model);
 
     ui->pushSearch->setEnabled(true);
+    ui->pushButton_HealthRecord->setChecked(true);
+}
+
+HealthcareWindow::~HealthcareWindow()
+{
+    delete ui;
 }
 
 void HealthcareWindow::on_pushAdd_clicked()
@@ -135,4 +127,34 @@ void HealthcareWindow::on_pushAccept_clicked()
     ui->remarks->setPlainText("");
     ui->date->setDate(QDate(2000,01,01));
     ui->time->setTime(QTime(12, 0, 0));
+}
+
+void HealthcareWindow::on_pushButton_HealthRecord_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+
+    /*QSqlDatabase db = Database::getDatabase();
+
+    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery("SELECT * FROM MEDCHECKS", db);
+    ui->tableView->setModel(model);*/
+
+    QSqlDatabase db = Database::getDatabase();
+    model = new QSqlTableModel(this, db);
+    model->setTable("MEDCHECKS");
+    model->select();
+
+    ui->tableView->setModel(model);
+
+    ui->pushSearch->setEnabled(true);
+}
+
+void HealthcareWindow::on_pushButton_17_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void HealthcareWindow::on_pushButton_18_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
 }

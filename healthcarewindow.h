@@ -17,7 +17,6 @@ public:
     ~HealthcareWindow();
 
 private slots:
-    void on_pushButton_HealthRecord_clicked(bool checked);
 
     void on_pushAdd_clicked();
 
@@ -28,6 +27,12 @@ private slots:
     void on_pushSearch_clicked();
 
     void on_pushAccept_clicked();
+
+    void on_pushButton_HealthRecord_clicked();
+
+    void on_pushButton_17_clicked();
+
+    void on_pushButton_18_clicked();
 
 private:
     Ui::HealthcareWindow *ui;

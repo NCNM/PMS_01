@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>727</width>
-    <height>422</height>
+    <width>830</width>
+    <height>501</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -84,11 +84,9 @@ background-color: #222222;
 }
 
 QPushButton:checked {
-border-radius:0px;
-border: 1px solid #ED8876;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:10px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
 }
 
 </string>
@@ -134,11 +132,9 @@ background-color: #222222;
 }
 
 QPushButton:checked {
-border-radius:0px;
-border: 1px solid #ED8876;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:10px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
 }
 
 </string>
@@ -184,11 +180,9 @@ background-color: #222222;
 }
 
 QPushButton:checked {
-border-radius:0px;
-border: 1px solid #ED8876;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:10px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
 }
 
 </string>
@@ -207,6 +201,9 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_20">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>-1</x>
@@ -229,7 +226,7 @@ text-align:left;
 color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>            ACTIONS</string>
+       <string>            MENU</string>
       </property>
       <property name="flat">
        <bool>true</bool>
@@ -249,24 +246,19 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);
 text-align:left;
 background-image: url(:/images/sidebar_unpin.png);
+background-position:center;
 }
 
 QPushButton:hover {
-border-radius:1px;
-background-color: #299ED6;
+border-radius:5px;
+border: 1px solid rgb(120, 120, 120);
+background-color: rgb(38, 38, 38);
 }
 
 QPushButton:pressed {
-border: 1px solid #333333;
-background-color: #222222;
-}
-
-QPushButton:checked {
-border: 1px solid #ED8876;
-border-radius: 5px;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:5px;
+border: 1px solid rgb(60, 60, 60);
+background-color: rgb(85, 170, 255);
 }
 
 </string>
@@ -291,25 +283,20 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
        <string notr="true">QPushButton {
 color: rgb(255, 255, 255);
 text-align:left;
-	background-image: url(:/images/sidebar_close.png);
+background-image: url(:/images/sidebar_close.png);
+background-position:center;
 }
 
 QPushButton:hover {
-border-radius:1px;
-background-color: #299ED6;
+border-radius:5px;
+border: 1px solid rgb(120, 120, 120);
+background-color: rgb(38, 38, 38);
 }
 
 QPushButton:pressed {
-border: 1px solid #333333;
-background-color: #222222;
-}
-
-QPushButton:checked {
-border: 1px solid #ED8876;
-border-radius: 5px;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:5px;
+border: 1px solid rgb(60, 60, 60);
+background-color: rgb(85, 170, 255);
 }
 
 </string>
@@ -368,7 +355,11 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
+         <string notr="true">QFrame #frame_3 {
+	background-color: rgb(255, 255, 255);
+	background-image: url(:/images/subwindow_header.png);
+	background-repeat:0;
+}</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>
@@ -391,6 +382,9 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
            <pointsize>14</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:0;</string>
+         </property>
          <property name="text">
           <string>System</string>
          </property>
@@ -405,10 +399,11 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(94, 94, 94);</string>
+          <string notr="true">color: rgb(94, 94, 94);
+background-color:0;</string>
          </property>
          <property name="text">
-          <string>About, Settings, and Help</string>
+          <string>Application information, settings and documentation</string>
          </property>
         </widget>
        </widget>
@@ -446,12 +441,18 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
          <item>
           <widget class="QStackedWidget" name="stackedWidget">
            <property name="currentIndex">
-            <number>1</number>
+            <number>0</number>
            </property>
            <widget class="QWidget" name="about">
-            <layout class="QHBoxLayout" name="horizontalLayout_4">
-             <item>
+            <layout class="QGridLayout" name="gridLayout_3">
+             <item row="0" column="0" rowspan="2">
               <widget class="QFrame" name="frame_6">
+               <property name="maximumSize">
+                <size>
+                 <width>300</width>
+                 <height>16777215</height>
+                </size>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
                </property>
@@ -461,6 +462,12 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
                <layout class="QGridLayout" name="gridLayout">
                 <item row="0" column="0">
                  <widget class="QLabel" name="label_5">
+                  <property name="maximumSize">
+                   <size>
+                    <width>100</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
                   <property name="text">
                    <string>Hostname:</string>
                   </property>
@@ -476,7 +483,7 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777215</width>
+                    <width>200</width>
                     <height>25</height>
                    </size>
                   </property>
@@ -496,6 +503,12 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
                 </item>
                 <item row="1" column="0">
                  <widget class="QLabel" name="label_6">
+                  <property name="maximumSize">
+                   <size>
+                    <width>100</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
                   <property name="text">
                    <string>User ID:</string>
                   </property>
@@ -511,7 +524,7 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777215</width>
+                    <width>200</width>
                     <height>25</height>
                    </size>
                   </property>
@@ -531,6 +544,12 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
                 </item>
                 <item row="2" column="0">
                  <widget class="QLabel" name="label_7">
+                  <property name="maximumSize">
+                   <size>
+                    <width>100</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
                   <property name="text">
                    <string>Password:</string>
                   </property>
@@ -546,7 +565,7 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777215</width>
+                    <width>200</width>
                     <height>25</height>
                    </size>
                   </property>
@@ -566,6 +585,12 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
                 </item>
                 <item row="3" column="0">
                  <widget class="QLabel" name="label_8">
+                  <property name="maximumSize">
+                   <size>
+                    <width>100</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
                   <property name="text">
                    <string>Port:</string>
                   </property>
@@ -581,7 +606,7 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777215</width>
+                    <width>200</width>
                     <height>25</height>
                    </size>
                   </property>
@@ -601,6 +626,12 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
                 </item>
                 <item row="4" column="0">
                  <widget class="QLabel" name="label_9">
+                  <property name="maximumSize">
+                   <size>
+                    <width>100</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
                   <property name="text">
                    <string>Server status:</string>
                   </property>
@@ -649,11 +680,47 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
                    </item>
                    <item>
                     <widget class="QPushButton" name="pushButton_connect">
+                     <property name="minimumSize">
+                      <size>
+                       <width>90</width>
+                       <height>0</height>
+                      </size>
+                     </property>
                      <property name="maximumSize">
                       <size>
-                       <width>16777215</width>
+                       <width>90</width>
                        <height>25</height>
                       </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:8px;
+border: 1px solid rgb(210, 210, 210);
+background-color: rgb(245, 245, 245);
+}
+
+QPushButton:hover {
+color: rgb(255, 255, 255);
+border-radius:8px;
+border: 1px solid rgb(23, 120, 173);
+background-color: #299ED6;
+}
+
+QPushButton:pressed {
+border-radius:10px;
+border: 1px solid #777777;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border-radius:10px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
+}
+
+</string>
                      </property>
                      <property name="text">
                       <string>Connect</string>
@@ -671,12 +738,31 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_5">
+                   <item>
+                    <widget class="QLabel" name="label_12">
+                     <property name="font">
+                      <font>
+                       <pointsize>10</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">color: rgb(255, 0, 0);</string>
+                     </property>
+                     <property name="text">
+                      <string>&lt; This functionality is unimplemented &gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                </layout>
               </widget>
              </item>
-             <item>
+             <item row="0" column="1">
               <widget class="QFrame" name="frame_7">
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
@@ -713,11 +799,47 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
                 </item>
                 <item>
                  <widget class="QPushButton" name="pushButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>135</width>
+                    <height>0</height>
+                   </size>
+                  </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777215</width>
+                    <width>135</width>
                     <height>25</height>
                    </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:8px;
+border: 1px solid rgb(210, 210, 210);
+background-color: rgb(245, 245, 245);
+}
+
+QPushButton:hover {
+color: rgb(255, 255, 255);
+border-radius:8px;
+border: 1px solid rgb(23, 120, 173);
+background-color: #299ED6;
+}
+
+QPushButton:pressed {
+border-radius:10px;
+border: 1px solid #777777;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border-radius:10px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
+}
+
+</string>
                   </property>
                   <property name="text">
                    <string>Auto-login account</string>
@@ -726,11 +848,47 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
                 </item>
                 <item>
                  <widget class="QPushButton" name="pushButton_2">
+                  <property name="minimumSize">
+                   <size>
+                    <width>135</width>
+                    <height>0</height>
+                   </size>
+                  </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777215</width>
+                    <width>135</width>
                     <height>25</height>
                    </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:8px;
+border: 1px solid rgb(210, 210, 210);
+background-color: rgb(245, 245, 245);
+}
+
+QPushButton:hover {
+color: rgb(255, 255, 255);
+border-radius:8px;
+border: 1px solid rgb(23, 120, 173);
+background-color: #299ED6;
+}
+
+QPushButton:pressed {
+border-radius:10px;
+border: 1px solid #777777;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border-radius:10px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
+}
+
+</string>
                   </property>
                   <property name="text">
                    <string>Master account settings</string>
@@ -750,54 +908,159 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
                </layout>
               </widget>
              </item>
+             <item row="0" column="2">
+              <widget class="QFrame" name="frame_15">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2">
+              <widget class="QFrame" name="frame_16">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+              </widget>
+             </item>
             </layout>
            </widget>
            <widget class="QWidget" name="settings">
-            <widget class="QFrame" name="frame_4">
-             <property name="geometry">
-              <rect>
-               <x>10</x>
-               <y>10</y>
-               <width>512</width>
-               <height>90</height>
-              </rect>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-image: url(:/images/about_banner.png);</string>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-            </widget>
-            <widget class="QLabel" name="label_3">
-             <property name="geometry">
-              <rect>
-               <x>40</x>
-               <y>130</y>
-               <width>221</width>
-               <height>16</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>Version versionnumber.build.revision</string>
-             </property>
-            </widget>
-            <widget class="QLabel" name="label_4">
-             <property name="geometry">
-              <rect>
-               <x>40</x>
-               <y>170</y>
-               <width>311</width>
-               <height>171</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;The definitive prision management system&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;Developed by the NCNM team.&lt;/p&gt;&lt;p&gt;Credits:&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-            </widget>
+            <layout class="QGridLayout" name="gridLayout_2">
+             <item row="0" column="0" colspan="2">
+              <widget class="QFrame" name="frame_4">
+               <property name="minimumSize">
+                <size>
+                 <width>512</width>
+                 <height>90</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>512</width>
+                 <height>90</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-image: url(:/images/about_banner.png);</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QFrame" name="frame_12">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QFrame" name="frame_10">
+               <property name="maximumSize">
+                <size>
+                 <width>10</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1" colspan="2">
+              <widget class="QFrame" name="frame_14">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_3">
+                <property name="leftMargin">
+                 <number>5</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="label_3">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Version 0.6.0.0</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QFrame" name="frame_11">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1" colspan="2">
+              <widget class="QFrame" name="frame_13">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_4">
+                <property name="leftMargin">
+                 <number>5</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="label_4">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;The definitive prision management system&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;Developed by the NCNM team.&lt;/p&gt;&lt;p&gt;Credits:&lt;/p&gt;&lt;p&gt;&lt;br/&gt;Lê Dân&lt;/p&gt;&lt;p&gt;Nguyễn Thanh Danh&lt;/p&gt;&lt;p&gt;Hồ Dương Nhật Duy&lt;/p&gt;&lt;p&gt;Phạm Minh Quang Duy&lt;/p&gt;&lt;p&gt;Đặng Nhật Duy&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </widget>
          </item>

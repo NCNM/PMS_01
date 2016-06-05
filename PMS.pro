@@ -11,6 +11,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = PMS
 TEMPLATE = app
 
+RC_FILE = PMS.rc
 
 SOURCES += main.cpp\
         mainwindow.cpp \
@@ -51,3 +52,6 @@ FORMS    += mainwindow.ui \
 
 RESOURCES += \
     pms_resources.qrc
+
+DISTFILES += \
+    PMS.rc

@@ -7,16 +7,8 @@ EntryReleaseForm::EntryReleaseForm(QWidget *parent) :
     ui(new Ui::EntryReleaseForm)
 {
     ui->setupUi(this);
-    ui->pushSearch->setEnabled(false);
-}
+    ui->stackedWidget->setCurrentIndex(0);
 
-EntryReleaseForm::~EntryReleaseForm()
-{
-    delete ui;
-}
-
-void EntryReleaseForm::on_pushButton_update_clicked(bool checked)
-{
     QSqlDatabase db = Database::getDatabase();
     model = new QSqlTableModel(this, db);
     model->setTable("INMATE");
@@ -25,6 +17,13 @@ void EntryReleaseForm::on_pushButton_update_clicked(bool checked)
     ui->tableView->setModel(model);
 
     ui->pushSearch->setEnabled(true);
+
+    ui->pushButton_update->setChecked(true);
+}
+
+EntryReleaseForm::~EntryReleaseForm()
+{
+    delete ui;
 }
 
 void EntryReleaseForm::on_pushButton_3_clicked()
@@ -53,4 +52,39 @@ void EntryReleaseForm::on_pushSearch_clicked()
     QSqlQueryModel *model = new QSqlQueryModel;
     model->setQuery(query, db);
     ui->tableView->setModel(model);
+}
+
+void EntryReleaseForm::on_pushButton_update_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+
+    QSqlDatabase db = Database::getDatabase();
+    model = new QSqlTableModel(this, db);
+    model->setTable("INMATE");
+    model->select();
+
+    ui->tableView->setModel(model);
+
+    ui->pushSearch->setEnabled(true);
+}
+
+void EntryReleaseForm::on_pushButton_17_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+
+void EntryReleaseForm::on_pushButton_18_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
+void EntryReleaseForm::on_pushButton_19_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+}
+
+void EntryReleaseForm::on_pushButton_6_clicked()
+{
+    ui->plainTextEdit->clear();
 }

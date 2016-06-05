@@ -87,11 +87,9 @@ background-color: #222222;
 }
 
 QPushButton:checked {
-border-radius:0px;
-border: 1px solid #ED8876;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:10px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
 }
 
 </string>
@@ -110,6 +108,9 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_20">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>-1</x>
@@ -132,7 +133,7 @@ text-align:left;
 color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>            ACTIONS</string>
+       <string>            MENU</string>
       </property>
       <property name="flat">
        <bool>true</bool>
@@ -166,11 +167,9 @@ background-color: #222222;
 }
 
 QPushButton:checked {
-border-radius:0px;
-border: 1px solid #ED8876;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:10px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
 }
 
 </string>
@@ -216,11 +215,9 @@ background-color: #222222;
 }
 
 QPushButton:checked {
-border-radius:0px;
-border: 1px solid #ED8876;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:10px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
 }
 
 </string>
@@ -252,24 +249,19 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
 color: rgb(255, 255, 255);
 text-align:left;
 background-image: url(:/images/sidebar_unpin.png);
+background-position:center;
 }
 
 QPushButton:hover {
-border-radius:1px;
-background-color: #299ED6;
+border-radius:5px;
+border: 1px solid rgb(120, 120, 120);
+background-color: rgb(38, 38, 38);
 }
 
 QPushButton:pressed {
-border: 1px solid #333333;
-background-color: #222222;
-}
-
-QPushButton:checked {
-border: 1px solid #ED8876;
-border-radius: 5px;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:5px;
+border: 1px solid rgb(60, 60, 60);
+background-color: rgb(85, 170, 255);
 }
 
 </string>
@@ -294,25 +286,20 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
        <string notr="true">QPushButton {
 color: rgb(255, 255, 255);
 text-align:left;
-	background-image: url(:/images/sidebar_close.png);
+background-image: url(:/images/sidebar_close.png);
+background-position:center;
 }
 
 QPushButton:hover {
-border-radius:1px;
-background-color: #299ED6;
+border-radius:5px;
+border: 1px solid rgb(120, 120, 120);
+background-color: rgb(38, 38, 38);
 }
 
 QPushButton:pressed {
-border: 1px solid #333333;
-background-color: #222222;
-}
-
-QPushButton:checked {
-border: 1px solid #ED8876;
-border-radius: 5px;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:5px;
+border: 1px solid rgb(60, 60, 60);
+background-color: rgb(85, 170, 255);
 }
 
 </string>
@@ -352,17 +339,15 @@ background-color: #222222;
 }
 
 QPushButton:checked {
-border-radius:0px;
-border: 1px solid #ED8876;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:10px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
 }
 
 </string>
       </property>
       <property name="text">
-       <string>Schedule visits</string>
+       <string>Visiting times</string>
       </property>
       <property name="checkable">
        <bool>true</bool>
@@ -424,7 +409,11 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
+         <string notr="true">QFrame #frame_3 {
+	background-color: rgb(255, 255, 255);
+	background-image: url(:/images/subwindow_header.png);
+	background-repeat:0;
+}</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>
@@ -450,6 +439,9 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
            <pointsize>14</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:0;</string>
+         </property>
          <property name="text">
           <string>Entry &amp; Release</string>
          </property>
@@ -464,7 +456,8 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(94, 94, 94);</string>
+          <string notr="true">color: rgb(94, 94, 94);
+background-color:0;</string>
          </property>
          <property name="text">
           <string>Update inmates database and monitor entry and release records</string>
@@ -549,8 +542,11 @@ QScrollBar::sub-line:vertical {
          </property>
          <item>
           <widget class="QStackedWidget" name="stackedWidget">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 255);</string>
+           </property>
            <property name="currentIndex">
-            <number>0</number>
+            <number>1</number>
            </property>
            <widget class="QWidget" name="database">
             <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -571,6 +567,9 @@ QScrollBar::sub-line:vertical {
              </property>
              <item>
               <widget class="QTableView" name="tableView">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::NoFrame</enum>
                </property>
@@ -890,6 +889,9 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
              </property>
              <item>
               <widget class="QPlainTextEdit" name="plainTextEdit">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::NoFrame</enum>
                </property>
@@ -1120,6 +1122,9 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
              </property>
              <item>
               <widget class="QTableView" name="tableView_2">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::NoFrame</enum>
                </property>
@@ -1146,156 +1151,30 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
              </property>
              <item>
               <widget class="QFrame" name="frame_10">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
                </property>
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
                </property>
-               <layout class="QGridLayout" name="gridLayout">
-                <property name="leftMargin">
-                 <number>15</number>
-                </property>
-                <property name="rightMargin">
-                 <number>35</number>
-                </property>
-                <item row="0" column="0">
-                 <widget class="QLabel" name="label_3">
-                  <property name="maximumSize">
-                   <size>
-                    <width>85</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>Weekdays:</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="1">
+               <layout class="QVBoxLayout" name="verticalLayout_7">
+                <item>
                  <widget class="QFrame" name="frame">
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_5">
-                   <property name="leftMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="rightMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
-                   <item>
-                    <widget class="QCheckBox" name="checkBox">
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>Sun</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QCheckBox" name="checkBox_2">
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>Mon</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QCheckBox" name="checkBox_7">
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>Tue</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QCheckBox" name="checkBox_3">
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>Wed</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QCheckBox" name="checkBox_4">
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>Thu</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QCheckBox" name="checkBox_5">
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>Fri</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QCheckBox" name="checkBox_6">
-                     <property name="text">
-                      <string>Sat</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-                <item row="1" column="0">
-                 <widget class="QLabel" name="label_4">
-                  <property name="maximumSize">
+                  <property name="minimumSize">
                    <size>
-                    <width>85</width>
-                    <height>16777215</height>
+                    <width>0</width>
+                    <height>40</height>
                    </size>
                   </property>
-                  <property name="text">
-                   <string>Time range:</string>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>40</height>
+                   </size>
                   </property>
-                 </widget>
-                </item>
-                <item row="1" column="1">
-                 <widget class="QFrame" name="frame_9">
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
@@ -1303,21 +1182,159 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                    <enum>QFrame::Raised</enum>
                   </property>
                   <layout class="QHBoxLayout" name="horizontalLayout_4">
-                   <property name="spacing">
-                    <number>6</number>
-                   </property>
-                   <property name="leftMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="rightMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
+                   <item>
+                    <widget class="QLabel" name="label_3">
+                     <property name="maximumSize">
+                      <size>
+                       <width>85</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Weekdays:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QFrame" name="frame_12">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_5">
+                      <property name="leftMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="QCheckBox" name="checkBox">
+                        <property name="maximumSize">
+                         <size>
+                          <width>50</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string>Sun</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QCheckBox" name="checkBox_2">
+                        <property name="maximumSize">
+                         <size>
+                          <width>50</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string>Mon</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QCheckBox" name="checkBox_7">
+                        <property name="maximumSize">
+                         <size>
+                          <width>50</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string>Tue</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QCheckBox" name="checkBox_3">
+                        <property name="maximumSize">
+                         <size>
+                          <width>50</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string>Wed</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QCheckBox" name="checkBox_4">
+                        <property name="maximumSize">
+                         <size>
+                          <width>50</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string>Thu</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QCheckBox" name="checkBox_5">
+                        <property name="maximumSize">
+                         <size>
+                          <width>50</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string>Fri</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QCheckBox" name="checkBox_6">
+                        <property name="text">
+                         <string>Sat</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="frame_14">
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_6">
+                   <item>
+                    <widget class="QLabel" name="label_4">
+                     <property name="maximumSize">
+                      <size>
+                       <width>85</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Time range:</string>
+                     </property>
+                    </widget>
+                   </item>
                    <item>
                     <widget class="QTimeEdit" name="timeEdit"/>
                    </item>
@@ -1338,6 +1355,39 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     <widget class="QTimeEdit" name="timeEdit_2"/>
                    </item>
                   </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="frame_15">
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <widget class="QLabel" name="label_12">
+                   <property name="geometry">
+                    <rect>
+                     <x>20</x>
+                     <y>30</y>
+                     <width>261</width>
+                     <height>16</height>
+                    </rect>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(255, 0, 0);</string>
+                   </property>
+                   <property name="text">
+                    <string>&lt; This functionality is unimplemented &gt;</string>
+                   </property>
+                  </widget>
                  </widget>
                 </item>
                </layout>

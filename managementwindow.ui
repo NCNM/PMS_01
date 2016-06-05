@@ -59,8 +59,8 @@
      <widget class="QPushButton" name="pushButton_18">
       <property name="geometry">
        <rect>
-        <x>11</x>
-        <y>111</y>
+        <x>10</x>
+        <y>110</y>
         <width>181</width>
         <height>21</height>
        </rect>
@@ -84,17 +84,21 @@ background-color: #222222;
 }
 
 QPushButton:checked {
-border-radius:0px;
-border: 1px solid #ED8876;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:10px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
 }
 
 </string>
       </property>
       <property name="text">
        <string>View inmate records</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
       </property>
       <property name="flat">
        <bool>true</bool>
@@ -103,8 +107,8 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
      <widget class="QPushButton" name="pushButton_17">
       <property name="geometry">
        <rect>
-        <x>11</x>
-        <y>81</y>
+        <x>10</x>
+        <y>80</y>
         <width>181</width>
         <height>21</height>
        </rect>
@@ -128,17 +132,21 @@ background-color: #222222;
 }
 
 QPushButton:checked {
-border-radius:0px;
-border: 1px solid #ED8876;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:10px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
 }
 
 </string>
       </property>
       <property name="text">
-       <string>Entrie &amp;&amp; release reports</string>
+       <string>Entry &amp;&amp; release reports</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
       </property>
       <property name="flat">
        <bool>true</bool>
@@ -157,25 +165,20 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
        <string notr="true">QPushButton {
 color: rgb(255, 255, 255);
 text-align:left;
-	background-image: url(:/images/sidebar_close.png);
+background-image: url(:/images/sidebar_close.png);
+background-position:center;
 }
 
 QPushButton:hover {
-border-radius:1px;
-background-color: #299ED6;
+border-radius:5px;
+border: 1px solid rgb(120, 120, 120);
+background-color: rgb(38, 38, 38);
 }
 
 QPushButton:pressed {
-border: 1px solid #333333;
-background-color: #222222;
-}
-
-QPushButton:checked {
-border: 1px solid #ED8876;
-border-radius: 5px;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:5px;
+border: 1px solid rgb(60, 60, 60);
+background-color: rgb(85, 170, 255);
 }
 
 </string>
@@ -190,8 +193,8 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
      <widget class="QPushButton" name="pushButton_19">
       <property name="geometry">
        <rect>
-        <x>11</x>
-        <y>141</y>
+        <x>10</x>
+        <y>140</y>
         <width>181</width>
         <height>21</height>
        </rect>
@@ -215,17 +218,21 @@ background-color: #222222;
 }
 
 QPushButton:checked {
-border-radius:0px;
-border: 1px solid #ED8876;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:10px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
 }
 
 </string>
       </property>
       <property name="text">
        <string>Schedule guard duty</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
       </property>
       <property name="flat">
        <bool>true</bool>
@@ -245,24 +252,19 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
 color: rgb(255, 255, 255);
 text-align:left;
 background-image: url(:/images/sidebar_unpin.png);
+background-position:center;
 }
 
 QPushButton:hover {
-border-radius:1px;
-background-color: #299ED6;
+border-radius:5px;
+border: 1px solid rgb(120, 120, 120);
+background-color: rgb(38, 38, 38);
 }
 
 QPushButton:pressed {
-border: 1px solid #333333;
-background-color: #222222;
-}
-
-QPushButton:checked {
-border: 1px solid #ED8876;
-border-radius: 5px;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:5px;
+border: 1px solid rgb(60, 60, 60);
+background-color: rgb(85, 170, 255);
 }
 
 </string>
@@ -277,8 +279,8 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
      <widget class="QPushButton" name="pushButton_16">
       <property name="geometry">
        <rect>
-        <x>11</x>
-        <y>51</y>
+        <x>10</x>
+        <y>50</y>
         <width>181</width>
         <height>21</height>
        </rect>
@@ -302,11 +304,9 @@ background-color: #222222;
 }
 
 QPushButton:checked {
-border-radius:0px;
-border: 1px solid #ED8876;
-background-color: #C73D18;
-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67, 
-stop: 0 #A73F2D, stop: 1 #E4685D);
+border-radius:10px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
 }
 
 </string>
@@ -315,16 +315,22 @@ stop: 0 #A73F2D, stop: 1 #E4685D);
        <string>View activity logs</string>
       </property>
       <property name="checkable">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="checked">
        <bool>false</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
       </property>
       <property name="flat">
        <bool>true</bool>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_20">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>-1</x>
@@ -347,12 +353,19 @@ text-align:left;
 color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>            ACTIONS</string>
+       <string>            MENU</string>
       </property>
       <property name="flat">
        <bool>true</bool>
       </property>
      </widget>
+     <zorder>pushButton_18</zorder>
+     <zorder>pushButton_17</zorder>
+     <zorder>pushButton_19</zorder>
+     <zorder>pushButton_16</zorder>
+     <zorder>pushButton_20</zorder>
+     <zorder>pushButton_21</zorder>
+     <zorder>pushButton_22</zorder>
     </widget>
    </item>
    <item>
@@ -424,7 +437,11 @@ color: rgb(255, 255, 255);</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(255, 255, 255);</string>
+            <string notr="true">QFrame #frame_3 {
+	background-color: rgb(255, 255, 255);
+	background-image: url(:/images/subwindow_header.png);
+	background-repeat:0;
+}</string>
            </property>
            <property name="frameShape">
             <enum>QFrame::NoFrame</enum>
@@ -450,6 +467,9 @@ color: rgb(255, 255, 255);</string>
               <pointsize>14</pointsize>
              </font>
             </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:0;</string>
+            </property>
             <property name="text">
              <string>Management &amp; Events</string>
             </property>
@@ -464,7 +484,8 @@ color: rgb(255, 255, 255);</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">color: rgb(94, 94, 94);</string>
+             <string notr="true">color: rgb(94, 94, 94);
+background-color:0;</string>
             </property>
             <property name="text">
              <string>Manage inmate records and monitor important events across the facility</string>
@@ -608,7 +629,7 @@ QTimeEdit {
                   <widget class="QLabel" name="label_4">
                    <property name="geometry">
                     <rect>
-                     <x>6</x>
+                     <x>26</x>
                      <y>22</y>
                      <width>91</width>
                      <height>20</height>
@@ -621,7 +642,7 @@ QTimeEdit {
                   <widget class="QDateEdit" name="dateEdit">
                    <property name="geometry">
                     <rect>
-                     <x>100</x>
+                     <x>120</x>
                      <y>20</y>
                      <width>110</width>
                      <height>22</height>
@@ -631,7 +652,7 @@ QTimeEdit {
                   <widget class="QDateEdit" name="dateEdit_2">
                    <property name="geometry">
                     <rect>
-                     <x>240</x>
+                     <x>260</x>
                      <y>20</y>
                      <width>110</width>
                      <height>22</height>
@@ -641,7 +662,7 @@ QTimeEdit {
                   <widget class="QLabel" name="label_6">
                    <property name="geometry">
                     <rect>
-                     <x>220</x>
+                     <x>240</x>
                      <y>22</y>
                      <width>16</width>
                      <height>16</height>
@@ -654,7 +675,7 @@ QTimeEdit {
                   <widget class="QLabel" name="label_5">
                    <property name="geometry">
                     <rect>
-                     <x>6</x>
+                     <x>26</x>
                      <y>62</y>
                      <width>81</width>
                      <height>20</height>
@@ -667,7 +688,7 @@ QTimeEdit {
                   <widget class="QLabel" name="label_7">
                    <property name="geometry">
                     <rect>
-                     <x>220</x>
+                     <x>240</x>
                      <y>65</y>
                      <width>47</width>
                      <height>13</height>
@@ -680,7 +701,7 @@ QTimeEdit {
                   <widget class="QTimeEdit" name="timeEdit">
                    <property name="geometry">
                     <rect>
-                     <x>100</x>
+                     <x>120</x>
                      <y>60</y>
                      <width>111</width>
                      <height>22</height>
@@ -690,7 +711,7 @@ QTimeEdit {
                   <widget class="QTimeEdit" name="timeEdit_2">
                    <property name="geometry">
                     <rect>
-                     <x>240</x>
+                     <x>260</x>
                      <y>60</y>
                      <width>111</width>
                      <height>22</height>
@@ -701,6 +722,9 @@ QTimeEdit {
                 </item>
                 <item>
                  <widget class="QTableView" name="tableView_2">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(255, 255, 255);</string>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::NoFrame</enum>
                   </property>
@@ -986,6 +1010,9 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                 </property>
                 <item>
                  <widget class="QTableView" name="tableView_3">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(255, 255, 255);</string>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::NoFrame</enum>
                   </property>
@@ -1199,6 +1226,9 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                 </property>
                 <item>
                  <widget class="QFrame" name="frame_10">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(255, 255, 255);</string>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
@@ -1207,23 +1237,17 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                   </property>
                   <layout class="QGridLayout" name="gridLayout">
                    <property name="leftMargin">
-                    <number>15</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>15</number>
+                    <number>20</number>
                    </property>
                    <property name="rightMargin">
-                    <number>15</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>15</number>
+                    <number>20</number>
                    </property>
                    <item row="0" column="0">
                     <widget class="QLabel" name="label_8">
                      <property name="maximumSize">
                       <size>
                        <width>85</width>
-                       <height>16777215</height>
+                       <height>64</height>
                       </size>
                      </property>
                      <property name="text">
@@ -1233,6 +1257,12 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                    </item>
                    <item row="0" column="1" colspan="2">
                     <widget class="QFrame" name="frame_11">
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>48</height>
+                      </size>
+                     </property>
                      <property name="frameShape">
                       <enum>QFrame::StyledPanel</enum>
                      </property>
@@ -1355,6 +1385,12 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                    </item>
                    <item row="1" column="1" colspan="2">
                     <widget class="QFrame" name="frame_12">
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>48</height>
+                      </size>
+                     </property>
                      <property name="frameShape">
                       <enum>QFrame::StyledPanel</enum>
                      </property>
@@ -1378,7 +1414,14 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                        <number>0</number>
                       </property>
                       <item>
-                       <widget class="QTimeEdit" name="timeEdit_3"/>
+                       <widget class="QTimeEdit" name="timeEdit_3">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </widget>
                       </item>
                       <item>
                        <widget class="QLabel" name="label_10">
@@ -1394,18 +1437,81 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                        </widget>
                       </item>
                       <item>
-                       <widget class="QTimeEdit" name="timeEdit_4"/>
+                       <widget class="QTimeEdit" name="timeEdit_4">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </widget>
                       </item>
                      </layout>
                     </widget>
-                   </item>
-                   <item row="2" column="2">
-                    <widget class="QLineEdit" name="lineEdit"/>
                    </item>
                    <item row="2" column="0">
                     <widget class="QLabel" name="label_11">
                      <property name="text">
                       <string>Officer ID:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="1" colspan="2">
+                    <widget class="QLineEdit" name="lineEdit">
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="0" colspan="2">
+                    <widget class="QFrame" name="frame_15">
+                     <property name="minimumSize">
+                      <size>
+                       <width>290</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <widget class="QLabel" name="label_12">
+                      <property name="geometry">
+                       <rect>
+                        <x>10</x>
+                        <y>30</y>
+                        <width>261</width>
+                        <height>16</height>
+                       </rect>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(255, 0, 0);</string>
+                      </property>
+                      <property name="text">
+                       <string>&lt; This functionality is unimplemented &gt;</string>
+                      </property>
+                     </widget>
+                    </widget>
+                   </item>
+                   <item row="3" column="2">
+                    <widget class="QFrame" name="frame_16">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
                    </item>

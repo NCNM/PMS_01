@@ -23,6 +23,12 @@ public:
 private slots:
     void on_pushButton_16_clicked();
 
+    void on_pushButton_17_clicked();
+
+    void on_pushButton_18_clicked();
+
+    void on_pushButton_19_clicked();
+
 private:
     Ui::ManagementWindow *ui;
     QSqlTableModel *model;

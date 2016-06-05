@@ -6,7 +6,17 @@ RehabForm::RehabForm(QWidget *parent) :
     ui(new Ui::RehabForm)
 {
     ui->setupUi(this);
-    ui->pushSearch->setEnabled(false);
+    ui->stackedWidget->setCurrentIndex(0);
+
+    QSqlDatabase db = Database::getDatabase();
+    model = new QSqlTableModel(this, db);
+    model->setTable("REHABILITATION");
+    model->select();
+
+    ui->tableView->setModel(model);
+
+    ui->pushSearch->setEnabled(true);
+    ui->pushButton_16->setChecked(true);
 }
 
 RehabForm::~RehabForm()
@@ -16,6 +26,8 @@ RehabForm::~RehabForm()
 
 void RehabForm::on_pushButton_16_clicked()
 {
+    ui->stackedWidget->setCurrentIndex(0);
+
     /*QSqlDatabase db = Database::getDatabase();
 
     QSqlQueryModel *model = new QSqlQueryModel;
@@ -59,4 +71,14 @@ void RehabForm::on_pushSearch_clicked()
     QSqlQueryModel *model = new QSqlQueryModel;
     model->setQuery(query, db);
     ui->tableView->setModel(model);
+}
+
+void RehabForm::on_pushButton_17_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void RehabForm::on_pushButton_18_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
 }

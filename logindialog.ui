@@ -63,14 +63,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">QFrame {
-	background-color: rgb(255, 255, 255);
-}
-
-QPlainTextEdit {
-background-color: rgb(255, 255, 255);
-color: #333;
-}</string>
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -253,6 +246,36 @@ color: #333;
         <height>23</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:8px;
+border: 1px solid rgb(210, 210, 210);
+background-color: rgb(245, 245, 245);
+}
+
+QPushButton:hover {
+color: rgb(255, 255, 255);
+border-radius:8px;
+border: 1px solid rgb(23, 120, 173);
+background-color: #299ED6;
+}
+
+QPushButton:pressed {
+border-radius:10px;
+border: 1px solid #777777;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border-radius:10px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
+}
+
+</string>
+      </property>
       <property name="text">
        <string>Connect</string>
       </property>
@@ -302,7 +325,7 @@ color: #333;
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>20</y>
+        <y>15</y>
         <width>91</width>
         <height>16</height>
        </rect>
@@ -315,6 +338,10 @@ color: #333;
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:0;
+color: rgb(255, 255, 255);</string>
+      </property>
       <property name="text">
        <string>Welcome!</string>
       </property>
@@ -323,10 +350,14 @@ color: #333;
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>45</y>
+        <y>40</y>
         <width>391</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: 0;
+color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>Please log in to PMS using a user account assigned to you by the Administrator.</string>
@@ -370,14 +401,48 @@ color: #333;
      <widget class="QCommandLinkButton" name="commandLinkButton">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>235</x>
         <y>190</y>
-        <width>181</width>
-        <height>41</height>
+        <width>168</width>
+        <height>38</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QCommandLinkButton {
+color: rgb(50, 50, 50);
+background-color:0;
+border:0;
+}
+
+QCommandLinkButton:hover {
+color: rgb(255, 255, 255);
+border-radius:5px;
+border: 1px solid rgb(200, 200, 200);
+background-color: rgb(240, 240, 240);
+}
+
+QCommandLinkButton:pressed {
+border-radius:5px;
+border: 1px solid #fdfdfd;
+background-color: #cccccc;
+}
+
+QCommandLinkButton:checked {
+color: rgb(255, 255, 255);
+border-radius:5px;
+background-color: rgb(220, 220, 220);
+}
+
+</string>
       </property>
       <property name="text">
        <string>Database configuration</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
       </property>
       <property name="checkable">
        <bool>true</bool>
@@ -387,9 +452,9 @@ color: #333;
       <property name="geometry">
        <rect>
         <x>430</x>
-        <y>9</y>
+        <y>-1</y>
         <width>1</width>
-        <height>322</height>
+        <height>350</height>
        </rect>
       </property>
       <property name="frameShape">
@@ -399,6 +464,58 @@ color: #333;
        <enum>QFrame::Plain</enum>
       </property>
      </widget>
+     <widget class="QFrame" name="frame">
+      <property name="geometry">
+       <rect>
+        <x>-1</x>
+        <y>-1</y>
+        <width>432</width>
+        <height>66</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>432</width>
+        <height>66</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>432</width>
+        <height>66</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/images/login_header.png);
+background-repeat:0;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+     <zorder>frame</zorder>
+     <zorder>label</zorder>
+     <zorder>label_2</zorder>
+     <zorder>plainTextEdit_username</zorder>
+     <zorder>label_3</zorder>
+     <zorder>label_4</zorder>
+     <zorder>plainTextEdit_localhost</zorder>
+     <zorder>label_5</zorder>
+     <zorder>plainTextEdit_pass</zorder>
+     <zorder>plainTextEdit_port</zorder>
+     <zorder>label_6</zorder>
+     <zorder>pushButton_connect</zorder>
+     <zorder>label_8</zorder>
+     <zorder>serverStatus</zorder>
+     <zorder>label_7</zorder>
+     <zorder>label_9</zorder>
+     <zorder>txtID</zorder>
+     <zorder>txtPassword</zorder>
+     <zorder>commandLinkButton</zorder>
+     <zorder>frame_2</zorder>
     </widget>
    </item>
    <item>

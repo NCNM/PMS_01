@@ -13,6 +13,16 @@ DiningWindow::DiningWindow(QWidget *parent) :
     ui->setupUi(this);
     curView = VIEW_NONE;
     ui->pushSearch->setEnabled(false);
+    ui->pushButton_viewInmates->setChecked(true);
+    ui->stackedWidget->setCurrentIndex(0);
+    QSqlDatabase db = Database::getDatabase();
+
+    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery("SELECT * FROM INMATE", db);
+    ui->tableView->setModel(model);
+
+    curView = VIEW_OFFICER;
+    ui->pushSearch->setEnabled(true);
 }
 
 DiningWindow::~DiningWindow()
@@ -24,6 +34,7 @@ DiningWindow::~DiningWindow()
 
 void DiningWindow::on_pushButton_viewInmates_clicked(bool checked)
 {
+    ui->stackedWidget->setCurrentIndex(0);
     QSqlDatabase db = Database::getDatabase();
 /*
     QSqlTableModel *model = new QSqlTableModel(this, db);
@@ -42,6 +53,7 @@ void DiningWindow::on_pushButton_viewInmates_clicked(bool checked)
 
 void DiningWindow::on_pushButton_viewOfficers_clicked(bool checked)
 {
+    ui->stackedWidget->setCurrentIndex(0);
     QSqlDatabase db = Database::getDatabase();
 
     /*QSqlQueryModel *model = new QSqlQueryModel;
@@ -77,7 +89,7 @@ void DiningWindow::on_pushSearch_clicked()
     ui->tableView->setModel(model);
 }
 
-void DiningWindow::on_pushButton_viewOfficers_clicked()
+void DiningWindow::on_pushButton_18_clicked()
 {
-
+    ui->stackedWidget->setCurrentIndex(1);
 }

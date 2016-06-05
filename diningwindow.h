@@ -26,7 +26,7 @@ private slots:
 
     void on_pushSearch_clicked();
 
-    void on_pushButton_viewOfficers_clicked();
+    void on_pushButton_18_clicked();
 
 private:
     Ui::DiningWindow *ui;
