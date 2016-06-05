@@ -135,6 +135,10 @@ void MainWindow::SetPermission(int OfficerType)
         ui->toolButton_rehab->setEnabled(false);
         ui->permision->setText("Management");
     }
+    else if (OfficerType == ADMINTYPE)
+    {
+        ui->permision->setText("Administrator");
+    }
 }
 
 void MainWindow::on_toolButton_Dashboard_clicked()

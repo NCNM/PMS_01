@@ -99,7 +99,14 @@ void LoginDialog::loginSuccess()
     IDType[0] = tmp[0];
     IDType[1] = tmp[1];
     //qDebug() << tmp;
-    if (IDType == RELATIVE)
+    if (IDType == ADMIN)
+    {
+        this_mw = new MainWindow(ADMINTYPE, mID);
+        this_mw->show();
+
+        this->close();
+    }
+    else if (IDType == RELATIVE)
     {
         this_mw = new MainWindow(RELATIVETYPE, mID);
         this_mw->show();
