@@ -31,7 +31,7 @@ LoginDialog::~LoginDialog()
 
 void LoginDialog::on_pushButton_5_clicked()
 {
-    if ((ui->txtID->text() == "admin") && (ui->txtPassword->text() =="admin"))
+    if ((ui->txtID->text() == "admin") && (ui->txtPassword->text() == "admin"))
     {
         loginSuccess();
     }
@@ -52,12 +52,12 @@ void LoginDialog::on_pushButton_5_clicked()
              return;
          }
 
-         //succes
+         //success
          query.next();
          mID = query.value(0).toString();
          loginSuccess();
 
-         //QMessageBox::critical(this, "Error", "Please connect to database server first!");
+         QMessageBox::critical(this, "Error", "Please connect to database server first!");
     }
 }
 

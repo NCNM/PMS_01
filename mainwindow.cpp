@@ -16,7 +16,6 @@ MainWindow::MainWindow(int OfficerType, QString ID, QWidget *parent) :
 
     ui->nameID->setText(ID);
 
-    ui->statusBar->showMessage("<i> Setting permissions...");
     SetPermission(OfficerType);
 
 
@@ -141,6 +140,7 @@ void MainWindow::SetPermission(int OfficerType)
     }
     else if (OfficerType == ADMINTYPE)
     {
+        ui->nameID->setText("admin");
         ui->permision->setText("Administrator");
     }
 }

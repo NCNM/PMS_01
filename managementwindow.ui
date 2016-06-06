@@ -85,8 +85,7 @@ background-color: #222222;
 
 QPushButton:checked {
 border-radius:10px;
-border: 1px solid rgb(150, 150, 150);
-background-color: rgb(38, 38, 38);
+background-color: rgb(120, 120, 120);
 }
 
 </string>
@@ -133,8 +132,7 @@ background-color: #222222;
 
 QPushButton:checked {
 border-radius:10px;
-border: 1px solid rgb(150, 150, 150);
-background-color: rgb(38, 38, 38);
+background-color: rgb(120, 120, 120);
 }
 
 </string>
@@ -219,8 +217,7 @@ background-color: #222222;
 
 QPushButton:checked {
 border-radius:10px;
-border: 1px solid rgb(150, 150, 150);
-background-color: rgb(38, 38, 38);
+background-color: rgb(120, 120, 120);
 }
 
 </string>
@@ -305,8 +302,7 @@ background-color: #222222;
 
 QPushButton:checked {
 border-radius:10px;
-border: 1px solid rgb(150, 150, 150);
-background-color: rgb(38, 38, 38);
+background-color: rgb(120, 120, 120);
 }
 
 </string>
