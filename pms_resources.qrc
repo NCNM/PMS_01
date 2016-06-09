@@ -39,5 +39,8 @@
         <file>note.png</file>
         <file>sidebar_header.png</file>
         <file>login_header.png</file>
+        <file>newinmate_header.png</file>
+        <file>cancel.png</file>
+        <file>left_arrow.png</file>
     </qresource>
 </RCC>

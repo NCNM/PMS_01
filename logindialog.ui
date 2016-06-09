@@ -75,7 +75,7 @@
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>110</y>
+        <y>112</y>
         <width>51</width>
         <height>20</height>
        </rect>
@@ -88,7 +88,7 @@
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>150</y>
+        <y>152</y>
         <width>51</width>
         <height>20</height>
        </rect>
@@ -318,7 +318,7 @@ background-color: rgb(38, 38, 38);
        </font>
       </property>
       <property name="text">
-       <string>Unavailable</string>
+       <string>Not connected</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_7">
@@ -369,11 +369,40 @@ color: rgb(255, 255, 255);</string>
         <x>160</x>
         <y>110</y>
         <width>241</width>
-        <height>20</height>
+        <height>25</height>
        </rect>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QLineEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QLineEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+</string>
+      </property>
       <property name="placeholderText">
-       <string>Your user ID</string>
+       <string>Your user account ID</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="txtPassword">
@@ -382,8 +411,37 @@ color: rgb(255, 255, 255);</string>
         <x>160</x>
         <y>150</y>
         <width>241</width>
-        <height>20</height>
+        <height>25</height>
        </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QLineEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QLineEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+</string>
       </property>
       <property name="inputMask">
        <string/>
@@ -641,7 +699,7 @@ stop: 0.39999 #717171, stop: 0.4 #626262,
 stop: 0.9 #4c4c4c, stop: 1 #333333);</string>
         </property>
         <property name="text">
-         <string>Remember details</string>
+         <string>Remember login details</string>
         </property>
        </widget>
       </item>
@@ -679,6 +737,9 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);</string>
         </property>
         <property name="text">
          <string>Login</string>
+        </property>
+        <property name="default">
+         <bool>true</bool>
         </property>
        </widget>
       </item>

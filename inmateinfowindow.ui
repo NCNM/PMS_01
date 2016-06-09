@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>newinmateform</class>
- <widget class="QWidget" name="newinmateform">
+ <class>InmateInfoWindow</class>
+ <widget class="QWidget" name="InmateInfoWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>734</width>
-    <height>412</height>
+    <width>796</width>
+    <height>467</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>New inmate</string>
-  </property>
-  <property name="windowIcon">
-   <iconset resource="pms_resources.qrc">
-    <normaloff>:/images/door_open.png</normaloff>:/images/door_open.png</iconset>
+   <string>Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -60,7 +56,7 @@
       <string notr="true">QWidget #header {
 	
 	background-color: rgb(255, 255, 255);
-	background-image: url(:/images/newinmate_header.png);
+	background-image: url(:/images/subwindow_header.png);
 }</string>
      </property>
      <property name="frameShape">
@@ -93,7 +89,7 @@ color: rgb(0, 0, 0);
 background-image: 0;</string>
       </property>
       <property name="text">
-       <string>Add new inmate</string>
+       <string>Detailed inmate information</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_2">
@@ -111,7 +107,7 @@ color: rgb(0, 0, 0);
 background-image: 0;</string>
       </property>
       <property name="text">
-       <string>Input the detailed information of the new inmate, then click Add entry</string>
+       <string>name, age</string>
       </property>
      </widget>
     </widget>
@@ -205,7 +201,7 @@ QFrame {
         </property>
         <property name="maximumSize">
          <size>
-          <width>180</width>
+          <width>250</width>
           <height>16777215</height>
          </size>
         </property>
@@ -216,22 +212,12 @@ QFrame {
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="topMargin">
+          <number>15</number>
+         </property>
          <property name="rightMargin">
           <number>15</number>
          </property>
-         <item>
-          <widget class="QLabel" name="label_13">
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>25</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Inmate photo:</string>
-           </property>
-          </widget>
-         </item>
          <item>
           <widget class="QGraphicsView" name="gv_Photo">
            <property name="maximumSize">
@@ -239,69 +225,6 @@ QFrame {
              <width>16777215</width>
              <height>200</height>
             </size>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton_4">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>27</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-color: rgb(50, 50, 50);
-padding-left:7px;
-border-radius:5px;
-border: 1px solid rgb(200, 200, 200);
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 rgb(255, 255, 255), stop: 1 rgb(229, 229, 229));
-}
-
-QPushButton:hover {
-color: rgb(255, 255, 255);
-border-radius:5px;
-border: 1px solid rgb(23, 120, 173);
-background-color: ;
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 rgb(161, 215, 255), stop: 1 #299ED6);
-}
-
-QPushButton:pressed {
-border-radius:5px;
-border: 1px solid #777777;
-background-color: #222222;
-}
-
-QPushButton:checked {
-border-radius:5px;
-border: 1px solid rgb(150, 150, 150);
-background-color: rgb(38, 38, 38);
-}
-
-</string>
-           </property>
-           <property name="text">
-            <string>Load photo</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="lbl_Filename">
-           <property name="font">
-            <font>
-             <italic>true</italic>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(152, 152, 152);</string>
-           </property>
-           <property name="text">
-            <string>filename</string>
            </property>
           </widget>
          </item>
@@ -349,8 +272,11 @@ background-color: rgb(38, 38, 38);
          <property name="topMargin">
           <number>15</number>
          </property>
+         <property name="horizontalSpacing">
+          <number>8</number>
+         </property>
          <property name="verticalSpacing">
-          <number>15</number>
+          <number>18</number>
          </property>
          <item row="0" column="0">
           <widget class="QLabel" name="label_3">
@@ -399,7 +325,7 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="0" column="3" colspan="2">
+         <item row="0" column="3" colspan="3">
           <widget class="QLineEdit" name="txtMidName">
            <property name="minimumSize">
             <size>
@@ -432,7 +358,7 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="0" column="5" colspan="2">
+         <item row="0" column="6">
           <widget class="QLabel" name="label_4">
            <property name="text">
             <string>Last name:</string>
@@ -480,7 +406,7 @@ border: 1px solid #777777;
           </widget>
          </item>
          <item row="1" column="1" colspan="2">
-          <widget class="QComboBox" name="cmbGender">
+          <widget class="QLineEdit" name="txtGender">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -488,55 +414,28 @@ border: 1px solid #777777;
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QComboBox {
+            <string notr="true">QLineEdit {
 color: rgb(50, 50, 50);
 padding-left:7px;
 border-radius:5px;
 border: 1px solid rgb(170, 170, 170);
 background: qradialgradient(cx: 0.3, cy: -0.4,
 fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(248, 248, 248));
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
 }
 
-QComboBox:hover {
-color: rgb(255, 255, 255);
+QLineEdit:hover {
 border-radius:5px;
 border: 1px solid rgb(23, 120, 173);
-background-color: ;
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 rgb(161, 215, 255), stop: 1 #299ED6);
+background-color: rgb(255, 255, 255);
 }
 
-QComboBox:pressed {
+QLineEdit:pressed {
 border-radius:5px;
 border: 1px solid #777777;
 }
-
-QComboBox::drop-down {
-	subcontrol-origin: padding;
-	subcontrol-position: top right;
-	width: 25px;
- 
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;
-}
-
-QComboBox::down-arrow {
-	image: url(:/images/cmbbox_arrow.png);
-}
 </string>
            </property>
-           <item>
-            <property name="text">
-             <string>Male</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Female</string>
-            </property>
-           </item>
           </widget>
          </item>
          <item row="1" column="3" colspan="2">
@@ -547,7 +446,7 @@ QComboBox::down-arrow {
           </widget>
          </item>
          <item row="1" column="5" colspan="3">
-          <widget class="QDateEdit" name="deDOB">
+          <widget class="QLineEdit" name="txtDOB">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -555,7 +454,7 @@ QComboBox::down-arrow {
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QDateEdit {
+            <string notr="true">QLineEdit {
 color: rgb(50, 50, 50);
 padding-left:7px;
 border-radius:5px;
@@ -565,50 +464,15 @@ fx: 0.3, fy: -0.4,
 radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
 }
 
-QDateEdit:hover {
+QLineEdit:hover {
 border-radius:5px;
 border: 1px solid rgb(23, 120, 173);
 background-color: rgb(255, 255, 255);
 }
 
-QDateEdit:pressed {
+QLineEdit:pressed {
 border-radius:5px;
 border: 1px solid #777777;
-}
-
-QDateEdit::down-button {
-	subcontrol-origin: padding;
-	subcontrol-position: bottom right;
-	width: 25px;
- 
-	border-top-right-radius: 1px;
-	border-bottom-right-radius: 1px;
-}
-
-QDateEdit::down-button:hover {
-	background-color: rgb(227, 227, 227);
-}
-
-
-QDateEdit::down-arrow {
-	image: url(:/images/scroll_down.png);
-}
-
-QDateEdit::up-button {
-	subcontrol-origin: padding;
-	subcontrol-position: top right;
-	width: 25px;
- 
-	border-top-right-radius: 1px;
-	border-bottom-right-radius: 1px;
-}
-
-QDateEdit::up-button:hover {
-	background-color: rgb(227, 227, 227);
-}
-
-QDateEdit::up-arrow {
-	image: url(:/images/scroll_up.png);
 }
 </string>
            </property>
@@ -701,7 +565,7 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="3" column="3" colspan="2">
+         <item row="3" column="3" colspan="3">
           <widget class="QLineEdit" name="txtEyes">
            <property name="minimumSize">
             <size>
@@ -734,7 +598,7 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="3" column="5">
+         <item row="3" column="6">
           <widget class="QLabel" name="label_10">
            <property name="text">
             <string>Hair color:</string>
@@ -821,7 +685,57 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="5" column="1" colspan="3">
+         <item row="6" column="2">
+          <widget class="QFrame" name="frame_7">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="5" colspan="3">
+          <widget class="QLineEdit" name="txtAvaialable">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>27</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QLineEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QLineEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="4">
+          <widget class="QLabel" name="label_13">
+           <property name="text">
+            <string>Availability for visits:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1" colspan="2">
           <widget class="QLineEdit" name="txtCustody">
            <property name="minimumSize">
             <size>
@@ -854,88 +768,10 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="5" column="4" colspan="2">
-          <widget class="QLabel" name="label_15">
-           <property name="text">
-            <string>Available for visits:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="6" colspan="2">
-          <widget class="QComboBox" name="cmbAvailable">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>27</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QComboBox {
-color: rgb(50, 50, 50);
-padding-left:7px;
-border-radius:5px;
-border: 1px solid rgb(170, 170, 170);
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(248, 248, 248));
-}
-
-QComboBox:hover {
-color: rgb(255, 255, 255);
-border-radius:5px;
-border: 1px solid rgb(23, 120, 173);
-background-color: ;
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 rgb(161, 215, 255), stop: 1 #299ED6);
-}
-
-QComboBox:pressed {
-border-radius:5px;
-border: 1px solid #777777;
-}
-
-QComboBox::drop-down {
-	subcontrol-origin: padding;
-	subcontrol-position: top right;
-	width: 25px;
- 
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;
-}
-
-QComboBox::down-arrow {
-	image: url(:/images/cmbbox_arrow.png);
-}
-</string>
-           </property>
-           <item>
-            <property name="text">
-             <string>Yes</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>No</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="6" column="2">
-          <widget class="QFrame" name="frame_7">
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-          </widget>
-         </item>
         </layout>
         <zorder>label_12</zorder>
         <zorder>label_4</zorder>
         <zorder>txtHair</zorder>
-        <zorder>deDOB</zorder>
         <zorder>txtEth</zorder>
         <zorder>txtLastName</zorder>
         <zorder>label_9</zorder>
@@ -949,14 +785,15 @@ QComboBox::down-arrow {
         <zorder>label_6</zorder>
         <zorder>label_10</zorder>
         <zorder>txtReason</zorder>
-        <zorder>cmbGender</zorder>
         <zorder>txtCustody</zorder>
         <zorder>label_8</zorder>
         <zorder>txtMidName</zorder>
         <zorder>label_14</zorder>
         <zorder>frame_7</zorder>
-        <zorder>label_15</zorder>
-        <zorder>cmbAvailable</zorder>
+        <zorder>txtGender</zorder>
+        <zorder>txtDOB</zorder>
+        <zorder>txtAvaialable</zorder>
+        <zorder>label_13</zorder>
        </widget>
       </item>
      </layout>
@@ -1086,35 +923,6 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
-        <property name="minimumSize">
-         <size>
-          <width>94</width>
-          <height>27</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>85</width>
-          <height>27</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Add entry</string>
-        </property>
-        <property name="icon">
-         <iconset resource="pms_resources.qrc">
-          <normaloff>:/images/add_new.png</normaloff>:/images/add_new.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>24</width>
-          <height>24</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QPushButton" name="pushButton">
         <property name="minimumSize">
          <size>
@@ -1132,11 +940,11 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
          <string notr="true"/>
         </property>
         <property name="text">
-         <string>Cancel</string>
+         <string>Go back</string>
         </property>
         <property name="icon">
          <iconset resource="pms_resources.qrc">
-          <normaloff>:/images/cancel.png</normaloff>:/images/cancel.png</iconset>
+          <normaloff>:/images/left_arrow.png</normaloff>:/images/left_arrow.png</iconset>
         </property>
         <property name="iconSize">
          <size>

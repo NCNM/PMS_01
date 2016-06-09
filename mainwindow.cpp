@@ -112,7 +112,7 @@ void MainWindow::SetPermission(int OfficerType)
         ui->toolButton_etrr->setEnabled(false);
         ui->toolButton_mng->setEnabled(false);
         ui->toolButton_rehab->setEnabled(false);
-        ui->permision->setText("Health care");
+        ui->permision->setText("Healthcare");
     }
     else if (OfficerType == ENTRY_RELEASETYPE)
     {

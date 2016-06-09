@@ -1,5 +1,6 @@
 #include "entryreleaseform.h"
 #include "ui_entryreleaseform.h"
+#include "newinmateform.h"
 #include <QDebug>
 
 EntryReleaseForm::EntryReleaseForm(QWidget *parent) :
@@ -33,7 +34,10 @@ void EntryReleaseForm::on_pushButton_3_clicked()
 
 void EntryReleaseForm::on_pushButton_2_clicked()
 {
-    model->insertRow(model->rowCount());
+    // model->insertRow(model->rowCount());
+    newinmateform* nif = new newinmateform;
+    nif->setWindowFlags(Qt::MSWindowsFixedSizeDialogHint);
+    nif->show();
 }
 
 void EntryReleaseForm::on_pushButton_clicked()

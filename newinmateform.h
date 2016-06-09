@@ -15,6 +15,11 @@ public:
     explicit newinmateform(QWidget *parent = 0);
     ~newinmateform();
 
+private slots:
+    void on_pushButton_clicked();
+
+    void on_pushButton_4_clicked();
+
 private:
     Ui::newinmateform *ui;
 };

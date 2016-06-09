@@ -693,26 +693,31 @@ background-color:0;</string>
                       <string notr="true">QPushButton {
 color: rgb(50, 50, 50);
 padding-left:7px;
-border-radius:8px;
-border: 1px solid rgb(210, 210, 210);
-background-color: rgb(245, 245, 245);
+border-radius:5px;
+border: 1px solid rgb(200, 200, 200);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(255, 255, 255), stop: 1 rgb(229, 229, 229));
 }
 
 QPushButton:hover {
 color: rgb(255, 255, 255);
-border-radius:8px;
+border-radius:5px;
 border: 1px solid rgb(23, 120, 173);
-background-color: #299ED6;
+background-color: ;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(161, 215, 255), stop: 1 #299ED6);
 }
 
 QPushButton:pressed {
-border-radius:10px;
+border-radius:5px;
 border: 1px solid #777777;
 background-color: #222222;
 }
 
 QPushButton:checked {
-border-radius:10px;
+border-radius:5px;
 border: 1px solid rgb(150, 150, 150);
 background-color: rgb(38, 38, 38);
 }
@@ -812,26 +817,31 @@ background-color: rgb(38, 38, 38);
                    <string notr="true">QPushButton {
 color: rgb(50, 50, 50);
 padding-left:7px;
-border-radius:8px;
-border: 1px solid rgb(210, 210, 210);
-background-color: rgb(245, 245, 245);
+border-radius:5px;
+border: 1px solid rgb(200, 200, 200);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(255, 255, 255), stop: 1 rgb(229, 229, 229));
 }
 
 QPushButton:hover {
 color: rgb(255, 255, 255);
-border-radius:8px;
+border-radius:5px;
 border: 1px solid rgb(23, 120, 173);
-background-color: #299ED6;
+background-color: ;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(161, 215, 255), stop: 1 #299ED6);
 }
 
 QPushButton:pressed {
-border-radius:10px;
+border-radius:5px;
 border: 1px solid #777777;
 background-color: #222222;
 }
 
 QPushButton:checked {
-border-radius:10px;
+border-radius:5px;
 border: 1px solid rgb(150, 150, 150);
 background-color: rgb(38, 38, 38);
 }
@@ -861,26 +871,31 @@ background-color: rgb(38, 38, 38);
                    <string notr="true">QPushButton {
 color: rgb(50, 50, 50);
 padding-left:7px;
-border-radius:8px;
-border: 1px solid rgb(210, 210, 210);
-background-color: rgb(245, 245, 245);
+border-radius:5px;
+border: 1px solid rgb(200, 200, 200);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(255, 255, 255), stop: 1 rgb(229, 229, 229));
 }
 
 QPushButton:hover {
 color: rgb(255, 255, 255);
-border-radius:8px;
+border-radius:5px;
 border: 1px solid rgb(23, 120, 173);
-background-color: #299ED6;
+background-color: ;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(161, 215, 255), stop: 1 #299ED6);
 }
 
 QPushButton:pressed {
-border-radius:10px;
+border-radius:5px;
 border: 1px solid #777777;
 background-color: #222222;
 }
 
 QPushButton:checked {
-border-radius:10px;
+border-radius:5px;
 border: 1px solid rgb(150, 150, 150);
 background-color: rgb(38, 38, 38);
 }
@@ -964,6 +979,16 @@ background-color: rgb(38, 38, 38);
                </property>
               </widget>
              </item>
+             <item row="2" column="0">
+              <widget class="QFrame" name="frame_11">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+              </widget>
+             </item>
              <item row="1" column="0">
               <widget class="QFrame" name="frame_10">
                <property name="maximumSize">
@@ -1031,16 +1056,6 @@ background-color: rgb(38, 38, 38);
                </layout>
               </widget>
              </item>
-             <item row="2" column="0">
-              <widget class="QFrame" name="frame_11">
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-              </widget>
-             </item>
              <item row="2" column="1" colspan="2">
               <widget class="QFrame" name="frame_13">
                <property name="frameShape">
@@ -1050,13 +1065,164 @@ background-color: rgb(38, 38, 38);
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_4">
+                <property name="spacing">
+                 <number>9</number>
+                </property>
                 <property name="leftMargin">
                  <number>5</number>
                 </property>
                 <item>
                  <widget class="QLabel" name="label_4">
                   <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;The definitive prision management system&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;Developed by the NCNM team.&lt;/p&gt;&lt;p&gt;Credits:&lt;/p&gt;&lt;p&gt;&lt;br/&gt;Lê Dân&lt;/p&gt;&lt;p&gt;Nguyễn Thanh Danh&lt;/p&gt;&lt;p&gt;Hồ Dương Nhật Duy&lt;/p&gt;&lt;p&gt;Phạm Minh Quang Duy&lt;/p&gt;&lt;p&gt;Đặng Nhật Duy&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;The definitive prision management system&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;Developed by the NCNM team.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QTextBrowser" name="textBrowser">
+                  <property name="styleSheet">
+                   <string notr="true">QScrollBar:horizontal {
+	background-color: white;
+    height: 14px;
+    margin: 0px 20px 0px 20px;
+}
+
+QScrollBar::handle:horizontal {
+	background-color: rgb(195, 195, 195);
+    min-width: 15px;
+}
+
+QScrollBar::add-line:horizontal {
+	border-image: url(:/images/scroll_right.png);
+    width: 16px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:horizontal {
+	border-image: url(:/images/scroll_left.png);
+    width: 16px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+
+QScrollBar:vertical {
+	width:14px;
+	background-color: white;
+	margin: 20px 0px 20px 0px;
+}
+
+QScrollBar::handle:vertical {
+	background-color: rgb(195, 195, 195);
+    min-height: 15px;
+}
+
+QScrollBar::add-line:vertical {
+	border-image: url(:/images/scroll_down.png);
+    height: 16px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical {
+	border-image: url(:/images/scroll_up.png);
+    height: 16px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QFrame {
+	background-color: rgb(255, 255, 255);
+}</string>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::NoFrame</enum>
+                  </property>
+                  <property name="html">
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;1412078&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;	Lê Dân		&lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic;&quot;&gt;Project manager&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;1412075&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;	Nguyễn Thanh Danh	&lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic;&quot;&gt;Documentation &amp;amp; architectural design&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;1412081&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;	Hồ Dương Nhật Duy	&lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic;&quot;&gt;Application logic&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;1412093&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;	Phạm Minh Quang Duy	&lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic;&quot;&gt;User interface&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;1412079&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;	Đặng Nhật Duy		&lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic;&quot;&gt;Documentation &amp;amp; database design&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline;&quot;&gt;Third-party credits:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-style:italic;&quot;&gt;Qt Stylesheet Button Bar Tutorial&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;  by Dave Smith&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-style:italic;&quot;&gt;Farm-Fresh Web Icons&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; from FatCow Web Hosting&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Button icons from Syncfusion's &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic;&quot;&gt;Metro Studio&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_3">
+                  <property name="minimumSize">
+                   <size>
+                    <width>135</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>135</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(200, 200, 200);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(255, 255, 255), stop: 1 rgb(229, 229, 229));
+}
+
+QPushButton:hover {
+color: rgb(255, 255, 255);
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: ;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(161, 215, 255), stop: 1 #299ED6);
+}
+
+QPushButton:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border-radius:5px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
+}
+
+</string>
+                  </property>
+                  <property name="text">
+                   <string>Powered by Qt</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="frame_17">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
                   </property>
                  </widget>
                 </item>

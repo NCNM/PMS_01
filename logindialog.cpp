@@ -31,14 +31,23 @@ LoginDialog::~LoginDialog()
 
 void LoginDialog::on_pushButton_5_clicked()
 {
+    //This really needs to change
     if ((ui->txtID->text() == "admin") && (ui->txtPassword->text() == "admin"))
     {
         loginSuccess();
     }
     else
     {
-        if (!connected)
-             on_pushButton_connect_clicked();
+        if (!connected) {
+            QMessageBox::information(this, "Connect to database server", "No database server connection detected. You need\n"
+                                                                         "to connect to a database "
+                                                                         "server first before attempting to log in!\n\n"
+                                                                         "PMS will now attempt to connect using default settings. If "
+                                                                         "it fails, you will\nhave to manually connect to your server. "
+                                                                         "To do so, click Database configuration, enter your"
+                                                                         " database server's details, and then click Connect.");
+            on_pushButton_connect_clicked();
+        }
 
          QSqlDatabase db = Database::getDatabase();
          QString ID = ui->txtID->text();
@@ -55,9 +64,7 @@ void LoginDialog::on_pushButton_5_clicked()
          //success
          query.next();
          mID = query.value(0).toString();
-         loginSuccess();
-
-         QMessageBox::critical(this, "Error", "Please connect to database server first!");
+         loginSuccess(); 
     }
 }
 
@@ -68,6 +75,9 @@ void LoginDialog::on_pushButton_6_clicked()
 
 void LoginDialog::on_pushButton_connect_clicked()
 {
+    ui->serverStatus->setStyleSheet("QLabel { background-color : white; color : gray; }");
+    ui->serverStatus->setText("Connecting...");
+
     QString hostname = ui->plainTextEdit_localhost->toPlainText();
     QString username = ui->plainTextEdit_username->toPlainText();
     QString password = ui->plainTextEdit_pass->toPlainText();
@@ -79,7 +89,7 @@ void LoginDialog::on_pushButton_connect_clicked()
     {
         connected = true;
 
-        ui->serverStatus->setStyleSheet("QLabel { background-color : white; color : blue; }");
+        ui->serverStatus->setStyleSheet("QLabel { background-color : white; color : green; }");
         ui->serverStatus->setText("Connected");
 
         ui->pushButton_connect->setEnabled(0);
@@ -87,6 +97,10 @@ void LoginDialog::on_pushButton_connect_clicked()
         ui->plainTextEdit_pass->setEnabled(0);
         ui->plainTextEdit_port->setEnabled(0);
         ui->plainTextEdit_username->setEnabled(0);
+    }
+    else {
+        ui->serverStatus->setStyleSheet("QLabel { background-color : white; color : red; }");
+        ui->serverStatus->setText("Not connected");
     }
 }
 

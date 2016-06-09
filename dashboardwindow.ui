@@ -177,6 +177,12 @@ background-color:0;</string>
             <property name="spacing">
              <number>9</number>
             </property>
+            <property name="leftMargin">
+             <number>9</number>
+            </property>
+            <property name="rightMargin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QFrame" name="dsbDatabase">
               <property name="styleSheet">
@@ -238,6 +244,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                    <height>50</height>
                   </size>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: 0;</string>
+                 </property>
                  <property name="frameShape">
                   <enum>QFrame::StyledPanel</enum>
                  </property>
@@ -293,6 +302,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                </item>
                <item>
                 <widget class="QFrame" name="frame_7">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: 0;</string>
+                 </property>
                  <property name="frameShape">
                   <enum>QFrame::StyledPanel</enum>
                  </property>
@@ -418,6 +430,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                    <height>50</height>
                   </size>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: 0;</string>
+                 </property>
                  <property name="frameShape">
                   <enum>QFrame::StyledPanel</enum>
                  </property>
@@ -473,6 +488,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                </item>
                <item>
                 <widget class="QFrame" name="frame_9">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: 0;</string>
+                 </property>
                  <property name="frameShape">
                   <enum>QFrame::StyledPanel</enum>
                  </property>
@@ -527,6 +545,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
             <enum>QFrame::Raised</enum>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_3">
+            <property name="leftMargin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QFrame" name="dsbShortcuts">
               <property name="minimumSize">
@@ -600,6 +621,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                    <height>50</height>
                   </size>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: 0;</string>
+                 </property>
                  <property name="frameShape">
                   <enum>QFrame::StyledPanel</enum>
                  </property>
@@ -655,6 +679,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                </item>
                <item>
                 <widget class="QFrame" name="frame_11">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: 0;</string>
+                 </property>
                  <property name="frameShape">
                   <enum>QFrame::StyledPanel</enum>
                  </property>
