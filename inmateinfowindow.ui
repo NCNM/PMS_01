@@ -242,6 +242,39 @@ QFrame {
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QLabel" name="lblError">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <italic>true</italic>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 0, 0);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QFrame" name="frame_3">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
         </layout>
@@ -269,14 +302,17 @@ QFrame {
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QGridLayout" name="gridLayout">
+         <property name="leftMargin">
+          <number>15</number>
+         </property>
          <property name="topMargin">
           <number>15</number>
          </property>
          <property name="horizontalSpacing">
-          <number>8</number>
+          <number>9</number>
          </property>
          <property name="verticalSpacing">
-          <number>18</number>
+          <number>15</number>
          </property>
          <item row="0" column="0">
           <widget class="QLabel" name="label_3">
@@ -328,7 +364,7 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="0" column="3" colspan="3">
+         <item row="0" column="3">
           <widget class="QLineEdit" name="txtMidName">
            <property name="minimumSize">
             <size>
@@ -364,14 +400,14 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="0" column="6">
+         <item row="0" column="4">
           <widget class="QLabel" name="label_4">
            <property name="text">
             <string>First name:</string>
            </property>
           </widget>
          </item>
-         <item row="0" column="7">
+         <item row="0" column="5">
           <widget class="QLineEdit" name="txtLastName">
            <property name="minimumSize">
             <size>
@@ -450,14 +486,14 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="1" column="3" colspan="2">
+         <item row="1" column="3">
           <widget class="QLabel" name="label_5">
            <property name="text">
             <string>Date of birth:</string>
            </property>
           </widget>
          </item>
-         <item row="1" column="5" colspan="3">
+         <item row="1" column="4" colspan="2">
           <widget class="QLineEdit" name="txtDOB">
            <property name="minimumSize">
             <size>
@@ -500,7 +536,7 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="2" column="1" colspan="7">
+         <item row="2" column="1" colspan="5">
           <widget class="QLineEdit" name="txtAddress">
            <property name="minimumSize">
             <size>
@@ -586,7 +622,7 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="3" column="3" colspan="3">
+         <item row="3" column="3">
           <widget class="QLineEdit" name="txtEyes">
            <property name="minimumSize">
             <size>
@@ -622,14 +658,14 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="3" column="6">
+         <item row="3" column="4">
           <widget class="QLabel" name="label_10">
            <property name="text">
             <string>Hair color:</string>
            </property>
           </widget>
          </item>
-         <item row="3" column="7">
+         <item row="3" column="5">
           <widget class="QLineEdit" name="txtHair">
            <property name="minimumSize">
             <size>
@@ -672,7 +708,7 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="4" column="1" colspan="7">
+         <item row="4" column="1" colspan="5">
           <widget class="QLineEdit" name="txtReason">
            <property name="minimumSize">
             <size>
@@ -715,59 +751,6 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="6" column="2">
-          <widget class="QFrame" name="frame_7">
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="5" colspan="3">
-          <widget class="QLineEdit" name="txtAvaialable">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>27</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QLineEdit {
-color: rgb(50, 50, 50);
-padding-left:7px;
-border-radius:5px;
-border: 1px solid rgb(170, 170, 170);
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
-}
-
-QLineEdit:hover {
-border-radius:5px;
-border: 1px solid rgb(23, 120, 173);
-background-color: rgb(255, 255, 255);
-}
-
-QLineEdit:pressed {
-border-radius:5px;
-border: 1px solid #777777;
-}
-</string>
-           </property>
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="4">
-          <widget class="QLabel" name="label_13">
-           <property name="text">
-            <string>Availability for visits:</string>
-           </property>
-          </widget>
-         </item>
          <item row="5" column="1" colspan="2">
           <widget class="QLineEdit" name="txtCustody">
            <property name="minimumSize">
@@ -804,6 +787,145 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
+         <item row="5" column="3">
+          <widget class="QLabel" name="label_13">
+           <property name="text">
+            <string>Availability for visits:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="4" colspan="2">
+          <widget class="QLineEdit" name="txtAvaialable">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>27</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QLineEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QLineEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_15">
+           <property name="text">
+            <string>Bookin:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1" colspan="2">
+          <widget class="QLineEdit" name="txtBookin">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>27</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QLineEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QLineEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="3">
+          <widget class="QLabel" name="label_16">
+           <property name="text">
+            <string>Bookout:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="4" colspan="2">
+          <widget class="QLineEdit" name="txtBookout">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>27</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QLineEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QLineEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="2">
+          <widget class="QFrame" name="frame_7">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+          </widget>
+         </item>
         </layout>
         <zorder>label_12</zorder>
         <zorder>label_4</zorder>
@@ -830,6 +952,10 @@ border: 1px solid #777777;
         <zorder>txtDOB</zorder>
         <zorder>txtAvaialable</zorder>
         <zorder>label_13</zorder>
+        <zorder>txtBookout</zorder>
+        <zorder>txtBookin</zorder>
+        <zorder>label_15</zorder>
+        <zorder>label_16</zorder>
        </widget>
       </item>
      </layout>

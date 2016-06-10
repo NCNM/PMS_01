@@ -7,6 +7,7 @@
 #include <QSqlQueryModel>
 #include <QSqlQuery>
 #include <QDebug>
+#include "inmateinfowindow.h"
 
 namespace Ui {
 class ManagementWindow;
@@ -28,6 +29,11 @@ private slots:
     void on_pushButton_18_clicked();
 
     void on_pushButton_19_clicked();
+
+    void on_tableView_3_doubleClicked(const QModelIndex &index);
+
+signals:
+    void row_activated(InmateInfoWindow* child, int parent);
 
 private:
     Ui::ManagementWindow *ui;

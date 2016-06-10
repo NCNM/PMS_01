@@ -720,6 +720,54 @@ QTimeEdit {
                     </rect>
                    </property>
                   </widget>
+                  <widget class="QPushButton" name="pushButton_5">
+                   <property name="geometry">
+                    <rect>
+                     <x>410</x>
+                     <y>60</y>
+                     <width>75</width>
+                     <height>23</height>
+                    </rect>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(200, 200, 200);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(255, 255, 255), stop: 1 rgb(229, 229, 229));
+}
+
+QPushButton:hover {
+color: rgb(255, 255, 255);
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: ;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(161, 215, 255), stop: 1 #299ED6);
+}
+
+QPushButton:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border-radius:5px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
+}
+
+</string>
+                   </property>
+                   <property name="text">
+                    <string>Load</string>
+                   </property>
+                  </widget>
                  </widget>
                 </item>
                 <item>
@@ -1043,7 +1091,6 @@ padding: 5px;
 background: qradialgradient(cx: 0.3, cy: -0.4,
 fx: 0.3, fy: -0.4,
 radius: 1.35, stop: 0 #fff, stop: 1 #888);
-min-width: 80px;
 }
 
 QPushButton:hover {
@@ -1101,6 +1148,27 @@ background: qradialgradient(cx: 0.4, cy: -0.1,
 fx: 0.4, fy: -0.1,
 radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
 }
+
+QLineEdit {
+color: #333;
+border: 2px solid #555;
+border-radius: 5px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #eee, stop: 1 #ddd);
+min-width: 80px;
+}
+
+QLineEdit:hover {
+background-color: rgb(255, 255, 255);
+}
+
+QLineEdit:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}
 </string>
                   </property>
                   <property name="frameShape">
@@ -1110,30 +1178,80 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                    <enum>QFrame::Raised</enum>
                   </property>
                   <layout class="QHBoxLayout" name="horizontalLayout_3">
-                   <property name="spacing">
-                    <number>6</number>
-                   </property>
-                   <property name="leftMargin">
-                    <number>9</number>
-                   </property>
                    <property name="topMargin">
                     <number>0</number>
-                   </property>
-                   <property name="rightMargin">
-                    <number>9</number>
                    </property>
                    <property name="bottomMargin">
                     <number>0</number>
                    </property>
                    <item>
+                    <widget class="QLineEdit" name="lineEdit_2">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>94</width>
+                       <height>27</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>175</width>
+                       <height>27</height>
+                      </size>
+                     </property>
+                     <property name="placeholderText">
+                      <string>Find...</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="pushSearch">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>27</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>32</width>
+                       <height>27</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="pms_resources.qrc">
+                       <normaloff>:/images/find_icon.png</normaloff>:/images/find_icon.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>24</width>
+                       <height>24</height>
+                      </size>
+                     </property>
+                     <property name="flat">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
                     <widget class="QFrame" name="frame_9">
                      <property name="styleSheet">
                       <string notr="true">border: none;
-background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-stop: 0.08 #7f7f7f,
-stop: 0.39999 #717171, stop: 0.4 #626262,
-stop: 0.9 #4c4c4c, stop: 1 #333333);
-</string>
+background-color: 0;</string>
                      </property>
                      <property name="frameShape">
                       <enum>QFrame::NoFrame</enum>
@@ -1147,7 +1265,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     <widget class="QPushButton" name="pushButton_3">
                      <property name="minimumSize">
                       <size>
-                       <width>94</width>
+                       <width>0</width>
                        <height>0</height>
                       </size>
                      </property>
@@ -1176,7 +1294,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     <widget class="QPushButton" name="pushButton_4">
                      <property name="minimumSize">
                       <size>
-                       <width>94</width>
+                       <width>0</width>
                        <height>0</height>
                       </size>
                      </property>

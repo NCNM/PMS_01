@@ -15,7 +15,7 @@ DiningWindow::DiningWindow(QWidget *parent) :
     model->setQuery("SELECT ID AS ID, Lastname AS \"Last name\", Midname AS \"Middle name\", Firstname as \"First name\", "
                     "Gender AS Gender, DOB AS DOB, Hair AS \"Hair color\", Eyes AS \"Eye color\", "
                     "Eth AS \"Ethnicity\", Addr AS \"Home address\", Reason AS Reason, Custody AS Custody, "
-                    "BookIn AS Bookin, BookOut AS Bookout FROM INMATE", db);
+                    "Availability AS Availability, BookIn AS Bookin, BookOut AS Bookout FROM INMATE", db);
     ui->tableView->setModel(model);
 
     curView = VIEW_INMATE;
@@ -44,7 +44,7 @@ void DiningWindow::on_pushButton_viewInmates_clicked(bool checked)
     model->setQuery("SELECT ID AS ID, Lastname AS \"Last name\", Midname AS \"Middle name\", Firstname as \"First name\", "
                     "Gender AS Gender, DOB AS DOB, Hair AS \"Hair color\", Eyes AS \"Eye color\", "
                     "Eth AS \"Ethnicity\", Addr AS \"Home address\", Reason AS Reason, Custody AS Custody, "
-                    "BookIn AS Bookin, BookOut AS Bookout FROM INMATE", db);
+                    "Availability AS Availability, BookIn AS Bookin, BookOut AS Bookout FROM INMATE", db);
     ui->tableView->setModel(model);
 
     curView = VIEW_INMATE;
@@ -104,4 +104,16 @@ void DiningWindow::on_tableView_doubleClicked(const QModelIndex &index)
     QString ID = index.sibling(index.row(), 0).data().toString();
     InmateInfoWindow * inmateInfo = new InmateInfoWindow(0, ID, curView);
     emit row_activated(inmateInfo, 0);
+}
+
+void DiningWindow::on_pushButton_4_clicked()
+{
+    QSqlDatabase db = Database::getDatabase();
+    QString query;
+    query = ui->txtQuery->toPlainText();
+
+    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery(query, db);
+    ui->tableView->setModel(model);
+    ui->stackedWidget->setCurrentIndex(0);
 }

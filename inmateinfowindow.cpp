@@ -26,6 +26,17 @@ InmateInfoWindow::InmateInfoWindow(QWidget *parent, QString ID, int record_type)
         ui->txtReason->setText((model->data(model->index(0, 11)).toString()));
         ui->txtCustody->setText((model->data(model->index(0, 12)).toString()));
         ui->txtAvaialable->setText(model->data(model->index(0, 13)).toString());
+        ui->txtBookin->setText(model->data(model->index(0, 14)).toString());
+        ui->txtBookout->setText(model->data(model->index(0, 15)).toString());
+        QImage image(model->data(model->index(0, 1)).toString());
+        if(image.isNull()) ui->lblError->setText("No photo found.");
+        else {
+            QGraphicsScene* scene = new QGraphicsScene();
+            QPixmap* item = new QPixmap(QPixmap::fromImage(image));
+            scene->addPixmap(*item);
+            ui->gv_Photo->setScene(scene);
+            ui->gv_Photo->fitInView(scene->sceneRect(), Qt::KeepAspectRatio);
+        }
     }
     else if (record_type == VIEW_OFFICER) {
         query = "SELECT * FROM OFFICER WHERE ID = '" + ID + "'";

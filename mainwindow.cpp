@@ -181,6 +181,7 @@ void MainWindow::on_toolButton_etrr_clicked()
 {
     if (sub_etrr == NULL) {
        etrr = new EntryReleaseForm;
+       connect(etrr, &EntryReleaseForm::row_activated, this, &MainWindow::view_inmate_details);
        sub_etrr = ui->mdiArea->addSubWindow(etrr, Qt::FramelessWindowHint);
        etrr->showMaximized();
        etrr->activateWindow();
@@ -203,6 +204,7 @@ void MainWindow::on_toolButton_mng_clicked()
 {
     if (sub_mng == NULL) {
        mng = new ManagementWindow;
+       connect(mng, &ManagementWindow::row_activated, this, &MainWindow::view_inmate_details);
        sub_mng = ui->mdiArea->addSubWindow(mng, Qt::FramelessWindowHint);
        mng->showMaximized();
        mng->activateWindow();

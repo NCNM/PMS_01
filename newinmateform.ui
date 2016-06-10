@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>734</width>
-    <height>412</height>
+    <height>448</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -71,7 +71,7 @@
      <property name="lineWidth">
       <number>0</number>
      </property>
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="lblTitle">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -95,7 +95,7 @@ background-image: 0;</string>
        <string>Add new inmate</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="lblSubtitle">
       <property name="geometry">
        <rect>
         <x>22</x>
@@ -345,8 +345,14 @@ background-color: rgb(38, 38, 38);
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QGridLayout" name="gridLayout">
-         <property name="topMargin">
+         <property name="leftMargin">
           <number>15</number>
+         </property>
+         <property name="topMargin">
+          <number>18</number>
+         </property>
+         <property name="horizontalSpacing">
+          <number>9</number>
          </property>
          <property name="verticalSpacing">
           <number>15</number>
@@ -391,14 +397,14 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="0" column="2">
+         <item row="0" column="2" colspan="3">
           <widget class="QLabel" name="label_14">
            <property name="text">
             <string>Middle name:</string>
            </property>
           </widget>
          </item>
-         <item row="0" column="3" colspan="2">
+         <item row="0" column="5" colspan="2">
           <widget class="QLineEdit" name="txtMidName">
            <property name="minimumSize">
             <size>
@@ -431,14 +437,14 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="0" column="5" colspan="2">
+         <item row="0" column="7">
           <widget class="QLabel" name="label_4">
            <property name="text">
             <string>Last name:</string>
            </property>
           </widget>
          </item>
-         <item row="0" column="7">
+         <item row="0" column="8">
           <widget class="QLineEdit" name="txtLastName">
            <property name="minimumSize">
             <size>
@@ -472,13 +478,53 @@ border: 1px solid #777777;
           </widget>
          </item>
          <item row="1" column="0">
+          <widget class="QLabel" name="label_16">
+           <property name="text">
+            <string>Inmate ID:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" colspan="2">
+          <widget class="QLineEdit" name="txtID">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>27</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QLineEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QLineEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
           <widget class="QLabel" name="label_6">
            <property name="text">
             <string>Gender:</string>
            </property>
           </widget>
          </item>
-         <item row="1" column="1" colspan="2">
+         <item row="1" column="4" colspan="2">
           <widget class="QComboBox" name="cmbGender">
            <property name="minimumSize">
             <size>
@@ -538,14 +584,14 @@ QComboBox::down-arrow {
            </item>
           </widget>
          </item>
-         <item row="1" column="3" colspan="2">
+         <item row="1" column="6" colspan="2">
           <widget class="QLabel" name="label_5">
            <property name="text">
             <string>Date of birth:</string>
            </property>
           </widget>
          </item>
-         <item row="1" column="5" colspan="3">
+         <item row="1" column="8">
           <widget class="QDateEdit" name="deDOB">
            <property name="minimumSize">
             <size>
@@ -611,6 +657,9 @@ QDateEdit::up-arrow {
 }
 </string>
            </property>
+           <property name="displayFormat">
+            <string>yyyy-M-d</string>
+           </property>
           </widget>
          </item>
          <item row="2" column="0">
@@ -620,7 +669,7 @@ QDateEdit::up-arrow {
            </property>
           </widget>
          </item>
-         <item row="2" column="1" colspan="7">
+         <item row="2" column="1" colspan="8">
           <widget class="QLineEdit" name="txtAddress">
            <property name="minimumSize">
             <size>
@@ -693,14 +742,14 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="3" column="2">
+         <item row="3" column="2" colspan="2">
           <widget class="QLabel" name="label_9">
            <property name="text">
             <string>Eye color:</string>
            </property>
           </widget>
          </item>
-         <item row="3" column="3" colspan="2">
+         <item row="3" column="5" colspan="2">
           <widget class="QLineEdit" name="txtEyes">
            <property name="minimumSize">
             <size>
@@ -733,14 +782,14 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="3" column="5">
+         <item row="3" column="7">
           <widget class="QLabel" name="label_10">
            <property name="text">
             <string>Hair color:</string>
            </property>
           </widget>
          </item>
-         <item row="3" column="7">
+         <item row="3" column="8">
           <widget class="QLineEdit" name="txtHair">
            <property name="minimumSize">
             <size>
@@ -780,7 +829,7 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="4" column="1" colspan="7">
+         <item row="4" column="1" colspan="8">
           <widget class="QLineEdit" name="txtReason">
            <property name="minimumSize">
             <size>
@@ -820,7 +869,7 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="5" column="1" colspan="3">
+         <item row="5" column="1" colspan="5">
           <widget class="QLineEdit" name="txtCustody">
            <property name="minimumSize">
             <size>
@@ -853,14 +902,14 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="5" column="4" colspan="2">
+         <item row="5" column="6" colspan="2">
           <widget class="QLabel" name="label_15">
            <property name="text">
             <string>Available for visits:</string>
            </property>
           </widget>
          </item>
-         <item row="5" column="6" colspan="2">
+         <item row="5" column="8">
           <widget class="QComboBox" name="cmbAvailable">
            <property name="minimumSize">
             <size>
@@ -920,13 +969,169 @@ QComboBox::down-arrow {
            </item>
           </widget>
          </item>
-         <item row="6" column="2">
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_17">
+           <property name="text">
+            <string>Bookin:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1" colspan="4">
+          <widget class="QDateEdit" name="deBookin">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>27</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QDateEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QDateEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QDateEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+
+QDateEdit::down-button {
+	subcontrol-origin: padding;
+	subcontrol-position: bottom right;
+	width: 25px;
+ 
+	border-top-right-radius: 1px;
+	border-bottom-right-radius: 1px;
+}
+
+QDateEdit::down-button:hover {
+	background-color: rgb(227, 227, 227);
+}
+
+
+QDateEdit::down-arrow {
+	image: url(:/images/scroll_down.png);
+}
+
+QDateEdit::up-button {
+	subcontrol-origin: padding;
+	subcontrol-position: top right;
+	width: 25px;
+ 
+	border-top-right-radius: 1px;
+	border-bottom-right-radius: 1px;
+}
+
+QDateEdit::up-button:hover {
+	background-color: rgb(227, 227, 227);
+}
+
+QDateEdit::up-arrow {
+	image: url(:/images/scroll_up.png);
+}
+</string>
+           </property>
+           <property name="displayFormat">
+            <string>yyyy-M-d</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="2" colspan="3">
           <widget class="QFrame" name="frame_7">
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
            </property>
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="7" colspan="2">
+          <widget class="QDateEdit" name="deBookout">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>27</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QDateEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QDateEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QDateEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+
+QDateEdit::down-button {
+	subcontrol-origin: padding;
+	subcontrol-position: bottom right;
+	width: 25px;
+ 
+	border-top-right-radius: 1px;
+	border-bottom-right-radius: 1px;
+}
+
+QDateEdit::down-button:hover {
+	background-color: rgb(227, 227, 227);
+}
+
+
+QDateEdit::down-arrow {
+	image: url(:/images/scroll_down.png);
+}
+
+QDateEdit::up-button {
+	subcontrol-origin: padding;
+	subcontrol-position: top right;
+	width: 25px;
+ 
+	border-top-right-radius: 1px;
+	border-bottom-right-radius: 1px;
+}
+
+QDateEdit::up-button:hover {
+	background-color: rgb(227, 227, 227);
+}
+
+QDateEdit::up-arrow {
+	image: url(:/images/scroll_up.png);
+}
+</string>
+           </property>
+           <property name="displayFormat">
+            <string>yyyy-M-d</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="6">
+          <widget class="QLabel" name="label_18">
+           <property name="text">
+            <string>Bookout:</string>
            </property>
           </widget>
          </item>
@@ -956,6 +1161,12 @@ QComboBox::down-arrow {
         <zorder>frame_7</zorder>
         <zorder>label_15</zorder>
         <zorder>cmbAvailable</zorder>
+        <zorder>label_16</zorder>
+        <zorder>txtID</zorder>
+        <zorder>label_17</zorder>
+        <zorder>deBookin</zorder>
+        <zorder>deBookout</zorder>
+        <zorder>label_18</zorder>
        </widget>
       </item>
      </layout>

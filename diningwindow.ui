@@ -580,7 +580,7 @@ QScrollBar::sub-line:vertical {
                <string notr="true">background-color: rgb(255, 255, 255);</string>
               </property>
               <property name="currentIndex">
-               <number>0</number>
+               <number>1</number>
               </property>
               <widget class="QWidget" name="database">
                <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -881,7 +881,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QPlainTextEdit" name="plainTextEdit">
+                 <widget class="QPlainTextEdit" name="txtQuery">
                   <property name="styleSheet">
                    <string notr="true">background-color: rgb(255, 255, 255);</string>
                   </property>

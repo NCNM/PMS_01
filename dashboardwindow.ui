@@ -325,7 +325,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                      <string notr="true">color: rgb(69, 69, 69);</string>
                     </property>
                     <property name="text">
-                     <string>Database server connection: Disconnected</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Database server connection: &lt;span style=&quot; color:#00aa00;&quot;&gt;Connected&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                    </widget>
                   </item>
@@ -479,7 +479,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                      <string notr="true">background-color: 0;</string>
                     </property>
                     <property name="text">
-                     <string>MESSAGE OF THE DAY</string>
+                     <string>ANNOUNCEMENTS</string>
                     </property>
                    </widget>
                   </item>
@@ -511,7 +511,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                      <string notr="true">color: rgb(69, 69, 69);</string>
                     </property>
                     <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Error: No MotD database found.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;tbh it's not like anyone's gonna care about MotDs anyway.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; color:#ff0000;&quot;&gt;This functionality is not implemented.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;tbh it's not like anyone's gonna care about announcements anyway.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                    </widget>
                   </item>
@@ -552,7 +552,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
              <widget class="QFrame" name="dsbShortcuts">
               <property name="minimumSize">
                <size>
-                <width>92</width>
+                <width>350</width>
                 <height>0</height>
                </size>
               </property>

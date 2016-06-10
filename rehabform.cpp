@@ -28,12 +28,6 @@ void RehabForm::on_pushButton_16_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 
-    /*QSqlDatabase db = Database::getDatabase();
-
-    QSqlQueryModel *model = new QSqlQueryModel;
-    model->setQuery("SELECT * FROM REHABILITATION", db);
-    ui->tableView->setModel(model);*/
-
     QSqlDatabase db = Database::getDatabase();
     model = new QSqlTableModel(this, db);
     model->setTable("REHABILITATION");
@@ -81,4 +75,21 @@ void RehabForm::on_pushButton_17_clicked()
 void RehabForm::on_pushButton_18_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
+}
+
+void RehabForm::on_pushButton_4_clicked()
+{
+    QSqlDatabase db = Database::getDatabase();
+    QString query;
+    query = ui->txtQuery->toPlainText();
+
+    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery(query, db);
+    ui->tableView->setModel(model);
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void RehabForm::on_pushButton_5_clicked()
+{
+    ui->txtQuery->clear();
 }
