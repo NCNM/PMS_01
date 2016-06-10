@@ -15,6 +15,12 @@ public:
     explicit InmateInfoWindow(QWidget *parent = 0);
     ~InmateInfoWindow();
 
+private slots:
+    void on_pushButton_clicked();
+
+signals:
+    void go_back();
+
 private:
     Ui::InmateInfoWindow *ui;
 };

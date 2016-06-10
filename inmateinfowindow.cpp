@@ -12,3 +12,9 @@ InmateInfoWindow::~InmateInfoWindow()
 {
     delete ui;
 }
+
+void InmateInfoWindow::on_pushButton_clicked()
+{
+    emit go_back();
+    this->close();
+}

@@ -1,10 +1,4 @@
 #include "diningwindow.h"
-#include "ui_diningwindow.h"
-#include <database.h>
-#include <QSqlTableModel>
-#include <QSqlQueryModel>
-#include <QSqlQuery>
-#include <QDebug>
 
 DiningWindow::DiningWindow(QWidget *parent) :
     QWidget(parent),
@@ -18,7 +12,10 @@ DiningWindow::DiningWindow(QWidget *parent) :
     QSqlDatabase db = Database::getDatabase();
 
     QSqlQueryModel *model = new QSqlQueryModel;
-    model->setQuery("SELECT * FROM INMATE", db);
+    model->setQuery("SELECT ID AS ID, Lastname AS \"Last name\", Midname AS \"Middle name\", Firstname as \"First name\", "
+                    "Gender AS Gender, DOB AS DOB, Hair AS \"Hair color\", Eyes AS \"Eye color\", "
+                    "Eth AS \"Ethnicity\", Addr AS \"Home address\", Reason AS Reason, Custody AS Custody, "
+                    "BookIn AS Bookin, BookOut AS Bookout FROM INMATE", db);
     ui->tableView->setModel(model);
 
     curView = VIEW_OFFICER;
@@ -100,4 +97,12 @@ void DiningWindow::on_pushButton_18_clicked()
 void DiningWindow::on_pushButton_viewInmates_clicked()
 {
 
+}
+
+void DiningWindow::on_tableView_doubleClicked(const QModelIndex &index)
+{
+    int row = index.row();
+    QString inmateID = index.sibling(row, 0).data().toString();
+    InmateInfoWindow * inmateInfo = new InmateInfoWindow;
+    emit row_activated(inmateInfo, 0);
 }

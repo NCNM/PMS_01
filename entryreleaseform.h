@@ -40,7 +40,7 @@ private slots:
 
 private:
     Ui::EntryReleaseForm *ui;
-    QSqlTableModel *model;
+    QSqlQueryModel *model;
 };
 
 #endif // ENTRYRELEASEFORM_H

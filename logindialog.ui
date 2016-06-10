@@ -672,6 +672,9 @@ background-color: rgb(205, 205, 205);
       </property>
       <item>
        <widget class="QCheckBox" name="checkBox">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>

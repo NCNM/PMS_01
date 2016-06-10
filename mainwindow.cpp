@@ -1,5 +1,3 @@
-#include <QMessageBox>
-#include <QDebug>
 #include "mainwindow.h"
 
 MainWindow::MainWindow(int OfficerType, QString ID, QWidget *parent) :
@@ -160,6 +158,7 @@ void MainWindow::on_toolButton_Dining_clicked()
 {
     if (sub_dining == NULL) {
        dining = new DiningWindow;
+       connect(dining, &DiningWindow::row_activated, this, &MainWindow::view_inmate_details);
        sub_dining = ui->mdiArea->addSubWindow(dining, Qt::FramelessWindowHint);
        dining->showMaximized();
        dining->activateWindow();
@@ -221,4 +220,18 @@ void MainWindow::on_system_clicked()
        system->activateWindow();
     }
     else ui->mdiArea->setActiveSubWindow(sub_system);
+}
+
+void MainWindow::view_inmate_details(InmateInfoWindow* child, int parent)
+{
+        current_sub = ui->mdiArea->currentSubWindow();
+        connect(child, &InmateInfoWindow::go_back, this, &MainWindow::details_closed);
+        ui->mdiArea->addSubWindow(child, Qt::FramelessWindowHint);
+        child->showMaximized();
+        child->activateWindow();
+}
+
+void MainWindow::details_closed()
+{
+    ui->mdiArea->setActiveSubWindow(current_sub);
 }

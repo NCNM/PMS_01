@@ -11,10 +11,11 @@ EntryReleaseForm::EntryReleaseForm(QWidget *parent) :
     ui->stackedWidget->setCurrentIndex(0);
 
     QSqlDatabase db = Database::getDatabase();
-    model = new QSqlTableModel(this, db);
-    model->setTable("INMATE");
-    model->select();
-
+    model = new QSqlQueryModel;
+    model->setQuery("SELECT ID AS ID, Lastname AS \"Last name\", Midname AS \"Middle name\", Firstname as \"First name\", "
+                    "Gender AS Gender, DOB AS DOB, Hair AS \"Hair color\", Eyes AS \"Eye color\", "
+                    "Eth AS \"Ethnicity\", Addr AS \"Home address\", Reason AS Reason, Custody AS Custody, "
+                    "BookIn AS Bookin, BookOut AS Bookout FROM INMATE", db);
     ui->tableView->setModel(model);
 
     ui->pushSearch->setEnabled(true);
@@ -29,7 +30,7 @@ EntryReleaseForm::~EntryReleaseForm()
 
 void EntryReleaseForm::on_pushButton_3_clicked()
 {
-    model->select();
+    // model->select();
 }
 
 void EntryReleaseForm::on_pushButton_2_clicked()
@@ -53,9 +54,9 @@ void EntryReleaseForm::on_pushSearch_clicked()
     QString query;
     query = "SELECT * FROM INMATE WHERE Firstname LIKE '%" + name + "%' OR Midname LIKE '%" + name + "%' OR Lastname LIKE '%" + name + "%'";
 
-    QSqlQueryModel *model = new QSqlQueryModel;
-    model->setQuery(query, db);
-    ui->tableView->setModel(model);
+    QSqlQueryModel *model2 = new QSqlQueryModel;
+    model2->setQuery(query, db);
+    ui->tableView->setModel(model2);
 }
 
 void EntryReleaseForm::on_pushButton_update_clicked()
@@ -63,9 +64,11 @@ void EntryReleaseForm::on_pushButton_update_clicked()
     ui->stackedWidget->setCurrentIndex(0);
 
     QSqlDatabase db = Database::getDatabase();
-    model = new QSqlTableModel(this, db);
-    model->setTable("INMATE");
-    model->select();
+    model = new QSqlQueryModel;
+    model->setQuery("SELECT ID AS ID, Lastname AS \"Last name\", Midname AS \"Middle name\", Firstname as \"First name\", "
+                    "Gender AS Gender, DOB AS DOB, Hair AS \"Hair color\", Eyes AS \"Eye color\", "
+                    "Eth AS \"Ethnicity\", Addr AS \"Home address\", Reason AS Reason, Custody AS Custody, "
+                    "BookIn AS Bookin, BookOut AS Bookout FROM INMATE", db);
 
     ui->tableView->setModel(model);
 

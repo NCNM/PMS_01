@@ -2,7 +2,13 @@
 #define DININGWINDOW_H
 
 #include <QWidget>
+#include <database.h>
 #include <QSqlTableModel>
+#include <QSqlQueryModel>
+#include <QSqlQuery>
+#include <QDebug>
+#include "ui_diningwindow.h"
+#include "inmateinfowindow.h"
 
 #define VIEW_INMATE 1
 #define VIEW_OFFICER 2
@@ -29,6 +35,11 @@ private slots:
     void on_pushButton_18_clicked();
 
     void on_pushButton_viewInmates_clicked();
+
+    void on_tableView_doubleClicked(const QModelIndex &index);
+
+signals:
+    void row_activated(InmateInfoWindow* child, int parent);
 
 private:
     Ui::DiningWindow *ui;

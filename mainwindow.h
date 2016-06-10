@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QMessageBox>
+#include <QDebug>
 #include "database.h"
 #include "ui_mainwindow.h"
 #include "dashboardwindow.h"
@@ -12,6 +14,7 @@
 #include "database.h"
 #include "idofficertype.h"
 #include "systemwindow.h"
+#include "inmateinfowindow.h"
 
 namespace Ui {
 class MainWindow;
@@ -40,6 +43,10 @@ private slots:
 
     void on_system_clicked();
 
+    void view_inmate_details(InmateInfoWindow* child, int parent);
+
+    void details_closed();
+
 private:
     Ui::MainWindow *ui;
 
@@ -67,6 +74,7 @@ private:
     QMdiSubWindow *sub_rehab;
     QMdiSubWindow *sub_mng;
     QMdiSubWindow *sub_system;
+    QMdiSubWindow *current_sub;
 };
 
 #endif // MAINWINDOW_H

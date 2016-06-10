@@ -200,11 +200,11 @@ QToolButton:hover {
 	border-image: url(:/images/banner_hovered.png);
  }
 
-QToolButton:checked {    
+QToolButton:checked {  
 	border-image: url(:/images/banner_selected.png);
  }
 
-QToolButton:pressed {    
+QToolButton:pressed { 
 	border-image: url(:/images/banner_pressed.png);
  }
 </string>
@@ -256,7 +256,7 @@ QToolButton:pressed {
 	color: rgb(255, 255, 255);
  }
 
-QToolButton#toolButton:checked {    
+QToolButton#toolButton:checked {   
 	border-image: url(:/images/banner_selected.png);
  }
 </string>
@@ -310,7 +310,7 @@ QToolButton#toolButton:checked {
 	color: rgb(255, 255, 255);
  }
 
-QToolButton#toolButton:checked {    
+QToolButton#toolButton:checked {   
 	border-image: url(:/images/banner_selected.png);
  }
 </string>
@@ -364,7 +364,7 @@ QToolButton#toolButton:checked {
 	color: rgb(255, 255, 255);
  }
 
-QToolButton#toolButton:checked {    
+QToolButton#toolButton:checked {   
 	border-image: url(:/images/banner_selected.png);
  }
 </string>
@@ -418,7 +418,7 @@ QToolButton#toolButton:checked {
 	color: rgb(255, 255, 255);
  }
 
-QToolButton#toolButton:checked {    
+QToolButton#toolButton:checked {   
 	border-image: url(:/images/banner_selected.png);
  }
 </string>
@@ -472,7 +472,7 @@ QToolButton#toolButton:checked {
 	color: rgb(255, 255, 255);
  }
 
-QToolButton#toolButton:checked {    
+QToolButton#toolButton:checked {   
 	border-image: url(:/images/banner_selected.png);
  }
 </string>
@@ -522,7 +522,14 @@ QToolButton#toolButton:checked {
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">QToolButton {    
+	color: rgb(255, 255, 255);
+ }
+
+QToolButton#toolButton:checked {   
+	border-image: url(:/images/banner_selected.png);
+ }
+</string>
             </property>
             <property name="text">
              <string>Dining</string>
@@ -569,7 +576,14 @@ QToolButton#toolButton:checked {
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">QToolButton {    
+	color: rgb(255, 255, 255);
+ }
+
+QToolButton#toolButton:checked {   
+	border-image: url(:/images/banner_selected.png);
+ }
+</string>
             </property>
             <property name="text">
              <string>Dashboard</string>

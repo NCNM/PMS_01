@@ -54,9 +54,9 @@
      </property>
      <property name="styleSheet">
       <string notr="true">QWidget #header {
-	
 	background-color: rgb(255, 255, 255);
 	background-image: url(:/images/subwindow_header.png);
+	background-repeat: 0;
 }</string>
      </property>
      <property name="frameShape">
@@ -89,7 +89,7 @@ color: rgb(0, 0, 0);
 background-image: 0;</string>
       </property>
       <property name="text">
-       <string>Detailed inmate information</string>
+       <string>Detailed record information</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_2">
@@ -316,6 +316,9 @@ border: 1px solid #777777;
 }
 </string>
            </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
           </widget>
          </item>
          <item row="0" column="2">
@@ -355,6 +358,9 @@ border-radius:5px;
 border: 1px solid #777777;
 }
 </string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -396,6 +402,9 @@ border: 1px solid #777777;
 }
 </string>
            </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
           </widget>
          </item>
          <item row="1" column="0">
@@ -435,6 +444,9 @@ border-radius:5px;
 border: 1px solid #777777;
 }
 </string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -476,6 +488,9 @@ border: 1px solid #777777;
 }
 </string>
            </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
           </widget>
          </item>
          <item row="2" column="0">
@@ -515,6 +530,9 @@ border-radius:5px;
 border: 1px solid #777777;
 }
 </string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -556,6 +574,9 @@ border: 1px solid #777777;
 }
 </string>
            </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
           </widget>
          </item>
          <item row="3" column="2">
@@ -595,6 +616,9 @@ border-radius:5px;
 border: 1px solid #777777;
 }
 </string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -636,6 +660,9 @@ border: 1px solid #777777;
 }
 </string>
            </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
           </widget>
          </item>
          <item row="4" column="0">
@@ -675,6 +702,9 @@ border-radius:5px;
 border: 1px solid #777777;
 }
 </string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -726,6 +756,9 @@ border: 1px solid #777777;
 }
 </string>
            </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
           </widget>
          </item>
          <item row="5" column="4">
@@ -765,6 +798,9 @@ border-radius:5px;
 border: 1px solid #777777;
 }
 </string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
