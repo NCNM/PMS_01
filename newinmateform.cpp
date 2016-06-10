@@ -41,3 +41,8 @@ void newinmateform::on_pushButton_4_clicked()
            ui->lbl_Filename->setText(fileName);
        }
 }
+
+void newinmateform::on_pushButton_2_clicked()
+{
+
+}

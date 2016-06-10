@@ -18,7 +18,7 @@ DiningWindow::DiningWindow(QWidget *parent) :
                     "BookIn AS Bookin, BookOut AS Bookout FROM INMATE", db);
     ui->tableView->setModel(model);
 
-    curView = VIEW_OFFICER;
+    curView = VIEW_INMATE;
     ui->pushSearch->setEnabled(true);
 }
 
@@ -101,8 +101,7 @@ void DiningWindow::on_pushButton_viewInmates_clicked()
 
 void DiningWindow::on_tableView_doubleClicked(const QModelIndex &index)
 {
-    int row = index.row();
-    QString inmateID = index.sibling(row, 0).data().toString();
-    InmateInfoWindow * inmateInfo = new InmateInfoWindow;
+    QString ID = index.sibling(index.row(), 0).data().toString();
+    InmateInfoWindow * inmateInfo = new InmateInfoWindow(0, ID, curView);
     emit row_activated(inmateInfo, 0);
 }

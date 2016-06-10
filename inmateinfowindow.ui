@@ -92,7 +92,7 @@ background-image: 0;</string>
        <string>Detailed record information</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="lblID">
       <property name="geometry">
        <rect>
         <x>22</x>
@@ -107,7 +107,7 @@ color: rgb(0, 0, 0);
 background-image: 0;</string>
       </property>
       <property name="text">
-       <string>name, age</string>
+       <string>record ID</string>
       </property>
      </widget>
     </widget>
@@ -281,7 +281,7 @@ QFrame {
          <item row="0" column="0">
           <widget class="QLabel" name="label_3">
            <property name="text">
-            <string>First name:</string>
+            <string>Last name:</string>
            </property>
           </widget>
          </item>
@@ -367,7 +367,7 @@ border: 1px solid #777777;
          <item row="0" column="6">
           <widget class="QLabel" name="label_4">
            <property name="text">
-            <string>Last name:</string>
+            <string>First name:</string>
            </property>
           </widget>
          </item>
