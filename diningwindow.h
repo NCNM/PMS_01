@@ -28,6 +28,8 @@ private slots:
 
     void on_pushButton_18_clicked();
 
+    void on_pushButton_viewInmates_clicked();
+
 private:
     Ui::DiningWindow *ui;
     QSqlTableModel *model;

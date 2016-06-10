@@ -42,5 +42,6 @@
         <file>newinmate_header.png</file>
         <file>cancel.png</file>
         <file>left_arrow.png</file>
+        <file>button_hover.png</file>
     </qresource>
 </RCC>

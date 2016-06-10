@@ -1,3 +1,4 @@
+#include <QMessageBox>
 #include "systemwindow.h"
 #include "ui_systemwindow.h"
 
@@ -23,4 +24,9 @@ void systemwindow::on_pushButton_16_clicked()
 void systemwindow::on_pushButton_17_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
+}
+
+void systemwindow::on_pushButton_3_clicked()
+{
+    QMessageBox::aboutQt(this, tr("About Qt"));
 }

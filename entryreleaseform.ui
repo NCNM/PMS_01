@@ -475,6 +475,11 @@ QScrollBar::handle:horizontal {
     min-width: 20px;
 }
 
+QScrollBar::handle:horizontal:hover {
+	background-color: #299ed6;
+    min-width: 20px;
+}
+
 QScrollBar::add-line:horizontal {
 	border-image: url(:/images/scroll_right.png);
     width: 16px;
@@ -498,6 +503,11 @@ QScrollBar:vertical {
 QScrollBar::handle:vertical {
 	background-color: rgb(195, 195, 195);
     min-height: 15px;
+}
+
+QScrollBar::handle:vertical:hover {
+	background-color: #299ed6;
+    min-width: 20px;
 }
 
 QScrollBar::add-line:vertical {

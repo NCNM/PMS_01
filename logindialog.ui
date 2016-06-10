@@ -391,7 +391,7 @@ radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
 
 QLineEdit:hover {
 border-radius:5px;
-border: 1px solid rgb(23, 120, 173);
+border: 2px solid #299ed6;
 background-color: rgb(255, 255, 255);
 }
 
@@ -433,7 +433,7 @@ radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
 
 QLineEdit:hover {
 border-radius:5px;
-border: 1px solid rgb(23, 120, 173);
+border: 2px solid #299ed6;
 background-color: rgb(255, 255, 255);
 }
 
@@ -473,10 +473,10 @@ border:0;
 }
 
 QCommandLinkButton:hover {
-color: rgb(255, 255, 255);
-border-radius:5px;
-border: 1px solid rgb(200, 200, 200);
-background-color: rgb(240, 240, 240);
+border-radius: 5px;
+border-style: inset;
+background-color: #FFFFFF;
+border: 2px solid #299ed6;
 }
 
 QCommandLinkButton:pressed {
@@ -577,6 +577,34 @@ background-repeat:0;</string>
     </widget>
    </item>
    <item>
+    <widget class="Line" name="line">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>1</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>1</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(160, 160, 160);</string>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QFrame" name="frame_5">
      <property name="minimumSize">
       <size>
@@ -592,72 +620,33 @@ background-repeat:0;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-color: #333;
-border: 2px solid #555;
 border-radius: 5px;
-padding: 5px;
+border: 1px solid rgb(150, 150, 150);
 background: qradialgradient(cx: 0.3, cy: -0.4,
 fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 #fff, stop: 1 #888);
-min-width: 80px;
+radius: 1.35, stop: 0 #fff, stop: 1 #ccc);
 }
 
 QPushButton:hover {
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+border-style: inset;
+background-color: #FFFFFF;
+border: 2px solid #299ed6;
 }
 
 QPushButton:pressed {
-background: qradialgradient(cx: 0.4, cy: -0.1,
-fx: 0.4, fy: -0.1,
-radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+border: 1px solid rgb(140, 140, 140);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #999, stop: 1 #ddd);
 }
 
 #frame_5 {
 border: none;
-background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-stop: 0 #4c4c4c,
-stop: 0.04 #7a7a7a,
-stop: 0.39999 #717171, stop: 0.4 #626262,
-stop: 0.9 #4c4c4c, stop: 1 #333333);
+background-color: rgb(205, 205, 205);
 }
 
-QComboBox {
-color: #333;
-border: 2px solid #555;
-border-radius: 5px;
-padding: 5px;
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 #fff, stop: 1 #888);
-min-width: 80px;
-}
 
-QComboBox::drop-down {
-	subcontrol-origin: padding;
-	subcontrol-position: top right;
-	width: 25px;
- 
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;
-}
-
-QComboBox::down-arrow {
-	image: url(:/images/cmbbox_arrow.png);
-}
-
-QComboBox:hover {
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
-}
-
-QComboBox:pressed {
-background: qradialgradient(cx: 0.4, cy: -0.1,
-fx: 0.4, fy: -0.1,
-radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
-}</string>
+</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
@@ -670,13 +659,13 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
        <number>6</number>
       </property>
       <property name="leftMargin">
-       <number>9</number>
+       <number>12</number>
       </property>
       <property name="topMargin">
        <number>0</number>
       </property>
       <property name="rightMargin">
-       <number>9</number>
+       <number>12</number>
       </property>
       <property name="bottomMargin">
        <number>0</number>
@@ -690,13 +679,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(255, 255, 255);
-border: none;
-background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-stop: 0 #4c4c4c,
-stop: 0.04 #7a7a7a,
-stop: 0.39999 #717171, stop: 0.4 #626262,
-stop: 0.9 #4c4c4c, stop: 1 #333333);</string>
+         <string notr="true">background-color: 0;</string>
         </property>
         <property name="text">
          <string>Remember login details</string>
@@ -706,12 +689,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);</string>
       <item>
        <widget class="QFrame" name="frame_7">
         <property name="styleSheet">
-         <string notr="true">border: none;
-background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-stop: 0 #4c4c4c,
-stop: 0.04 #7a7a7a,
-stop: 0.39999 #717171, stop: 0.4 #626262,
-stop: 0.9 #4c4c4c, stop: 1 #333333);</string>
+         <string notr="true">background-color: 0;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>
@@ -725,18 +703,28 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);</string>
        <widget class="QPushButton" name="pushButton_5">
         <property name="minimumSize">
          <size>
-          <width>94</width>
-          <height>0</height>
+          <width>0</width>
+          <height>27</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>85</width>
-          <height>16777215</height>
+          <height>27</height>
          </size>
         </property>
         <property name="text">
          <string>Login</string>
+        </property>
+        <property name="icon">
+         <iconset resource="pms_resources.qrc">
+          <normaloff>:/images/check.png</normaloff>:/images/check.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
         </property>
         <property name="default">
          <bool>true</bool>
@@ -747,14 +735,14 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);</string>
        <widget class="QPushButton" name="pushButton_6">
         <property name="minimumSize">
          <size>
-          <width>94</width>
-          <height>0</height>
+          <width>0</width>
+          <height>27</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>85</width>
-          <height>16777215</height>
+          <height>27</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -762,6 +750,16 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);</string>
         </property>
         <property name="text">
          <string>Cancel</string>
+        </property>
+        <property name="icon">
+         <iconset resource="pms_resources.qrc">
+          <normaloff>:/images/cancel.png</normaloff>:/images/cancel.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
         </property>
        </widget>
       </item>
