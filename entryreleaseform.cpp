@@ -2,6 +2,7 @@
 #include "ui_entryreleaseform.h"
 #include "newinmateform.h"
 #include <QDebug>
+#include <QMessageBox>
 
 EntryReleaseForm::EntryReleaseForm(QWidget *parent) :
     QWidget(parent),
@@ -55,7 +56,23 @@ void EntryReleaseForm::on_pushButton_2_clicked()
 
 void EntryReleaseForm::on_pushButton_clicked()
 {
-    model->removeRow(ui->tableView->currentIndex().row());
+    //model->removeRow(ui->tableView->currentIndex().row());
+
+    QString ID = ui->tableView->currentIndex().data().toString();
+
+    if (ID[0] != 'I' && ID[1] != 'M')
+    {
+        QMessageBox::information(this, "Alert", "You must choose the Inmate ID!");
+        return;
+    }
+
+    QSqlDatabase db = Database::getDatabase();
+    QSqlQuery query(db);
+    query.exec("DELETE FROM INMATE WHERE ID = '" + ID + "'");
+
+    QMessageBox::information(this, "Alert", "Success!");
+
+    on_pushButton_update_clicked();
 }
 
 void EntryReleaseForm::on_pushSearch_clicked()

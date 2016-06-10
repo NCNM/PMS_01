@@ -2,6 +2,7 @@
 #include <QMessageBox>
 #include "newinmateform.h"
 #include "ui_newinmateform.h"
+#include <QDebug>
 
 newinmateform::newinmateform(QWidget *parent, int purpose, QString ID) :
     QWidget(parent),
@@ -63,14 +64,15 @@ void newinmateform::on_pushButton_2_clicked()
     QString query;
     if (ui->pushButton_2->text() == "Add entry")
     {
-        query = "INSERT INMATE ('ID', 'Photo', 'Lastname', 'Midname', 'Firstname', "
-                "'Gender', 'DOB', 'Hair', 'Eyes', 'Eth', 'Addr', 'Reason', 'Custody', 'Availability', 'BookIn', "
-                "'BookOut') VALUES (N'" + ui->txtID->text() + ", N'" + ui->lbl_Filename->text() + "', N'" + ui->txtLastName->text() +"', "
+        query = "INSERT INTO INMATE (`ID`, `Photo`, `Lastname`, `Midname`, `Firstname`, "
+                "`Gender`, `DOB`, `Hair`, `Eyes`, `Eth`, `Addr`, `Reason`, `Custody`, `Availability`, `BookIn`, "
+                "`BookOut`) VALUES (N'" + ui->txtID->text() + "', N'" + ui->lbl_Filename->text() + "', N'" + ui->txtLastName->text() +"', "
                 "N'" + ui->txtMidName->text() +"', N'" + ui->txtFirstName->text() +"', N'" + ui->cmbGender->currentText() +"', "
                 "CAST(N'" + ui->deDOB->text() +"' AS Date), N'" + ui->txtHair->text() +"', N'" + ui->txtEyes->text() +"', "
                 "N'" + ui->txtEth->text() +"', N'" + ui->txtAddress->text() +"', N'" + ui->txtReason->text() +"', "
                 "N'" + ui->txtCustody->text() +"', N'" + ui->cmbAvailable->currentText() + "' ,CAST(N'" + ui->deBookin->text() + "' AS Date), "
                 "CAST(N'" + ui->deBookout->text() + "' AS Date));";
+        qDebug() << query;
     }
     else if (ui->pushButton_2->text() == "Update")
     {
