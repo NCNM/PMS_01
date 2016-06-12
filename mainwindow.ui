@@ -169,7 +169,7 @@
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">border-image: url(:/images/doge.jpeg);
+           <string notr="true">border-image: url(:/images/generic_user.jpg);
 border: 2px solid;
 border-color: rgb(17, 53, 108);
 border-radius: 5px</string>

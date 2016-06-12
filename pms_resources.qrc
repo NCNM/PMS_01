@@ -43,5 +43,6 @@
         <file>cancel.png</file>
         <file>left_arrow.png</file>
         <file>button_hover.png</file>
+        <file>generic_user.jpg</file>
     </qresource>
 </RCC>
