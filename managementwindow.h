@@ -32,6 +32,8 @@ private slots:
 
     void on_tableView_3_doubleClicked(const QModelIndex &index);
 
+    void on_tableView_3_pressed(const QModelIndex &index);
+
 signals:
     void row_activated(InmateInfoWindow* child, int parent);
 

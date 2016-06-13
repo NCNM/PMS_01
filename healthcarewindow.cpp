@@ -42,11 +42,6 @@ HealthcareWindow::~HealthcareWindow()
     delete ui;
 }
 
-void HealthcareWindow::on_pushAdd_clicked()
-{
-    model->insertRow(model->rowCount());
-}
-
 void HealthcareWindow::on_pushDelete_clicked()
 {
     model->removeRow(ui->tableView->currentIndex().row());
@@ -168,4 +163,9 @@ void HealthcareWindow::on_pushButton_17_clicked()
 void HealthcareWindow::on_pushButton_18_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
+}
+
+void HealthcareWindow::on_tableView_pressed(const QModelIndex &index)
+{
+    ui->tableView->selectRow(index.row());
 }

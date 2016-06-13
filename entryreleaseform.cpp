@@ -31,7 +31,6 @@ EntryReleaseForm::~EntryReleaseForm()
 
 void EntryReleaseForm::on_pushButton_3_clicked()
 {
-    // model->select();
     QModelIndexList indexes = ui->tableView->selectionModel()->selection().indexes();
     QModelIndex index = indexes.at(0);
     QString ID = index.sibling(index.row(), 0).data().toString();
@@ -56,24 +55,24 @@ void EntryReleaseForm::on_pushButton_2_clicked()
 
 void EntryReleaseForm::on_pushButton_clicked()
 {
-    //model->removeRow(ui->tableView->currentIndex().row());
-
-    QString ID = ui->tableView->currentIndex().data().toString();
-
+    QModelIndexList indexes = ui->tableView->selectionModel()->selection().indexes();
+    QModelIndex index = indexes.at(0);
+    QString ID = index.sibling(index.row(), 0).data().toString();
     if (ID[0] != 'I' && ID[1] != 'M')
     {
-        QMessageBox::information(this, "Alert", "You must choose the Inmate ID!");
+        QMessageBox::critical(this, "Unable to delete", "No entry selected!");
         return;
     }
-
     QSqlDatabase db = Database::getDatabase();
     QSqlQuery query(db);
     query.exec("DELETE FROM INMATE WHERE ID = '" + ID + "'");
 
-    QMessageBox::information(this, "Alert", "Success!");
+    query.exec("INSERT INTO LOG (logtime, content) VALUES ("
+            "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
+            "N'Record deleted.')");
 
     on_pushButton_update_clicked();
-}
+ }
 
 void EntryReleaseForm::on_pushSearch_clicked()
 {
@@ -112,12 +111,29 @@ void EntryReleaseForm::on_pushButton_17_clicked()
 
 void EntryReleaseForm::on_pushButton_18_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(0);
+
+    QSqlDatabase db = Database::getDatabase();
+    model = new QSqlQueryModel;
+    model->setQuery("SELECT ID AS ID, Lastname AS \"Last name\", Midname AS \"Middle name\", Firstname as \"First name\", "
+                    "Gender AS Gender, DOB AS DOB, Hair AS \"Hair color\", Eyes AS \"Eye color\", "
+                    "Eth AS \"Ethnicity\", Addr AS \"Home address\", Reason AS Reason, Custody AS Custody, "
+                    "Availability AS Availability, BookIn AS Bookin, BookOut AS Bookout FROM INMATE WHERE "
+                    "Bookin > NOW() AND DATEDIFF(NOW(), BookIn) <= 7", db);
+
+    ui->tableView->setModel(model);
 }
 
 void EntryReleaseForm::on_pushButton_19_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
+    QSqlDatabase db = Database::getDatabase();
+    model = new QSqlQueryModel;
+    model->setQuery("SELECT mon AS Monday, tue AS Tuesday, wed AS Wednesday, "
+                    "thu AS Thursday, fri AS Friday, sat AS Saturday, sun AS Sunday "
+                    "FROM VISIT_TIMES", db);
+
+    ui->tblVisitTimes->setModel(model);
 }
 
 void EntryReleaseForm::on_pushButton_6_clicked()
@@ -127,6 +143,7 @@ void EntryReleaseForm::on_pushButton_6_clicked()
 
 void EntryReleaseForm::on_tableView_doubleClicked(const QModelIndex &index)
 {
+    ui->tableView->selectRow(index.row());
     QString ID = index.sibling(index.row(), 0).data().toString();
     InmateInfoWindow * inmateInfo = new InmateInfoWindow(0, ID, 1);
     emit row_activated(inmateInfo, 0);
@@ -145,17 +162,67 @@ void EntryReleaseForm::on_pushButton_5_clicked()
 }
 
 void EntryReleaseForm::add_inmate_triggered(QString query) {
-    QSqlQuery qqq;
-    qqq.prepare(query);
-    qqq.exec();
-    QSqlDatabase db = Database::getDatabase();
-    QSqlQueryModel *model = new QSqlQueryModel;
-    model->setQuery(query, db);
-    ui->tableView->setModel(model);
-    model->setQuery("SELECT ID AS ID, Lastname AS \"Last name\", Midname AS \"Middle name\", Firstname as \"First name\", "
-                    "Gender AS Gender, DOB AS DOB, Hair AS \"Hair color\", Eyes AS \"Eye color\", "
-                    "Eth AS \"Ethnicity\", Addr AS \"Home address\", Reason AS Reason, Custody AS Custody, "
-                    "Availability AS Availability, BookIn AS Bookin, BookOut AS Bookout FROM INMATE", db);
-    ui->tableView->setModel(model);
-    ui->stackedWidget->setCurrentIndex(0);
+    QSqlQuery satan_approves;
+    satan_approves.prepare(query);
+    satan_approves.exec();
+    on_pushButton_update_clicked();
+}
+
+void EntryReleaseForm::on_tableView_pressed(const QModelIndex &index)
+{
+    ui->tableView->selectRow(index.row());
+}
+
+void EntryReleaseForm::on_pushButton_9_clicked()
+{
+    QString query;
+
+    query = "DELETE FROM VISIT_TIMES";
+    QSqlQuery satan_approves;
+    satan_approves.prepare(query);
+    satan_approves.exec();
+
+    QString range;
+    range = ui->teStartTime->text() + " - " + ui->teEndTime->text();
+
+    query = "INSERT INTO VISIT_TIMES (static) VALUES ('666')";
+    satan_approves.prepare(query);
+    satan_approves.exec();
+
+    if (ui->chkMon->isChecked() == true) {
+        query = "UPDATE VISIT_TIMES SET mon = '" + range + "' WHERE static = '666'";
+        satan_approves.prepare(query);
+        satan_approves.exec();
+    }
+    if (ui->chkTue->isChecked() == true) {
+        query = "UPDATE VISIT_TIMES SET tue = '" + range + "' WHERE static = '666'";
+        satan_approves.prepare(query);
+        satan_approves.exec();
+    }
+    if (ui->chkWed->isChecked() == true) {
+        query = "UPDATE VISIT_TIMES SET wed = '" + range + "' WHERE static = '666'";
+        satan_approves.prepare(query);
+        satan_approves.exec();
+    }
+    if (ui->chkThu->isChecked() == true) {
+        query = "UPDATE VISIT_TIMES SET thu = '" + range + "' WHERE static = '666'";
+        satan_approves.prepare(query);
+        satan_approves.exec();
+    }
+    if (ui->chkFri->isChecked() == true) {
+        query = "UPDATE VISIT_TIMES SET fri = '" + range + "' WHERE static = '666'";
+        satan_approves.prepare(query);
+        satan_approves.exec();
+    }
+    if (ui->chkSat->isChecked() == true) {
+        query = "UPDATE VISIT_TIMES SET sat = '" + range + "' WHERE static = '666'";
+        satan_approves.prepare(query);
+        satan_approves.exec();
+    }
+    if (ui->chkSun->isChecked() == true) {
+        query = "UPDATE VISIT_TIMES SET sun = '" + range + "' WHERE static = '666'";
+        satan_approves.prepare(query);
+        satan_approves.exec();
+    }
+    on_pushButton_19_clicked();
 }

@@ -18,8 +18,6 @@ public:
 
 private slots:
 
-    void on_pushAdd_clicked();
-
     void on_pushDelete_clicked();
 
     void on_pushModify_clicked();
@@ -33,6 +31,8 @@ private slots:
     void on_pushButton_17_clicked();
 
     void on_pushButton_18_clicked();
+
+    void on_tableView_pressed(const QModelIndex &index);
 
 private:
     Ui::HealthcareWindow *ui;

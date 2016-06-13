@@ -93,3 +93,8 @@ void RehabForm::on_pushButton_5_clicked()
 {
     ui->txtQuery->clear();
 }
+
+void RehabForm::on_tableView_pressed(const QModelIndex &index)
+{
+    ui->tableView->selectRow(index.row());
+}

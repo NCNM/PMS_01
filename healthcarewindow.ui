@@ -827,35 +827,6 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushAdd">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>0</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>85</width>
-                       <height>27</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>Add</string>
-                     </property>
-                     <property name="icon">
-                      <iconset resource="pms_resources.qrc">
-                       <normaloff>:/images/add_new.png</normaloff>:/images/add_new.png</iconset>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>24</width>
-                       <height>24</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
                     <widget class="QPushButton" name="pushDelete">
                      <property name="minimumSize">
                       <size>

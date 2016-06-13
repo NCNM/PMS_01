@@ -39,6 +39,8 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void on_tableView_pressed(const QModelIndex &index);
+
 private:
     Ui::RehabForm *ui;
     QSqlTableModel *model;

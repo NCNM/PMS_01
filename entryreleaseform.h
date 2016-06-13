@@ -46,6 +46,10 @@ private slots:
 
     void add_inmate_triggered(QString query);
 
+    void on_tableView_pressed(const QModelIndex &index);
+
+    void on_pushButton_9_clicked();
+
 signals:
     void row_activated(InmateInfoWindow* child, int parent);
 

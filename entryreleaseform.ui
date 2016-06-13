@@ -579,6 +579,9 @@ QScrollBar::sub-line:vertical {
                <property name="frameShape">
                 <enum>QFrame::NoFrame</enum>
                </property>
+               <attribute name="verticalHeaderVisible">
+                <bool>false</bool>
+               </attribute>
               </widget>
              </item>
              <item>
@@ -1314,6 +1317,42 @@ QTimeEdit::up-button:hover {
 
 QTimeEdit::up-arrow {
 	image: url(:/images/scroll_up.png);
+}
+
+QTableView {
+padding-left:5px;
+padding-top:5px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+}
+
+QTableView:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QTableView:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+
+QCheckBox::indicator {
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+min-width:18px;
+min-height:18px;
+}
+
+QCheckBox::indicator:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(239, 243, 255);
+}
+
+QCheckBox::indicator:checked {
+image: url(:/images/check.png);
+border-color:#555555;
 }</string>
                </property>
                <property name="frameShape">
@@ -1323,12 +1362,15 @@ QTimeEdit::up-arrow {
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_7">
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QFrame" name="frame">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
-                    <height>40</height>
+                    <height>60</height>
                    </size>
                   </property>
                   <property name="maximumSize">
@@ -1379,7 +1421,13 @@ QTimeEdit::up-arrow {
                        <number>0</number>
                       </property>
                       <item>
-                       <widget class="QCheckBox" name="checkBox">
+                       <widget class="QCheckBox" name="chkSun">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>35</height>
+                         </size>
+                        </property>
                         <property name="maximumSize">
                          <size>
                           <width>50</width>
@@ -1392,7 +1440,13 @@ QTimeEdit::up-arrow {
                        </widget>
                       </item>
                       <item>
-                       <widget class="QCheckBox" name="checkBox_2">
+                       <widget class="QCheckBox" name="chkMon">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>35</height>
+                         </size>
+                        </property>
                         <property name="maximumSize">
                          <size>
                           <width>50</width>
@@ -1405,7 +1459,13 @@ QTimeEdit::up-arrow {
                        </widget>
                       </item>
                       <item>
-                       <widget class="QCheckBox" name="checkBox_7">
+                       <widget class="QCheckBox" name="chkTue">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>35</height>
+                         </size>
+                        </property>
                         <property name="maximumSize">
                          <size>
                           <width>50</width>
@@ -1418,7 +1478,13 @@ QTimeEdit::up-arrow {
                        </widget>
                       </item>
                       <item>
-                       <widget class="QCheckBox" name="checkBox_3">
+                       <widget class="QCheckBox" name="chkWed">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>35</height>
+                         </size>
+                        </property>
                         <property name="maximumSize">
                          <size>
                           <width>50</width>
@@ -1431,7 +1497,13 @@ QTimeEdit::up-arrow {
                        </widget>
                       </item>
                       <item>
-                       <widget class="QCheckBox" name="checkBox_4">
+                       <widget class="QCheckBox" name="chkThu">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>35</height>
+                         </size>
+                        </property>
                         <property name="maximumSize">
                          <size>
                           <width>50</width>
@@ -1444,7 +1516,13 @@ QTimeEdit::up-arrow {
                        </widget>
                       </item>
                       <item>
-                       <widget class="QCheckBox" name="checkBox_5">
+                       <widget class="QCheckBox" name="chkFri">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>35</height>
+                         </size>
+                        </property>
                         <property name="maximumSize">
                          <size>
                           <width>50</width>
@@ -1457,7 +1535,13 @@ QTimeEdit::up-arrow {
                        </widget>
                       </item>
                       <item>
-                       <widget class="QCheckBox" name="checkBox_6">
+                       <widget class="QCheckBox" name="chkSat">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>35</height>
+                         </size>
+                        </property>
                         <property name="text">
                          <string>Sat</string>
                         </property>
@@ -1498,7 +1582,7 @@ QTimeEdit::up-arrow {
                     </widget>
                    </item>
                    <item>
-                    <widget class="QTimeEdit" name="timeEdit">
+                    <widget class="QTimeEdit" name="teStartTime">
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -1521,7 +1605,7 @@ QTimeEdit::up-arrow {
                     </widget>
                    </item>
                    <item>
-                    <widget class="QTimeEdit" name="timeEdit_2">
+                    <widget class="QTimeEdit" name="teEndTime">
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -1541,29 +1625,18 @@ QTimeEdit::up-arrow {
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <widget class="QLabel" name="label_12">
-                   <property name="geometry">
-                    <rect>
-                     <x>20</x>
-                     <y>30</y>
-                     <width>261</width>
-                     <height>16</height>
-                    </rect>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                     <weight>75</weight>
-                     <bold>true</bold>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(255, 0, 0);</string>
-                   </property>
-                   <property name="text">
-                    <string>&lt; This functionality is unimplemented &gt;</string>
-                   </property>
-                  </widget>
+                  <layout class="QHBoxLayout" name="horizontalLayout_8">
+                   <item>
+                    <widget class="QTableView" name="tblVisitTimes">
+                     <property name="frameShape">
+                      <enum>QFrame::NoFrame</enum>
+                     </property>
+                     <attribute name="verticalHeaderVisible">
+                      <bool>false</bool>
+                     </attribute>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                </layout>
