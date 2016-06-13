@@ -60,7 +60,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>80</y>
+        <y>96</y>
         <width>181</width>
         <height>21</height>
        </rect>
@@ -215,7 +215,7 @@ background-color: rgb(85, 170, 255);
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>110</y>
+        <y>126</y>
         <width>181</width>
         <height>21</height>
        </rect>
@@ -265,7 +265,7 @@ background-color: rgb(120, 120, 120);
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>140</y>
+        <y>156</y>
         <width>181</width>
         <height>21</height>
        </rect>
@@ -312,7 +312,7 @@ background-color: rgb(120, 120, 120);
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>50</y>
+        <y>66</y>
         <width>181</width>
         <height>21</height>
        </rect>
@@ -355,6 +355,53 @@ background-color: rgb(120, 120, 120);
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QPushButton" name="pushButton_Menu">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(255, 255, 255);
+text-align:left;
+padding-left:7px;
+}
+
+QPushButton:hover {
+border-radius:10px;
+background-color: #299ED6;
+}
+
+QPushButton:pressed {
+border-radius:10px;
+border: 1px solid #777777;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border-radius:10px;
+background-color: rgb(120, 120, 120);
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Menu</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
      <zorder>pushButton_viewOfficers</zorder>
      <zorder>pushButton_20</zorder>
      <zorder>pushButton_21</zorder>
@@ -362,6 +409,7 @@ background-color: rgb(120, 120, 120);
      <zorder>pushButton_19</zorder>
      <zorder>pushButton_viewInmates</zorder>
      <zorder>pushButton_22</zorder>
+     <zorder>pushButton_Menu</zorder>
     </widget>
    </item>
    <item>
@@ -797,6 +845,20 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                      </property>
                      <property name="frameShadow">
                       <enum>QFrame::Raised</enum>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="pushButton_Modify">
+                     <property name="text">
+                      <string>Modify</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="pushButton_Add">
+                     <property name="text">
+                      <string>Add</string>
                      </property>
                     </widget>
                    </item>

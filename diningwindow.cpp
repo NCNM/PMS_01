@@ -7,18 +7,19 @@ DiningWindow::DiningWindow(QWidget *parent) :
     ui->setupUi(this);
     curView = VIEW_NONE;
     ui->pushSearch->setEnabled(false);
-    ui->pushButton_viewInmates->setChecked(true);
+    ui->pushButton_Menu->setChecked(true);
     ui->stackedWidget->setCurrentIndex(0);
-    QSqlDatabase db = Database::getDatabase();
+
+    /*QSqlDatabase db = Database::getDatabase();
 
     QSqlQueryModel *model = new QSqlQueryModel;
     model->setQuery("SELECT ID AS ID, Lastname AS \"Last name\", Midname AS \"Middle name\", Firstname as \"First name\", "
                     "Gender AS Gender, DOB AS DOB, Hair AS \"Hair color\", Eyes AS \"Eye color\", "
                     "Eth AS \"Ethnicity\", Addr AS \"Home address\", Reason AS Reason, Custody AS Custody, "
                     "Availability AS Availability, BookIn AS Bookin, BookOut AS Bookout FROM INMATE", db);
-    ui->tableView->setModel(model);
-
-    curView = VIEW_INMATE;
+    ui->tableView->setModel(model);*/
+    on_pushButton_Menu_clicked(0);
+    curView = VIEW_MENU;
     ui->pushSearch->setEnabled(true);
 }
 
@@ -101,9 +102,9 @@ void DiningWindow::on_pushButton_viewInmates_clicked()
 
 void DiningWindow::on_tableView_doubleClicked(const QModelIndex &index)
 {
-    QString ID = index.sibling(index.row(), 0).data().toString();
+    /*QString ID = index.sibling(index.row(), 0).data().toString();
     InmateInfoWindow * inmateInfo = new InmateInfoWindow(0, ID, curView);
-    emit row_activated(inmateInfo, 0);
+    emit row_activated(inmateInfo, 0);*/
 }
 
 void DiningWindow::on_pushButton_4_clicked()
@@ -114,6 +115,57 @@ void DiningWindow::on_pushButton_4_clicked()
 
     QSqlQueryModel *model = new QSqlQueryModel;
     model->setQuery(query, db);
+    ui->tableView->setModel(model);
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void DiningWindow::on_pushButton_Menu_clicked(bool checked)
+{
+    ui->stackedWidget->setCurrentIndex(0);
+    QSqlDatabase db = Database::getDatabase();
+
+    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery("SELECT ID AS 'ID', _Date AS 'Date', Breakfast as 'Breakfast', "
+                    "Lunch AS 'Lunch', Dinner AS 'Dinner', Subject AS 'Subject' FROM DINING", db);
+    ui->tableView->setModel(model);
+
+    curView = VIEW_MENU;
+    ui->pushSearch->setEnabled(true);
+}
+
+void DiningWindow::on_pushButton_Add_clicked()
+{
+    // model->insertRow(model->rowCount());
+    newmenuform * menu = new newmenuform(0, 0);
+    connect(menu, &newmenuform::exec_query, this, &DiningWindow::exec_query);
+    menu->setWindowFlags(Qt::MSWindowsFixedSizeDialogHint);
+    //connect(menu, &newmenuform::exec_query, this, &DiningWindow::exec_query);
+    menu->show();
+}
+
+void DiningWindow::on_pushButton_Modify_clicked()
+{
+    QModelIndexList indexes = ui->tableView->selectionModel()->selection().indexes();
+    QModelIndex index = indexes.at(0);
+    QString ID = index.sibling(index.row(), 0).data().toString();
+
+    newmenuform * menu = new newmenuform(0, 1, ID);
+    connect(menu, &newmenuform::exec_query, this, &DiningWindow::exec_query);
+    menu->setWindowFlags(Qt::MSWindowsFixedSizeDialogHint);
+    //connect(menu, &newmenuform::exec_query, this, &DiningWindow::exec_query);
+    menu->show();
+}
+
+void DiningWindow::exec_query(QString Squery)
+{
+    qDebug() << Squery;
+    QSqlDatabase db = Database::getDatabase();
+    QSqlQuery query(db);
+    query.exec(Squery);
+
+    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery("SELECT ID AS 'ID', _Date AS 'Date', Breakfast as 'Breakfast', "
+                    "Lunch AS 'Lunch', Dinner AS 'Dinner', Subject AS 'Subject' FROM DINING", db);
     ui->tableView->setModel(model);
     ui->stackedWidget->setCurrentIndex(0);
 }

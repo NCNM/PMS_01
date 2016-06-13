@@ -100,7 +100,7 @@ void newinmateform::on_pushButton_2_clicked()
                 "N'" + ui->txtEth->text() +"', N'" + ui->txtAddress->text() +"', N'" + ui->txtReason->text() +"', "
                 "N'" + ui->txtCustody->text() +"', N'" + ui->cmbAvailable->currentText() + "' ,CAST(N'" + ui->deBookin->text() + "' AS Datetime), "
                 "CAST(N'" + ui->deBookout->text() + "' AS Datetime));";
-        qDebug() << query;
+        //qDebug() << query;
     }
     else if (mode == 1)
     {

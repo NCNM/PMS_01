@@ -9,9 +9,12 @@
 #include <QDebug>
 #include "ui_diningwindow.h"
 #include "inmateinfowindow.h"
+#include "newmenuform.h"
+#include <QDebug>
 
 #define VIEW_INMATE 1
 #define VIEW_OFFICER 2
+#define VIEW_MENU 3
 #define VIEW_NONE 0
 
 namespace Ui {
@@ -39,6 +42,14 @@ private slots:
     void on_tableView_doubleClicked(const QModelIndex &index);
 
     void on_pushButton_4_clicked();
+
+    void on_pushButton_Menu_clicked(bool checked);
+
+    void on_pushButton_Add_clicked();
+
+    void on_pushButton_Modify_clicked();
+
+    void exec_query(QString query);
 
 signals:
     void row_activated(InmateInfoWindow* child, int parent);
