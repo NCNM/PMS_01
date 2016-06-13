@@ -1158,7 +1158,163 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
              <item>
               <widget class="QFrame" name="frame_10">
                <property name="styleSheet">
-                <string notr="true">background-color: rgb(255, 255, 255);</string>
+                <string notr="true">QFrame #frame_7 {
+background-color: rgb(255, 255, 255);
+}
+
+QLineEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QLineEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QLineEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+
+QDateEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QDateEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QDateEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+
+QDateEdit::down-button {
+	subcontrol-origin: padding;
+	subcontrol-position: bottom right;
+	width: 25px;
+ 
+	border-top-right-radius: 1px;
+	border-bottom-right-radius: 1px;
+}
+
+QDateEdit::down-button:hover {
+	background-color: rgb(227, 227, 227);
+}
+
+
+QDateEdit::down-arrow {
+	image: url(:/images/scroll_down.png);
+}
+
+QDateEdit::up-button {
+	subcontrol-origin: padding;
+	subcontrol-position: top right;
+	width: 25px;
+ 
+	border-top-right-radius: 1px;
+	border-bottom-right-radius: 1px;
+}
+
+QDateEdit::up-button:hover {
+	background-color: rgb(227, 227, 227);
+}
+
+QDateEdit::up-arrow {
+	image: url(:/images/scroll_up.png);
+}
+
+QPlainTextEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QPlainTextEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QPlainTextEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+
+QTimeEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QTimeEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QTimeEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+
+QTimeEdit::down-button {
+	subcontrol-origin: padding;
+	subcontrol-position: bottom right;
+	width: 25px;
+ 
+	border-top-right-radius: 1px;
+	border-bottom-right-radius: 1px;
+}
+
+QTimeEdit::down-button:hover {
+	background-color: rgb(227, 227, 227);
+}
+
+
+QTimeEdit::down-arrow {
+	image: url(:/images/scroll_down.png);
+}
+
+QTimeEdit::up-button {
+	subcontrol-origin: padding;
+	subcontrol-position: top right;
+	width: 25px;
+ 
+	border-top-right-radius: 1px;
+	border-bottom-right-radius: 1px;
+}
+
+QTimeEdit::up-button:hover {
+	background-color: rgb(227, 227, 227);
+}
+
+QTimeEdit::up-arrow {
+	image: url(:/images/scroll_up.png);
+}</string>
                </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
@@ -1342,7 +1498,14 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     </widget>
                    </item>
                    <item>
-                    <widget class="QTimeEdit" name="timeEdit"/>
+                    <widget class="QTimeEdit" name="timeEdit">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                    </widget>
                    </item>
                    <item>
                     <widget class="QLabel" name="label_5">
@@ -1358,7 +1521,14 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     </widget>
                    </item>
                    <item>
-                    <widget class="QTimeEdit" name="timeEdit_2"/>
+                    <widget class="QTimeEdit" name="timeEdit_2">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                    </widget>
                    </item>
                   </layout>
                  </widget>

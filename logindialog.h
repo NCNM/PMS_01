@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QTextCursor>
+#include <QDesktopWidget>
 #include <QMessageBox>
 #include <QtSql>
 #include <QSqlError>

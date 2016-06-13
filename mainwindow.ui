@@ -170,9 +170,9 @@
           </property>
           <property name="styleSheet">
            <string notr="true">border-image: url(:/images/generic_user.jpg);
-border: 2px solid;
-border-color: rgb(17, 53, 108);
-border-radius: 5px</string>
+border-radius: 5px;
+
+</string>
           </property>
           <property name="resizeAnchor">
            <enum>QGraphicsView::AnchorViewCenter</enum>

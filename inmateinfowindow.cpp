@@ -10,7 +10,7 @@ InmateInfoWindow::InmateInfoWindow(QWidget *parent, QString ID, int record_type)
     ui->lblID->setText("Record ID: " + ID);
     QSqlDatabase db = Database::getDatabase();
     QString query;
-    QSqlQueryModel *model = new QSqlQueryModel;
+    model = new QSqlQueryModel;
     if (record_type == VIEW_INMATE) {
         query = "SELECT * FROM INMATE WHERE ID = '" + ID + "'";
         model->setQuery(query, db);
@@ -19,24 +19,15 @@ InmateInfoWindow::InmateInfoWindow(QWidget *parent, QString ID, int record_type)
         ui->txtLastName->setText((model->data(model->index(0, 4)).toString()));
         ui->txtGender->setText((model->data(model->index(0, 5)).toString()));
         ui->txtDOB->setText((model->data(model->index(0, 6)).toString()));
-        ui->txtAddress->setText((model->data(model->index(0, 7)).toString()));
-        ui->txtEth->setText((model->data(model->index(0, 8)).toString()));
-        ui->txtEyes->setText((model->data(model->index(0, 9)).toString()));
-        ui->txtHair->setText((model->data(model->index(0, 10)).toString()));
+        ui->txtHair->setText((model->data(model->index(0, 7)).toString()));
+        ui->txtEyes->setText((model->data(model->index(0, 8)).toString()));
+        ui->txtEth->setText((model->data(model->index(0, 9)).toString()));
+        ui->txtAddress->setText((model->data(model->index(0, 10)).toString()));
         ui->txtReason->setText((model->data(model->index(0, 11)).toString()));
         ui->txtCustody->setText((model->data(model->index(0, 12)).toString()));
         ui->txtAvaialable->setText(model->data(model->index(0, 13)).toString());
         ui->txtBookin->setText(model->data(model->index(0, 14)).toString());
         ui->txtBookout->setText(model->data(model->index(0, 15)).toString());
-        QImage image(model->data(model->index(0, 1)).toString());
-        if(image.isNull()) ui->lblError->setText("No photo found.");
-        else {
-            QGraphicsScene* scene = new QGraphicsScene();
-            QPixmap* item = new QPixmap(QPixmap::fromImage(image));
-            scene->addPixmap(*item);
-            ui->gv_Photo->setScene(scene);
-            ui->gv_Photo->fitInView(scene->sceneRect(), Qt::KeepAspectRatio);
-        }
     }
     else if (record_type == VIEW_OFFICER) {
         query = "SELECT * FROM OFFICER WHERE ID = '" + ID + "'";
@@ -66,4 +57,17 @@ void InmateInfoWindow::on_pushButton_clicked()
 void InmateInfoWindow::on_InmateInfoWindow_destroyed()
 {
 
+}
+
+void InmateInfoWindow::showEvent(QShowEvent *) {
+    QString imagepath = model->data(model->index(0, 1)).toString();
+    QImage image(imagepath);
+    if(image.isNull()) ui->lblError->setText("No photo found.");
+    else {
+        QGraphicsScene* scene = new QGraphicsScene();
+        QPixmap* item = new QPixmap(QPixmap::fromImage(image));
+        scene->addPixmap(*item);
+        ui->gv_Photo->setScene(scene);
+        ui->gv_Photo->fitInView(scene->sceneRect(), Qt::KeepAspectRatio);
+    }
 }

@@ -11,11 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>New inmate</string>
+   <string>Record editor</string>
   </property>
   <property name="windowIcon">
    <iconset resource="pms_resources.qrc">
-    <normaloff>:/images/door_open.png</normaloff>:/images/door_open.png</iconset>
+    <normaloff>:/images/database.png</normaloff>:/images/database.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -39,7 +39,7 @@
       <bool>true</bool>
      </property>
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+      <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -47,13 +47,13 @@
      <property name="minimumSize">
       <size>
        <width>0</width>
-       <height>66</height>
+       <height>65</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>16777215</width>
-       <height>66</height>
+       <width>734</width>
+       <height>65</height>
       </size>
      </property>
      <property name="styleSheet">
@@ -63,7 +63,7 @@
 }</string>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Panel</enum>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="frameShadow">
       <enum>QFrame::Plain</enum>
@@ -71,48 +71,6 @@
      <property name="lineWidth">
       <number>0</number>
      </property>
-     <widget class="QLabel" name="lblTitle">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>10</y>
-        <width>271</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Segoe UI</family>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: 0;
-color: rgb(0, 0, 0);
-background-image: 0;</string>
-      </property>
-      <property name="text">
-       <string>Add new inmate</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="lblSubtitle">
-      <property name="geometry">
-       <rect>
-        <x>22</x>
-        <y>36</y>
-        <width>391</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: 0;
-color: rgb(0, 0, 0);
-background-image: 0;</string>
-      </property>
-      <property name="text">
-       <string>Input the detailed information of the new inmate, then click Add entry</string>
-      </property>
-     </widget>
     </widget>
    </item>
    <item>
@@ -302,6 +260,9 @@ background-color: rgb(38, 38, 38);
            <property name="text">
             <string>filename</string>
            </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
           </widget>
          </item>
          <item>
@@ -349,7 +310,7 @@ background-color: rgb(38, 38, 38);
           <number>15</number>
          </property>
          <property name="topMargin">
-          <number>18</number>
+          <number>15</number>
          </property>
          <property name="horizontalSpacing">
           <number>9</number>
@@ -658,7 +619,7 @@ QDateEdit::up-arrow {
 </string>
            </property>
            <property name="displayFormat">
-            <string>yyyy-M-d</string>
+            <string>yyyy-M-dd</string>
            </property>
           </widget>
          </item>
@@ -976,8 +937,15 @@ QComboBox::down-arrow {
            </property>
           </widget>
          </item>
-         <item row="6" column="1" colspan="4">
-          <widget class="QDateEdit" name="deBookin">
+         <item row="6" column="6">
+          <widget class="QLabel" name="lblBookout">
+           <property name="text">
+            <string>Bookout:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="7" colspan="2">
+          <widget class="QDateTimeEdit" name="deBookout">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -985,7 +953,7 @@ QComboBox::down-arrow {
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QDateEdit {
+            <string notr="true">QDateTimeEdit {
 color: rgb(50, 50, 50);
 padding-left:7px;
 border-radius:5px;
@@ -995,18 +963,18 @@ fx: 0.3, fy: -0.4,
 radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
 }
 
-QDateEdit:hover {
+QDateTimeEdit:hover {
 border-radius:5px;
 border: 1px solid rgb(23, 120, 173);
 background-color: rgb(255, 255, 255);
 }
 
-QDateEdit:pressed {
+QDateTimeEdit:pressed {
 border-radius:5px;
 border: 1px solid #777777;
 }
 
-QDateEdit::down-button {
+QDateTimeEdit::down-button {
 	subcontrol-origin: padding;
 	subcontrol-position: bottom right;
 	width: 25px;
@@ -1015,16 +983,16 @@ QDateEdit::down-button {
 	border-bottom-right-radius: 1px;
 }
 
-QDateEdit::down-button:hover {
+QDateTimeEdit::down-button:hover {
 	background-color: rgb(227, 227, 227);
 }
 
 
-QDateEdit::down-arrow {
+QDateTimeEdit::down-arrow {
 	image: url(:/images/scroll_down.png);
 }
 
-QDateEdit::up-button {
+QDateTimeEdit::up-button {
 	subcontrol-origin: padding;
 	subcontrol-position: top right;
 	width: 25px;
@@ -1033,17 +1001,17 @@ QDateEdit::up-button {
 	border-bottom-right-radius: 1px;
 }
 
-QDateEdit::up-button:hover {
+QDateTimeEdit::up-button:hover {
 	background-color: rgb(227, 227, 227);
 }
 
-QDateEdit::up-arrow {
+QDateTimeEdit::up-arrow {
 	image: url(:/images/scroll_up.png);
 }
 </string>
            </property>
            <property name="displayFormat">
-            <string>yyyy-M-d</string>
+            <string>yyyy-MM-dd HH:mm</string>
            </property>
           </widget>
          </item>
@@ -1057,8 +1025,8 @@ QDateEdit::up-arrow {
            </property>
           </widget>
          </item>
-         <item row="6" column="7" colspan="2">
-          <widget class="QDateEdit" name="deBookout">
+         <item row="6" column="1" colspan="4">
+          <widget class="QDateTimeEdit" name="deBookin">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -1066,7 +1034,7 @@ QDateEdit::up-arrow {
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QDateEdit {
+            <string notr="true">QDateTimeEdit {
 color: rgb(50, 50, 50);
 padding-left:7px;
 border-radius:5px;
@@ -1076,18 +1044,18 @@ fx: 0.3, fy: -0.4,
 radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
 }
 
-QDateEdit:hover {
+QDateTimeEdit:hover {
 border-radius:5px;
 border: 1px solid rgb(23, 120, 173);
 background-color: rgb(255, 255, 255);
 }
 
-QDateEdit:pressed {
+QDateTimeEdit:pressed {
 border-radius:5px;
 border: 1px solid #777777;
 }
 
-QDateEdit::down-button {
+QDateTimeEdit::down-button {
 	subcontrol-origin: padding;
 	subcontrol-position: bottom right;
 	width: 25px;
@@ -1096,16 +1064,16 @@ QDateEdit::down-button {
 	border-bottom-right-radius: 1px;
 }
 
-QDateEdit::down-button:hover {
+QDateTimeEdit::down-button:hover {
 	background-color: rgb(227, 227, 227);
 }
 
 
-QDateEdit::down-arrow {
+QDateTimeEdit::down-arrow {
 	image: url(:/images/scroll_down.png);
 }
 
-QDateEdit::up-button {
+QDateTimeEdit::up-button {
 	subcontrol-origin: padding;
 	subcontrol-position: top right;
 	width: 25px;
@@ -1114,24 +1082,17 @@ QDateEdit::up-button {
 	border-bottom-right-radius: 1px;
 }
 
-QDateEdit::up-button:hover {
+QDateTimeEdit::up-button:hover {
 	background-color: rgb(227, 227, 227);
 }
 
-QDateEdit::up-arrow {
+QDateTimeEdit::up-arrow {
 	image: url(:/images/scroll_up.png);
 }
 </string>
            </property>
            <property name="displayFormat">
-            <string>yyyy-M-d</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="6">
-          <widget class="QLabel" name="label_18">
-           <property name="text">
-            <string>Bookout:</string>
+            <string>yyyy-MM-dd HH:mm</string>
            </property>
           </widget>
          </item>
@@ -1164,9 +1125,9 @@ QDateEdit::up-arrow {
         <zorder>label_16</zorder>
         <zorder>txtID</zorder>
         <zorder>label_17</zorder>
+        <zorder>lblBookout</zorder>
         <zorder>deBookin</zorder>
         <zorder>deBookout</zorder>
-        <zorder>label_18</zorder>
        </widget>
       </item>
      </layout>

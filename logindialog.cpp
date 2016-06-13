@@ -10,7 +10,7 @@ LoginDialog::LoginDialog(QWidget *parent):
     connected = false;
     qDebug() << "drivers: "<< QSqlDatabase::drivers();
     this_mw = NULL;
-    ui->serverStatus->setStyleSheet("QLabel { background-color : white; color : red; }");
+    ui->serverStatus->setStyleSheet("QLabel { background-color : 0; color : red; }");
 }
 
 LoginDialog::~LoginDialog()
@@ -75,13 +75,13 @@ void LoginDialog::on_pushButton_6_clicked()
 
 void LoginDialog::on_pushButton_connect_clicked()
 {
-    ui->serverStatus->setStyleSheet("QLabel { background-color : white; color : gray; }");
+    ui->serverStatus->setStyleSheet("QLabel { background-color : 0; color : gray; }");
     ui->serverStatus->setText("Connecting...");
 
-    QString hostname = ui->plainTextEdit_localhost->toPlainText();
-    QString username = ui->plainTextEdit_username->toPlainText();
-    QString password = ui->plainTextEdit_pass->toPlainText();
-    int port = ui->plainTextEdit_port->toPlainText().toInt();
+    QString hostname = ui->txtHostname->text();
+    QString username = ui->txtUsername->text();
+    QString password = ui->txtDatabasePassword->text();
+    int port = ui->txtPort->text().toInt();
 
     Database *CDb = Database::init(hostname, username, password, port);
 
@@ -89,17 +89,25 @@ void LoginDialog::on_pushButton_connect_clicked()
     {
         connected = true;
 
-        ui->serverStatus->setStyleSheet("QLabel { background-color : white; color : green; }");
+        ui->serverStatus->setStyleSheet("QLabel { background-color : 0; color : green; }");
         ui->serverStatus->setText("Connected");
 
+        this->setMaximumSize(432, 290);
+        this->setFixedSize(432, 290);
+
+        this->setGeometry(QStyle::alignedRect(Qt::LeftToRight,
+        Qt::AlignCenter, this->size(), qApp->desktop()->availableGeometry()));
+
+        ui->commandLinkButton->setChecked(0);
+
         ui->pushButton_connect->setEnabled(0);
-        ui->plainTextEdit_localhost->setEnabled(0);
-        ui->plainTextEdit_pass->setEnabled(0);
-        ui->plainTextEdit_port->setEnabled(0);
-        ui->plainTextEdit_username->setEnabled(0);
+        ui->txtHostname->setEnabled(0);
+        ui->txtDatabasePassword->setEnabled(0);
+        ui->txtPort->setEnabled(0);
+        ui->txtUsername->setEnabled(0);
     }
     else {
-        ui->serverStatus->setStyleSheet("QLabel { background-color : white; color : red; }");
+        ui->serverStatus->setStyleSheet("QLabel { background-color : 0; color : red; }");
         ui->serverStatus->setText("Not connected");
     }
 }
@@ -167,11 +175,13 @@ void LoginDialog::loginSuccess()
 void LoginDialog::on_commandLinkButton_clicked(bool checked)
 {
     if (checked == true) {
-        this->setMaximumSize(738, 386);
-        this->setFixedSize(738, 386);
+        this->setMaximumSize(752, 415);
+        this->setFixedSize(752, 415);
     }
     else {
-        this->setMaximumSize(414, 290);
-        this->setFixedSize(414, 290);
+        this->setMaximumSize(432, 290);
+        this->setFixedSize(432, 290);
     }
+    this->setGeometry(QStyle::alignedRect(Qt::LeftToRight,
+    Qt::AlignCenter, this->size(), qApp->desktop()->availableGeometry()));
 }

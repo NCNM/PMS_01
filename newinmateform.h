@@ -2,6 +2,15 @@
 #define NEWINMATEFORM_H
 
 #include <QWidget>
+#include "database.h"
+#include <QSqlTableModel>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QDebug>
+#include <QDate>
+#include <QStandardPaths>
 
 namespace Ui {
 class newinmateform;
@@ -28,6 +37,9 @@ signals:
 private:
     Ui::newinmateform *ui;
     QString workingID;
+    int mode;
+    QSqlQueryModel *model;
+    void showEvent(QShowEvent *);
 };
 
 #endif // NEWINMATEFORM_H

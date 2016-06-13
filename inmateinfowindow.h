@@ -2,6 +2,16 @@
 #define INMATEINFOWINDOW_H
 
 #include <QWidget>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QDebug>
+#include <QDate>
+#include "database.h"
+#include <QStandardPaths>
+#include <QSqlTableModel>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QGraphicsPixmapItem>
 
 #define VIEW_INMATE 1
 #define VIEW_OFFICER 2
@@ -28,6 +38,8 @@ signals:
 
 private:
     Ui::InmateInfoWindow *ui;
+    QSqlQueryModel * model;
+    void showEvent(QShowEvent *);
 };
 
 #endif // INMATEINFOWINDOW_H

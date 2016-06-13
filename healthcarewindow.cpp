@@ -16,11 +16,22 @@ HealthcareWindow::HealthcareWindow(QWidget *parent) :
     ui->stackedWidget->setCurrentIndex(0);
 
     QSqlDatabase db = Database::getDatabase();
-    model = new QSqlTableModel(this, db);
-    model->setTable("MEDCHECKS");
-    model->select();
+//    model = new QSqlTableModel(this, db);
+//    model->setTable("MEDCHECKS");
+//    model->select();
 
-    ui->tableView->setModel(model);
+    QSqlQueryModel * qmodel = new QSqlQueryModel;
+
+    QString query = "SELECT `medchecks`.`ID` AS `Record ID`, "
+                    "`medchecks`.`InmateID` AS `Inmate ID`, "
+                    "`medchecks`.`MEDCHECKS_Date` AS `Date`, "
+                    "`medchecks`.`Urgency` AS `Urgency`, "
+                    "`medchecks`.`Condi` AS `Inmate health condition`, "
+                    "`medchecks`.`Remarks` AS `Remarks FROM `pms`.`medchecks`;";
+
+    qmodel->setQuery(query, db);
+
+    ui->tableView->setModel(qmodel);
 
     ui->pushSearch->setEnabled(true);
     ui->pushButton_HealthRecord->setChecked(true);

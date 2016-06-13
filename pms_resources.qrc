@@ -35,14 +35,19 @@
         <file>print.png</file>
         <file>about_banner.png</file>
         <file>banner.png</file>
-        <file>subwindow_header.png</file>
         <file>note.png</file>
         <file>sidebar_header.png</file>
-        <file>login_header.png</file>
         <file>newinmate_header.png</file>
         <file>cancel.png</file>
         <file>left_arrow.png</file>
         <file>button_hover.png</file>
         <file>generic_user.jpg</file>
+        <file>save_data.png</file>
+        <file>user_login.png</file>
+        <file>subwindow_header.png</file>
+        <file>login_header.png</file>
+        <file>add_new_header.png</file>
+        <file>update_header.png</file>
+        <file>generic_standalone_header.png</file>
     </qresource>
 </RCC>

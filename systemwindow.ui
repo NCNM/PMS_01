@@ -496,10 +496,164 @@ QScrollBar::sub-line:vertical {
     height: 16px;
     subcontrol-position: top;
     subcontrol-origin: margin;
+}
+
+QLineEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QLineEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QLineEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+
+QDateEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QDateEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QDateEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+
+QDateEdit::down-button {
+	subcontrol-origin: padding;
+	subcontrol-position: bottom right;
+	width: 25px;
+ 
+	border-top-right-radius: 1px;
+	border-bottom-right-radius: 1px;
+}
+
+QDateEdit::down-button:hover {
+	background-color: rgb(227, 227, 227);
+}
+
+
+QDateEdit::down-arrow {
+	image: url(:/images/scroll_down.png);
+}
+
+QDateEdit::up-button {
+	subcontrol-origin: padding;
+	subcontrol-position: top right;
+	width: 25px;
+ 
+	border-top-right-radius: 1px;
+	border-bottom-right-radius: 1px;
+}
+
+QDateEdit::up-button:hover {
+	background-color: rgb(227, 227, 227);
+}
+
+QDateEdit::up-arrow {
+	image: url(:/images/scroll_up.png);
+}
+
+QPlainTextEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QPlainTextEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QPlainTextEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+
+QTimeEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QTimeEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QTimeEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+
+QTimeEdit::down-button {
+	subcontrol-origin: padding;
+	subcontrol-position: bottom right;
+	width: 25px;
+ 
+	border-top-right-radius: 1px;
+	border-bottom-right-radius: 1px;
+}
+
+QTimeEdit::down-button:hover {
+	background-color: rgb(227, 227, 227);
+}
+
+
+QTimeEdit::down-arrow {
+	image: url(:/images/scroll_down.png);
+}
+
+QTimeEdit::up-button {
+	subcontrol-origin: padding;
+	subcontrol-position: top right;
+	width: 25px;
+ 
+	border-top-right-radius: 1px;
+	border-bottom-right-radius: 1px;
+}
+
+QTimeEdit::up-button:hover {
+	background-color: rgb(227, 227, 227);
+}
+
+QTimeEdit::up-arrow {
+	image: url(:/images/scroll_up.png);
 }</string>
            </property>
            <property name="currentIndex">
-            <number>1</number>
+            <number>0</number>
            </property>
            <widget class="QWidget" name="about">
             <layout class="QGridLayout" name="gridLayout_3">

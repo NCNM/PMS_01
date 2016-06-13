@@ -168,7 +168,7 @@ background-color:0;</string>
          <item>
           <widget class="QFrame" name="frame_4">
            <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
+            <enum>QFrame::NoFrame</enum>
            </property>
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
@@ -528,31 +528,28 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
           <widget class="QFrame" name="frame_5">
            <property name="minimumSize">
             <size>
-             <width>250</width>
+             <width>350</width>
              <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>250</width>
+             <width>350</width>
              <height>16777215</height>
             </size>
            </property>
            <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
+            <enum>QFrame::NoFrame</enum>
            </property>
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_3">
-            <property name="leftMargin">
-             <number>3</number>
-            </property>
             <item>
              <widget class="QFrame" name="dsbShortcuts">
               <property name="minimumSize">
                <size>
-                <width>350</width>
+                <width>250</width>
                 <height>0</height>
                </size>
               </property>
@@ -569,7 +566,6 @@ border: 1px solid #ddd;
 border-radius: 5px;
 padding: 5px;
 background-color: rgb(253, 253, 254);
-min-width: 80px;
 }
 
 QFrame #dsbShortcuts:hover {
