@@ -9,10 +9,12 @@ RehabForm::RehabForm(QWidget *parent) :
     ui->stackedWidget->setCurrentIndex(0);
 
     QSqlDatabase db = Database::getDatabase();
-    model = new QSqlTableModel(this, db);
-    model->setTable("REHABILITATION");
-    model->select();
 
+    QString query = "SELECT `rehabilitation`.`OfficerID` AS `Officer in charge`, `rehabilitation`.`InmateID` AS `Inmate ID`, "
+                    "`rehabilitation`.`R_level` AS `Progress`, `rehabilitation`.`Ludate` AS `Last updated`, `rehabilitation`.`Talents` AS `Talents`, "
+                    "`rehabilitation`.`Recommendation` AS `Recommendations`, `rehabilitation`.`Reward` AS `Rewards`, `rehabilitation`.`Remarks` AS `Remarks`"
+                    "FROM `pms`.`rehabilitation`;";
+    model->setQuery(query, db);
     ui->tableView->setModel(model);
 
     ui->pushSearch->setEnabled(true);
@@ -29,10 +31,12 @@ void RehabForm::on_pushButton_16_clicked()
     ui->stackedWidget->setCurrentIndex(0);
 
     QSqlDatabase db = Database::getDatabase();
-    model = new QSqlTableModel(this, db);
-    model->setTable("REHABILITATION");
-    model->select();
 
+    QString query = "SELECT `rehabilitation`.`OfficerID` AS `Officer in charge`, `rehabilitation`.`InmateID` AS `Inmate ID`, "
+                    "`rehabilitation`.`R_level` AS `Progress`, `rehabilitation`.`Ludate` AS `Last updated`, `rehabilitation`.`Talents` AS `Talents`, "
+                    "`rehabilitation`.`Recommendation` AS `Recommendations`, `rehabilitation`.`Reward` AS `Rewards`, `rehabilitation`.`Remarks` AS `Remarks`"
+                    "FROM `pms`.`rehabilitation`;";
+    model->setQuery(query, db);
     ui->tableView->setModel(model);
 
     ui->pushSearch->setEnabled(true);
@@ -41,11 +45,23 @@ void RehabForm::on_pushButton_16_clicked()
 void RehabForm::on_pushAdd_clicked()
 {
     model->insertRow(model->rowCount());
+    QSqlQuery satan_approves;
+    QString log = "INSERT INTO LOG (department, logtime, content) VALUES ('Rehabilitation', "
+            "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
+            "N'Record added.')";
+    satan_approves.prepare(log);
+    satan_approves.exec();
 }
 
 void RehabForm::on_pushDelete_clicked()
 {
     model->removeRow(ui->tableView->currentIndex().row());
+    QSqlQuery satan_approves;
+    QString log = "INSERT INTO LOG (department, logtime, content) VALUES ('Rehabilitation', "
+            "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
+            "N'Record deleted.')";
+    satan_approves.prepare(log);
+    satan_approves.exec();
 }
 
 void RehabForm::on_pushModify_clicked()

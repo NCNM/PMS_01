@@ -67,7 +67,7 @@ void EntryReleaseForm::on_pushButton_clicked()
     QSqlQuery query(db);
     query.exec("DELETE FROM INMATE WHERE ID = '" + ID + "'");
 
-    query.exec("INSERT INTO LOG (logtime, content) VALUES ("
+    query.exec("INSERT INTO LOG (department, logtime, content) VALUES ('Entry/Release', "
             "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
             "N'Record deleted.')");
 
@@ -165,6 +165,11 @@ void EntryReleaseForm::add_inmate_triggered(QString query) {
     QSqlQuery satan_approves;
     satan_approves.prepare(query);
     satan_approves.exec();
+    QString log = "INSERT INTO LOG (department, logtime, content) VALUES ('Entry/Release', "
+            "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
+            "N'Record changed.')";
+    satan_approves.prepare(log);
+    satan_approves.exec();
     on_pushButton_update_clicked();
 }
 
@@ -224,5 +229,12 @@ void EntryReleaseForm::on_pushButton_9_clicked()
         satan_approves.prepare(query);
         satan_approves.exec();
     }
+
+    query = "INSERT INTO LOG (department, logtime, content) VALUES ('Entry/Release', "
+            "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
+            "N'Visit times changed.')";
+    satan_approves.prepare(query);
+    satan_approves.exec();
+
     on_pushButton_19_clicked();
 }

@@ -43,7 +43,7 @@ private slots:
 
 private:
     Ui::RehabForm *ui;
-    QSqlTableModel *model;
+    QSqlQueryModel *model;
 };
 
 #endif // REHABFORM_H

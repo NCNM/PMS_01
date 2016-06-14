@@ -18,7 +18,7 @@ DiningWindow::DiningWindow(QWidget *parent) :
                     "Eth AS \"Ethnicity\", Addr AS \"Home address\", Reason AS Reason, Custody AS Custody, "
                     "Availability AS Availability, BookIn AS Bookin, BookOut AS Bookout FROM INMATE", db);
     ui->tableView->setModel(model);*/
-    on_pushButton_Menu_clicked(0);
+    on_pushButton_Menu_clicked();
     curView = VIEW_MENU;
     ui->pushSearch->setEnabled(true);
 }
@@ -50,6 +50,8 @@ void DiningWindow::on_pushButton_viewInmates_clicked(bool checked)
 
     curView = VIEW_INMATE;
     ui->pushSearch->setEnabled(true);
+    ui->pushButton_Modify->hide();
+    ui->pushButton_Add->hide();
 }
 
 void DiningWindow::on_pushButton_viewOfficers_clicked(bool checked)
@@ -67,6 +69,8 @@ void DiningWindow::on_pushButton_viewOfficers_clicked(bool checked)
 
     curView = VIEW_OFFICER;
     ui->pushSearch->setEnabled(true);
+    ui->pushButton_Modify->hide();
+    ui->pushButton_Add->hide();
 }
 
 void DiningWindow::on_pushSearch_clicked()
@@ -119,20 +123,6 @@ void DiningWindow::on_pushButton_4_clicked()
     ui->stackedWidget->setCurrentIndex(0);
 }
 
-void DiningWindow::on_pushButton_Menu_clicked(bool checked)
-{
-    ui->stackedWidget->setCurrentIndex(0);
-    QSqlDatabase db = Database::getDatabase();
-
-    QSqlQueryModel *model = new QSqlQueryModel;
-    model->setQuery("SELECT ID AS 'ID', _Date AS 'Date', Breakfast as 'Breakfast', "
-                    "Lunch AS 'Lunch', Dinner AS 'Dinner', Subject AS 'Subject' FROM DINING", db);
-    ui->tableView->setModel(model);
-
-    curView = VIEW_MENU;
-    ui->pushSearch->setEnabled(true);
-}
-
 void DiningWindow::on_pushButton_Add_clicked()
 {
     // model->insertRow(model->rowCount());
@@ -168,4 +158,25 @@ void DiningWindow::exec_query(QString Squery)
                     "Lunch AS 'Lunch', Dinner AS 'Dinner', Subject AS 'Subject' FROM DINING", db);
     ui->tableView->setModel(model);
     ui->stackedWidget->setCurrentIndex(0);
+
+    QString log = "INSERT INTO LOG (department, logtime, content) VALUES ('Dining', "
+            "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
+            "N'Record added.')";
+    satan_approves.exec(log);
+}
+
+void DiningWindow::on_pushButton_Menu_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+    QSqlDatabase db = Database::getDatabase();
+
+    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery("SELECT ID AS 'ID', _Date AS 'Date', Breakfast as 'Breakfast', "
+                    "Lunch AS 'Lunch', Dinner AS 'Dinner', Subject AS 'Subject' FROM DINING", db);
+    ui->tableView->setModel(model);
+
+    curView = VIEW_MENU;
+    ui->pushSearch->setEnabled(true);
+    ui->pushButton_Modify->show();
+    ui->pushButton_Add->show();
 }

@@ -22,7 +22,7 @@ newinmateform::newinmateform(QWidget *parent, int n_mode, QString ID) :
     }
     else if (mode == 1)
     {
-        ui->pushButton_2->setText("Update");
+        ui->pushButton_2->setText("Save");
         ui->pushButton_2->setIcon(QIcon(":/images/save_data.png"));
         ui->header->setStyleSheet("QWidget #header { background-color: rgb(255, 255, 255);"
                                   "background-image: url(:/images/update_header.png);"

@@ -169,3 +169,26 @@ void HealthcareWindow::on_tableView_pressed(const QModelIndex &index)
 {
     ui->tableView->selectRow(index.row());
 }
+
+void HealthcareWindow::on_pushButton_19_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+
+    QSqlDatabase db = Database::getDatabase();
+
+    QSqlQueryModel * qmodel = new QSqlQueryModel;
+
+    QString query = "SELECT `medchecks`.`ID` AS `Record ID`, "
+                    "`medchecks`.`InmateID` AS `Inmate ID`, "
+                    "`medchecks`.`MEDCHECKS_Date` AS `Date`, "
+                    "`medchecks`.`Urgency` AS `Urgency`, "
+                    "`medchecks`.`Condi` AS `Inmate health condition`, "
+                    "`medchecks`.`Remarks` AS `Remarks FROM `pms`.`medchecks` "
+                    "WHERE `medchecks`.`Urgency` = 'High';";
+
+    qmodel->setQuery(query, db);
+
+    ui->tableView->setModel(qmodel);
+
+    ui->pushSearch->setEnabled(true);
+}

@@ -179,7 +179,7 @@ background-color: rgb(120, 120, 120);
      </widget>
      <widget class="QPushButton" name="pushButton_19">
       <property name="enabled">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="geometry">
        <rect>

@@ -22,13 +22,13 @@ newmenuform::newmenuform(QWidget *parent, int n_mode, QString ID) :
 
     if (mode == 0)
     {
-        ui->pushButton->setText("Add entry");
-        ui->pushButton->setIcon(QIcon(":/images/add_new.png"));
+        ui->pushButton_2->setText("Add entry");
+        ui->pushButton_2->setIcon(QIcon(":/images/add_new.png"));
     }
     else if (mode == 1)
     {
-        ui->pushButton->setText("Update");
-        ui->pushButton->setIcon(QIcon(":/images/save_data.png"));
+        ui->pushButton_2->setText("Update");
+        ui->pushButton_2->setIcon(QIcon(":/images/save_data.png"));
 
         model = new QSqlQueryModel;
         QString query = "SELECT * FROM DINING WHERE ID = '" + ID + "'";
@@ -77,7 +77,8 @@ QString getNewDiningID(QVector <QString> arrID)
      newID = "DN" + newID;
      return newID;
  }
-void newmenuform::on_pushButton_clicked()
+
+void newmenuform::on_pushButton_2_clicked()
 {
     QSqlDatabase db = Database::getDatabase();
 
@@ -112,4 +113,9 @@ void newmenuform::on_pushButton_clicked()
     emit exec_query(QSQuery);
     //query.exec(QSQuery);
     close();
+}
+
+void newmenuform::on_pushButton_3_clicked()
+{
+    this->close();
 }

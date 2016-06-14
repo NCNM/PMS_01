@@ -170,7 +170,7 @@ QFrame {
          <enum>QFrame::NoFrame</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
+         <enum>QFrame::Plain</enum>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <property name="rightMargin">
@@ -300,10 +300,10 @@ background-color: rgb(38, 38, 38);
       <item>
        <widget class="QFrame" name="frame_2">
         <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
+         <enum>QFrame::NoFrame</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
+         <enum>QFrame::Plain</enum>
         </property>
         <layout class="QGridLayout" name="gridLayout">
          <property name="leftMargin">

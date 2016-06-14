@@ -26,7 +26,9 @@ SOURCES += main.cpp\
     newinmateform.cpp \
     systemwindow.cpp \
     inmateinfowindow.cpp \
-    newmenuform.cpp
+    newmenuform.cpp \
+    updatehealthform.cpp \
+    newrehabform.cpp
 
 HEADERS  += mainwindow.h \
     dashboardwindow.h \
@@ -41,7 +43,9 @@ HEADERS  += mainwindow.h \
     newinmateform.h \
     systemwindow.h \
     inmateinfowindow.h \
-    newmenuform.h
+    newmenuform.h \
+    updatehealthform.h \
+    newrehabform.h
 
 FORMS    += mainwindow.ui \
     dashboardwindow.ui \
@@ -54,7 +58,9 @@ FORMS    += mainwindow.ui \
     newinmateform.ui \
     systemwindow.ui \
     inmateinfowindow.ui \
-    newmenuform.ui
+    newmenuform.ui \
+    updatehealthform.ui \
+    newrehabform.ui
 
 RESOURCES += \
     pms_resources.qrc

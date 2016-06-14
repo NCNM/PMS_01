@@ -11,7 +11,7 @@ ManagementWindow::ManagementWindow(QWidget *parent) :
     QSqlDatabase db = Database::getDatabase();
 
     QSqlQueryModel *model = new QSqlQueryModel;
-    model->setQuery("SELECT logtime AS Timestamp, content AS Content FROM LOG", db);
+    model->setQuery("SELECT logtime AS Timestamp, content AS Event FROM LOG", db);
     ui->tableView_2->setModel(model);
 }
 

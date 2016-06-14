@@ -34,6 +34,8 @@ private slots:
 
     void on_tableView_pressed(const QModelIndex &index);
 
+    void on_pushButton_19_clicked();
+
 private:
     Ui::HealthcareWindow *ui;
     QSqlTableModel *model;

@@ -1,36 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>newmenuform</class>
- <widget class="QWidget" name="newmenuform">
+ <class>updatehealthform</class>
+ <widget class="QWidget" name="updatehealthform">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>645</width>
-    <height>420</height>
+    <width>700</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>645</width>
-    <height>420</height>
+    <width>700</width>
+    <height>500</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>645</width>
-    <height>420</height>
+    <width>700</width>
+    <height>500</height>
    </size>
   </property>
   <property name="windowTitle">
-   <string>Record editor</string>
-  </property>
-  <property name="windowIcon">
-   <iconset resource="pms_resources.qrc">
-    <normaloff>:/images/qip_eating.png</normaloff>:/images/qip_eating.png</iconset>
-  </property>
-  <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
+   <string>Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -74,7 +67,7 @@
      <property name="styleSheet">
       <string notr="true">QWidget #header {
 	background-color: rgb(255, 255, 255);
-	background-image: url(:/images/add_new_header.png);
+	background-image:url(:/images/update_header.png);
 }</string>
      </property>
      <property name="frameShape">
@@ -169,42 +162,73 @@ QFrame {
       </property>
       <item>
        <widget class="QFrame" name="frame_2">
-        <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>27</height>
+         </size>
         </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <layout class="QGridLayout" name="gridLayout">
-         <property name="leftMargin">
-          <number>15</number>
-         </property>
-         <property name="topMargin">
-          <number>15</number>
-         </property>
-         <property name="horizontalSpacing">
-          <number>9</number>
-         </property>
-         <property name="verticalSpacing">
-          <number>15</number>
-         </property>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label">
-           <property name="text">
-            <string>Date:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QDateEdit" name="dateEdit">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>27</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QDateEdit {
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QLineEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QLineEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+
+QComboBox {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(248, 248, 248));
+}
+
+QComboBox:hover {
+color: rgb(255, 255, 255);
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: ;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(161, 215, 255), stop: 1 #299ED6);
+}
+
+QComboBox:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+
+QComboBox::drop-down {
+	subcontrol-origin: padding;
+	subcontrol-position: top right;
+	width: 25px;
+ 
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+QComboBox::down-arrow {
+	image: url(:/images/cmbbox_arrow.png);
+}
+
+QDateEdit {
 color: rgb(50, 50, 50);
 padding-left:7px;
 border-radius:5px;
@@ -259,196 +283,150 @@ QDateEdit::up-button:hover {
 QDateEdit::up-arrow {
 	image: url(:/images/scroll_up.png);
 }
+
+QPlainTextEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QPlainTextEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QPlainTextEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
 </string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout">
+         <property name="leftMargin">
+          <number>15</number>
+         </property>
+         <property name="topMargin">
+          <number>15</number>
+         </property>
+         <property name="horizontalSpacing">
+          <number>9</number>
+         </property>
+         <property name="verticalSpacing">
+          <number>15</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_16">
+           <property name="text">
+            <string>Inmate ID:</string>
            </property>
-           <property name="displayFormat">
-            <string>yyyy/MM/dd</string>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="txtID">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>27</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
            </property>
           </widget>
          </item>
          <item row="1" column="0">
-          <widget class="QLabel" name="label_2">
+          <widget class="QLabel" name="label_8">
            <property name="text">
-            <string>Breakfast:</string>
+            <string>Date:</string>
            </property>
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QLineEdit" name="lineEdit_Breakfast">
+          <widget class="QDateEdit" name="deDate">
            <property name="minimumSize">
             <size>
              <width>0</width>
              <height>27</height>
             </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QLineEdit {
-color: rgb(50, 50, 50);
-padding-left:7px;
-border-radius:5px;
-border: 1px solid rgb(170, 170, 170);
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
-}
-
-QLineEdit:hover {
-border-radius:5px;
-border: 1px solid rgb(23, 120, 173);
-background-color: rgb(255, 255, 255);
-}
-
-QLineEdit:pressed {
-border-radius:5px;
-border: 1px solid #777777;
-}
-</string>
            </property>
           </widget>
          </item>
          <item row="2" column="0">
-          <widget class="QLabel" name="label_3">
+          <widget class="QLabel" name="label_7">
            <property name="text">
-            <string>Lunch:</string>
+            <string>Urgency:</string>
            </property>
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QLineEdit" name="lineEdit_Lunch">
+          <widget class="QComboBox" name="cmbUrgency">
            <property name="minimumSize">
             <size>
              <width>0</width>
              <height>27</height>
             </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QLineEdit {
-color: rgb(50, 50, 50);
-padding-left:7px;
-border-radius:5px;
-border: 1px solid rgb(170, 170, 170);
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
-}
-
-QLineEdit:hover {
-border-radius:5px;
-border: 1px solid rgb(23, 120, 173);
-background-color: rgb(255, 255, 255);
-}
-
-QLineEdit:pressed {
-border-radius:5px;
-border: 1px solid #777777;
-}
-</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_4">
-           <property name="text">
-            <string>Dinner:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QLineEdit" name="lineEdit_Diner">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>27</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QLineEdit {
-color: rgb(50, 50, 50);
-padding-left:7px;
-border-radius:5px;
-border: 1px solid rgb(170, 170, 170);
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
-}
-
-QLineEdit:hover {
-border-radius:5px;
-border: 1px solid rgb(23, 120, 173);
-background-color: rgb(255, 255, 255);
-}
-
-QLineEdit:pressed {
-border-radius:5px;
-border: 1px solid #777777;
-}
-</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_5">
-           <property name="text">
-            <string>Subject:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QComboBox" name="comboBox_Subject">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>27</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QComboBox {
-color: rgb(50, 50, 50);
-padding-left:7px;
-border-radius:5px;
-border: 1px solid rgb(170, 170, 170);
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(248, 248, 248));
-}
-
-QComboBox:hover {
-color: rgb(255, 255, 255);
-border-radius:5px;
-border: 1px solid rgb(23, 120, 173);
-background-color: ;
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 rgb(161, 215, 255), stop: 1 #299ED6);
-}
-
-QComboBox:pressed {
-border-radius:5px;
-border: 1px solid #777777;
-}
-
-QComboBox::drop-down {
-	subcontrol-origin: padding;
-	subcontrol-position: top right;
-	width: 25px;
- 
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;
-}
-
-QComboBox::down-arrow {
-	image: url(:/images/cmbbox_arrow.png);
-}
-</string>
            </property>
            <item>
             <property name="text">
-             <string>All</string>
+             <string>High</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Low</string>
             </property>
            </item>
           </widget>
          </item>
-         <item row="5" column="1">
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>Inmate health condition:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="txtCondition">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>27</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_12">
+           <property name="text">
+            <string>Prescriptions/Remarks:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QPlainTextEdit" name="txtRemarks">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>180</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0" colspan="2">
           <widget class="QFrame" name="frame_7">
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
@@ -459,6 +437,17 @@ QComboBox::down-arrow {
           </widget>
          </item>
         </layout>
+        <zorder>label_12</zorder>
+        <zorder>txtID</zorder>
+        <zorder>label_7</zorder>
+        <zorder>label_11</zorder>
+        <zorder>label_8</zorder>
+        <zorder>frame_7</zorder>
+        <zorder>label_16</zorder>
+        <zorder>txtCondition</zorder>
+        <zorder>deDate</zorder>
+        <zorder>cmbUrgency</zorder>
+        <zorder>txtRemarks</zorder>
        </widget>
       </item>
      </layout>
@@ -588,11 +577,11 @@ background-color:0;</string>
          </size>
         </property>
         <property name="text">
-         <string>Add entry</string>
+         <string>Save</string>
         </property>
         <property name="icon">
          <iconset resource="pms_resources.qrc">
-          <normaloff>:/images/add_new.png</normaloff>:/images/add_new.png</iconset>
+          <normaloff>:/images/save_data.png</normaloff>:/images/save_data.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -603,7 +592,7 @@ background-color:0;</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="QPushButton" name="pushButton">
         <property name="minimumSize">
          <size>
           <width>80</width>
@@ -638,11 +627,6 @@ background-color:0;</string>
     </widget>
    </item>
   </layout>
-  <zorder></zorder>
-  <zorder>frame_5</zorder>
-  <zorder>line_2</zorder>
-  <zorder>header</zorder>
-  <zorder>frame_4</zorder>
  </widget>
  <resources>
   <include location="pms_resources.qrc"/>

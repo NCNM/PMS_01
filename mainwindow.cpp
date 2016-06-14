@@ -31,15 +31,15 @@ MainWindow::MainWindow(int OfficerType, QString ID, QWidget *parent) :
     sub_mng = NULL;
     sub_system = NULL;
 
-    QString query = "INSERT INTO LOG (logtime, content) VALUES ("
-            "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
+    QString query = "INSERT INTO LOG (department, logtime, content) VALUES ('Maintenance', "
+            "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss") + "' AS Datetime), "
             "N'User " + ui->nameID->text() + " logged in.')";
 
     QSqlQuery satan_approves;
     satan_approves.prepare(query);
     satan_approves.exec();
 
-    ui->statusBar->showMessage("<i> Ready.");
+    ui->statusBar->showMessage("Application is idle.");
 }
 
 MainWindow::~MainWindow()

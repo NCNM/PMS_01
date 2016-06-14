@@ -31,6 +31,7 @@ public:
 
 private slots:
     void on_pushButton_viewInmates_clicked(bool checked);
+
     void on_pushButton_viewOfficers_clicked(bool checked);
 
     void on_pushSearch_clicked();
@@ -43,13 +44,13 @@ private slots:
 
     void on_pushButton_4_clicked();
 
-    void on_pushButton_Menu_clicked(bool checked);
-
     void on_pushButton_Add_clicked();
 
     void on_pushButton_Modify_clicked();
 
     void exec_query(QString query);
+
+    void on_pushButton_Menu_clicked();
 
 signals:
     void row_activated(InmateInfoWindow* child, int parent);
