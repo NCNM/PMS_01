@@ -7,6 +7,7 @@
 #include <QSqlQueryModel>
 #include <QSqlQuery>
 #include <QDebug>
+#include <QDateTime>
 
 namespace Ui {
 class RehabForm;

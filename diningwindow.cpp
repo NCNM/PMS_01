@@ -136,6 +136,8 @@ void DiningWindow::on_pushButton_Add_clicked()
 void DiningWindow::on_pushButton_Modify_clicked()
 {
     QModelIndexList indexes = ui->tableView->selectionModel()->selection().indexes();
+    if (indexes.isEmpty())
+        return;
     QModelIndex index = indexes.at(0);
     QString ID = index.sibling(index.row(), 0).data().toString();
 
@@ -159,6 +161,7 @@ void DiningWindow::exec_query(QString Squery)
     ui->tableView->setModel(model);
     ui->stackedWidget->setCurrentIndex(0);
 
+    QSqlQuery satan_approves(db);
     QString log = "INSERT INTO LOG (department, logtime, content) VALUES ('Dining', "
             "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
             "N'Record added.')";
@@ -179,4 +182,22 @@ void DiningWindow::on_pushButton_Menu_clicked()
     ui->pushSearch->setEnabled(true);
     ui->pushButton_Modify->show();
     ui->pushButton_Add->show();
+}
+
+void DiningWindow::on_Delete_clicked()
+{
+    QModelIndexList indexes = ui->tableView->selectionModel()->selection().indexes();
+    if (indexes.isEmpty())
+        return;
+    QModelIndex index = indexes.at(0);
+    QString ID = index.sibling(index.row(), 0).data().toString();
+
+    QSqlDatabase db = Database::getDatabase();
+    QSqlQuery query(db);
+    QString Squery = "DELETE FROM DINING WHERE ID = '" + ID + "'";
+    query.exec(Squery);
+
+    //qDebug() << Squery;
+
+    on_pushButton_Menu_clicked();
 }

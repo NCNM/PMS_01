@@ -907,6 +907,35 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     </widget>
                    </item>
                    <item>
+                    <widget class="QPushButton" name="Delete">
+                     <property name="minimumSize">
+                      <size>
+                       <width>70</width>
+                       <height>27</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>85</width>
+                       <height>27</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Delete</string>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>delete.png</normaloff>delete.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>24</width>
+                       <height>24</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
                     <widget class="QPushButton" name="pushButton_3">
                      <property name="minimumSize">
                       <size>

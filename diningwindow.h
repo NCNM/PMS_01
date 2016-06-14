@@ -52,6 +52,8 @@ private slots:
 
     void on_pushButton_Menu_clicked();
 
+    void on_Delete_clicked();
+
 signals:
     void row_activated(InmateInfoWindow* child, int parent);
 

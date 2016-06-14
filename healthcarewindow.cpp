@@ -35,6 +35,14 @@ HealthcareWindow::HealthcareWindow(QWidget *parent) :
 
     ui->pushSearch->setEnabled(true);
     ui->pushButton_HealthRecord->setChecked(true);
+
+    QSqlQuery qquery(db);
+    qquery.exec("SELECT * FROM INMATE");
+
+    while(qquery.next())
+    {
+        ui->comboBox_inmateID->addItem(qquery.value(0).toString());
+    }
 }
 
 HealthcareWindow::~HealthcareWindow()
@@ -99,14 +107,14 @@ QString getNewMedCheckID(QVector <QString> arrID)
 
 void HealthcareWindow::on_pushAccept_clicked()
 {
-    if (ui->inmateID->text() == "")
+    if (ui->comboBox_inmateID->currentText() == "")
     {
         QMessageBox::critical(this, "Error", "Invalid ID!");
         return;
     }
 
     QSqlDatabase db = Database::getDatabase();
-    QString QSQuery = "SELECT * FROM INMATE WHERE ID = '" + ui->inmateID->text() + "'";
+    QString QSQuery = "SELECT * FROM INMATE WHERE ID = '" + ui->comboBox_inmateID->currentText() + "'";
     QSqlQuery query(db);
     query.exec(QSQuery);
     if (query.size() < 1)
@@ -125,11 +133,11 @@ void HealthcareWindow::on_pushAccept_clicked()
     }
 
     QString newID = getNewMedCheckID(arrID);
-    QSQuery = "INSERT INTO MEDCHECKS VALUES('" + newID + "', '" + ui->inmateID->text() + "', '" + ui->date->text() + " " + ui->time->text().left(ui->time->text().size() - 3) + "', NULL, NULL, N'" + ui->remarks->toPlainText() + "')";
+    QSQuery = "INSERT INTO MEDCHECKS VALUES('" + newID + "', '" + ui->comboBox_inmateID->currentText() + "', '" + ui->date->text() + " " + ui->time->text().left(ui->time->text().size() - 3) + "', NULL, NULL, N'" + ui->remarks->toPlainText() + "')";
     query.exec(QSQuery);
 
     QMessageBox::information(this, "Success", "Complete!");
-    ui->inmateID->setText("");
+    ui->comboBox_inmateID->setCurrentText("");
     ui->remarks->setPlainText("");
     ui->date->setDate(QDate(2000,01,01));
     ui->time->setTime(QTime(12, 0, 0));
@@ -191,4 +199,9 @@ void HealthcareWindow::on_pushButton_19_clicked()
     ui->tableView->setModel(qmodel);
 
     ui->pushSearch->setEnabled(true);
+}
+
+void HealthcareWindow::on_pushButton_17_clicked(bool checked)
+{
+
 }

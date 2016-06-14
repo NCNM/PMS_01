@@ -36,6 +36,8 @@ private slots:
 
     void on_pushButton_19_clicked();
 
+    void on_pushButton_17_clicked(bool checked);
+
 private:
     Ui::HealthcareWindow *ui;
     QSqlTableModel *model;

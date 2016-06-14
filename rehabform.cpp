@@ -8,17 +8,12 @@ RehabForm::RehabForm(QWidget *parent) :
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
 
-    QSqlDatabase db = Database::getDatabase();
+    model = new QSqlQueryModel;
 
-    QString query = "SELECT `rehabilitation`.`OfficerID` AS `Officer in charge`, `rehabilitation`.`InmateID` AS `Inmate ID`, "
-                    "`rehabilitation`.`R_level` AS `Progress`, `rehabilitation`.`Ludate` AS `Last updated`, `rehabilitation`.`Talents` AS `Talents`, "
-                    "`rehabilitation`.`Recommendation` AS `Recommendations`, `rehabilitation`.`Reward` AS `Rewards`, `rehabilitation`.`Remarks` AS `Remarks`"
-                    "FROM `pms`.`rehabilitation`;";
-    model->setQuery(query, db);
-    ui->tableView->setModel(model);
+    on_pushButton_16_clicked();
 
-    ui->pushSearch->setEnabled(true);
     ui->pushButton_16->setChecked(true);
+
 }
 
 RehabForm::~RehabForm()
@@ -66,7 +61,7 @@ void RehabForm::on_pushDelete_clicked()
 
 void RehabForm::on_pushModify_clicked()
 {
-    model->select();
+    //model->select();
 }
 
 
