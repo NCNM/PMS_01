@@ -49,5 +49,6 @@
         <file>add_new_header.png</file>
         <file>update_header.png</file>
         <file>generic_standalone_header.png</file>
+        <file>information.png</file>
     </qresource>
 </RCC>
