@@ -6,17 +6,15 @@ MainWindow::MainWindow(int OfficerType, QString ID, QWidget *parent) :
 {
     ui->setupUi(this);
 
-    dashboard = new DashboardWindow;
-    sub_dashboard = ui->mdiArea->addSubWindow(dashboard, Qt::FramelessWindowHint);
-    dashboard->showMaximized();
-    dashboard->activateWindow();
-    ui->toolButton_Dashboard->setChecked(true);
+    m_ID = ID;
+    ui->nameID->setText(m_ID);
 
-    ui->nameID->setText(ID);
+    m_OfficerType = OfficerType;
+    //qDebug() << m_OfficerType;
 
-    SetPermission(OfficerType);
+    SetPermission(m_OfficerType);
 
-
+    dashboard = NULL;
     healthcare = NULL;
     dining = NULL;
     etrr = NULL;
@@ -24,6 +22,7 @@ MainWindow::MainWindow(int OfficerType, QString ID, QWidget *parent) :
     mng = NULL;
     system = NULL;
 
+    sub_dashboard = NULL;
     sub_healthcare = NULL;
     sub_dining = NULL;
     sub_etrr = NULL;
@@ -40,6 +39,8 @@ MainWindow::MainWindow(int OfficerType, QString ID, QWidget *parent) :
     satan_approves.exec();
 
     ui->statusBar->showMessage("Application is idle.");
+
+    on_toolButton_Dashboard_clicked();
 }
 
 MainWindow::~MainWindow()
@@ -153,13 +154,25 @@ void MainWindow::SetPermission(int OfficerType)
 
 void MainWindow::on_toolButton_Dashboard_clicked()
 {
+    //qDebug() << "Dashboard";
     if (sub_dashboard == NULL) {
-        dashboard = new DashboardWindow;
+        if (m_OfficerType == RELATIVETYPE)
+        {
+            dashboard = new DashboardWindow(0, true, m_ID);
+            //qDebug() << "Is releative " + m_ID;
+        }
+        else
+        {
+            dashboard = new DashboardWindow(0, false);
+            //qDebug() << "Is not relative";
+        }
         sub_dashboard = ui->mdiArea->addSubWindow(dashboard, Qt::FramelessWindowHint);
         dashboard->showMaximized();
         dashboard->activateWindow();
     }
-    else ui->mdiArea->setActiveSubWindow(sub_dashboard);
+    else
+        ui->mdiArea->setActiveSubWindow(sub_dashboard);
+    ui->toolButton_Dashboard->setChecked(true);
 }
 
 void MainWindow::on_toolButton_Dining_clicked()

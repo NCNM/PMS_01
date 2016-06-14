@@ -75,6 +75,9 @@ private:
     QMdiSubWindow *sub_mng;
     QMdiSubWindow *sub_system;
     QMdiSubWindow *current_sub;
+
+    int m_OfficerType;
+    QString m_ID;
 };
 
 #endif // MAINWINDOW_H

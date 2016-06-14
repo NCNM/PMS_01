@@ -140,7 +140,7 @@ background-color:0;</string>
          <string notr="true">background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="page">
          <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -888,36 +888,37 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                    <enum>QFrame::Raised</enum>
                   </property>
                   <layout class="QGridLayout" name="gridLayout">
-                   <item row="0" column="0">
-                    <widget class="QLabel" name="label_12">
-                     <property name="text">
-                      <string>Your related inmates:</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="1" column="0" colspan="3">
-                    <widget class="QTableView" name="tblRelatives">
+                   <item row="3" column="2">
+                    <widget class="QFrame" name="frame_15">
                      <property name="frameShape">
                       <enum>QFrame::NoFrame</enum>
                      </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="0">
-                    <widget class="QPushButton" name="pushButton_connect">
-                     <property name="minimumSize">
-                      <size>
-                       <width>90</width>
-                       <height>27</height>
-                      </size>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>140</width>
-                       <height>25</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton {
+                     <widget class="QPushButton" name="pushButton_overview">
+                      <property name="geometry">
+                       <rect>
+                        <x>0</x>
+                        <y>0</y>
+                        <width>140</width>
+                        <height>27</height>
+                       </rect>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>90</width>
+                        <height>27</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>140</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton {
 color: rgb(50, 50, 50);
 padding-left:7px;
 border-radius:5px;
@@ -950,13 +951,14 @@ background-color: rgb(38, 38, 38);
 }
 
 </string>
-                     </property>
-                     <property name="text">
-                      <string>View detailed information</string>
-                     </property>
+                      </property>
+                      <property name="text">
+                       <string>Overview</string>
+                      </property>
+                     </widget>
                     </widget>
                    </item>
-                   <item row="2" column="1">
+                   <item row="3" column="1">
                     <widget class="QPushButton" name="pushButton_connect_2">
                      <property name="minimumSize">
                       <size>
@@ -1010,13 +1012,71 @@ background-color: rgb(38, 38, 38);
                      </property>
                     </widget>
                    </item>
-                   <item row="2" column="2">
-                    <widget class="QFrame" name="frame_15">
+                   <item row="1" column="0" colspan="3">
+                    <widget class="QTableView" name="tblRelatives">
                      <property name="frameShape">
                       <enum>QFrame::NoFrame</enum>
                      </property>
-                     <property name="frameShadow">
-                      <enum>QFrame::Raised</enum>
+                    </widget>
+                   </item>
+                   <item row="3" column="0">
+                    <widget class="QPushButton" name="pushButton_connect">
+                     <property name="minimumSize">
+                      <size>
+                       <width>90</width>
+                       <height>27</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>140</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(200, 200, 200);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(255, 255, 255), stop: 1 rgb(229, 229, 229));
+}
+
+QPushButton:hover {
+color: rgb(255, 255, 255);
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: ;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(161, 215, 255), stop: 1 #299ED6);
+}
+
+QPushButton:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+background-color: #222222;
+}
+
+QPushButton:checked {
+border-radius:5px;
+border: 1px solid rgb(150, 150, 150);
+background-color: rgb(38, 38, 38);
+}
+
+</string>
+                     </property>
+                     <property name="text">
+                      <string>View detailed information</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_12">
+                     <property name="text">
+                      <string>Your related inmates:</string>
                      </property>
                     </widget>
                    </item>

@@ -13,7 +13,7 @@ class updatehealthform : public QWidget
     Q_OBJECT
 
 public:
-    explicit updatehealthform(QWidget *parent = 0, QString ID);
+    explicit updatehealthform(QWidget *parent = 0, QString ID = "");
     ~updatehealthform();
 
 private slots:
@@ -24,6 +24,7 @@ private slots:
 private:
     Ui::updatehealthform *ui;
     QString workingID;
+    QSqlQueryModel * model;
 };
 
 #endif // UPDATEHEALTHFORM_H

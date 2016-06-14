@@ -19,7 +19,7 @@ updatehealthform::updatehealthform(QWidget *parent, QString ID) :
     ui->deDate->setReadOnly(1);
     ui->cmbUrgency->setCurrentText((model->data(model->index(0, 3)).toString()));
     ui->txtCondition->setText((model->data(model->index(0, 4)).toString()));
-    ui->txtRemarks->setPlainText((model->data(model->index(0, 5)).toString())););
+    ui->txtRemarks->setPlainText((model->data(model->index(0, 5)).toString()));
 }
 
 updatehealthform::~updatehealthform()
