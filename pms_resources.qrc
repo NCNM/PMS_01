@@ -50,5 +50,13 @@
         <file>update_header.png</file>
         <file>generic_standalone_header.png</file>
         <file>information.png</file>
+        <file>bg_bottommenu.png</file>
+        <file>bottommenu_button_hover.png</file>
+        <file>bottommenu_button_pressed.png</file>
+        <file>bottommenu_button_checked.png</file>
+        <file>clock.png</file>
+        <file>health_log.png</file>
+        <file>list.png</file>
+        <file>view_details.png</file>
     </qresource>
 </RCC>

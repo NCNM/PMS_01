@@ -14,6 +14,7 @@ DashboardWindow::DashboardWindow(QWidget *parent, bool isRelative, QString ID) :
         //qDebug() << "Is relative";
         ui->stackedWidget->setCurrentIndex(1);
         on_pushButton_overview_clicked();
+        ui->pushButton_overview->setChecked(1);
     }
     else
         ui->stackedWidget->setCurrentIndex(0);

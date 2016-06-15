@@ -163,7 +163,7 @@ void MainWindow::on_toolButton_Dashboard_clicked()
         }
         else
         {
-            dashboard = new DashboardWindow(0, false);
+            dashboard = new DashboardWindow(0, true);
             //qDebug() << "Is not relative";
         }
         sub_dashboard = ui->mdiArea->addSubWindow(dashboard, Qt::FramelessWindowHint);

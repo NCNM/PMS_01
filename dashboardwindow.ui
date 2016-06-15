@@ -336,59 +336,137 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                      <property name="frameShadow">
                       <enum>QFrame::Raised</enum>
                      </property>
-                     <layout class="QVBoxLayout" name="verticalLayout_8">
-                      <item>
-                       <widget class="QLabel" name="label_7">
-                        <property name="font">
-                         <font>
-                          <pointsize>10</pointsize>
-                          <weight>50</weight>
-                          <bold>false</bold>
-                         </font>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">color: rgb(69, 69, 69);</string>
-                        </property>
-                        <property name="text">
-                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Database server connection: &lt;span style=&quot; color:#00aa00;&quot;&gt;Connected&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="label_8">
-                        <property name="font">
-                         <font>
-                          <pointsize>10</pointsize>
-                          <weight>50</weight>
-                          <bold>false</bold>
-                         </font>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">color: rgb(69, 69, 69);</string>
-                        </property>
-                        <property name="text">
-                         <string>Number of inmates: 000</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="label_9">
-                        <property name="font">
-                         <font>
-                          <pointsize>10</pointsize>
-                          <weight>50</weight>
-                          <bold>false</bold>
-                         </font>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">color: rgb(69, 69, 69);</string>
-                        </property>
-                        <property name="text">
-                         <string>Number of relatives: 000</string>
-                        </property>
-                       </widget>
-                      </item>
-                     </layout>
+                     <widget class="QLabel" name="label_7">
+                      <property name="geometry">
+                       <rect>
+                        <x>10</x>
+                        <y>10</y>
+                        <width>227</width>
+                        <height>16</height>
+                       </rect>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(69, 69, 69);</string>
+                      </property>
+                      <property name="text">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Database server connection: &lt;span style=&quot; color:#00aa00;&quot;&gt;Connected&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                     </widget>
+                     <widget class="QLabel" name="label_8">
+                      <property name="geometry">
+                       <rect>
+                        <x>10</x>
+                        <y>50</y>
+                        <width>139</width>
+                        <height>16</height>
+                       </rect>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(69, 69, 69);</string>
+                      </property>
+                      <property name="text">
+                       <string>Number of inmates: 000</string>
+                      </property>
+                     </widget>
+                     <widget class="QLabel" name="label_9">
+                      <property name="geometry">
+                       <rect>
+                        <x>10</x>
+                        <y>85</y>
+                        <width>142</width>
+                        <height>16</height>
+                       </rect>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(69, 69, 69);</string>
+                      </property>
+                      <property name="text">
+                       <string>Number of relatives: 000</string>
+                      </property>
+                     </widget>
+                     <widget class="QLabel" name="label_15">
+                      <property name="geometry">
+                       <rect>
+                        <x>330</x>
+                        <y>60</y>
+                        <width>139</width>
+                        <height>16</height>
+                       </rect>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(69, 69, 69);</string>
+                      </property>
+                      <property name="text">
+                       <string>Number of jail officers: 000</string>
+                      </property>
+                     </widget>
+                     <widget class="QLabel" name="label_16">
+                      <property name="geometry">
+                       <rect>
+                        <x>330</x>
+                        <y>80</y>
+                        <width>139</width>
+                        <height>16</height>
+                       </rect>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(69, 69, 69);</string>
+                      </property>
+                      <property name="text">
+                       <string>Last login: 000</string>
+                      </property>
+                     </widget>
+                     <widget class="QFrame" name="frame_23">
+                      <property name="geometry">
+                       <rect>
+                        <x>330</x>
+                        <y>10</y>
+                        <width>120</width>
+                        <height>31</height>
+                       </rect>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                     </widget>
                     </widget>
                    </item>
                   </layout>
@@ -709,6 +787,162 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                      <property name="frameShadow">
                       <enum>QFrame::Raised</enum>
                      </property>
+                     <layout class="QGridLayout" name="gridLayout">
+                      <item row="0" column="0">
+                       <widget class="QLabel" name="label_6">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <pointsize>9</pointsize>
+                          <weight>50</weight>
+                          <bold>false</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>FACILITY NAME</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="1">
+                       <widget class="QFrame" name="frame_18">
+                        <property name="frameShape">
+                         <enum>QFrame::StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="0">
+                       <widget class="QLabel" name="label_12">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <pointsize>9</pointsize>
+                          <weight>50</weight>
+                          <bold>false</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>ADDRESS</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="1">
+                       <widget class="QFrame" name="frame_19">
+                        <property name="frameShape">
+                         <enum>QFrame::StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="0">
+                       <widget class="QLabel" name="label_13">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <pointsize>9</pointsize>
+                          <weight>50</weight>
+                          <bold>false</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>PHONE</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="1">
+                       <widget class="QFrame" name="frame_20">
+                        <property name="frameShape">
+                         <enum>QFrame::StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="3" column="0">
+                       <widget class="QLabel" name="label_14">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <pointsize>9</pointsize>
+                          <weight>50</weight>
+                          <bold>false</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>WEBSITE</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="3" column="1">
+                       <widget class="QFrame" name="frame_21">
+                        <property name="frameShape">
+                         <enum>QFrame::StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="4" column="0" colspan="2">
+                       <widget class="QFrame" name="frame_22">
+                        <property name="frameShape">
+                         <enum>QFrame::StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
                     </widget>
                    </item>
                   </layout>
@@ -742,12 +976,27 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
           <item>
            <widget class="QFrame" name="frame_12">
             <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
+             <enum>QFrame::NoFrame</enum>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_14">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
              <item>
               <widget class="QFrame" name="dsbShortcuts_2">
                <property name="minimumSize">
@@ -763,48 +1012,29 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true">QFrame #dsbShortcuts {
-color: #333;
-border: 1px solid #ddd;
-border-radius: 5px;
-padding: 5px;
-background-color: rgb(253, 253, 254);
-}
-
-QFrame #dsbShortcuts:hover {
-border-color: rgb(149, 173, 209);
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.2, stop: 0 #fefefe, stop: 1 #efefef);
-}
-
-QFrame #dsbShortcuts:pressed {
-background: qradialgradient(cx: 0.4, cy: -0.1,
-fx: 0.4, fy: -0.1,
-radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
-}</string>
+                <string notr="true"/>
                </property>
                <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
+                <enum>QFrame::NoFrame</enum>
                </property>
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_12">
                 <property name="spacing">
-                 <number>2</number>
+                 <number>0</number>
                 </property>
                 <property name="leftMargin">
-                 <number>2</number>
+                 <number>0</number>
                 </property>
                 <property name="topMargin">
-                 <number>2</number>
+                 <number>0</number>
                 </property>
                 <property name="rightMargin">
-                 <number>2</number>
+                 <number>0</number>
                 </property>
                 <property name="bottomMargin">
-                 <number>2</number>
+                 <number>0</number>
                 </property>
                 <item>
                  <widget class="QFrame" name="frame_13">
@@ -845,7 +1075,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                       </size>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">background-image: url(:/images/database.png);</string>
+                      <string notr="true">background-image: url(:/images/user_imprisoned_female.png);</string>
                      </property>
                      <property name="text">
                       <string/>
@@ -869,7 +1099,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                       <string notr="true">background-color: 0;</string>
                      </property>
                      <property name="text">
-                      <string>RELATIVES' CORNER</string>
+                      <string>INMATES RELATED TO YOU</string>
                      </property>
                     </widget>
                    </item>
@@ -882,202 +1112,327 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                    <string notr="true">background-color: 0;</string>
                   </property>
                   <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
+                   <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QGridLayout" name="gridLayout">
-                   <item row="3" column="2">
-                    <widget class="QFrame" name="frame_15">
-                     <property name="frameShape">
-                      <enum>QFrame::NoFrame</enum>
-                     </property>
-                     <property name="frameShadow">
-                      <enum>QFrame::Raised</enum>
-                     </property>
-                     <widget class="QPushButton" name="pushButton_overview">
-                      <property name="geometry">
-                       <rect>
-                        <x>0</x>
-                        <y>0</y>
-                        <width>140</width>
-                        <height>27</height>
-                       </rect>
-                      </property>
-                      <property name="minimumSize">
-                       <size>
-                        <width>90</width>
-                        <height>27</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>140</width>
-                        <height>25</height>
-                       </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QPushButton {
-color: rgb(50, 50, 50);
-padding-left:7px;
-border-radius:5px;
-border: 1px solid rgb(200, 200, 200);
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 rgb(255, 255, 255), stop: 1 rgb(229, 229, 229));
-}
-
-QPushButton:hover {
-color: rgb(255, 255, 255);
-border-radius:5px;
-border: 1px solid rgb(23, 120, 173);
-background-color: ;
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 rgb(161, 215, 255), stop: 1 #299ED6);
-}
-
-QPushButton:pressed {
-border-radius:5px;
-border: 1px solid #777777;
-background-color: #222222;
-}
-
-QPushButton:checked {
-border-radius:5px;
-border: 1px solid rgb(150, 150, 150);
-background-color: rgb(38, 38, 38);
-}
-
-</string>
-                      </property>
-                      <property name="text">
-                       <string>Overview</string>
-                      </property>
-                     </widget>
-                    </widget>
-                   </item>
-                   <item row="3" column="1">
-                    <widget class="QPushButton" name="pushButton_connect_2">
-                     <property name="minimumSize">
-                      <size>
-                       <width>90</width>
-                       <height>27</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>120</width>
-                       <height>25</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton {
-color: rgb(50, 50, 50);
-padding-left:7px;
-border-radius:5px;
-border: 1px solid rgb(200, 200, 200);
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 rgb(255, 255, 255), stop: 1 rgb(229, 229, 229));
-}
-
-QPushButton:hover {
-color: rgb(255, 255, 255);
-border-radius:5px;
-border: 1px solid rgb(23, 120, 173);
-background-color: ;
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 rgb(161, 215, 255), stop: 1 #299ED6);
-}
-
-QPushButton:pressed {
-border-radius:5px;
-border: 1px solid #777777;
-background-color: #222222;
-}
-
-QPushButton:checked {
-border-radius:5px;
-border: 1px solid rgb(150, 150, 150);
-background-color: rgb(38, 38, 38);
-}
-
-</string>
-                     </property>
-                     <property name="text">
-                      <string>View visiting times</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="1" column="0" colspan="3">
+                  <layout class="QVBoxLayout" name="verticalLayout_7">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
                     <widget class="QTableView" name="tblRelatives">
                      <property name="frameShape">
                       <enum>QFrame::NoFrame</enum>
                      </property>
                     </widget>
                    </item>
-                   <item row="3" column="0">
-                    <widget class="QPushButton" name="pushButton_connect">
+                   <item>
+                    <widget class="QFrame" name="frame_15">
                      <property name="minimumSize">
                       <size>
-                       <width>90</width>
-                       <height>27</height>
+                       <width>0</width>
+                       <height>48</height>
                       </size>
                      </property>
                      <property name="maximumSize">
                       <size>
-                       <width>140</width>
-                       <height>25</height>
+                       <width>16777215</width>
+                       <height>48</height>
                       </size>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">QPushButton {
-color: rgb(50, 50, 50);
-padding-left:7px;
-border-radius:5px;
-border: 1px solid rgb(200, 200, 200);
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 rgb(255, 255, 255), stop: 1 rgb(229, 229, 229));
+                      <string notr="true">QFrame #frame_15 {
+	background-image: url(:/images/bg_bottommenu.png);
+	background-position:top;
+	background-color:0;
+	background-repeat:no-repeat;
+}</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_7">
+                      <property name="spacing">
+                       <number>0</number>
+                      </property>
+                      <property name="leftMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="QFrame" name="frame_17">
+                        <property name="frameShape">
+                         <enum>QFrame::StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="pushButton_overview">
+                        <property name="minimumSize">
+                         <size>
+                          <width>180</width>
+                          <height>48</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>180</width>
+                          <height>48</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton {
+	background-color:0;
+	color: #FFFFFF;
+	border:0;
 }
 
 QPushButton:hover {
-color: rgb(255, 255, 255);
-border-radius:5px;
-border: 1px solid rgb(23, 120, 173);
-background-color: ;
-background: qradialgradient(cx: 0.3, cy: -0.4,
-fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 rgb(161, 215, 255), stop: 1 #299ED6);
+	background-image: url(:/images/bottommenu_button_hover.png);
 }
 
 QPushButton:pressed {
-border-radius:5px;
-border: 1px solid #777777;
-background-color: #222222;
+	background-image: url(:/images/bottommenu_button_pressed.png);
 }
 
 QPushButton:checked {
-border-radius:5px;
-border: 1px solid rgb(150, 150, 150);
-background-color: rgb(38, 38, 38);
+	background-image: url(:/images/bottommenu_button_checked.png);
+}</string>
+                        </property>
+                        <property name="text">
+                         <string>Overview</string>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="pms_resources.qrc">
+                          <normaloff>:/images/list.png</normaloff>:/images/list.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>24</width>
+                          <height>24</height>
+                         </size>
+                        </property>
+                        <property name="checkable">
+                         <bool>true</bool>
+                        </property>
+                        <property name="autoExclusive">
+                         <bool>true</bool>
+                        </property>
+                        <property name="flat">
+                         <bool>false</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="pushButton_connect_3">
+                        <property name="minimumSize">
+                         <size>
+                          <width>180</width>
+                          <height>48</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>180</width>
+                          <height>48</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton {
+	background-color:0;
+	color: #FFFFFF;
+	border:0;
 }
 
-</string>
-                     </property>
-                     <property name="text">
-                      <string>View detailed information</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="0">
-                    <widget class="QLabel" name="label_12">
-                     <property name="text">
-                      <string>Your related inmates:</string>
-                     </property>
+QPushButton:hover {
+	background-image: url(:/images/bottommenu_button_hover.png);
+}
+
+QPushButton:pressed {
+	background-image: url(:/images/bottommenu_button_pressed.png);
+}
+
+QPushButton:checked {
+	background-image: url(:/images/bottommenu_button_checked.png);
+}</string>
+                        </property>
+                        <property name="text">
+                         <string>Health log</string>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="pms_resources.qrc">
+                          <normaloff>:/images/health_log.png</normaloff>:/images/health_log.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>24</width>
+                          <height>24</height>
+                         </size>
+                        </property>
+                        <property name="checkable">
+                         <bool>true</bool>
+                        </property>
+                        <property name="autoExclusive">
+                         <bool>true</bool>
+                        </property>
+                        <property name="flat">
+                         <bool>false</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="pushButton_connect_2">
+                        <property name="minimumSize">
+                         <size>
+                          <width>180</width>
+                          <height>48</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>180</width>
+                          <height>48</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton {
+	background-color:0;
+	color: #FFFFFF;
+	border:0;
+}
+
+QPushButton:hover {
+	background-image: url(:/images/bottommenu_button_hover.png);
+}
+
+QPushButton:pressed {
+	background-image: url(:/images/bottommenu_button_pressed.png);
+}
+
+QPushButton:checked {
+	background-image: url(:/images/bottommenu_button_checked.png);
+}</string>
+                        </property>
+                        <property name="text">
+                         <string>Visiting times</string>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="pms_resources.qrc">
+                          <normaloff>:/images/clock.png</normaloff>:/images/clock.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>24</width>
+                          <height>24</height>
+                         </size>
+                        </property>
+                        <property name="checkable">
+                         <bool>true</bool>
+                        </property>
+                        <property name="autoExclusive">
+                         <bool>true</bool>
+                        </property>
+                        <property name="flat">
+                         <bool>false</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="pushButton_connect">
+                        <property name="minimumSize">
+                         <size>
+                          <width>180</width>
+                          <height>48</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>180</width>
+                          <height>48</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton {
+	background-color:0;
+	color: #FFFFFF;
+	border:0;
+}
+
+QPushButton:hover {
+	background-image: url(:/images/bottommenu_button_hover.png);
+}
+
+QPushButton:pressed {
+	background-image: url(:/images/bottommenu_button_pressed.png);
+}
+
+QPushButton:checked {
+	background-image: url(:/images/bottommenu_button_checked.png);
+}</string>
+                        </property>
+                        <property name="text">
+                         <string>Detailed information</string>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="pms_resources.qrc">
+                          <normaloff>:/images/view_details.png</normaloff>:/images/view_details.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>24</width>
+                          <height>24</height>
+                         </size>
+                        </property>
+                        <property name="checkable">
+                         <bool>false</bool>
+                        </property>
+                        <property name="autoExclusive">
+                         <bool>true</bool>
+                        </property>
+                        <property name="flat">
+                         <bool>false</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QFrame" name="frame_16">
+                        <property name="frameShape">
+                         <enum>QFrame::StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
                     </widget>
                    </item>
                   </layout>
