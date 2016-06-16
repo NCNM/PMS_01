@@ -101,6 +101,7 @@ void EntryReleaseForm::on_pushButton_update_clicked()
                     "Availability AS Availability, BookIn AS Bookin, BookOut AS Bookout FROM INMATE", db);
 
     ui->tableView->setModel(model);
+    ui->tableView->resizeColumnsToContents();
 
     ui->pushSearch->setEnabled(true);
 }
@@ -124,6 +125,7 @@ void EntryReleaseForm::on_pushButton_18_clicked()
                     "Bookin > NOW() AND DATEDIFF(NOW(), BookIn) <= 7", db);
 
     ui->tableView->setModel(model);
+    ui->tableView->resizeColumnsToContents();
 }
 
 void EntryReleaseForm::on_pushButton_19_clicked()
@@ -136,6 +138,7 @@ void EntryReleaseForm::on_pushButton_19_clicked()
                     "FROM VISIT_TIMES", db);
 
     ui->tblVisitTimes->setModel(model);
+    ui->tblVisitTimes->resizeRowsToContents();
 }
 
 void EntryReleaseForm::on_pushButton_6_clicked()
@@ -241,4 +244,29 @@ void EntryReleaseForm::on_pushButton_9_clicked()
     satan_approves.exec();
 
     on_pushButton_19_clicked();
+}
+
+void EntryReleaseForm::on_tableView_clicked(const QModelIndex &index)
+{
+    ui->tableView->selectRow(index.row());
+}
+
+void EntryReleaseForm::on_tableView_2_pressed(const QModelIndex &index)
+{
+    ui->tableView_2->selectRow(index.row());
+}
+
+void EntryReleaseForm::on_tableView_2_clicked(const QModelIndex &index)
+{
+    ui->tableView_2->selectRow(index.row());
+}
+
+void EntryReleaseForm::on_tblVisitTimes_clicked(const QModelIndex &index)
+{
+    ui->tblVisitTimes->selectRow(index.row());
+}
+
+void EntryReleaseForm::on_tblVisitTimes_pressed(const QModelIndex &index)
+{
+    ui->tblVisitTimes->selectRow(index.row());
 }

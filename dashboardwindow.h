@@ -29,6 +29,10 @@ private slots:
 
     void on_pushButton_connect_3_clicked();
 
+    void on_tblRelatives_clicked(const QModelIndex &index);
+
+    void on_tblRelatives_pressed(const QModelIndex &index);
+
 signals:
     void row_activated(InmateInfoWindow* child, int parent);
 private:

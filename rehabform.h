@@ -43,10 +43,14 @@ private slots:
 
     void on_tableView_pressed(const QModelIndex &index);
 
+    void execQuery(QString query);
+
+    void on_tableView_clicked(const QModelIndex &index);
+
 private:
     Ui::RehabForm *ui;
     QSqlQueryModel *model;
-    void execQuery(QString query);
+
 };
 
 #endif // REHABFORM_H

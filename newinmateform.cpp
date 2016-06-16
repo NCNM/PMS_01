@@ -114,6 +114,7 @@ void newinmateform::on_pushButton_2_clicked()
                 "WHERE `ID` = N'" + workingID + "';";
     }
     emit add_new_inmate(query);
+    qDebug() << query;
     this->close();
 }
 

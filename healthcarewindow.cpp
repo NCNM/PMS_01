@@ -1,4 +1,5 @@
 #include "healthcarewindow.h"
+#include "updatehealthform.h"
 #include "ui_healthcarewindow.h"
 #include <QStyleFactory>
 #include "database.h"
@@ -20,7 +21,7 @@ HealthcareWindow::HealthcareWindow(QWidget *parent) :
 //    model->setTable("MEDCHECKS");
 //    model->select();
 
-   on_pushButton_HealthRecord_clicked();
+    on_pushButton_HealthRecord_clicked();
 
     ui->pushSearch->setEnabled(true);
     ui->pushButton_HealthRecord->setChecked(true);
@@ -41,12 +42,30 @@ HealthcareWindow::~HealthcareWindow()
 
 void HealthcareWindow::on_pushDelete_clicked()
 {
-    model->removeRow(ui->tableView->currentIndex().row());
+    QModelIndexList indexes = ui->tableView->selectionModel()->selection().indexes();
+    QModelIndex index = indexes.at(0);
+    QString ID = index.sibling(index.row(), 0).data().toString();
+    QSqlDatabase db = Database::getDatabase();
+
+    QString query;
+    query = "DELETE FROM MEDCHECKS WHERE MEDCHECKS.ID = N'" + ID + "'";
+
+    QSqlQuery satan_approves;
+    satan_approves.prepare(query);
+    satan_approves.exec();
+
+    on_pushButton_HealthRecord_clicked();
 }
 
 void HealthcareWindow::on_pushModify_clicked()
 {
-    model->select();
+    QModelIndexList indexes = ui->tableView->selectionModel()->selection().indexes();
+    QModelIndex index = indexes.at(0);
+    QString ID = index.sibling(index.row(), 0).data().toString();
+    updatehealthform* uhf = new updatehealthform(0, ID);
+    connect(uhf, &updatehealthform::finished_updating, this, &HealthcareWindow::on_finish_updating);
+    uhf->setWindowFlags(Qt::MSWindowsFixedSizeDialogHint);
+    uhf->show();
 }
 
 void HealthcareWindow::on_pushSearch_clicked()
@@ -60,6 +79,7 @@ void HealthcareWindow::on_pushSearch_clicked()
     QSqlQueryModel *model = new QSqlQueryModel;
     model->setQuery(query, db);
     ui->tableView->setModel(model);
+    ui->tableView->resizeColumnsToContents();
 }
 
 QString getNewMedCheckID(QVector <QString> arrID)
@@ -130,7 +150,12 @@ void HealthcareWindow::on_pushAccept_clicked()
 
     query.exec(QSQuery);
 
-    QMessageBox::information(this, "Success", "Complete!");
+    query.exec("INSERT INTO LOG (department, logtime, content) VALUES ('Healthcare', "
+            "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
+            "N'Record added.')");
+
+    emit send_status("Record added.");
+
     ui->comboBox_inmateID->setCurrentText("");
     ui->remarks->setPlainText("");
     ui->date->setDate(QDate(2000,01,01));
@@ -155,6 +180,7 @@ void HealthcareWindow::on_pushButton_HealthRecord_clicked()
     qmodel->setQuery(query, db);
 
     ui->tableView->setModel(qmodel);
+    ui->tableView->resizeColumnsToContents();
 
     ui->pushSearch->setEnabled(true);
 }
@@ -187,12 +213,15 @@ void HealthcareWindow::on_pushButton_19_clicked()
                     "`medchecks`.`MEDCHECKS_Date` AS `Date`, "
                     "`medchecks`.`Urgency` AS `Urgency`, "
                     "`medchecks`.`Condi` AS `Inmate health condition`, "
-                    "`medchecks`.`Remarks` AS `Remarks FROM `pms`.`medchecks` "
-                    "WHERE `medchecks`.`Urgency` = 'High';";
+                    "`medchecks`.`Remarks` AS `Remarks` FROM `pms`.`medchecks` "
+                    "WHERE `medchecks`.`Urgency` = N'High';";
+
+    qDebug() << query;
 
     qmodel->setQuery(query, db);
 
     ui->tableView->setModel(qmodel);
+    ui->tableView->resizeColumnsToContents();
 
     ui->pushSearch->setEnabled(true);
 }
@@ -200,4 +229,31 @@ void HealthcareWindow::on_pushButton_19_clicked()
 void HealthcareWindow::on_pushButton_17_clicked(bool checked)
 {
 
+}
+
+void HealthcareWindow::on_tableView_2_clicked(const QModelIndex &index)
+{
+    ui->tableView_2->selectRow(index.row());
+}
+
+void HealthcareWindow::on_tableView_2_pressed(const QModelIndex &index)
+{
+    ui->tableView_2->selectRow(index.row());
+}
+
+void HealthcareWindow::on_finish_updating()
+{
+    QSqlDatabase db = Database::getDatabase();
+    QSqlQuery query(db);
+    query.exec("INSERT INTO LOG (department, logtime, content) VALUES ('Healthcare', "
+            "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
+            "N'Record changed.')");
+
+    emit send_status("Record updated.");
+    on_pushButton_HealthRecord_clicked();
+}
+
+void HealthcareWindow::on_tableView_clicked(const QModelIndex &index)
+{
+    ui->tableView->selectRow(index.row());
 }

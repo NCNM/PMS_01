@@ -23,8 +23,10 @@ private slots:
     void on_pushButton_clicked();
 
     void on_pushButton_cancel_clicked();
+
 signals:
     void exec_query(QString query);
+
 private:
     Ui::newrehabform *ui;
     void initID();

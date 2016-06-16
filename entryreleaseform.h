@@ -50,6 +50,16 @@ private slots:
 
     void on_pushButton_9_clicked();
 
+    void on_tableView_clicked(const QModelIndex &index);
+
+    void on_tableView_2_pressed(const QModelIndex &index);
+
+    void on_tableView_2_clicked(const QModelIndex &index);
+
+    void on_tblVisitTimes_clicked(const QModelIndex &index);
+
+    void on_tblVisitTimes_pressed(const QModelIndex &index);
+
 signals:
     void row_activated(InmateInfoWindow* child, int parent);
 

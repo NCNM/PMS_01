@@ -38,7 +38,7 @@ MainWindow::MainWindow(int OfficerType, QString ID, QWidget *parent) :
     satan_approves.prepare(query);
     satan_approves.exec();
 
-    ui->statusBar->showMessage("Application is idle.");
+    ui->statusBar->showMessage("Finished loading.", 5000);
 
     on_toolButton_Dashboard_clicked();
 }
@@ -264,5 +264,5 @@ void MainWindow::details_closed()
 }
 
 void MainWindow::echo_status(QString content) {
-    ui->statusBar->showMessage(content, 5);
+    ui->statusBar->showMessage(content, 5000);
 }

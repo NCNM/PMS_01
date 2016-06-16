@@ -47,6 +47,7 @@ void DiningWindow::on_pushButton_viewInmates_clicked(bool checked)
                     "Eth AS 'Ethnicity', Addr AS 'Home address', Reason AS 'Reason', Custody AS 'Custody', "
                     "Availability AS 'Availability', BookIn AS 'Bookin', BookOut AS 'Bookout' FROM INMATE", db);
     ui->tableView->setModel(model);
+    ui->tableView->resizeColumnsToContents();
 
     curView = VIEW_INMATE;
     ui->pushSearch->setEnabled(true);
@@ -69,6 +70,7 @@ void DiningWindow::on_pushButton_viewOfficers_clicked(bool checked)
     QSqlQueryModel *model = new QSqlQueryModel;
     model->setQuery("SELECT * FROM OFFICER", db);
     ui->tableView->setModel(model);
+    ui->tableView->resizeColumnsToContents();
 
     curView = VIEW_OFFICER;
     ui->pushSearch->setEnabled(true);
@@ -98,6 +100,7 @@ void DiningWindow::on_pushSearch_clicked()
     QSqlQueryModel *model = new QSqlQueryModel;
     model->setQuery(query, db);
     ui->tableView->setModel(model);
+    ui->tableView->resizeColumnsToContents();
 }
 
 void DiningWindow::on_pushButton_18_clicked()
@@ -165,13 +168,15 @@ void DiningWindow::exec_query(QString Squery)
     model->setQuery("SELECT ID AS 'ID', _Date AS 'Date', Breakfast as 'Breakfast', "
                     "Lunch AS 'Lunch', Dinner AS 'Dinner', Subject AS 'Subject' FROM DINING", db);
     ui->tableView->setModel(model);
+    ui->tableView->resizeColumnsToContents();
     ui->stackedWidget->setCurrentIndex(0);
 
     QSqlQuery satan_approves(db);
     QString log = "INSERT INTO LOG (department, logtime, content) VALUES ('Dining', "
             "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
-            "N'Record added.')";
-    satan_approves.exec(log);
+            "N'Record changed.')";
+
+    emit send_status("Record changed.");
 }
 
 void DiningWindow::on_pushButton_Menu_clicked()
@@ -183,6 +188,7 @@ void DiningWindow::on_pushButton_Menu_clicked()
     model->setQuery("SELECT ID AS 'ID', _Date AS 'Date', Breakfast as 'Breakfast', "
                     "Lunch AS 'Lunch', Dinner AS 'Dinner', Subject AS 'Subject' FROM DINING", db);
     ui->tableView->setModel(model);
+    ui->tableView->resizeColumnsToContents();
 
     curView = VIEW_MENU;
     ui->pushSearch->setEnabled(true);
@@ -208,5 +214,21 @@ void DiningWindow::on_Delete_clicked()
 
     //qDebug() << Squery;
 
+    query.exec("INSERT INTO LOG (department, logtime, content) VALUES ('Dining', "
+            "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
+            "N'Record deleted.')");
+
+    emit send_status("Record deleted.");
+
     on_pushButton_Menu_clicked();
+}
+
+void DiningWindow::on_tableView_clicked(const QModelIndex &index)
+{
+    ui->tableView->selectRow(index.row());
+}
+
+void DiningWindow::on_tableView_pressed(const QModelIndex &index)
+{
+    ui->tableView->selectRow(index.row());
 }

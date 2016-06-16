@@ -33,18 +33,13 @@ void RehabForm::on_pushButton_16_clicked()
                     "FROM `pms`.`rehabilitation`;";
     model->setQuery(query, db);
     ui->tableView->setModel(model);
+    ui->tableView->resizeColumnsToContents();
 
     ui->pushSearch->setEnabled(true);
 }
 
 void RehabForm::on_pushAdd_clicked()
 {
-    /*QSqlQuery satan_approves;
-    QString log = "INSERT INTO LOG (department, logtime, content) VALUES ('Rehabilitation', "
-            "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
-            "N'Record added.')";
-    satan_approves.prepare(log);
-    satan_approves.exec();*/
     newrehabform * reha = new newrehabform(0, 0);
     connect(reha, &newrehabform::exec_query, this, &RehabForm::execQuery);
     reha->show();
@@ -105,6 +100,7 @@ void RehabForm::on_pushSearch_clicked()
     QSqlQueryModel *model = new QSqlQueryModel;
     model->setQuery(query, db);
     ui->tableView->setModel(model);
+    ui->tableView->resizeColumnsToContents();
 }
 
 void RehabForm::on_pushButton_17_clicked()
@@ -126,6 +122,7 @@ void RehabForm::on_pushButton_4_clicked()
     QSqlQueryModel *model = new QSqlQueryModel;
     model->setQuery(query, db);
     ui->tableView->setModel(model);
+    ui->tableView->resizeColumnsToContents();
     ui->stackedWidget->setCurrentIndex(0);
 }
 
@@ -153,4 +150,9 @@ void RehabForm::execQuery(QString Squery)
             "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
             "N'Record added.')";
     //satan_approves.exec(log);*/
+}
+
+void RehabForm::on_tableView_clicked(const QModelIndex &index)
+{
+    ui->tableView->selectRow(index.row());
 }

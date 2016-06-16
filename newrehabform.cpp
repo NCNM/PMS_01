@@ -15,11 +15,17 @@ newrehabform::newrehabform(QWidget *parent, int purpose, QString IDInm) :
     {
         ui->pushButton->setText("Add entry");
         ui->pushButton->setIcon(QIcon(":/images/add_new.png"));
+        ui->header->setStyleSheet("QWidget #header { background-color: rgb(255, 255, 255);"
+                                  "background-image: url(:/images/add_new_header.png);"
+                                  "}");
     }
     else if (purpose == 1)  // update
     {
-        ui->pushButton->setText("Update");
+        ui->pushButton->setText("Save");
         ui->pushButton->setIcon(QIcon(":/images/save_data.png"));
+        ui->header->setStyleSheet("QWidget #header { background-color: rgb(255, 255, 255);"
+                                  "background-image: url(:/images/update_header.png);"
+                                  "}");
 
         QSqlQueryModel * model = new QSqlQueryModel;
         QSqlDatabase db = Database::getDatabase();

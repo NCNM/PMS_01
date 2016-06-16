@@ -72,13 +72,28 @@ void ManagementWindow::on_comboBox_currentIndexChanged(const QString &arg1)
     ui->pushSearch->setEnabled(true);
     if (arg1 == "All") {
         model->setQuery("SELECT department AS Department, logtime AS Timestamp, content AS Event FROM LOG", db);
-        ui->tableView_3->setModel(model);
+        ui->tableView_2->setModel(model);
     }
     else {
-        if (arg1 == "All") {
             model->setQuery("SELECT department AS Department, logtime AS Timestamp, content AS Event FROM LOG "
                             "WHERE department = N'" + arg1 + "'", db);
-            ui->tableView_3->setModel(model);
-        }
+            qDebug() << "SELECT department AS Department, logtime AS Timestamp, content AS Event FROM LOG "
+                        "WHERE department = N'" + arg1 + "'";
+            ui->tableView_2->setModel(model);
     }
+}
+
+void ManagementWindow::on_tableView_2_clicked(const QModelIndex &index)
+{
+    ui->tableView_2->selectRow(index.row());
+}
+
+void ManagementWindow::on_tableView_2_pressed(const QModelIndex &index)
+{
+    ui->tableView_2->selectRow(index.row());
+}
+
+void ManagementWindow::on_tableView_3_clicked(const QModelIndex &index)
+{
+    ui->tableView_3->selectRow(index.row());
 }

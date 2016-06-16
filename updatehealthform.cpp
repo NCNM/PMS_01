@@ -36,11 +36,13 @@ void updatehealthform::on_pushButton_2_clicked()
 {
     QString query;
     query = "UPDATE MEDCHECKS SET "
-            "Urgency = '" + ui->cmbUrgency->currentText() + "', MEDCHECKS_Date = '"
+            "Urgency = '" + ui->cmbUrgency->currentText() + "', Condi = '"
             + ui->txtCondition->text() + "', Remarks = '" + ui->txtRemarks->toPlainText()
-            + "' WHERE ID = '" + workingID + "'";
+            + "' WHERE MEDCHECKS.ID = '" + workingID + "'";
+    qDebug() << query;
     QSqlQuery satan_approves;
     satan_approves.prepare(query);
     satan_approves.exec();
+    emit finished_updating();
     this->close();
 }

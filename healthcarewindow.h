@@ -38,6 +38,14 @@ private slots:
 
     void on_pushButton_17_clicked(bool checked);
 
+    void on_tableView_2_clicked(const QModelIndex &index);
+
+    void on_tableView_2_pressed(const QModelIndex &index);
+
+    void on_finish_updating();
+
+    void on_tableView_clicked(const QModelIndex &index);
+
 signals:
     void send_status(QString content);
 

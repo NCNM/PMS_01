@@ -390,7 +390,7 @@ background-color: rgb(120, 120, 120);
 </string>
       </property>
       <property name="text">
-       <string>Menu</string>
+       <string>Diets</string>
       </property>
       <property name="checkable">
        <bool>true</bool>

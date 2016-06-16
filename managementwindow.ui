@@ -782,7 +782,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                      </item>
                      <item>
                       <property name="text">
-                       <string>Entry &amp; Release</string>
+                       <string>Entry/Release</string>
                       </property>
                      </item>
                      <item>

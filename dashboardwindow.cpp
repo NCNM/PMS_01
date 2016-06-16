@@ -93,3 +93,13 @@ void DashboardWindow::on_pushButton_connect_3_clicked()
     model->setQuery(query);
     ui->tblRelatives->setModel(model);
 }
+
+void DashboardWindow::on_tblRelatives_clicked(const QModelIndex &index)
+{
+    ui->tblRelatives->selectRow(index.row());
+}
+
+void DashboardWindow::on_tblRelatives_pressed(const QModelIndex &index)
+{
+    ui->tblRelatives->selectRow(index.row());
+}

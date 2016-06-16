@@ -21,6 +21,9 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+signals:
+    void finished_updating();
+
 private:
     Ui::updatehealthform *ui;
     QString workingID;

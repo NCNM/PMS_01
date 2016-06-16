@@ -140,7 +140,7 @@ background-color:0;</string>
          <string notr="true">background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="page">
          <layout class="QVBoxLayout" name="verticalLayout_10">

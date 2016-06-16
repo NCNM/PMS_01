@@ -54,6 +54,10 @@ private slots:
 
     void on_Delete_clicked();
 
+    void on_tableView_clicked(const QModelIndex &index);
+
+    void on_tableView_pressed(const QModelIndex &index);
+
 signals:
     void row_activated(InmateInfoWindow* child, int parent);
 

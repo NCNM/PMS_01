@@ -24,11 +24,17 @@ newmenuform::newmenuform(QWidget *parent, int n_mode, QString ID) :
     {
         ui->pushButton_2->setText("Add entry");
         ui->pushButton_2->setIcon(QIcon(":/images/add_new.png"));
+        ui->header->setStyleSheet("QWidget #header { background-color: rgb(255, 255, 255);"
+                                  "background-image: url(:/images/add_new_header.png);"
+                                  "}");
     }
     else if (mode == 1)
     {
-        ui->pushButton_2->setText("Update");
+        ui->pushButton_2->setText("Save");
         ui->pushButton_2->setIcon(QIcon(":/images/save_data.png"));
+        ui->header->setStyleSheet("QWidget #header { background-color: rgb(255, 255, 255);"
+                                  "background-image: url(:/images/update_header.png);"
+                                  "}");
 
         model = new QSqlQueryModel;
         QString query = "SELECT * FROM DINING WHERE ID = '" + ID + "'";
@@ -48,6 +54,7 @@ newmenuform::~newmenuform()
 
 QString getNewDiningID(QVector <QString> arrID)
  {
+    // Must be magic.
      QVector <int> arrNumID(arrID.size());
 
      for (int i = 0; i < arrID.size(); i++)
@@ -111,7 +118,7 @@ void newmenuform::on_pushButton_2_clicked()
                 "WHERE `ID` = N'" + workingID + "';";
     }
     emit exec_query(QSQuery);
-    //query.exec(QSQuery);
+    qDebug() << QSQuery;
     close();
 }
 

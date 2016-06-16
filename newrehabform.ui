@@ -23,7 +23,11 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Record Editor</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="pms_resources.qrc">
+    <normaloff>:/images/education.png</normaloff>:/images/education.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -431,10 +435,24 @@ border: 1px solid #777777;
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QComboBox" name="comboBox_officerInCharge"/>
+          <widget class="QComboBox" name="comboBox_officerInCharge">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>27</height>
+            </size>
+           </property>
+          </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QComboBox" name="comboBox_inmateID"/>
+          <widget class="QComboBox" name="comboBox_inmateID">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>27</height>
+            </size>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>
