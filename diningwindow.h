@@ -57,6 +57,8 @@ private slots:
 signals:
     void row_activated(InmateInfoWindow* child, int parent);
 
+    void send_status(QString content);
+
 private:
     Ui::DiningWindow *ui;
     QSqlTableModel *model;

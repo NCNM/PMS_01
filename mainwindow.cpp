@@ -180,6 +180,7 @@ void MainWindow::on_toolButton_Dining_clicked()
     if (sub_dining == NULL) {
        dining = new DiningWindow;
        connect(dining, &DiningWindow::row_activated, this, &MainWindow::view_inmate_details);
+       connect(dining, &DiningWindow::send_status, this, &MainWindow::echo_status);
        sub_dining = ui->mdiArea->addSubWindow(dining, Qt::FramelessWindowHint);
        dining->showMaximized();
        dining->activateWindow();
@@ -192,6 +193,7 @@ void MainWindow::on_toolButton_Healthcare_clicked()
     if (sub_healthcare == NULL) {
       healthcare = new HealthcareWindow;
       sub_healthcare = ui->mdiArea->addSubWindow(healthcare, Qt::FramelessWindowHint);
+      connect(healthcare, &HealthcareWindow::send_status, this, &MainWindow::echo_status);
       healthcare->showMaximized();
       healthcare->activateWindow();
     }
@@ -203,6 +205,7 @@ void MainWindow::on_toolButton_etrr_clicked()
     if (sub_etrr == NULL) {
        etrr = new EntryReleaseForm;
        connect(etrr, &EntryReleaseForm::row_activated, this, &MainWindow::view_inmate_details);
+       connect(etrr, &EntryReleaseForm::send_status, this, &MainWindow::echo_status);
        sub_etrr = ui->mdiArea->addSubWindow(etrr, Qt::FramelessWindowHint);
        etrr->showMaximized();
        etrr->activateWindow();
@@ -226,6 +229,7 @@ void MainWindow::on_toolButton_mng_clicked()
     if (sub_mng == NULL) {
        mng = new ManagementWindow;
        connect(mng, &ManagementWindow::row_activated, this, &MainWindow::view_inmate_details);
+       connect(mng, &ManagementWindow::send_status, this, &MainWindow::echo_status);
        sub_mng = ui->mdiArea->addSubWindow(mng, Qt::FramelessWindowHint);
        mng->showMaximized();
        mng->activateWindow();
@@ -257,4 +261,8 @@ void MainWindow::view_inmate_details(InmateInfoWindow* child, int parent)
 void MainWindow::details_closed()
 {
     ui->mdiArea->setActiveSubWindow(current_sub);
+}
+
+void MainWindow::echo_status(QString content) {
+    ui->statusBar->showMessage(content, 5);
 }

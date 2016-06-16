@@ -47,6 +47,8 @@ private slots:
 
     void details_closed();
 
+    void echo_status(QString content);
+
 private:
     Ui::MainWindow *ui;
 

@@ -20,18 +20,7 @@ HealthcareWindow::HealthcareWindow(QWidget *parent) :
 //    model->setTable("MEDCHECKS");
 //    model->select();
 
-    QSqlQueryModel * qmodel = new QSqlQueryModel;
-
-    QString query = "SELECT `medchecks`.`ID` AS `Record ID`, "
-                    "`medchecks`.`InmateID` AS `Inmate ID`, "
-                    "`medchecks`.`MEDCHECKS_Date` AS `Date`, "
-                    "`medchecks`.`Urgency` AS `Urgency`, "
-                    "`medchecks`.`Condi` AS `Inmate health condition`, "
-                    "`medchecks`.`Remarks` AS `Remarks FROM `pms`.`medchecks`;";
-
-    qmodel->setQuery(query, db);
-
-    ui->tableView->setModel(qmodel);
+   on_pushButton_HealthRecord_clicked();
 
     ui->pushSearch->setEnabled(true);
     ui->pushButton_HealthRecord->setChecked(true);
@@ -133,7 +122,12 @@ void HealthcareWindow::on_pushAccept_clicked()
     }
 
     QString newID = getNewMedCheckID(arrID);
-    QSQuery = "INSERT INTO MEDCHECKS VALUES('" + newID + "', '" + ui->comboBox_inmateID->currentText() + "', '" + ui->date->text() + " " + ui->time->text().left(ui->time->text().size() - 3) + "', NULL, NULL, N'" + ui->remarks->toPlainText() + "')";
+    QSQuery = "INSERT INTO MEDCHECKS VALUES('" + newID + "', '" + ui->comboBox_inmateID->currentText()
+            + "', '" + ui->date->text() + " " + ui->time->text().left(ui->time->text().size() - 3)
+            + "', NULL, NULL, N'" + ui->remarks->toPlainText() + "')";
+
+    qDebug() << QSQuery;
+
     query.exec(QSQuery);
 
     QMessageBox::information(this, "Success", "Complete!");
@@ -147,18 +141,20 @@ void HealthcareWindow::on_pushButton_HealthRecord_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 
-    /*QSqlDatabase db = Database::getDatabase();
-
-    QSqlQueryModel *model = new QSqlQueryModel;
-    model->setQuery("SELECT * FROM MEDCHECKS", db);
-    ui->tableView->setModel(model);*/
-
     QSqlDatabase db = Database::getDatabase();
-    model = new QSqlTableModel(this, db);
-    model->setTable("MEDCHECKS");
-    model->select();
+    QSqlQueryModel * qmodel = new QSqlQueryModel;
 
-    ui->tableView->setModel(model);
+    QString query = "SELECT `medchecks`.`ID` AS `Record ID`, "
+                    "`medchecks`.`InmateID` AS `Inmate ID`, "
+                    "`medchecks`.`MEDCHECKS_Date` AS `Date`, "
+                    "`medchecks`.`Urgency` AS `Urgency`, "
+                    "`medchecks`.`Condi` AS `Inmate health condition`, "
+                    "`medchecks`.`Remarks` AS `Remarks` FROM `pms`.`medchecks`;";
+    qDebug() << query;
+
+    qmodel->setQuery(query, db);
+
+    ui->tableView->setModel(qmodel);
 
     ui->pushSearch->setEnabled(true);
 }

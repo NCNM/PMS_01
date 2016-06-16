@@ -58,5 +58,13 @@
         <file>health_log.png</file>
         <file>list.png</file>
         <file>view_details.png</file>
+        <file>criminal.png</file>
+        <file>jail_officer.png</file>
+        <file>last_login.png</file>
+        <file>relatives.png</file>
+        <file>globe.png</file>
+        <file>location.png</file>
+        <file>nametag.png</file>
+        <file>phone.png</file>
     </qresource>
 </RCC>

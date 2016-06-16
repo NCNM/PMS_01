@@ -71,6 +71,8 @@ void EntryReleaseForm::on_pushButton_clicked()
             "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
             "N'Record deleted.')");
 
+    emit send_status("Record deleted.");
+
     on_pushButton_update_clicked();
  }
 
@@ -168,6 +170,7 @@ void EntryReleaseForm::add_inmate_triggered(QString query) {
     QString log = "INSERT INTO LOG (department, logtime, content) VALUES ('Entry/Release', "
             "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
             "N'Record changed.')";
+    emit send_status("Record changed.");
     satan_approves.prepare(log);
     satan_approves.exec();
     on_pushButton_update_clicked();
@@ -233,6 +236,7 @@ void EntryReleaseForm::on_pushButton_9_clicked()
     query = "INSERT INTO LOG (department, logtime, content) VALUES ('Entry/Release', "
             "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
             "N'Visit times changed.')";
+    emit send_status("Visit times updated.");
     satan_approves.prepare(query);
     satan_approves.exec();
 

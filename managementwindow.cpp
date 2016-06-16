@@ -11,7 +11,7 @@ ManagementWindow::ManagementWindow(QWidget *parent) :
     QSqlDatabase db = Database::getDatabase();
 
     QSqlQueryModel *model = new QSqlQueryModel;
-    model->setQuery("SELECT logtime AS Timestamp, content AS Event FROM LOG", db);
+    model->setQuery("SELECT department AS Department, logtime AS Timestamp, content AS Event FROM LOG", db);
     ui->tableView_2->setModel(model);
 }
 
@@ -26,7 +26,7 @@ void ManagementWindow::on_pushButton_16_clicked()
     QSqlDatabase db = Database::getDatabase();
 
     QSqlQueryModel *model = new QSqlQueryModel;
-    model->setQuery("SELECT logtime AS Timestamp, content AS Content FROM LOG", db);
+    model->setQuery("SELECT department AS Department, logtime AS Timestamp, content AS Event FROM LOG", db);
     ui->tableView_2->setModel(model);
 }
 
@@ -63,4 +63,22 @@ void ManagementWindow::on_tableView_3_doubleClicked(const QModelIndex &index)
 void ManagementWindow::on_tableView_3_pressed(const QModelIndex &index)
 {
     ui->tableView_3->selectRow(index.row());
+}
+
+void ManagementWindow::on_comboBox_currentIndexChanged(const QString &arg1)
+{
+    QSqlDatabase db = Database::getDatabase();
+    QSqlQueryModel *model = new QSqlQueryModel;
+    ui->pushSearch->setEnabled(true);
+    if (arg1 == "All") {
+        model->setQuery("SELECT department AS Department, logtime AS Timestamp, content AS Event FROM LOG", db);
+        ui->tableView_3->setModel(model);
+    }
+    else {
+        if (arg1 == "All") {
+            model->setQuery("SELECT department AS Department, logtime AS Timestamp, content AS Event FROM LOG "
+                            "WHERE department = N'" + arg1 + "'", db);
+            ui->tableView_3->setModel(model);
+        }
+    }
 }

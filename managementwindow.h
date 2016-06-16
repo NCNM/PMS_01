@@ -34,8 +34,12 @@ private slots:
 
     void on_tableView_3_pressed(const QModelIndex &index);
 
+    void on_comboBox_currentIndexChanged(const QString &arg1);
+
 signals:
     void row_activated(InmateInfoWindow* child, int parent);
+
+    void send_status(QString content);
 
 private:
     Ui::ManagementWindow *ui;

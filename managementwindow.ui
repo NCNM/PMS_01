@@ -767,6 +767,11 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                      </property>
                      <item>
                       <property name="text">
+                       <string>All</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
                        <string>Healthcare</string>
                       </property>
                      </item>
@@ -782,7 +787,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                      </item>
                      <item>
                       <property name="text">
-                       <string>Management</string>
+                       <string>Maintenance</string>
                       </property>
                      </item>
                      <item>
@@ -825,7 +830,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                       </size>
                      </property>
                      <property name="text">
-                      <string>Forward</string>
+                      <string>Export</string>
                      </property>
                      <property name="icon">
                       <iconset resource="pms_resources.qrc">
@@ -1111,7 +1116,7 @@ background-color: 0;</string>
                       </size>
                      </property>
                      <property name="text">
-                      <string>Forward</string>
+                      <string>Export</string>
                      </property>
                      <property name="icon">
                       <iconset resource="pms_resources.qrc">

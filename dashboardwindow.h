@@ -27,6 +27,8 @@ private slots:
 
     void on_pushButton_overview_clicked();
 
+    void on_pushButton_connect_3_clicked();
+
 signals:
     void row_activated(InmateInfoWindow* child, int parent);
 private:

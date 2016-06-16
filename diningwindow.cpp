@@ -52,6 +52,9 @@ void DiningWindow::on_pushButton_viewInmates_clicked(bool checked)
     ui->pushSearch->setEnabled(true);
     ui->pushButton_Modify->hide();
     ui->pushButton_Add->hide();
+    ui->Delete->hide();
+    ui->pushButton_2->show();
+    ui->pushButton_3->show();
 }
 
 void DiningWindow::on_pushButton_viewOfficers_clicked(bool checked)
@@ -71,6 +74,9 @@ void DiningWindow::on_pushButton_viewOfficers_clicked(bool checked)
     ui->pushSearch->setEnabled(true);
     ui->pushButton_Modify->hide();
     ui->pushButton_Add->hide();
+    ui->Delete->hide();
+    ui->pushButton_2->show();
+    ui->pushButton_3->show();
 }
 
 void DiningWindow::on_pushSearch_clicked()
@@ -182,6 +188,9 @@ void DiningWindow::on_pushButton_Menu_clicked()
     ui->pushSearch->setEnabled(true);
     ui->pushButton_Modify->show();
     ui->pushButton_Add->show();
+    ui->Delete->show();
+    ui->pushButton_2->hide();
+    ui->pushButton_3->hide();
 }
 
 void DiningWindow::on_Delete_clicked()

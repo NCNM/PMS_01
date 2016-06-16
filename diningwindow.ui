@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>715</width>
+    <width>796</width>
     <height>413</height>
    </rect>
   </property>
@@ -852,7 +852,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     <widget class="QPushButton" name="pushButton_Modify">
                      <property name="minimumSize">
                       <size>
-                       <width>70</width>
+                       <width>80</width>
                        <height>27</height>
                       </size>
                      </property>
@@ -881,7 +881,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     <widget class="QPushButton" name="pushButton_Add">
                      <property name="minimumSize">
                       <size>
-                       <width>70</width>
+                       <width>80</width>
                        <height>27</height>
                       </size>
                      </property>
@@ -910,7 +910,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     <widget class="QPushButton" name="Delete">
                      <property name="minimumSize">
                       <size>
-                       <width>70</width>
+                       <width>80</width>
                        <height>27</height>
                       </size>
                      </property>
@@ -924,8 +924,8 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                       <string>Delete</string>
                      </property>
                      <property name="icon">
-                      <iconset>
-                       <normaloff>delete.png</normaloff>delete.png</iconset>
+                      <iconset resource="pms_resources.qrc">
+                       <normaloff>:/images/delete.png</normaloff>:/images/delete.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -939,7 +939,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     <widget class="QPushButton" name="pushButton_3">
                      <property name="minimumSize">
                       <size>
-                       <width>70</width>
+                       <width>80</width>
                        <height>27</height>
                       </size>
                      </property>
@@ -968,7 +968,7 @@ stop: 0.9 #4c4c4c, stop: 1 #333333);
                     <widget class="QPushButton" name="pushButton_2">
                      <property name="minimumSize">
                       <size>
-                       <width>70</width>
+                       <width>80</width>
                        <height>27</height>
                       </size>
                      </property>

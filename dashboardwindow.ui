@@ -213,18 +213,21 @@ background-color:0;</string>
                   <property name="styleSheet">
                    <string notr="true">QFrame #dsbDatabase {
 color: #333;
-border: 1px solid #ddd;
+border: 1px solid;
 border-radius: 5px;
 padding: 5px;
-background-color: rgb(253, 253, 254);
-min-width: 80px;
-}
-
-QFrame #dsbDatabase:hover {
 border-color: rgb(149, 173, 209);
 background: qradialgradient(cx: 0.3, cy: -0.4,
 fx: 0.3, fy: -0.4,
 radius: 1.2, stop: 0 #fefefe, stop: 1 #efefef);
+min-width: 80px;
+}
+
+QFrame #dsbDatabase:hover {
+border-color: rgb(169, 193, 229);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.2, stop: 0 #ffffff, stop: 1 #fcfcfc);
 }
 
 QFrame #dsbDatabase:pressed {
@@ -234,7 +237,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
 }</string>
                   </property>
                   <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
+                   <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
@@ -259,7 +262,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                     <widget class="QFrame" name="frame_6">
                      <property name="minimumSize">
                       <size>
-                       <width>0</width>
+                       <width>92</width>
                        <height>50</height>
                       </size>
                      </property>
@@ -270,7 +273,14 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                       </size>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">background-color: 0;</string>
+                      <string notr="true">QFrame #frame_6 {
+border: 1px solid;
+border-radius: 5px;
+padding: 5px;
+border-color: rgb(129, 153, 189);
+background-color: rgb(129, 153, 189);
+min-width: 80px;
+}</string>
                      </property>
                      <property name="frameShape">
                       <enum>QFrame::StyledPanel</enum>
@@ -279,11 +289,17 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                       <enum>QFrame::Raised</enum>
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_3">
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
                       <item>
                        <widget class="QPushButton" name="pushButton">
                         <property name="minimumSize">
                          <size>
-                          <width>32</width>
+                          <width>0</width>
                           <height>32</height>
                          </size>
                         </property>
@@ -315,7 +331,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                          </font>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">background-color: 0;</string>
+                         <string notr="true">background-color: 0;
+color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="text">
                          <string>DATABASE INFORMATION</string>
@@ -337,13 +354,13 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                       <enum>QFrame::Raised</enum>
                      </property>
                      <layout class="QGridLayout" name="gridLayout_2">
-                      <item row="0" column="0">
+                      <item row="0" column="0" colspan="3">
                        <widget class="QLabel" name="label_7">
                         <property name="font">
                          <font>
                           <pointsize>10</pointsize>
-                          <weight>50</weight>
-                          <bold>false</bold>
+                          <weight>75</weight>
+                          <bold>true</bold>
                          </font>
                         </property>
                         <property name="styleSheet">
@@ -354,7 +371,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                         </property>
                        </widget>
                       </item>
-                      <item row="0" column="1">
+                      <item row="0" column="3">
                        <widget class="QFrame" name="frame_23">
                         <property name="frameShape">
                          <enum>QFrame::StyledPanel</enum>
@@ -366,6 +383,45 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                       </item>
                       <item row="1" column="0">
                        <widget class="QLabel" name="label_8">
+                        <property name="minimumSize">
+                         <size>
+                          <width>25</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>25</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <pointsize>10</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="pixmap">
+                         <pixmap resource="pms_resources.qrc">:/images/criminal.png</pixmap>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="1">
+                       <widget class="QLabel" name="txtInmateCount">
+                        <property name="minimumSize">
+                         <size>
+                          <width>32</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
                         <property name="font">
                          <font>
                           <pointsize>10</pointsize>
@@ -379,10 +435,55 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                         <property name="text">
                          <string>Number of inmates: 000</string>
                         </property>
+                        <property name="scaledContents">
+                         <bool>false</bool>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                        </property>
                        </widget>
                       </item>
-                      <item row="1" column="1">
+                      <item row="1" column="2">
                        <widget class="QLabel" name="label_15">
+                        <property name="minimumSize">
+                         <size>
+                          <width>25</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>25</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <pointsize>10</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="pixmap">
+                         <pixmap resource="pms_resources.qrc">:/images/jail_officer.png</pixmap>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="3">
+                       <widget class="QLabel" name="txtOfficerCount">
+                        <property name="minimumSize">
+                         <size>
+                          <width>32</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
                         <property name="font">
                          <font>
                           <pointsize>10</pointsize>
@@ -400,6 +501,45 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                       </item>
                       <item row="2" column="0">
                        <widget class="QLabel" name="label_9">
+                        <property name="minimumSize">
+                         <size>
+                          <width>25</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>25</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <pointsize>10</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="pixmap">
+                         <pixmap resource="pms_resources.qrc">:/images/relatives.png</pixmap>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="1">
+                       <widget class="QLabel" name="txtRelativeCount">
+                        <property name="minimumSize">
+                         <size>
+                          <width>32</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
                         <property name="font">
                          <font>
                           <pointsize>10</pointsize>
@@ -415,8 +555,47 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                         </property>
                        </widget>
                       </item>
-                      <item row="2" column="1">
+                      <item row="2" column="2">
                        <widget class="QLabel" name="label_16">
+                        <property name="minimumSize">
+                         <size>
+                          <width>25</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>25</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <pointsize>10</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="pixmap">
+                         <pixmap resource="pms_resources.qrc">:/images/last_login.png</pixmap>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="3">
+                       <widget class="QLabel" name="txtLoginCount">
+                        <property name="minimumSize">
+                         <size>
+                          <width>32</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
                         <property name="font">
                          <font>
                           <pointsize>10</pointsize>
@@ -428,7 +607,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                          <string notr="true">color: rgb(69, 69, 69);</string>
                         </property>
                         <property name="text">
-                         <string>Last login: 000</string>
+                         <string>Last login: 2016/06/17</string>
                         </property>
                        </widget>
                       </item>
@@ -443,18 +622,21 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                   <property name="styleSheet">
                    <string notr="true">QFrame #dsbCare{
 color: #333;
-border: 1px solid #ddd;
+border: 1px solid;
 border-radius: 5px;
 padding: 5px;
-background-color: rgb(253, 253, 254);
-min-width: 80px;
-}
-
-QFrame #dsbCare:hover {
 border-color: rgb(149, 173, 209);
 background: qradialgradient(cx: 0.3, cy: -0.4,
 fx: 0.3, fy: -0.4,
 radius: 1.2, stop: 0 #fefefe, stop: 1 #efefef);
+min-width: 80px;
+}
+
+QFrame #dsbCare:hover {
+border-color: rgb(169, 193, 229);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.2, stop: 0 #ffffff, stop: 1 #fcfcfc);
 }
 
 QFrame #dsbCare:pressed {
@@ -464,7 +646,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
 }</string>
                   </property>
                   <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
+                   <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
@@ -489,7 +671,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                     <widget class="QFrame" name="frame_8">
                      <property name="minimumSize">
                       <size>
-                       <width>0</width>
+                       <width>92</width>
                        <height>50</height>
                       </size>
                      </property>
@@ -500,7 +682,14 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                       </size>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">background-color: 0;</string>
+                      <string notr="true">QFrame #frame_8 {
+border: 1px solid;
+border-radius: 5px;
+padding: 5px;
+border-color: rgb(129, 153, 189);
+background-color: rgb(129, 153, 189);
+min-width: 80px;
+}</string>
                      </property>
                      <property name="frameShape">
                       <enum>QFrame::StyledPanel</enum>
@@ -509,6 +698,12 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                       <enum>QFrame::Raised</enum>
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_4">
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
                       <item>
                        <widget class="QPushButton" name="pushButton_2">
                         <property name="minimumSize">
@@ -545,7 +740,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                          </font>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">background-color: 0;</string>
+                         <string notr="true">background-color: 0;
+color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="text">
                          <string>ANNOUNCEMENTS</string>
@@ -580,7 +776,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                          <string notr="true">color: rgb(69, 69, 69);</string>
                         </property>
                         <property name="text">
-                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; color:#ff0000;&quot;&gt;This functionality is not implemented.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;tbh it's not like anyone's gonna care about announcements anyway.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; color:#ff0000;&quot;&gt;No new announcements.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;tbh it's not like anyone's gonna care about announcements anyway.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                         </property>
                        </widget>
                       </item>
@@ -618,7 +814,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                  <widget class="QFrame" name="dsbShortcuts">
                   <property name="minimumSize">
                    <size>
-                    <width>250</width>
+                    <width>92</width>
                     <height>0</height>
                    </size>
                   </property>
@@ -631,17 +827,21 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                   <property name="styleSheet">
                    <string notr="true">QFrame #dsbShortcuts {
 color: #333;
-border: 1px solid #ddd;
+border: 1px solid;
 border-radius: 5px;
 padding: 5px;
-background-color: rgb(253, 253, 254);
-}
-
-QFrame #dsbShortcuts:hover {
 border-color: rgb(149, 173, 209);
 background: qradialgradient(cx: 0.3, cy: -0.4,
 fx: 0.3, fy: -0.4,
 radius: 1.2, stop: 0 #fefefe, stop: 1 #efefef);
+min-width: 80px;
+}
+
+QFrame #dsbShortcuts:hover {
+border-color: rgb(169, 193, 229);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.2, stop: 0 #ffffff, stop: 1 #fcfcfc);
 }
 
 QFrame #dsbShortcuts:pressed {
@@ -651,7 +851,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
 }</string>
                   </property>
                   <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
+                   <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
@@ -676,7 +876,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                     <widget class="QFrame" name="frame_10">
                      <property name="minimumSize">
                       <size>
-                       <width>0</width>
+                       <width>92</width>
                        <height>50</height>
                       </size>
                      </property>
@@ -687,7 +887,14 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                       </size>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">background-color: 0;</string>
+                      <string notr="true">QFrame #frame_10 {
+border: 1px solid;
+border-radius: 5px;
+padding: 5px;
+border-color: rgb(129, 153, 189);
+background-color: rgb(129, 153, 189);
+min-width: 80px;
+}</string>
                      </property>
                      <property name="frameShape">
                       <enum>QFrame::StyledPanel</enum>
@@ -696,6 +903,12 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                       <enum>QFrame::Raised</enum>
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_5">
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
                       <item>
                        <widget class="QPushButton" name="pushButton_3">
                         <property name="minimumSize">
@@ -711,7 +924,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                          </size>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">border-image: url(:/images/information.png);</string>
+                         <string notr="true">border-image: url(:/images/information.png);
+background-color:0;</string>
                         </property>
                         <property name="text">
                          <string/>
@@ -732,7 +946,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                          </font>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">background-color: 0;</string>
+                         <string notr="true">background-color: 0;
+color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="text">
                          <string>FACILITY INFORMATION</string>
@@ -755,6 +970,22 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                      </property>
                      <layout class="QGridLayout" name="gridLayout">
                       <item row="0" column="0">
+                       <widget class="QLabel" name="label_17">
+                        <property name="maximumSize">
+                         <size>
+                          <width>32</width>
+                          <height>32</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="pixmap">
+                         <pixmap resource="pms_resources.qrc">:/images/nametag.png</pixmap>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="1">
                        <widget class="QLabel" name="label_6">
                         <property name="minimumSize">
                          <size>
@@ -770,9 +1001,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                         </property>
                         <property name="font">
                          <font>
-                          <pointsize>9</pointsize>
-                          <weight>50</weight>
-                          <bold>false</bold>
+                          <pointsize>8</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
                          </font>
                         </property>
                         <property name="text">
@@ -780,7 +1011,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                         </property>
                        </widget>
                       </item>
-                      <item row="0" column="1">
+                      <item row="0" column="2">
                        <widget class="QFrame" name="frame_18">
                         <property name="frameShape">
                          <enum>QFrame::StyledPanel</enum>
@@ -788,9 +1019,63 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                         <property name="frameShadow">
                          <enum>QFrame::Raised</enum>
                         </property>
+                        <layout class="QHBoxLayout" name="horizontalLayout_12">
+                         <item>
+                          <widget class="QLineEdit" name="txtID">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>27</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLineEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QLineEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QLineEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+</string>
+                           </property>
+                           <property name="readOnly">
+                            <bool>true</bool>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
                        </widget>
                       </item>
                       <item row="1" column="0">
+                       <widget class="QLabel" name="label_18">
+                        <property name="maximumSize">
+                         <size>
+                          <width>32</width>
+                          <height>32</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="pixmap">
+                         <pixmap resource="pms_resources.qrc">:/images/location.png</pixmap>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="1">
                        <widget class="QLabel" name="label_12">
                         <property name="minimumSize">
                          <size>
@@ -806,9 +1091,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                         </property>
                         <property name="font">
                          <font>
-                          <pointsize>9</pointsize>
-                          <weight>50</weight>
-                          <bold>false</bold>
+                          <pointsize>8</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
                          </font>
                         </property>
                         <property name="text">
@@ -816,7 +1101,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                         </property>
                        </widget>
                       </item>
-                      <item row="1" column="1">
+                      <item row="1" column="2">
                        <widget class="QFrame" name="frame_19">
                         <property name="frameShape">
                          <enum>QFrame::StyledPanel</enum>
@@ -824,9 +1109,63 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                         <property name="frameShadow">
                          <enum>QFrame::Raised</enum>
                         </property>
+                        <layout class="QHBoxLayout" name="horizontalLayout_11">
+                         <item>
+                          <widget class="QLineEdit" name="txtID_2">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>27</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLineEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QLineEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QLineEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+</string>
+                           </property>
+                           <property name="readOnly">
+                            <bool>true</bool>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
                        </widget>
                       </item>
                       <item row="2" column="0">
+                       <widget class="QLabel" name="label_19">
+                        <property name="maximumSize">
+                         <size>
+                          <width>32</width>
+                          <height>32</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="pixmap">
+                         <pixmap resource="pms_resources.qrc">:/images/phone.png</pixmap>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="1">
                        <widget class="QLabel" name="label_13">
                         <property name="minimumSize">
                          <size>
@@ -842,9 +1181,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                         </property>
                         <property name="font">
                          <font>
-                          <pointsize>9</pointsize>
-                          <weight>50</weight>
-                          <bold>false</bold>
+                          <pointsize>8</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
                          </font>
                         </property>
                         <property name="text">
@@ -852,7 +1191,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                         </property>
                        </widget>
                       </item>
-                      <item row="2" column="1">
+                      <item row="2" column="2">
                        <widget class="QFrame" name="frame_20">
                         <property name="frameShape">
                          <enum>QFrame::StyledPanel</enum>
@@ -860,9 +1199,63 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                         <property name="frameShadow">
                          <enum>QFrame::Raised</enum>
                         </property>
+                        <layout class="QHBoxLayout" name="horizontalLayout_10">
+                         <item>
+                          <widget class="QLineEdit" name="txtID_3">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>27</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLineEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QLineEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QLineEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+</string>
+                           </property>
+                           <property name="readOnly">
+                            <bool>true</bool>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
                        </widget>
                       </item>
                       <item row="3" column="0">
+                       <widget class="QLabel" name="label_20">
+                        <property name="maximumSize">
+                         <size>
+                          <width>32</width>
+                          <height>32</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="pixmap">
+                         <pixmap resource="pms_resources.qrc">:/images/globe.png</pixmap>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="3" column="1">
                        <widget class="QLabel" name="label_14">
                         <property name="minimumSize">
                          <size>
@@ -878,9 +1271,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                         </property>
                         <property name="font">
                          <font>
-                          <pointsize>9</pointsize>
-                          <weight>50</weight>
-                          <bold>false</bold>
+                          <pointsize>8</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
                          </font>
                         </property>
                         <property name="text">
@@ -888,7 +1281,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                         </property>
                        </widget>
                       </item>
-                      <item row="3" column="1">
+                      <item row="3" column="2">
                        <widget class="QFrame" name="frame_21">
                         <property name="frameShape">
                          <enum>QFrame::StyledPanel</enum>
@@ -896,9 +1289,47 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                         <property name="frameShadow">
                          <enum>QFrame::Raised</enum>
                         </property>
+                        <layout class="QHBoxLayout" name="horizontalLayout_9">
+                         <item>
+                          <widget class="QLineEdit" name="txtID_4">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>27</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLineEdit {
+color: rgb(50, 50, 50);
+padding-left:7px;
+border-radius:5px;
+border: 1px solid rgb(170, 170, 170);
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 rgb(254, 254, 254), stop: 1 rgb(252, 252, 252));
+}
+
+QLineEdit:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QLineEdit:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+</string>
+                           </property>
+                           <property name="readOnly">
+                            <bool>true</bool>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
                        </widget>
                       </item>
-                      <item row="4" column="0" colspan="2">
+                      <item row="4" column="0" colspan="3">
                        <widget class="QFrame" name="frame_22">
                         <property name="frameShape">
                          <enum>QFrame::StyledPanel</enum>
@@ -1100,13 +1531,109 @@ radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QTableView" name="tblRelatives">
+                    <widget class="QFrame" name="frame_24">
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
                      <property name="frameShape">
                       <enum>QFrame::NoFrame</enum>
                      </property>
-                     <attribute name="verticalHeaderVisible">
-                      <bool>false</bool>
-                     </attribute>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_8">
+                      <property name="spacing">
+                       <number>0</number>
+                      </property>
+                      <property name="leftMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>15</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>15</number>
+                      </property>
+                      <item>
+                       <widget class="QFrame" name="frame_25">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true"/>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::NoFrame</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QTableView" name="tblRelatives">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                         <size>
+                          <width>800</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QTableView {
+border-radius:5px;
+padding:5px;
+border: 1px solid rgb(170, 170, 170);
+}
+
+QTableView:hover {
+border-radius:5px;
+border: 1px solid rgb(23, 120, 173);
+background-color: rgb(255, 255, 255);
+}
+
+QTableView:pressed {
+border-radius:5px;
+border: 1px solid #777777;
+}
+</string>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::NoFrame</enum>
+                        </property>
+                        <attribute name="verticalHeaderVisible">
+                         <bool>false</bool>
+                        </attribute>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QFrame" name="frame_26">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::NoFrame</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
                     </widget>
                    </item>
                    <item>
