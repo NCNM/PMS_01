@@ -140,7 +140,7 @@ background-color:0;</string>
          <string notr="true">background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="page">
          <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -289,6 +289,9 @@ min-width: 80px;
                       <enum>QFrame::Raised</enum>
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_3">
+                      <property name="spacing">
+                       <number>9</number>
+                      </property>
                       <property name="topMargin">
                        <number>0</number>
                       </property>
@@ -698,6 +701,9 @@ min-width: 80px;
                       <enum>QFrame::Raised</enum>
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_4">
+                      <property name="spacing">
+                       <number>9</number>
+                      </property>
                       <property name="topMargin">
                        <number>0</number>
                       </property>
@@ -903,6 +909,9 @@ min-width: 80px;
                       <enum>QFrame::Raised</enum>
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_5">
+                      <property name="spacing">
+                       <number>9</number>
+                      </property>
                       <property name="topMargin">
                        <number>0</number>
                       </property>
@@ -1054,6 +1063,9 @@ border: 1px solid #777777;
                            <property name="readOnly">
                             <bool>true</bool>
                            </property>
+                           <property name="placeholderText">
+                            <string>ABCXYZ State Prison</string>
+                           </property>
                           </widget>
                          </item>
                         </layout>
@@ -1144,6 +1156,9 @@ border: 1px solid #777777;
                            <property name="readOnly">
                             <bool>true</bool>
                            </property>
+                           <property name="placeholderText">
+                            <string>12 Grimmauld Place</string>
+                           </property>
                           </widget>
                          </item>
                         </layout>
@@ -1193,6 +1208,9 @@ border: 1px solid #777777;
                       </item>
                       <item row="2" column="2">
                        <widget class="QFrame" name="frame_20">
+                        <property name="styleSheet">
+                         <string notr="true"/>
+                        </property>
                         <property name="frameShape">
                          <enum>QFrame::StyledPanel</enum>
                         </property>
@@ -1233,6 +1251,9 @@ border: 1px solid #777777;
                            </property>
                            <property name="readOnly">
                             <bool>true</bool>
+                           </property>
+                           <property name="placeholderText">
+                            <string>1528-5451-6486</string>
                            </property>
                           </widget>
                          </item>
@@ -1323,6 +1344,9 @@ border: 1px solid #777777;
                            </property>
                            <property name="readOnly">
                             <bool>true</bool>
+                           </property>
+                           <property name="placeholderText">
+                            <string>http://www.abcxyzsp.gov</string>
                            </property>
                           </widget>
                          </item>
@@ -1457,6 +1481,37 @@ border: 1px solid #777777;
                    <enum>QFrame::Raised</enum>
                   </property>
                   <layout class="QHBoxLayout" name="horizontalLayout_6">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QFrame" name="frame_27">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                    </widget>
+                   </item>
                    <item>
                     <widget class="QPushButton" name="pushButton_4">
                      <property name="minimumSize">
@@ -1497,6 +1552,22 @@ border: 1px solid #777777;
                      </property>
                      <property name="text">
                       <string>INMATES RELATED TO YOU</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QFrame" name="frame_28">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
                      </property>
                     </widget>
                    </item>
