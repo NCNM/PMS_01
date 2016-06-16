@@ -49,6 +49,10 @@ private slots:
 
     void echo_status(QString content);
 
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
 

@@ -44,7 +44,6 @@ void EntryReleaseForm::on_pushButton_3_clicked()
 
 void EntryReleaseForm::on_pushButton_2_clicked()
 {
-    // model->insertRow(model->rowCount());
     newinmateform* nif = new newinmateform(0, 0, 0);
     connect(nif, &newinmateform::add_new_inmate, this, &EntryReleaseForm::add_inmate_triggered);
     nif->setWindowFlags(Qt::MSWindowsFixedSizeDialogHint);

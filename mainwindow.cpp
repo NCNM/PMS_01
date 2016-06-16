@@ -154,17 +154,14 @@ void MainWindow::SetPermission(int OfficerType)
 
 void MainWindow::on_toolButton_Dashboard_clicked()
 {
-    //qDebug() << "Dashboard";
     if (sub_dashboard == NULL) {
         if (m_OfficerType == RELATIVETYPE)
         {
             dashboard = new DashboardWindow(0, true, m_ID);
-            //qDebug() << "Is releative " + m_ID;
         }
         else
         {
             dashboard = new DashboardWindow(0, false);
-            //qDebug() << "Is not relative";
         }
         sub_dashboard = ui->mdiArea->addSubWindow(dashboard, Qt::FramelessWindowHint);
         dashboard->showMaximized();
@@ -265,4 +262,20 @@ void MainWindow::details_closed()
 
 void MainWindow::echo_status(QString content) {
     ui->statusBar->showMessage(content, 5000);
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->frame->setStyleSheet("QFrame { background-image: url(:/images/banner_ee.png);"
+                             "background-repeat:no-repeat; }");
+    ui->graphicsView->setStyleSheet("border-image: url(:/images/doge.jpeg);"
+                                    "border-radius: 5px;");
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    ui->frame->setStyleSheet("QFrame { background-image: url(:/images/banner.png);"
+                             "background-repeat:no-repeat; }");
+    ui->graphicsView->setStyleSheet("border-image: url(:/images/generic_user.jpg);"
+                                    "border-radius: 5px;");
 }

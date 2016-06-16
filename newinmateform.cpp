@@ -76,7 +76,6 @@ void newinmateform::on_pushButton_4_clicked()
            if(image.isNull())
            {
                QMessageBox::critical(this, "Error", "Failed to display image!");
-               // return;
            }
            QGraphicsScene* scene = new QGraphicsScene();
            QPixmap* item = new QPixmap(QPixmap::fromImage(image));
@@ -100,7 +99,6 @@ void newinmateform::on_pushButton_2_clicked()
                 "N'" + ui->txtEth->text() +"', N'" + ui->txtAddress->text() +"', N'" + ui->txtReason->text() +"', "
                 "N'" + ui->txtCustody->text() +"', N'" + ui->cmbAvailable->currentText() + "' ,CAST(N'" + ui->deBookin->text() + "' AS Datetime), "
                 "CAST(N'" + ui->deBookout->text() + "' AS Datetime));";
-        //qDebug() << query;
     }
     else if (mode == 1)
     {
@@ -114,7 +112,6 @@ void newinmateform::on_pushButton_2_clicked()
                 "WHERE `ID` = N'" + workingID + "';";
     }
     emit add_new_inmate(query);
-    qDebug() << query;
     this->close();
 }
 

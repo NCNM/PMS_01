@@ -17,9 +17,6 @@ HealthcareWindow::HealthcareWindow(QWidget *parent) :
     ui->stackedWidget->setCurrentIndex(0);
 
     QSqlDatabase db = Database::getDatabase();
-//    model = new QSqlTableModel(this, db);
-//    model->setTable("MEDCHECKS");
-//    model->select();
 
     on_pushButton_HealthRecord_clicked();
 
@@ -152,8 +149,6 @@ void HealthcareWindow::on_pushAccept_clicked()
             + "', '" + ui->date->text() + " " + ui->time->text().left(ui->time->text().size() - 3)
             + "', NULL, NULL, N'" + ui->remarks->toPlainText() + "')";
 
-    qDebug() << QSQuery;
-
     query.exec(QSQuery);
 
     query.exec("INSERT INTO LOG (department, logtime, content) VALUES ('Healthcare', "
@@ -181,7 +176,6 @@ void HealthcareWindow::on_pushButton_HealthRecord_clicked()
                     "`medchecks`.`Urgency` AS `Urgency`, "
                     "`medchecks`.`Condi` AS `Inmate health condition`, "
                     "`medchecks`.`Remarks` AS `Remarks` FROM `pms`.`medchecks`;";
-    qDebug() << query;
 
     qmodel->setQuery(query, db);
 
@@ -221,8 +215,6 @@ void HealthcareWindow::on_pushButton_19_clicked()
                     "`medchecks`.`Condi` AS `Inmate health condition`, "
                     "`medchecks`.`Remarks` AS `Remarks` FROM `pms`.`medchecks` "
                     "WHERE `medchecks`.`Urgency` = N'High';";
-
-    qDebug() << query;
 
     qmodel->setQuery(query, db);
 

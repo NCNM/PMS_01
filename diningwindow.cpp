@@ -10,14 +10,6 @@ DiningWindow::DiningWindow(QWidget *parent) :
     ui->pushButton_Menu->setChecked(true);
     ui->stackedWidget->setCurrentIndex(0);
 
-    /*QSqlDatabase db = Database::getDatabase();
-
-    QSqlQueryModel *model = new QSqlQueryModel;
-    model->setQuery("SELECT ID AS ID, Lastname AS \"Last name\", Midname AS \"Middle name\", Firstname as \"First name\", "
-                    "Gender AS Gender, DOB AS DOB, Hair AS \"Hair color\", Eyes AS \"Eye color\", "
-                    "Eth AS \"Ethnicity\", Addr AS \"Home address\", Reason AS Reason, Custody AS Custody, "
-                    "Availability AS Availability, BookIn AS Bookin, BookOut AS Bookout FROM INMATE", db);
-    ui->tableView->setModel(model);*/
     on_pushButton_Menu_clicked();
     curView = VIEW_MENU;
     ui->pushSearch->setEnabled(true);
@@ -34,12 +26,6 @@ void DiningWindow::on_pushButton_viewInmates_clicked(bool checked)
 {
     ui->stackedWidget->setCurrentIndex(0);
     QSqlDatabase db = Database::getDatabase();
-/*
-    QSqlTableModel *model = new QSqlTableModel(this, db);
-    model->setTable("INMATE");
-    model->select();
-    ui->tableView->setModel(model);
-*/
 
     QSqlQueryModel *model = new QSqlQueryModel;
     model->setQuery("SELECT ID AS 'ID', Lastname AS 'Last name', Midname AS 'Middle name', Firstname as 'First name', "
@@ -62,10 +48,6 @@ void DiningWindow::on_pushButton_viewOfficers_clicked(bool checked)
 {
     ui->stackedWidget->setCurrentIndex(0);
     QSqlDatabase db = Database::getDatabase();
-
-    /*QSqlQueryModel *model = new QSqlQueryModel;
-    model->setQuery("SELECT * FROM OFFICER", db);
-    ui->tableView->setModel(model);*/
 
     QSqlQueryModel *model = new QSqlQueryModel;
     model->setQuery("SELECT * FROM OFFICER", db);
@@ -147,11 +129,9 @@ void DiningWindow::on_pushButton_4_clicked()
 
 void DiningWindow::on_pushButton_Add_clicked()
 {
-    // model->insertRow(model->rowCount());
     newmenuform * menu = new newmenuform(0, 0);
     connect(menu, &newmenuform::exec_query, this, &DiningWindow::exec_query);
     menu->setWindowFlags(Qt::MSWindowsFixedSizeDialogHint);
-    //connect(menu, &newmenuform::exec_query, this, &DiningWindow::exec_query);
     menu->show();
 }
 
@@ -166,7 +146,6 @@ void DiningWindow::on_pushButton_Modify_clicked()
     newmenuform * menu = new newmenuform(0, 1, ID);
     connect(menu, &newmenuform::exec_query, this, &DiningWindow::exec_query);
     menu->setWindowFlags(Qt::MSWindowsFixedSizeDialogHint);
-    //connect(menu, &newmenuform::exec_query, this, &DiningWindow::exec_query);
     menu->show();
 }
 
@@ -224,8 +203,6 @@ void DiningWindow::on_Delete_clicked()
     QSqlQuery query(db);
     QString Squery = "DELETE FROM DINING WHERE ID = '" + ID + "'";
     query.exec(Squery);
-
-    //qDebug() << Squery;
 
     query.exec("INSERT INTO LOG (department, logtime, content) VALUES ('Dining', "
             "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "

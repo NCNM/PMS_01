@@ -47,16 +47,8 @@ void RehabForm::on_pushAdd_clicked()
 
 void RehabForm::on_pushDelete_clicked()
 {
-   /* model->removeRow(ui->tableView->currentIndex().row());
-    QSqlQuery satan_approves;
-    QString log = "INSERT INTO LOG (department, logtime, content) VALUES ('Rehabilitation', "
-            "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
-            "N'Record deleted.')";
-    satan_approves.prepare(log);
-    satan_approves.exec();*/
-
     QMessageBox::StandardButton reply;
-      reply = QMessageBox::question(this, "Delete", "Are you sure you want to delete this line?",
+      reply = QMessageBox::question(this, "Delete", "Are you sure you want to delete this entry?",
                                     QMessageBox::Yes|QMessageBox::No);
       if (reply == QMessageBox::Yes)
       {
@@ -70,7 +62,10 @@ void RehabForm::on_pushDelete_clicked()
 
           QSqlQuery query(db);
           query.exec("DELETE FROM REHABILITATION WHERE InmateID = '" + IDInm + "'");
-
+          QString log = "INSERT INTO LOG (department, logtime, content) VALUES ('Rehabilitation', "
+                  "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
+                  "N'Record deleted.')";
+          query.exec(log);
           on_pushButton_16_clicked();
       }
 }
@@ -148,11 +143,10 @@ void RehabForm::execQuery(QString Squery)
 
     on_pushButton_16_clicked();
 
-    /*QSqlQuery satan_approves(db);
-    QString log = "INSERT INTO LOG (department, logtime, content) VALUES ('Dining', "
+    QString log = "INSERT INTO LOG (department, logtime, content) VALUES ('Rehabilitation', "
             "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
-            "N'Record added.')";
-    //satan_approves.exec(log);*/
+            "N'Record changed.')";
+    query.exec(log);
 }
 
 void RehabForm::on_tableView_clicked(const QModelIndex &index)
