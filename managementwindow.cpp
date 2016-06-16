@@ -97,3 +97,26 @@ void ManagementWindow::on_tableView_3_clicked(const QModelIndex &index)
 {
     ui->tableView_3->selectRow(index.row());
 }
+
+void ManagementWindow::on_pushSearch_clicked()
+{
+    QSqlDatabase db = Database::getDatabase();
+
+    QString name = ui->lineEdit_2->text();
+    QString query;
+    query = "SELECT ID AS ID, Lastname AS \"Last name\", Midname AS \"Middle name\", Firstname as \"First name\", "
+            "Gender AS Gender, DOB AS DOB, Hair AS \"Hair color\", Eyes AS \"Eye color\", "
+            "Eth AS \"Ethnicity\", Addr AS \"Home address\", Reason AS Reason, Custody AS Custody, "
+            "Availability AS Availability, BookIn AS Bookin, BookOut AS Bookout "
+            "FROM INMATE WHERE Firstname LIKE '%" + name + "%' OR Midname LIKE '%" + name + "%' OR Lastname LIKE '%" + name + "%' "
+            "OR ID LIKE '%" + name + "%'";
+
+    QSqlQueryModel *model2 = new QSqlQueryModel;
+    model2->setQuery(query, db);
+    ui->tableView_3->setModel(model2);
+}
+
+void ManagementWindow::on_lineEdit_2_returnPressed()
+{
+    on_pushSearch_clicked();
+}

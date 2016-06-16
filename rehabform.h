@@ -47,6 +47,8 @@ private slots:
 
     void on_tableView_clicked(const QModelIndex &index);
 
+    void on_lineEdit_returnPressed();
+
 private:
     Ui::RehabForm *ui;
     QSqlQueryModel *model;

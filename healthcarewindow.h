@@ -46,6 +46,8 @@ private slots:
 
     void on_tableView_clicked(const QModelIndex &index);
 
+    void on_lineEdit_returnPressed();
+
 signals:
     void send_status(QString content);
 

@@ -58,6 +58,8 @@ private slots:
 
     void on_tableView_pressed(const QModelIndex &index);
 
+    void on_lineEdit_returnPressed();
+
 signals:
     void row_activated(InmateInfoWindow* child, int parent);
 

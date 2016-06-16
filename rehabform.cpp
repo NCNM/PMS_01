@@ -95,7 +95,10 @@ void RehabForm::on_pushSearch_clicked()
 
     QString name = ui->lineEdit->text();
     QString query;
-    query = "SELECT * FROM REHABILITATION WHERE OfficerID LIKE '%" + name + "%' OR InmateID LIKE '%" + name + "%' OR R_level LIKE '%" + name + "%'";
+    query = "SELECT `rehabilitation`.`OfficerID` AS `Officer in charge`, `rehabilitation`.`InmateID` AS `Inmate ID`, "
+            "`rehabilitation`.`R_level` AS `Progress`, `rehabilitation`.`Ludate` AS `Last updated`, `rehabilitation`.`Talents` AS `Talents`, "
+            "`rehabilitation`.`Recommendation` AS `Recommendations`, `rehabilitation`.`Reward` AS `Rewards`, `rehabilitation`.`Remarks` AS `Remarks` "
+            "FROM REHABILITATION WHERE OfficerID LIKE '%" + name + "%' OR InmateID LIKE '%" + name + "%' OR R_level LIKE '%" + name + "%'";
 
     QSqlQueryModel *model = new QSqlQueryModel;
     model->setQuery(query, db);
@@ -155,4 +158,9 @@ void RehabForm::execQuery(QString Squery)
 void RehabForm::on_tableView_clicked(const QModelIndex &index)
 {
     ui->tableView->selectRow(index.row());
+}
+
+void RehabForm::on_lineEdit_returnPressed()
+{
+    on_pushSearch_clicked();
 }
