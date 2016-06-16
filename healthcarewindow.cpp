@@ -74,7 +74,13 @@ void HealthcareWindow::on_pushSearch_clicked()
 
     QString name = ui->lineEdit->text();
     QString query;
-    query = "SELECT * FROM MEDCHECKS WHERE ID LIKE '%" + name + "%' OR InmateID LIKE '%" + name + "%' OR Condi LIKE '%" + name + "%'";
+    query = "SELECT `medchecks`.`ID` AS `Record ID`, "
+            "`medchecks`.`InmateID` AS `Inmate ID`, "
+            "`medchecks`.`MEDCHECKS_Date` AS `Date`, "
+            "`medchecks`.`Urgency` AS `Urgency`, "
+            "`medchecks`.`Condi` AS `Inmate health condition`, "
+            "`medchecks`.`Remarks` AS `Remarks`"
+            "FROM MEDCHECKS WHERE ID LIKE '%" + name + "%' OR InmateID LIKE '%" + name + "%' OR Condi LIKE '%" + name + "%'";
 
     QSqlQueryModel *model = new QSqlQueryModel;
     model->setQuery(query, db);
@@ -256,4 +262,9 @@ void HealthcareWindow::on_finish_updating()
 void HealthcareWindow::on_tableView_clicked(const QModelIndex &index)
 {
     ui->tableView->selectRow(index.row());
+}
+
+void HealthcareWindow::on_lineEdit_returnPressed()
+{
+    on_pushSearch_clicked();
 }

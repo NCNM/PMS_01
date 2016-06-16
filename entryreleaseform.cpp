@@ -82,7 +82,12 @@ void EntryReleaseForm::on_pushSearch_clicked()
 
     QString name = ui->lineEdit->text();
     QString query;
-    query = "SELECT * FROM INMATE WHERE Firstname LIKE '%" + name + "%' OR Midname LIKE '%" + name + "%' OR Lastname LIKE '%" + name + "%'";
+    query = "SELECT ID AS ID, Lastname AS \"Last name\", Midname AS \"Middle name\", Firstname as \"First name\", "
+            "Gender AS Gender, DOB AS DOB, Hair AS \"Hair color\", Eyes AS \"Eye color\", "
+            "Eth AS \"Ethnicity\", Addr AS \"Home address\", Reason AS Reason, Custody AS Custody, "
+            "Availability AS Availability, BookIn AS Bookin, BookOut AS Bookout "
+            "FROM INMATE WHERE Firstname LIKE '%" + name + "%' OR Midname LIKE '%" + name + "%' OR Lastname LIKE '%" + name + "%' "
+            "OR ID LIKE '%" + name + "%'";
 
     QSqlQueryModel *model2 = new QSqlQueryModel;
     model2->setQuery(query, db);
@@ -269,4 +274,9 @@ void EntryReleaseForm::on_tblVisitTimes_clicked(const QModelIndex &index)
 void EntryReleaseForm::on_tblVisitTimes_pressed(const QModelIndex &index)
 {
     ui->tblVisitTimes->selectRow(index.row());
+}
+
+void EntryReleaseForm::on_lineEdit_returnPressed()
+{
+    on_pushSearch_clicked();
 }

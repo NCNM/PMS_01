@@ -89,14 +89,27 @@ void DiningWindow::on_pushSearch_clicked()
     QString query;
     if (curView == VIEW_OFFICER)
     {
-        query = "SELECT * FROM OFFICER WHERE Firstname LIKE '%" + name + "%' OR Midname LIKE '%" + name + "%' OR Lastname LIKE '%" + name + "%'";
+        query = "SELECT * FROM OFFICER WHERE Firstname LIKE '%" + name + "%' OR Midname LIKE '%" + name + "%' OR Lastname LIKE '%" + name + "%' "
+                "OR ID LIKE '%" + name + "%'";
     }
     else if (curView == VIEW_INMATE)
     {
-        query = "SELECT * FROM INMATE WHERE Firstname LIKE '%" + name + "%' OR Midname LIKE '%" + name + "%' OR Lastname LIKE '%" + name + "%'";
+        query = "SELECT ID AS 'ID', Lastname AS 'Last name', Midname AS 'Middle name', Firstname as 'First name', "
+                "Gender AS 'Gender', DOB AS 'DOB', Hair AS 'Hair color', Eyes AS 'Eye color', "
+                "Eth AS 'Ethnicity', Addr AS 'Home address', Reason AS 'Reason', Custody AS 'Custody', "
+                "Availability AS 'Availability', BookIn AS 'Bookin', BookOut AS 'Bookout' "
+                "FROM INMATE WHERE Firstname LIKE '%" + name + "%' OR Midname LIKE '%" + name + "%' OR Lastname LIKE '%" + name + "%' "
+                "OR ID LIKE '%" + name + "%'";
+    }
+    else if (curView == VIEW_MENU)
+    {
+        query = "SELECT ID AS 'ID', _Date AS 'Date', Breakfast as 'Breakfast', "
+                "Lunch AS 'Lunch', Dinner AS 'Dinner', Subject AS 'Subject' FROM DINING "
+                "WHERE ID LIKE '%" + name + "%'";
     }
     else
         return;
+    qDebug() << query;
     QSqlQueryModel *model = new QSqlQueryModel;
     model->setQuery(query, db);
     ui->tableView->setModel(model);
@@ -231,4 +244,9 @@ void DiningWindow::on_tableView_clicked(const QModelIndex &index)
 void DiningWindow::on_tableView_pressed(const QModelIndex &index)
 {
     ui->tableView->selectRow(index.row());
+}
+
+void DiningWindow::on_lineEdit_returnPressed()
+{
+    on_pushSearch_clicked();
 }
