@@ -322,30 +322,10 @@ border: 1px solid #777777;
            </property>
           </widget>
          </item>
-         <item row="0" column="1">
-          <widget class="QLineEdit" name="txtOfficer">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>27</height>
-            </size>
-           </property>
-          </widget>
-         </item>
          <item row="1" column="0">
           <widget class="QLabel" name="label_2">
            <property name="text">
             <string>Inmate ID:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QLineEdit" name="txtInmate">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>27</height>
-            </size>
            </property>
           </widget>
          </item>
@@ -381,6 +361,9 @@ border: 1px solid #777777;
              <height>27</height>
             </size>
            </property>
+           <property name="displayFormat">
+            <string>yyyy/MM/dd</string>
+           </property>
           </widget>
          </item>
          <item row="4" column="0">
@@ -408,7 +391,7 @@ border: 1px solid #777777;
           </widget>
          </item>
          <item row="5" column="1">
-          <widget class="QPlainTextEdit" name="plainTextEdit"/>
+          <widget class="QPlainTextEdit" name="plainTextEdit_Recomma"/>
          </item>
          <item row="6" column="0">
           <widget class="QLabel" name="label_7">
@@ -418,7 +401,7 @@ border: 1px solid #777777;
           </widget>
          </item>
          <item row="6" column="1">
-          <widget class="QLineEdit" name="lineEdit_5">
+          <widget class="QLineEdit" name="lineEdit_reward">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -435,7 +418,7 @@ border: 1px solid #777777;
           </widget>
          </item>
          <item row="7" column="1">
-          <widget class="QPlainTextEdit" name="plainTextEdit_2"/>
+          <widget class="QPlainTextEdit" name="plainTextEdit_remark"/>
          </item>
          <item row="8" column="1">
           <widget class="QFrame" name="frame">
@@ -446,6 +429,12 @@ border: 1px solid #777777;
             <enum>QFrame::Raised</enum>
            </property>
           </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="comboBox_officerInCharge"/>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="comboBox_inmateID"/>
          </item>
         </layout>
        </widget>
@@ -563,7 +552,7 @@ background-color:0;</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="pushButton">
         <property name="minimumSize">
          <size>
           <width>80</width>
@@ -592,7 +581,7 @@ background-color:0;</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="pushButton_cancel">
         <property name="minimumSize">
          <size>
           <width>80</width>

@@ -8,6 +8,7 @@
 #include <QSqlQuery>
 #include <QDebug>
 #include <QDateTime>
+#include "newrehabform.h"
 
 namespace Ui {
 class RehabForm;
@@ -45,6 +46,7 @@ private slots:
 private:
     Ui::RehabForm *ui;
     QSqlQueryModel *model;
+    void execQuery(QString query);
 };
 
 #endif // REHABFORM_H

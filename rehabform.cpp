@@ -39,29 +39,58 @@ void RehabForm::on_pushButton_16_clicked()
 
 void RehabForm::on_pushAdd_clicked()
 {
-    model->insertRow(model->rowCount());
-    QSqlQuery satan_approves;
+    /*QSqlQuery satan_approves;
     QString log = "INSERT INTO LOG (department, logtime, content) VALUES ('Rehabilitation', "
             "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
             "N'Record added.')";
     satan_approves.prepare(log);
-    satan_approves.exec();
+    satan_approves.exec();*/
+    newrehabform * reha = new newrehabform(0, 0);
+    connect(reha, &newrehabform::exec_query, this, &RehabForm::execQuery);
+    reha->show();
 }
 
 void RehabForm::on_pushDelete_clicked()
 {
-    model->removeRow(ui->tableView->currentIndex().row());
+   /* model->removeRow(ui->tableView->currentIndex().row());
     QSqlQuery satan_approves;
     QString log = "INSERT INTO LOG (department, logtime, content) VALUES ('Rehabilitation', "
             "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
             "N'Record deleted.')";
     satan_approves.prepare(log);
-    satan_approves.exec();
+    satan_approves.exec();*/
+
+    QMessageBox::StandardButton reply;
+      reply = QMessageBox::question(this, "Delete", "Are you sure you want to delete this line?",
+                                    QMessageBox::Yes|QMessageBox::No);
+      if (reply == QMessageBox::Yes)
+      {
+          QModelIndexList indexes = ui->tableView->selectionModel()->selection().indexes();
+          if (indexes.isEmpty())
+              return;
+          QModelIndex index = indexes.at(0);
+          QString IDInm = index.sibling(index.row(), 1).data().toString();
+
+          QSqlDatabase db = Database::getDatabase();
+
+          QSqlQuery query(db);
+          query.exec("DELETE FROM REHABILITATION WHERE InmateID = '" + IDInm + "'");
+
+          on_pushButton_16_clicked();
+      }
 }
 
 void RehabForm::on_pushModify_clicked()
 {
-    //model->select();
+    QModelIndexList indexes = ui->tableView->selectionModel()->selection().indexes();
+    if (indexes.isEmpty())
+        return;
+    QModelIndex index = indexes.at(0);
+    QString IDInm = index.sibling(index.row(), 1).data().toString();
+
+    newrehabform * reha = new newrehabform(0, 1, IDInm);
+    connect(reha, &newrehabform::exec_query, this, &RehabForm::execQuery);
+    reha->show();
 }
 
 
@@ -108,4 +137,20 @@ void RehabForm::on_pushButton_5_clicked()
 void RehabForm::on_tableView_pressed(const QModelIndex &index)
 {
     ui->tableView->selectRow(index.row());
+}
+
+void RehabForm::execQuery(QString Squery)
+{
+    qDebug() << Squery;
+    QSqlDatabase db = Database::getDatabase();
+    QSqlQuery query(db);
+    query.exec(Squery);
+
+    on_pushButton_16_clicked();
+
+    /*QSqlQuery satan_approves(db);
+    QString log = "INSERT INTO LOG (department, logtime, content) VALUES ('Dining', "
+            "CAST(N'" + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm") + "' AS Datetime), "
+            "N'Record added.')";
+    //satan_approves.exec(log);*/
 }

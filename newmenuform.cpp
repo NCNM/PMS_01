@@ -106,7 +106,7 @@ void newmenuform::on_pushButton_2_clicked()
     else if (mode == 1)
     {
         QSQuery = "UPDATE DINING "
-                "SET `_Date` = CAST(N'" + ui->dateEdit->text() + "' AS Datetime), `Breakfast` = N'" + ui->lineEdit_Breakfast->text() +"', "
+                "SET `_Date` = CAST(N'" + ui->dateEdit->text() + "' AS Date), `Breakfast` = N'" + ui->lineEdit_Breakfast->text() +"', "
                 "`Lunch` = N'" + ui->lineEdit_Lunch->text() +"', `Dinner` = N'" + ui->lineEdit_Diner->text() +"', `Subject` = N'" + ui->comboBox_Subject->currentText() +"' "
                 "WHERE `ID` = N'" + workingID + "';";
     }
