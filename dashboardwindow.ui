@@ -38,6 +38,67 @@
    </property>
    <item>
     <widget class="QFrame" name="frame">
+     <property name="styleSheet">
+      <string notr="true">QScrollBar:horizontal {
+	background-color: white;
+    height: 14px;
+    margin: 0px 20px 0px 20px;
+}
+
+QScrollBar::handle:horizontal {
+	background-color: rgb(195, 195, 195);
+    min-width: 20px;
+}
+
+QScrollBar::handle:horizontal:hover {
+	background-color: #299ed6;
+    min-width: 20px;
+}
+
+QScrollBar::add-line:horizontal {
+	border-image: url(:/images/scroll_right.png);
+    width: 16px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:horizontal {
+	border-image: url(:/images/scroll_left.png);
+    width: 16px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+
+QScrollBar:vertical {
+	width:14px;
+	background-color: white;
+	margin: 20px 0px 20px 0px;
+}
+
+QScrollBar::handle:vertical {
+	background-color: rgb(195, 195, 195);
+    min-height: 15px;
+}
+
+QScrollBar::handle:vertical:hover {
+	background-color: #299ed6;
+    min-width: 20px;
+}
+
+QScrollBar::add-line:vertical {
+	border-image: url(:/images/scroll_down.png);
+    height: 16px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical {
+	border-image: url(:/images/scroll_up.png);
+    height: 16px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}</string>
+     </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
      </property>
@@ -140,7 +201,7 @@ background-color:0;</string>
          <string notr="true">background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="page">
          <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -1677,6 +1738,66 @@ background-color: rgb(255, 255, 255);
 QTableView:pressed {
 border-radius:5px;
 border: 1px solid #777777;
+}
+
+QScrollBar:horizontal {
+	background-color: white;
+    height: 14px;
+    margin: 0px 20px 0px 20px;
+}
+
+QScrollBar::handle:horizontal {
+	background-color: rgb(195, 195, 195);
+    min-width: 20px;
+}
+
+QScrollBar::handle:horizontal:hover {
+	background-color: #299ed6;
+    min-width: 20px;
+}
+
+QScrollBar::add-line:horizontal {
+	border-image: url(:/images/scroll_right.png);
+    width: 16px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:horizontal {
+	border-image: url(:/images/scroll_left.png);
+    width: 16px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+
+QScrollBar:vertical {
+	width:14px;
+	background-color: white;
+	margin: 20px 0px 20px 0px;
+}
+
+QScrollBar::handle:vertical {
+	background-color: rgb(195, 195, 195);
+    min-height: 15px;
+}
+
+QScrollBar::handle:vertical:hover {
+	background-color: #299ed6;
+    min-width: 20px;
+}
+
+QScrollBar::add-line:vertical {
+	border-image: url(:/images/scroll_down.png);
+    height: 16px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical {
+	border-image: url(:/images/scroll_up.png);
+    height: 16px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
 }
 </string>
                         </property>

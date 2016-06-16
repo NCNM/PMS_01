@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Record Editor</string>
+   <string>Record editor</string>
   </property>
   <property name="windowIcon">
    <iconset resource="pms_resources.qrc">

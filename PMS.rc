@@ -2,7 +2,7 @@
 
 IDI_ICON1 ICON DISCARDABLE "PMS_app_icon.ico"
 VS_VERSION_INFO VERSIONINFO
-FILEVERSION 0, 6, 16, 1930
+FILEVERSION 0, 6, 16, 2218
 PRODUCTVERSION 0, 6, 0, 0
 FILEFLAGSMASK 0x3fL
 FILEFLAGS 0
@@ -20,7 +20,7 @@ BLOCK "040904b0"
 BEGIN
 VALUE "CompanyName", "NCNM\0"
 VALUE "FileDescription", "Prison Management System\0"
-VALUE "FileVersion", "0.6.16.1930\0"
+VALUE "FileVersion", "0.6.16.2218\0"
 VALUE "InternalName", "PMS\0"
 VALUE "LegalCopyright", "\0"
 VALUE "OriginalFilename", "PMS.exe\0"

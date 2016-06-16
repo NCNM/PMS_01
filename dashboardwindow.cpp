@@ -43,7 +43,7 @@ DashboardWindow::~DashboardWindow()
     delete ui;
 }
 
-void DashboardWindow::on_pushButton_connect_clicked()   //view detail
+void DashboardWindow::on_pushButton_connect_clicked()
 {
     InmateInfoWindow * inmateInfo = new InmateInfoWindow(0, m_InmateID, 1);
     inmateInfo->show();
@@ -59,20 +59,22 @@ void DashboardWindow::on_pushButton_connect_2_clicked()
 
     model->setQuery(query);
     ui->tblRelatives->setModel(model);
+    ui->tblRelatives->resizeColumnsToContents();
 }
 
 void DashboardWindow::on_pushButton_overview_clicked()
 {
-    QSqlDatabase db = Database::getDatabase();
     QSqlQueryModel *model = new QSqlQueryModel;
-    QString query = "SELECT `INMATE`.`ID`, `INMATE`.`Lastname` AS `Last name`, `INMATE`.`Midname` AS `Middle name`, `INMATE`.`Firstname` "
-                    "AS `First name`, `INMATE`.`BookIn` AS `Bookin`, "
-                    "`INMATE`.`BookOut` AS `Bookout` FROM `INMATE`, `RE_LATIVE` "
+    QString query = "SELECT `INMATE`.`ID` AS ID, `INMATE`.`Lastname` AS `Last name`, `INMATE`.`Midname` AS `Middle name`, "
+                    "`INMATE`.`Firstname` as `First name`, "
+                    "`INMATE`.`Gender` AS Gender, `INMATE`.DOB AS DOB, Hair AS `Hair color`, Eyes AS `Eye color`, "
+                    "Eth AS `Ethnicity`, `INMATE`.`Addr` AS `Home address`, Reason AS Reason, Custody AS Custody, "
+                    "Availability AS Availability, BookIn AS Bookin, BookOut AS Bookout FROM `INMATE`, `RE_LATIVE` "
                     "WHERE `INMATE`.`ID` = `RE_LATIVE`.`InmateID` AND `RE_LATIVE`.`ID` = N'" + m_RelativeID + "'";
 
-    qDebug() << query;
     model->setQuery(query);
     ui->tblRelatives->setModel(model);
+    ui->tblRelatives->resizeColumnsToContents();
     m_InmateID = model->data(model->index(0, 0)).toString();
 }
 
@@ -89,9 +91,9 @@ void DashboardWindow::on_pushButton_connect_3_clicked()
                     "AND `RE_LATIVE`.`ID` = N'" + m_RelativeID + "' "
                     "ORDER BY `MEDCHECKS`.`MEDCHECKS_Date`";
 
-    qDebug() << query;
     model->setQuery(query);
     ui->tblRelatives->setModel(model);
+    ui->tblRelatives->resizeColumnsToContents();
 }
 
 void DashboardWindow::on_tblRelatives_clicked(const QModelIndex &index)
