@@ -33,6 +33,13 @@ void ManagementWindow::on_pushButton_16_clicked()
 void ManagementWindow::on_pushButton_17_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
+    QSqlDatabase db = Database::getDatabase();
+
+    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery("SELECT ID, OfficerID AS 'Officer', AccessLevel AS 'Clearance', RP_Date AS Date, "
+                    "Content AS 'Content' FROM REPORT", db);
+    ui->tableView_3->setModel(model);
+    ui->tableView_3->resizeColumnsToContents();
 }
 
 void ManagementWindow::on_pushButton_18_clicked()

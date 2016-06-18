@@ -30,10 +30,6 @@ public:
     ~DiningWindow();
 
 private slots:
-    void on_pushButton_viewInmates_clicked(bool checked);
-
-    void on_pushButton_viewOfficers_clicked(bool checked);
-
     void on_pushSearch_clicked();
 
     void on_pushButton_18_clicked();
@@ -59,6 +55,8 @@ private slots:
     void on_tableView_pressed(const QModelIndex &index);
 
     void on_lineEdit_returnPressed();
+
+    void on_pushButton_viewOfficers_clicked();
 
 signals:
     void row_activated(InmateInfoWindow* child, int parent);

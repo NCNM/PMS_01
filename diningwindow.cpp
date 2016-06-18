@@ -20,49 +20,6 @@ DiningWindow::~DiningWindow()
     delete ui;
 }
 
-
-
-void DiningWindow::on_pushButton_viewInmates_clicked(bool checked)
-{
-    ui->stackedWidget->setCurrentIndex(0);
-    QSqlDatabase db = Database::getDatabase();
-
-    QSqlQueryModel *model = new QSqlQueryModel;
-    model->setQuery("SELECT ID AS 'ID', Lastname AS 'Last name', Midname AS 'Middle name', Firstname as 'First name', "
-                    "Gender AS 'Gender', DOB AS 'DOB', Hair AS 'Hair color', Eyes AS 'Eye color', "
-                    "Eth AS 'Ethnicity', Addr AS 'Home address', Reason AS 'Reason', Custody AS 'Custody', "
-                    "Availability AS 'Availability', BookIn AS 'Bookin', BookOut AS 'Bookout' FROM INMATE", db);
-    ui->tableView->setModel(model);
-    ui->tableView->resizeColumnsToContents();
-
-    curView = VIEW_INMATE;
-    ui->pushSearch->setEnabled(true);
-    ui->pushButton_Modify->hide();
-    ui->pushButton_Add->hide();
-    ui->Delete->hide();
-    ui->pushButton_2->show();
-    ui->pushButton_3->show();
-}
-
-void DiningWindow::on_pushButton_viewOfficers_clicked(bool checked)
-{
-    ui->stackedWidget->setCurrentIndex(0);
-    QSqlDatabase db = Database::getDatabase();
-
-    QSqlQueryModel *model = new QSqlQueryModel;
-    model->setQuery("SELECT * FROM OFFICER", db);
-    ui->tableView->setModel(model);
-    ui->tableView->resizeColumnsToContents();
-
-    curView = VIEW_OFFICER;
-    ui->pushSearch->setEnabled(true);
-    ui->pushButton_Modify->hide();
-    ui->pushButton_Add->hide();
-    ui->Delete->hide();
-    ui->pushButton_2->show();
-    ui->pushButton_3->show();
-}
-
 void DiningWindow::on_pushSearch_clicked()
 {
     QSqlDatabase db = Database::getDatabase();
@@ -105,7 +62,24 @@ void DiningWindow::on_pushButton_18_clicked()
 
 void DiningWindow::on_pushButton_viewInmates_clicked()
 {
+    ui->stackedWidget->setCurrentIndex(0);
+    QSqlDatabase db = Database::getDatabase();
 
+    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery("SELECT ID AS 'ID', Lastname AS 'Last name', Midname AS 'Middle name', Firstname as 'First name', "
+                    "Gender AS 'Gender', DOB AS 'DOB', Hair AS 'Hair color', Eyes AS 'Eye color', "
+                    "Eth AS 'Ethnicity', Addr AS 'Home address', Reason AS 'Reason', Custody AS 'Custody', "
+                    "Availability AS 'Availability', BookIn AS 'Bookin', BookOut AS 'Bookout' FROM INMATE", db);
+    ui->tableView->setModel(model);
+    ui->tableView->resizeColumnsToContents();
+
+    curView = VIEW_INMATE;
+    ui->pushSearch->setEnabled(true);
+    ui->pushButton_Modify->hide();
+    ui->pushButton_Add->hide();
+    ui->Delete->hide();
+    ui->pushButton_2->show();
+    ui->pushButton_3->show();
 }
 
 void DiningWindow::on_tableView_doubleClicked(const QModelIndex &index)
@@ -226,4 +200,24 @@ void DiningWindow::on_tableView_pressed(const QModelIndex &index)
 void DiningWindow::on_lineEdit_returnPressed()
 {
     on_pushSearch_clicked();
+}
+
+void DiningWindow::on_pushButton_viewOfficers_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+    QSqlDatabase db = Database::getDatabase();
+
+    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery("SELECT ID AS 'ID', Lastname AS 'Last name', Midname AS 'Middle name', Firstname as 'First name', "
+                    "Gender AS 'Gender', DOB AS 'DOB', Addr AS 'Address', Phone AS 'Phone', Department AS 'Department' "
+                    "FROM OFFICER", db);
+    ui->tableView->setModel(model);
+    ui->tableView->resizeColumnsToContents();
+    ui->pushSearch->setEnabled(true);
+    ui->pushButton_Modify->hide();
+    ui->pushButton_Add->hide();
+    ui->Delete->hide();
+    ui->pushButton_2->show();
+    ui->pushButton_3->show();
+    curView = VIEW_OFFICER;
 }

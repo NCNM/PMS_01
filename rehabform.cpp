@@ -136,7 +136,6 @@ void RehabForm::on_tableView_pressed(const QModelIndex &index)
 
 void RehabForm::execQuery(QString Squery)
 {
-    qDebug() << Squery;
     QSqlDatabase db = Database::getDatabase();
     QSqlQuery query(db);
     query.exec(Squery);

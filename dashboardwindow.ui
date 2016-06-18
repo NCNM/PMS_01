@@ -1218,7 +1218,7 @@ border: 1px solid #777777;
                             <bool>true</bool>
                            </property>
                            <property name="placeholderText">
-                            <string>12 Grimmauld Place</string>
+                            <string>12 Ka-El Street, NJ</string>
                            </property>
                           </widget>
                          </item>
